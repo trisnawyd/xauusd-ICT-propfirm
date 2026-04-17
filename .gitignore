@@ -1,0 +1,8 @@
+.obsidian/
+node_modules/
+.vscode/
+.claude/*
+!.claude/settings.json
+!.claude/CLAUDE.md
+mt5-mcp-server/.claude/*
+!mt5-mcp-server/.claude/settings.json

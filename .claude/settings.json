@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(Analysis/**)",
+      "Edit(Analysis/**)",
+      "Write(Analysis/**)",
+      "Read(Context/**)",
+      "Edit(Context/**)",
+      "Read(Trade Log/**)",
+      "Write(Trade Log/**)"
+    ]
+  }
+}

@@ -15,13 +15,11 @@ tool calls):
 3. get_account_info             — equity, balance
 4. get_daily_drawdown           — daily P&L
 5. detect_structure M15         — { timeframe: "M15", swing_count: 20 }
-6. detect_structure M5          — { timeframe: "M5", swing_count: 20 }
-7. detect_order_blocks M5       — { timeframe: "M5", count: 100 }
-8. detect_fvg M5                — { timeframe: "M5", count: 100 }
-9. detect_fvg M1                — { timeframe: "M1", count: 100 }
-10. detect_liquidity_sweeps M15 — { timeframe: "M15", count: 100 }
-11. get_premium_discount M15    — { timeframe: "M15" }
-12. get_ohlcv M1                — { symbol: "XAUUSD", timeframe: "M1", count: 30 }
+6. detect_order_blocks M5       — { timeframe: "M5", count: 50 }
+7. detect_fvg M5                — { timeframe: "M5", count: 50 }
+8. detect_liquidity_sweeps M15  — { timeframe: "M15", count: 50 }
+9. get_premium_discount M15     — { timeframe: "M15" }
+10. get_ohlcv M1                — { symbol: "XAUUSD", timeframe: "M1", count: 30 }
 
 ## Output Format
 
@@ -51,21 +49,11 @@ STRUCTURE_M15:
   all_events: [paste full list]
   swing_high: | swing_low: | eq:
 
-STRUCTURE_M5:
-  trend_label:
-  last_event:
-  all_events:
-  swing_high: | swing_low:
-
 ORDER_BLOCKS_M5:
   count_open:
   list: [paste all unmitigated OBs with price, direction, time]
 
 FVG_M5:
-  count_open:
-  list: [paste all unmitigated FVGs with price range, direction, time]
-
-FVG_M1:
   count_open:
   list: [paste all unmitigated FVGs with price range, direction, time]
 

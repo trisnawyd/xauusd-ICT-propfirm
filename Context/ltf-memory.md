@@ -1,48 +1,48 @@
 ---
-updated: 2026-04-17 12:41 UTC
-snapshot: "[[Analysis/LTF/20260417/20260417_1241_wait]]"
+updated: 2026-06-03 15:13 UTC
+snapshot: "[[Analysis/LTF/20260603/20260603_1513_wait]]"
 ---
 
 # LTF Memory — Last 3 Analyses
 
-## Current Market Structure (as of 2026-04-17 12:41 UTC)
+## Current Market Structure (as of 2026-06-03 15:13 UTC)
+- M15 Status: BEARISH confirmed — last event BoS DOWN@4438.35 broke 4452.73 (06/03 12:30). Swing H4496.77 / L4438.35, EQ 4452.81. Price 4459 in PREMIUM but no M5 supply zone at current price.
+- M5 Status: count_open OBs: 0 (all filled). 1 open FVG: BULLISH 4444.55–4447.34 (demand below price). All bearish M5 zones mitigated. No SHORT entry zone available near current price.
+- M1 Status: Choppy consolidation 4457–4464 range. Repeated micro-BSL sweeps with rejection. No clean directional trigger.
 
-**M15 Status:** Label BULLISH (lagging). Last confirmed event **BoS DOWN@4782.27** (04/17 10:45) — transition to bearish. M15 range H:4811.9/L:4778.75, EQ:4795.33. Price 4823.56 is deep PREMIUM (28 above EQ) — ABOVE prior M15 range high. Unconfirmed M15 BoS UP forming on current candle (price >> 4811.9).
+Key Levels:
+- 4481.70 — H1 bearish FVG top (Watch A SHORT SL reference)
+- 4474.43–4481.70 — H1 bearish FVG (nearest SHORT supply / Watch A entry)
+- 4467.27 — M15 swing high (BSL above)
+- 4459.29 — Current price (M15 premium, no entry zone)
+- 4452.81 — M15 EQ
+- 4449.40 — M15 OTE ceiling
+- 4444.55–4447.34 — Bullish M5 FVG open (Watch B demand confluence)
+- 4438.35 — London SSL sweep wick (critical support)
+- 4396.55–4418.58 — H4+H1 primary bullish FVG demand
 
-**M5 Status:** Label BULLISH. Last confirmed event BoS DOWN@4789.77 (11:30) — M5 bearish chain. 2 open M5 bullish FVGs: 4806.29–4811.61 (12:20) and 4812.60–4815.34 (12:25) — acting as support below price. 0 open M5 OBs. 0 open M5 bearish FVGs.
-
-**M1 Status:** Price 4823.56. 1 open M1 bullish FVG: 4807.88–4811.61 (12:24). Price printing new London high at 4824.80. Approaching H4 BoS UP / Watch B SHORT trigger at 4824.13.
-
-**Key Levels:**
-- 4824.80 — London high (live, 12:41) — current BSL pool
-- 4824.13 — H4 BoS UP / H1 CHoCH UP — Watch B SHORT trigger zone ⚠️
-- 4823.56 — Current price (LONDON, 12:41 UTC)
-- 4812.60–4815.34 — M5 bullish FVG (open) — support
-- 4806.29–4811.61 — M5 bullish FVG (open) — support
-- 4750.05–4751.58 — H4 FVG (open) — ONLY valid LONG entry zone
-
-**Setup:** WAIT — LONG not valid (counter-trend vs D1, price 72 pips above H4 demand). Watch A: price drops to H4 FVG 4750–4751 + M15 CHoCH UP → LONG. Watch B: price holds/rejects 4824.13 + M15 CHoCH DOWN + M5 bearish OB/FVG → SHORT (primary).
-
----
-
-## Analysis #1 — 2026-04-17 12:41 UTC (WAIT)
-- **Direction:** WAIT — LONG search blocked. LONG counter-trend vs D1 (BEARISH) — price 4823.56 is 72 pips above H4 demand FVG (4750–4751). Not at H4 OTE (4692–4731) either. M15 DEEP PREMIUM. Gate 3 fail. Unconfirmed M15 BoS UP forming but irrelevant — P/D rule blocks counter-trend LONG at 4823.
-- **Watch A:** Price drops to H4 FVG 4750.05–4751.58 + M15 CHoCH UP + M5 bullish OB/FVG + M1 bullish engulf → LONG ~4751, SL 4747, TP 4795 (R:R 11:1)
-- **Watch B:** Price holds/rejects 4824.13 + M15 CHoCH DOWN + M5 bearish OB/FVG + M1 bearish engulf → SHORT ~4822, SL 4826, TP 4750.05 (R:R 18:1)
-- **Invalidation:** Watch A dead if D1 closes below 4750.05. Watch B dead if M15 closes above 4831.04. Both dead if H1 closes above 4838.57.
+Setup: WAIT — Gate 3 fail: no unmitigated M5 supply zone at current price for SHORT; no H4 OTE/demand zone for counter-trend LONG at current price. Watch A SHORT on rally to H1 bearish FVG (4474–4481) is the primary setup to monitor.
 
 ---
 
-## Analysis #2 — 2026-04-17 12:34 UTC (WAIT)
-- **Direction:** WAIT — Gate 3 fail. M15 last event BoS DOWN@4782.27 (10:45) → SHORT proposed, WITH D1+H1 TREND. Price 4817 in M15 PREMIUM ✓. 0 M5 OBs/FVGs (bearish). 2 open M5 bullish FVGs (4806–4812, 4812–4815) from active bullish impulse. No bearish entry zone formed at 4817 — price running toward H4 resistance 4824.13.
-- **Watch A:** Price reaches H4 resistance 4824.13 + M15 CHoCH DOWN + M5 bearish OB/FVG + M1 bearish engulf → SHORT ~4822, SL 4826, TP 4750.05 (R:R 18:1)
-- **Watch B:** Impulse fades, retraces to M5 FVG zone 4806–4812 + M5 bearish OB/FVG forms + M1 bearish engulf → SHORT ~4810, SL 4814, TP 4750.05 (R:R 15:1)
-- **Invalidation:** Watch A dead if M15 closes above 4831.04. Watch B dead if M15 BoS UP confirms above 4811.9 without bearish entry zone. Both dead if H1 closes above 4838.57.
+## Analysis #1 — 2026-06-03 15:13 UTC (WAIT)
+- **Direction:** WAIT — Gate 3 fail: SHORT (WITH D1 TREND, M15 BoS DOWN confirmed) requires M5 supply zone but all M5 bearish OBs and FVGs are filled. LONG (counter-trend vs D1) requires H4 OTE (≤4453.62) or H4 demand FVG — price at 4459 is above H4 OTE ceiling. No entry zone at current price in either direction.
+- **Watch A:** Price rallies to H1 bearish FVG (4474.43–4481.70) + M1 bearish engulf/displacement → SHORT ~4476, SL 4485, TP 4444.55 (R:R 3.49:1) — Lot 0.05, Risk $9.00 — WITH D1 TREND
+- **Watch B:** Price drops to M15 OTE (4444.54–4449.40) + bullish M5 FVG (4444.55–4447.34) + M1 bullish engulf → LONG ~4447, SL 4436.50, TP 4474.00 (R:R 2.57:1) — Lot 0.04, Risk $8.40 — COUNTER-TREND vs D1
+- **Invalidation:** Watch A: M15 BoS UP above 4496.77; Watch B: M15 close below 4438.35
 
 ---
 
-## Analysis #3 — 2026-04-17 08:44 UTC (WAIT)
-- **Direction:** WAIT — Gate 3 fail. M15 last event BoS UP@4794.94 (07:30) → LONG proposed, COUNTER-TREND vs D1 (BEARISH). 0 M5 OBs/FVGs; 3 open M1 bullish FVGs (4787.38–4795.17) all below current price (4796.08) — consumed by impulsive move. LONG counter-trend blocked — price not at H4 demand (4750–4751) or H4 OTE (4692–4731). Price in M15 PREMIUM. Double SSL@4792.55/@4792.14 swept at 08:30 London.
-- **Watch A:** Price rallies to H1 resistance cluster 4807–4813 + M15 CHoCH DOWN forms + M5 bearish OB/FVG + M1 bearish engulf → SHORT ~4808, SL 4812, TP 4750.05 (R:R 14.5:1)
-- **Watch B:** Price drops to H4 bullish FVG 4750.05–4751.58 + M15 CHoCH UP + M5 bullish trigger → LONG ~4751, SL 4747, TP 4784.65 (R:R 8.4:1)
-- **Invalidation:** Watch A dead if M15 closes above 4805.32. Watch B dead if D1 closes below 4750.05. Both dead if H1 closes above 4824.13.
+## Analysis #2 — 2026-06-03 11:56 UTC (WAIT)
+- **Direction:** WAIT — Gate 3 fail: P/D mismatch both directions. SHORT (WITH D1 TREND) requires M15 PREMIUM above 4467.56 EQ; current price 4462.05 is in DISCOUNT. LONG (counter-trend vs D1) requires price inside H4 OTE (4415–4453) — current price 4462.05 is 8 pips above OTE ceiling. M5 BoS UP micro push is underway — price may rally into bearish supply FVGs before the M15 bearish trend resumes.
+- **Watch A:** Price drops into H4 OTE (≤4453.62) → retaps M5 bullish FVG (4444.55–4447.34) + M15 CHoCH UP + M1 bullish engulf + spread ≤ 2.0 → LONG ~4446, SL 4436.50, TP1 4467.56 (R:R 2.27:1) — Lot 0.05, Risk $47.50 ⚠️ COUNTER-TREND vs D1
+- **Watch B:** Price rallies above M15 EQ (4467.56) into bearish M5 FVG cluster (4475.74–4484.37) + M1 bearish engulf + spread ≤ 2.0 → SHORT ~4476, SL 4485, TP1 4444.55 (R:R 3.49:1) — Lot 0.05, Risk $45.00 — WITH D1 TREND
+- **Invalidation:** Watch A: M15 close below 4438.35; Watch B: M15 BoS UP above 4496.77; Both: spread > 5.0 at trigger
+
+---
+
+## Analysis #3 — 2026-06-03 09:52 UTC (WAIT)
+- **Direction:** WAIT — Gate 4 fail: no current M1 trigger at bullish FVG zone (4442.41–4443.33); M1 bearish FVG formed 09:51 UTC at 4446.15 (micro-rejection); spread 3.4 pips > 2.0 blocks execution. London SSL sweep to 4438.35 (09:30 UTC) with recovery — structure building. M15 TRANSITIONING BULLISH (BoS UP@4464.18, 07:45 UTC), price inside H4 OTE (4415–4453). High-quality LONG setup pending retap + trigger.
+- **Watch A:** Price retaps M1 bullish FVG (4442.41–4443.33) + M1 bullish engulf + spread ≤ 2.0 → LONG ~4443, SL 4437, TP1 4456.39 / TP2 4462.71 (R:R 2.23:1 / 3.29:1) — Lot 0.08, Risk $48.00 ⚠️ COUNTER-TREND vs D1
+- **Watch B:** Price rallies to M5 bearish OB/FVG (4465–4472) + M15 CHoCH DOWN + M1 bearish engulf + spread ≤ 2.0 → SHORT ~4467, SL 4473, TP1 4443 (R:R 4.0:1) — Lot 0.08, Risk $48.00 — WITH D1 TREND
+- **Invalidation:** Watch A: M15 close below 4438.35; Watch B: M15 BoS UP above 4474.43; Both: spread > 2.0 at trigger

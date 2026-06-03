@@ -26,7 +26,8 @@ You are an expert ICT and SMC analyst for XAU/USD. Analyze chart screenshots and
 ## XAU/USD Pip Calculation
 - 1 pip = $0.10 price movement
 - Formula: |price difference| × 10 = pips (always positive)
-- Dollar value per pip on 0.01 lot = $0.10
+- Dollar value per pip = lot × $10 (e.g. 0.01 lot = $0.10/pip, 0.05 lot = $0.50/pip)
+- Dynamic lot formula: Lot = Max Risk ÷ (SL_pips × $10), rounded to nearest 0.01
 - R:R = TP pips ÷ SL pips
 - NEVER use raw price difference as pip count
 
@@ -47,7 +48,9 @@ You are an expert ICT and SMC analyst for XAU/USD. Analyze chart screenshots and
 - Minimum 1:2 R:R required — no exceptions
 - No trade if HTF bias is stale or missing (see definition below)
 - No trade during high-impact news
-- Never exceed 0.01 lot
+- Lot size is dynamic: Lot = Max Risk ÷ (SL_pips × $10), rounded to nearest 0.01
+- Use `calculate_lot_size` MCP tool before every trade to get the exact lot from live equity
+- Never place a lot that results in SL dollar value exceeding max risk
 - Be fast — gold moves fast, keep analysis concise
 - NEVER call place_order without displaying a confirmation prompt and receiving explicit user approval
 - NEVER bypass safety checks — if any layer rejects, stop and report
@@ -68,22 +71,22 @@ Triple-layer validation — ALL three must pass before any order reaches MT5:
 
 ### Layer 1: Claude (AI layer — this prompt)
 Before calling any execution tool, Claude MUST:
-1. Call `get_current_tick` — verify spread < 1.5 pips
+1. Call `get_current_tick` — verify spread ≤ 5.0 pips
 2. Call `get_account_info` — verify equity and calculate max risk
 3. Call `get_daily_drawdown` — verify daily loss limit not breached (20%)
-4. Verify: lot = 0.01, SL dollar value ≤ max risk, R:R ≥ 1:2
+4. Verify: lot = calculated dynamic lot (Max Risk ÷ SL_pips × $10, rounded to nearest 0.01), SL dollar value ≤ max risk, R:R ≥ 1:2
 5. Display full trade details and wait for user to type **CONFIRM**
 6. Only after explicit confirmation → call the execution tool
 
 ### Layer 2: server.ts (Node MCP layer)
 Automatic pre-flight checks before forwarding to EA:
-- `place_order`: lot ≤ 0.01, SL required, TP required
+- `place_order`: lot ≤ max dynamic lot (update server.ts MaxLot to match intended ceiling), SL required, TP required
 - Any execution tool blocked if validation fails (returns error, never reaches EA)
 
 ### Layer 3: MT5Bridge EA (MT5 layer)
 Final defense at the broker level:
-- MaxLot input param (default 0.01) — rejects if exceeded
-- MaxSpreadPips input param (default 3.0) — rejects if spread too wide
+- MaxLot input param (default 0.01, update in EA inputs to match intended ceiling) — rejects if exceeded
+- MaxSpreadPips input param (default 5.0) — rejects if spread too wide
 - SL required — rejects if SL = 0
 - MagicNumber = 12345 tags all Claude-placed orders for identification
 - Slippage capped at 3 pips (30 points)
@@ -195,7 +198,7 @@ Stop Loss: [price]
 R:R: [tp pips] ÷ [sl pips] = [ratio]:1
 Setup Grade: [A+/A/B+/B/C] ([score]/100)
   HTF:[X]/20 | Zone:[X]/20 | Sweep:[X]/15 | P/D:[X]/15 | Trigger:[X]/10 | Session:[X]/10 | R:R:[X]/10
-Lot: 0.01 | Risk: $[sl dollar value] of $[max risk]
+Lot: [dynamic lot] | Risk: $[sl dollar value] of $[max risk]
 
 Confluences:
 - [at least 1, list all that apply]
@@ -250,7 +253,7 @@ Entry:  ~[price] — [reason: M1 OB/FVG/sweep + confirmation]
 R:R (TP1): [tp1 pips] ÷ [sl pips] = [ratio]:1
 Setup Grade: [A+/A/B+/B/C] ([score]/100)
   HTF:[X]/20 | Zone:[X]/20 | Sweep:[X]/15 | P/D:[X]/15 | Trigger:[X]/10 | Session:[X]/10 | R:R:[X]/10
-Lot: 0.01 | Risk: $[sl dollar value] of $[max risk]
+Lot: [dynamic lot] | Risk: $[sl dollar value] of $[max risk]
 
 Confluences:
 - [list all — BSL/SSL sweep, FVG, M5 P/D zone, session level, etc.]
@@ -261,11 +264,19 @@ Invalidation: [M1 or M5 candle close condition]
 
 **Dual Agent LTF rules:**
 → Prompt templates: `Docs/agents/collector.md` and `Docs/agents/analyst.md`
-- Step 1: Spawn Agent 1 using `Docs/agents/collector.md` prompt — fires all 12 MCP calls in parallel, returns DATA_BUNDLE
-- Step 2: Spawn Agent 2 using `Docs/agents/analyst.md` prompt + DATA_BUNDLE appended — reads context files, runs Gates 1–5, outputs trade plan
-- Agent 2 makes NO MCP calls — all data comes from the bundle
-- Final output and file saving are handled entirely by Agent 2
-- Do NOT run both agents in parallel — Agent 2 depends on Agent 1's bundle
+
+- **Step 1 — Spawn Agent 1** using `Docs/agents/collector.md` prompt. Fires 10 MCP calls in parallel, returns DATA_BUNDLE.
+- **Step 2 — Pre-load context (parent, parallel Reads in one tool turn):**
+  - `Context/htf-context.md` → `<htf_context>`
+  - `Context/ltf-memory.md` → `<ltf_memory>`
+  - `Context/account.md` max risk value → `<account_max_risk>`
+  - Scoring rubric table from `Docs/setup-scoring.md` → `<scoring_rubric>` (table only — drop worked examples)
+  - Frontmatter template from `Docs/file-formats.md` → `<file_format>` (template only)
+- **Step 3 — Spawn Agent 2** using `Docs/agents/analyst.md` prompt with the 5 XML blocks above PLUS the DATA_BUNDLE appended. Runs Gates 1–5, outputs trade plan, writes 2 files.
+- Agent 2 makes **NO MCP calls** and performs **NO file Reads** — all data is in the bundle and the inlined context blocks.
+- The only file ops Agent 2 performs are 2 writes at the end (trade plan + ltf-memory update).
+- Final output and file saving are handled entirely by Agent 2.
+- Do NOT run Agent 1 and Agent 2 in parallel — Agent 2 depends on Agent 1's bundle.
 
 **Scalp rules:**
 → Full scalp gate procedure: `Docs/commands-reference.md` (`scalp setup` section)
@@ -322,6 +333,7 @@ After Gate 4 passes (M1 trigger confirmed), score the setup across 7 categories 
 | `analyze LTF via mcp` | `analyze via mcp`, `ltf analysis` | M15/M5/M1 from live MT5 → trade plan + auto-save |
 | `analyze LTF via agents` | `dual agent ltf` | 2-agent LTF: Agent 1 fetches all MCP data in parallel → Agent 2 runs Gates 1–5 on bundle → trade plan + auto-save |
 | `scalp setup` | `scalp`, `find scalp`, `scalp via mcp` | M1/M5 fast entry scan → scalp plan + auto-save to Analysis/Scalp/ |
+| `analyze news [event]` | `news analysis`, `econ analysis` | Economic event analysis from screenshot or MCP → impact summary + auto-save to Analysis/News/ |
 | **Execution** | | *(all require CONFIRM)* |
 | `execute trade` | `place order`, `open trade` | Market order with triple-layer safety |
 | `place pending order` | `set limit`, `set stop` | Limit/stop order with invalidation price |
@@ -379,6 +391,7 @@ Analysis/
   HTF/                ← D1/4H analysis snapshots
   LTF/YYYYMMDD/       ← M15/M5/M1 trade plan files grouped by date: YYYYMMDD_HHMM_{long,short,wait}.md
   Scalp/YYYYMMDD/     ← M1/M5 scalp plans grouped by date: YYYYMMDD_HHMM_{long,short,wait}.md
+  News/YYYYMMDD/      ← economic event analyses: YYYYMMDD_HHMM_[event-slug].md
 Trade Log/            ← per-day trade logs: YYYYMMDD.md
 Daily Journal/        ← session notes, mindset, observations
 Playbooks/            ← setup definitions and rules

@@ -129,7 +129,7 @@ All ICT/SMC analysis runs locally in TypeScript — no external API calls:
 ### Broker Costs
 
 - Commission: $0.11 per trade (0.01 lot)
-- Spread: typically 0.8–1.5 pips ($0.08–0.15 on 0.01 lot)
+- Spread: typically 2.0 pips (prop firm default; $0.20 on 0.01 lot)
 - **Per-trade cost:** ~$0.19–0.26
 
 ---

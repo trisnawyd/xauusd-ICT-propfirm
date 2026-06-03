@@ -1,6 +1,6 @@
 export declare const SAFETY_CONFIG: {
-    readonly maxLot: 0.01;
-    readonly maxSpreadPips: 3;
+    readonly maxLot: 0.2;
+    readonly maxSpreadPips: 5;
     readonly requireSL: true;
     readonly requireTP: true;
     readonly maxRiskPct: 10;
@@ -208,7 +208,7 @@ export declare const TOOL_DEFINITIONS: readonly [{
             };
             readonly volume: {
                 readonly type: "number";
-                readonly description: "Lot size (max 0.01)";
+                readonly description: "Lot size (max 0.20)";
             };
             readonly sl: {
                 readonly type: "number";
@@ -281,7 +281,7 @@ export declare const TOOL_DEFINITIONS: readonly [{
             };
             readonly volume: {
                 readonly type: "number";
-                readonly description: "Lot size (max 0.01)";
+                readonly description: "Lot size (max 0.20)";
             };
             readonly sl: {
                 readonly type: "number";

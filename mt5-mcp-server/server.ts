@@ -13,8 +13,8 @@ sock.connect("tcp://127.0.0.1:5555");
 
 // --- Safety configuration (server-side layer) ---
 export const SAFETY_CONFIG = {
-  maxLot: 0.01,
-  maxSpreadPips: 3.0,
+  maxLot: 0.20,
+  maxSpreadPips: 5.0,
   requireSL: true,
   requireTP: true,
   maxRiskPct: 10,
@@ -760,7 +760,7 @@ export const TOOL_DEFINITIONS = [
       name: "place_order",
       description:
         "Place a market order on XAUUSD. REQUIRES user confirmation before calling. " +
-        "Safety: max lot 0.01, SL required, TP required, spread checked. " +
+        "Safety: max lot 0.20, SL required, TP required, spread checked. " +
         "Returns ticket, open_price, sl, tp, volume.",
       inputSchema: {
         type: "object" as const,
@@ -770,7 +770,7 @@ export const TOOL_DEFINITIONS = [
             enum: ["BUY", "SELL"],
             description: "Order direction",
           },
-          volume: { type: "number", description: "Lot size (max 0.01)" },
+          volume: { type: "number", description: "Lot size (max 0.20)" },
           sl: { type: "number", description: "Stop loss price (required)" },
           tp: { type: "number", description: "Take profit price (required)" },
           comment: {
@@ -824,7 +824,7 @@ export const TOOL_DEFINITIONS = [
       name: "place_pending_order",
       description:
         "Place a pending order on XAUUSD (limit or stop). REQUIRES user confirmation. " +
-        "Safety: max lot 0.01, SL required, TP required, price required.",
+        "Safety: max lot 0.20, SL required, TP required, price required.",
       inputSchema: {
         type: "object" as const,
         properties: {
@@ -838,7 +838,7 @@ export const TOOL_DEFINITIONS = [
             type: "number",
             description: "Trigger/entry price for the pending order",
           },
-          volume: { type: "number", description: "Lot size (max 0.01)" },
+          volume: { type: "number", description: "Lot size (max 0.20)" },
           sl: { type: "number", description: "Stop loss price (required)" },
           tp: { type: "number", description: "Take profit price (required)" },
           comment: {
@@ -1321,7 +1321,7 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
     try {
       const tick = await callEA("get_current_tick");
       if (tick.spread !== undefined) {
-        const spreadPips = tick.spread * 10; // XAUUSD: 1 pip = $0.10 = 0.10 price units
+        const spreadPips = tick.spread; // bridge already returns spread in pips
         if (spreadPips > SAFETY_CONFIG.maxSpreadPips) {
           return {
             content: [

@@ -126,30 +126,77 @@ Fast M1/M5 entry scan aligned to HTF bias. Use when price is near a key level an
 
 ---
 
+### `analyze news [event]` (aliases: `news analysis [event]`, `econ analysis [event]`)
+Analyze an economic event release and output a concise market impact summary.
+→ **Before executing, read `Docs/news-analyzer.md`** for the full prompt template and XAU/USD impact table.
+
+**Two input modes:**
+
+**Mode A — Screenshot (user provides Forex Factory image):**
+1. Read the screenshot: extract event name, actual, forecast, previous, impact level (color)
+2. Apply the prompt template from `Docs/news-analyzer.md` with extracted values
+3. Classify impact level (HIGH/MEDIUM/LOW) → apply trade warning if needed
+
+**Mode B — MCP calendar (no screenshot):**
+1. Call `get_economic_calendar { period: "24h" }` — find the target event
+2. Extract: name, actual, forecast, previous, impact from MCP response
+3. Apply the prompt template with extracted values
+
+**Both modes — then:**
+4. Read `Context/htf-context.md` — use current bias to frame the XAU/USD Implication line
+5. Output using the News Analysis template (see `Docs/news-analyzer.md`)
+6. **Trade warning:** if impact = HIGH → append "⚠️ HIGH-IMPACT — avoid new trades for 15 min after release"
+7. **AUTO-SAVE** to `Analysis/News/YYYYMMDD/YYYYMMDD_HHMM_[event-slug].md`
+   - `event-slug` = event name lowercased, spaces replaced with hyphens (e.g., `unemployment-claims`)
+   - YYYYMMDD and HHMM = UTC date/time using standard UTC Date Derivation rule
+   - Create `YYYYMMDD/` subdirectory if it doesn't exist
+
+**File format:**
+```markdown
+---
+date: YYYYMMDD
+time: YYYY-MM-DD HH:MM UTC
+event: [event name]
+actual: [value]
+forecast: [value]
+previous: [value]
+impact: [HIGH/MEDIUM/LOW]
+xauusd_implication: [BULLISH/BEARISH/NEUTRAL]
+trade_rule: [AVOID 15MIN / CAUTION / NO RESTRICTION]
+source: [screenshot / MCP get_economic_calendar]
+---
+
+# News Analysis — [Event Name] — YYYY-MM-DD HH:MM UTC
+
+[Full 3-section output here]
+```
+
+---
+
 ## Trade Execution Commands
 
 ### `execute trade` (aliases: `place order`, `open trade`)
 Place a market order on XAUUSD. **Requires explicit user confirmation.**
 1. Pre-flight checks (all in parallel):
-   - `get_current_tick` — verify spread < 1.5 pips
+   - `get_current_tick` — verify spread ≤ 5.0 pips
    - `get_account_info` — get equity, calculate max risk (10%)
    - `get_daily_drawdown` — verify daily loss < 20% (server.ts also hard-blocks this automatically)
 2. Validate:
-   - Lot = 0.01 (never exceed)
+   - Lot = dynamic (Max Risk ÷ SL_pips × $10, nearest 0.01) — never exceed SL dollar value > max risk
    - SL dollar value ≤ max risk
    - R:R ≥ 1:2
-   - Spread < 1.5 pips
+   - Spread ≤ 5.0 pips
 3. Display confirmation prompt:
    ```
    ⚠️ TRADE CONFIRMATION
    Direction: [BUY/SELL]
    Entry: [price] | SL: [price] | TP: [price]
    Risk: $[X] of $[max] | R:R: [ratio]
-   Spread: [X] pips | Lot: 0.01
+   Spread: [X] pips | Lot: [dynamic lot]
    Type CONFIRM to execute.
    ```
 4. Wait for user to type **CONFIRM** — do NOT proceed without it
-5. Call `place_order { type, volume: 0.01, sl, tp }`
+5. Call `place_order { type, volume: [dynamic lot], sl, tp }` — use `calculate_lot_size { sl_pips }` from step 1 to get the exact lot
 6. server.ts auto-appends equity/margin after execution (no manual sync needed)
 7. Save trade entry to `Context/ltf-memory.md`
 
@@ -158,7 +205,7 @@ Place a market order on XAUUSD. **Requires explicit user confirmation.**
 ### `place pending order` (aliases: `set limit`, `set stop`)
 Place a pending order (limit or stop) on XAUUSD. **Requires explicit user confirmation.**
 1. Pre-flight checks: same as `execute trade` (spread, risk, drawdown)
-2. Validate: lot = 0.01, SL/TP set, entry price specified, R:R ≥ 1:2
+2. Validate: lot = dynamic (Max Risk ÷ SL_pips × $10, nearest 0.01), SL/TP set, entry price specified, R:R ≥ 1:2
 3. Extract invalidation level from the trade plan's "Invalidation:" field — use as `invalidation_price`
 4. Display confirmation prompt:
    ```
@@ -166,12 +213,12 @@ Place a pending order (limit or stop) on XAUUSD. **Requires explicit user confir
    Type: [BUY_LIMIT / SELL_LIMIT / BUY_STOP / SELL_STOP]
    Entry: [price] | SL: [price] | TP: [price]
    Risk: $[X] of $[max] | R:R: [ratio]
-   Lot: 0.01
+   Lot: [dynamic lot]
    Invalidation: [price] (EA will auto-cancel if breached)
    Type CONFIRM to place.
    ```
 5. Wait for user **CONFIRM**
-6. Call `place_pending_order { type, price, volume: 0.01, sl, tp, invalidation_price }`
+6. Call `place_pending_order { type, price, volume: [dynamic lot], sl, tp, invalidation_price }` — use `calculate_lot_size { sl_pips }` to get the exact lot
 7. Report ticket number and confirm invalidation level registered
 
 **Order types:**
@@ -382,7 +429,7 @@ Quick live snapshot of current market conditions.
 Check current XAU/USD spread conditions before entering a trade.
 1. Call `get_spread_history { count: 50 }`
 2. Report: avg/max/min spread in pips, trend (widening or tightening)
-3. Flag if avg spread > 1.5 pips (avoid entry during wide spread)
+3. Flag if avg spread > 5.0 pips (avoid entry during wide spread)
 
 ---
 

@@ -1,4 +1,5 @@
 {
+  "enabledMcpjsonServers": ["mt5-bridge"],
   "permissions": {
     "allow": [
       "Read(Analysis/**)",

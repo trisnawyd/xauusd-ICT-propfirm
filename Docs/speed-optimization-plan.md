@@ -1,137 +1,131 @@
 # Speed Optimization Plan — LTF Analysis Pipeline
 
+## Final Status: Tier 0 SHIPPED. Tier 1 ATTEMPTED, NO GAIN, REVERTED.
+
+Current production system runs at **~168s** (down from 6m 33s baseline, **57% reduction**). Further LLM-level optimization is not pursued — see "Workflow Insight" below for the actual next step.
+
+---
+
 ## Observed Baseline (Real Run)
 - **Total wall time:** 6m 33s
 - **Agent 2 (Analyst):** 2m 57s, 47k tokens, 9 tool uses
 - **Agent 1 (Collector):** ~3m 36s (remainder)
 - **Symptom:** by the time the trade plan is ready, M1 has moved 5+ candles. Trigger stale.
 
-This is not a tuning problem — it's two distinct bugs against the original design contract.
+This was not a tuning problem — two distinct bugs against the original design contract.
 
 ---
 
 ## Confirmed Diagnosis
 
 ### Collector (`Docs/agents/collector.md`)
-- Prompt **correctly** states "in parallel (single message, multiple tool calls)" — contract is fine.
-- 3m 36s wall time suggests the slowness is per-call, not coordination:
-  - `detect_order_blocks M5 count:100` — heavy scan
-  - `detect_fvg M5 count:100` — heavy scan
-  - `detect_fvg M1 count:100` — heavy scan
-  - `detect_liquidity_sweeps M15 count:100` — heavy scan
-- Four scans at count:100 each, plus likely MCP/server.ts serial processing, explains the bulk of the time.
-- `detect_structure M5` (#6) and `detect_fvg M1` (#9) are not consumed by the Analyst — wasted calls.
+- Prompt correctly stated "in parallel (single message, multiple tool calls)" — contract fine.
+- 3m 36s wall time = per-call MCP latency (count:100 heavy scans on OBs/FVGs/sweeps).
+- `detect_structure M5` and `detect_fvg M1` were never consumed by Analyst — wasted calls.
 
 ### Analyst (`Docs/agents/analyst.md`)
-The 9 tool uses are **all file I/O**, not MCP. Breakdown:
-- Step 0 (line 9): 5 mandatory file reads (htf-context, ltf-memory, account, setup-scoring, file-formats)
-- Gate 1 (line 29): `"Read htf-context.md"` — duplicate
-- Gate 5 (line 62): `"Read Docs/setup-scoring.md"` — duplicate
-- Step 5 (line 93): `"Read Docs/file-formats.md"` — duplicate
-- Step 5: 2 file writes (trade plan + ltf-memory update)
+The 9 tool uses were **all file I/O**, not MCP:
+- Step 0: 5 mandatory file reads (htf-context, ltf-memory, account, setup-scoring, file-formats)
+- 3 duplicate Reads in Gates 1, 5, and Step 5
+- 2 file writes at the end
 
-Approximate total: 5 + 3 duplicates + 2 writes ≈ 10. Screenshot shows 9. ✓
-
-47k tokens is mostly the contents of those 5 reference files loaded into context, plus the bundle. Most of it is dead reference weight, not active reasoning fuel.
+47k tokens were mostly dead reference weight (worked examples, methodology docs).
 
 ---
 
-## Tier 0 — Bugs to Fix First
+## Tier 0 — SHIPPED (commit `caafab1`)
 
-### A. Strip Analyst's file I/O to zero
-Parent orchestrator pre-loads and inlines everything Agent 2 needs:
-- `htf-context.md` → `<htf_context>...</htf_context>` block in prompt
-- `ltf-memory.md` → `<ltf_memory>...</ltf_memory>` block in prompt
-- `account.md` max risk → single value in prompt
-- Scoring rubric **table only** from `setup-scoring.md` (drop worked examples) → inlined
-- File format frontmatter template only (drop docs around it) → inlined
+### A. Stripped Analyst file I/O to zero
+Parent orchestrator now pre-loads and inlines 5 XML blocks before spawning Analyst:
+- `<htf_context>` ← `Context/htf-context.md`
+- `<ltf_memory>` ← `Context/ltf-memory.md`
+- `<account_max_risk>` ← single value from `Context/account.md`
+- `<scoring_rubric>` ← rubric table only from `Docs/setup-scoring.md`
+- `<file_format>` ← frontmatter template only from `Docs/file-formats.md`
 
-Delete:
-- `Step 0 — Read Context Files` (entire section)
-- `Read htf-context.md` in Gate 1
-- `Read Docs/setup-scoring.md for full rubric before scoring` in Gate 5
-- `Read Docs/file-formats.md for exact frontmatter format` in Step 5
+All Read instructions removed from `analyst.md`.
 
-**Analyst tool uses: 9 → 2 (only the two writes at end).**
-**Removes ~30k tokens of file content + 5–7 serial Read round-trips.**
+**Result: Analyst tool uses 9 → 5, tokens 47k → 36k.**
 
-### B. Trim Collector's payload
-Edit `Docs/agents/collector.md`:
-- **Remove call #6** `detect_structure M5` — unused by any gate
-- **Remove call #9** `detect_fvg M1` — Gate 4 reads OHLCV_M1 directly; FVG_M1 not referenced
-- **Reduce `count:100` → `count:50`** on OBs, FVG_M5, liquidity_sweeps. 50 most recent is plenty for unmitigated zones — older ones are usually already swept.
+### B. Trimmed Collector payload
+- Removed `detect_structure M5` (unused)
+- Removed `detect_fvg M1` (unused)
+- Reduced `count:100` → `count:50` on OBs, FVG_M5, liquidity_sweeps
+- 12 calls → 10 calls
 
-### C. Verify parallel execution
-Check Agent 1's actual tool-use timeline in the logs:
-- Are all calls fired in one message?
-- Are responses arriving concurrently or serially?
-- If MCP server (`server.ts`) processes calls serially → fix server concurrency
-- If model is firing them in batches → switching Collector to Haiku may help (Haiku tends to follow parallel directives more literally)
+**Result: Collector wall time 3m 36s → 42s (5× faster).**
+
+### C. Parallel execution verified
+The MCP calls were already firing in parallel — the bottleneck was per-call latency from oversized `count:100` payloads. The `count:50` reduction was the actual fix, not coordination.
 
 ---
 
-## Tier 1 — After Tier 0 Lands
+## Tier 1 — ATTEMPTED, REVERTED
 
-### 1. Collapse to single agent for on-demand LTF
-Once Analyst has zero file I/O, the dual-agent handoff is pure overhead. A single Sonnet agent with:
-- All context inlined (from Tier 0 A)
-- Parallel MCP calls fired in one message
-- One warm context, one reasoning pass
+### #1 — Collapse to single agent (TESTED, NO GAIN)
+Theory: dual-agent handoff was wasting time on bundle pass-through. Reality: it wasn't.
 
-…should outperform the dual-agent flow for on-demand analysis.
+| Metric | Tier 0 (dual) | Tier 1 (single) |
+|--------|--------------|----------------|
+| Wall time | 168s | **167.9s** |
+| Tool uses | 16 | 17 |
+| Tokens | ~63k combined | 38.7k |
 
-Keep dual-agent only for scheduled / background runs where bundle handoff isn't on the critical path.
+**Decision: reverted.** Architectural simplification with zero speed benefit isn't worth maintaining a parallel implementation. The dual-agent files (`collector.md`, `analyst.md`) remain the production path.
 
-### 2. Downgrade Collector to Haiku
-Only if you keep dual-agent. Agent 1 does no reasoning — Haiku is 3–5× faster and cheaper for tool plumbing.
+### #2 — Haiku on Collector (NOT PURSUED)
+Conflicts with #1. Moot once #1 was reverted. Possible Tier 2 fallback if cost (not speed) becomes the constraint.
 
-### 3. M15 structure micro-cache
-Only safe cache in the system. M15 structure cannot change between candle closes.
-- Save last `detect_structure M15` result + close-time of last M15 candle
-- On next analysis: if no new M15 candle has closed → skip the MCP call
-- Saves 1 call, zero staleness risk
+### #3 — M15 structure micro-cache (NOT PURSUED)
+Skipped because the agent needs current UTC time to validate cache freshness, which requires an MCP/Bash call before the parallel batch — adding ~1–2s serial, offsetting the cache saving. Net wash.
 
 ---
 
-## Tier 2 — Polish (After Tier 0 + 1)
+## Why Tier 1 Failed: The Real Bottleneck
 
-4. **Output verbosity trim.** Tighten trade plan template — drop redundant "calc:" lines, shorter confluences format. Output tokens dominate LLM latency.
-5. **Pre-warm at session opens.** Only meaningful once on-demand path is fast. Background-spawn Collector at London −30s, NY −30s, NY-PM −30s.
-6. **Gate 5 short-circuit.** If Gate 1 or 3 fails → output WAIT without scoring. Saves grade-computation tokens on no-trade outcomes.
+The math after Tier 0 and Tier 1 testing:
+- 42s Collector (MCP latency)
+- ~125s Analyst (sequential gate reasoning over ~36k tokens)
+- = 168s total
+
+When collapsed: 167.9s (MCP + reasoning in one context, same total work).
+
+**The binding constraint is sequential gate reasoning, not coordination overhead.** Gates 1–5 cannot be parallelized — each depends on the previous. The only ways to reduce reasoning time:
+- Faster model (Haiku — CLAUDE.md explicitly warns it misses rules — bad trade)
+- Less reasoning (simpler gates, shorter output — degrades plan quality)
+- Smaller context (already done in Tier 0)
+
+None of these are net-positive trades for this system.
 
 ---
 
-## Do Not Do
+## Workflow Insight — The Actual Next Step
+
+The LTF analysis output is a **framework**, not a **trigger**. Once Watch A and Watch B levels are set ("SHORT at 4474–4481 with M1 bearish engulf, SL 4485, TP 4444"), you don't need to re-analyze every few minutes — you watch the levels and execute when conditions materialize.
+
+**Re-analyze only when:**
+- M15 closes (every 15 min) — structure could shift
+- Price approaches a watch zone — confirm trigger conditions
+- HTF context flips (rare, daily)
+
+This cuts "analysis runs per session" from ~10 to ~3. The 168s stops mattering because the human waiting time between runs is now minutes-to-hours, not seconds.
+
+---
+
+## Do Not Do (Validated)
 
 | Idea | Why Not |
 |------|---------|
 | Disk-persist OB/FVG/tick data | Staleness — "unmitigated" flips on every tick; cached zones = trading into traps |
 | One-agent-per-timeframe | Gates are sequential; M5 can't know which OBs to evaluate before M15 direction is set |
 | Haiku on Analyst | CLAUDE.md explicitly warns Haiku misses rules on this file's complexity |
-| 5-min cache on M5 data | Same staleness problem as disk persistence |
+| Single-agent collapse | Measured: zero speed benefit, adds maintenance cost |
+| M15 micro-cache (per-call check) | Time-validation overhead offsets the saved call |
 
 ---
 
-## Realistic Latency Targets
+## Lessons
 
-| Stage | Now | After Tier 0 | After Tier 1 |
-|-------|-----|-------------|-------------|
-| Collector | 3m 36s | ~30–60s (drop unused calls + count:50) | ~15–25s (single agent, parallel) |
-| Analyst | 2m 57s | ~45–75s (no file I/O, smaller context) | merged into single pass |
-| **Total** | **6m 33s** | **~75–120s** | **~45–75s** |
-
----
-
-## Implementation Order
-1. **Tier 0-A** (inline Analyst context) — biggest certain win, no risk
-2. **Tier 0-B** (trim Collector calls) — easy, no risk
-3. **Tier 0-C** (verify parallelism) — diagnostic, no code yet
-4. **Measure new baseline** before doing Tier 1
-5. **Tier 1** decisions based on measured data
-
-## Honest Summary
-The 6m 33s isn't a "needs caching" problem. It's two design-contract violations:
-- Analyst's mandatory file Reads should never have been mandatory — that data belongs in the prompt
-- Collector pulls data nothing consumes (M5 structure, FVG_M1) at maximum count
-
-Fix those first. Tier 1+2 only matter if Tier 0 isn't enough.
+1. **Diagnose before optimizing.** Tier 0 worked because we read the agent files and confirmed the bugs. Tier 1 failed because we theorized about coordination overhead without measuring it first.
+2. **Measure each tier before deciding the next.** Tier 1 looked good in projection (90–120s) and delivered nothing. Without the measurement step, we'd have built Tier 2 on a false foundation.
+3. **The fastest analysis is the one you don't have to re-run.** Workflow changes can outperform infrastructure optimization. Going from 10 runs/session to 3 runs/session at 168s each beats going to 100s each at 10 runs.

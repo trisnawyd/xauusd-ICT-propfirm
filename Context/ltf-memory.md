@@ -1,48 +1,49 @@
 ---
-updated: 2026-06-03 15:13 UTC
-snapshot: "[[Analysis/LTF/20260603/20260603_1513_wait]]"
+updated: 2026-06-03 14:39 UTC
+snapshot: "[[Analysis/LTF/20260603/20260603_1439_wait]]"
 ---
 
 # LTF Memory — Last 3 Analyses
 
-## Current Market Structure (as of 2026-06-03 15:13 UTC)
-- M15 Status: BEARISH confirmed — last event BoS DOWN@4438.35 broke 4452.73 (06/03 12:30). Swing H4496.77 / L4438.35, EQ 4452.81. Price 4459 in PREMIUM but no M5 supply zone at current price.
-- M5 Status: count_open OBs: 0 (all filled). 1 open FVG: BULLISH 4444.55–4447.34 (demand below price). All bearish M5 zones mitigated. No SHORT entry zone available near current price.
-- M1 Status: Choppy consolidation 4457–4464 range. Repeated micro-BSL sweeps with rejection. No clean directional trigger.
+## Current Market Structure (as of 2026-06-03 14:39 UTC)
 
-Key Levels:
-- 4481.70 — H1 bearish FVG top (Watch A SHORT SL reference)
-- 4474.43–4481.70 — H1 bearish FVG (nearest SHORT supply / Watch A entry)
-- 4467.27 — M15 swing high (BSL above)
-- 4459.29 — Current price (M15 premium, no entry zone)
-- 4452.81 — M15 EQ
-- 4449.40 — M15 OTE ceiling
-- 4444.55–4447.34 — Bullish M5 FVG open (Watch B demand confluence)
-- 4438.35 — London SSL sweep wick (critical support)
-- 4396.55–4418.58 — H4+H1 primary bullish FVG demand
+**M15 Status:** BEARISH label — LAST EVENT BoS UP@4467.6 (broke 4458.9 at 15:45 EET). BoS UP coincides with BSL sweep (wick 4467.60, close 4460.33) — likely manipulation/sweep-and-reverse rather than genuine bullish continuation. Price has drifted back to 4451 range. Structure: transitioning / indeterminate. Range H4467.60 / L4426.55. EQ 4447.08. OTE 4435.33–4442.23. Price 4451.15 in PREMIUM.
 
-Setup: WAIT — Gate 3 fail: no unmitigated M5 supply zone at current price for SHORT; no H4 OTE/demand zone for counter-trend LONG at current price. Watch A SHORT on rally to H1 bearish FVG (4474–4481) is the primary setup to monitor.
+**M5 Status:** 0 open OBs (all filled including bullish 4427.69–4450.33 and bearish 4446.27–4451.87). Open FVGs: BULLISH 4437.93–4441.37 [only open zone — demand below current price].
 
----
+**M1 Status:** Price grinding sideways-down in 4447–4455 range. Recent M1 candles showing lower closes from 4455 area toward 4451. No clean directional trigger at any open zone.
 
-## Analysis #1 — 2026-06-03 15:13 UTC (WAIT)
-- **Direction:** WAIT — Gate 3 fail: SHORT (WITH D1 TREND, M15 BoS DOWN confirmed) requires M5 supply zone but all M5 bearish OBs and FVGs are filled. LONG (counter-trend vs D1) requires H4 OTE (≤4453.62) or H4 demand FVG — price at 4459 is above H4 OTE ceiling. No entry zone at current price in either direction.
-- **Watch A:** Price rallies to H1 bearish FVG (4474.43–4481.70) + M1 bearish engulf/displacement → SHORT ~4476, SL 4485, TP 4444.55 (R:R 3.49:1) — Lot 0.05, Risk $9.00 — WITH D1 TREND
-- **Watch B:** Price drops to M15 OTE (4444.54–4449.40) + bullish M5 FVG (4444.55–4447.34) + M1 bullish engulf → LONG ~4447, SL 4436.50, TP 4474.00 (R:R 2.57:1) — Lot 0.04, Risk $8.40 — COUNTER-TREND vs D1
-- **Invalidation:** Watch A: M15 BoS UP above 4496.77; Watch B: M15 close below 4438.35
+**Key Levels:**
+- 4474.43–4481.70 — H1 bearish FVG (open supply) — Watch A SHORT trigger zone
+- 4467.60 — M15 BoS UP level / double BSL ceiling / resistance
+- 4447.08 — M15 EQ (current range) — price compressing near here
+- 4446.49 — H1 BoS DOWN invalidation (CRITICAL — close below = H1 BEARISH confirmed)
+- 4437.93–4441.37 — M5 bullish FVG (only open demand) — Watch B LONG entry zone
+- 4435.33–4442.23 — M15 + H4 OTE overlap
+- 4426.55 — London/NY session low / SSL sweep low
+
+**Setup:** WAIT — Gate 3 fail. No open M5 OB. Only open M5 FVG (4437.93–4441.37) is ~9 pips below current price. No entry zone actionable at 4451. Watch A SHORT at H1 FVG (4474), Watch B LONG at M5 FVG (4441).
 
 ---
 
-## Analysis #2 — 2026-06-03 11:56 UTC (WAIT)
-- **Direction:** WAIT — Gate 3 fail: P/D mismatch both directions. SHORT (WITH D1 TREND) requires M15 PREMIUM above 4467.56 EQ; current price 4462.05 is in DISCOUNT. LONG (counter-trend vs D1) requires price inside H4 OTE (4415–4453) — current price 4462.05 is 8 pips above OTE ceiling. M5 BoS UP micro push is underway — price may rally into bearish supply FVGs before the M15 bearish trend resumes.
-- **Watch A:** Price drops into H4 OTE (≤4453.62) → retaps M5 bullish FVG (4444.55–4447.34) + M15 CHoCH UP + M1 bullish engulf + spread ≤ 2.0 → LONG ~4446, SL 4436.50, TP1 4467.56 (R:R 2.27:1) — Lot 0.05, Risk $47.50 ⚠️ COUNTER-TREND vs D1
-- **Watch B:** Price rallies above M15 EQ (4467.56) into bearish M5 FVG cluster (4475.74–4484.37) + M1 bearish engulf + spread ≤ 2.0 → SHORT ~4476, SL 4485, TP1 4444.55 (R:R 3.49:1) — Lot 0.05, Risk $45.00 — WITH D1 TREND
-- **Invalidation:** Watch A: M15 close below 4438.35; Watch B: M15 BoS UP above 4496.77; Both: spread > 5.0 at trigger
+## Analysis #1 — 2026-06-03 14:39 UTC (WAIT)
+- **Direction:** WAIT — Gate 3 fail: no unmitigated M5 OB or FVG near current price. All M5 OBs filled. Only open M5 FVG at 4437.93–4441.37 is ~9 pips below current price (4451).
+- **Watch A:** Price rallies to H1 bearish FVG (4474.43–4481.70) + M1 bearish engulf → SHORT ~4474, SL 4482, TP 4437.93 (R:R 4.5:1) — Lot 0.06, Risk $48 — WITH D1/H4/H1 TREND
+- **Watch B:** Price drops into M5 bullish FVG (4437.93–4441.37) + M1 bullish engulf → LONG ~4441, SL 4435, TP 4467.60 (R:R 4.4:1) — Lot 0.08, Risk $48 — COUNTER-TREND vs D1/H4/H1
+- **Invalidation:** Watch A: M15 close above 4481.70; Watch B: M15 close below 4435
 
 ---
 
-## Analysis #3 — 2026-06-03 09:52 UTC (WAIT)
-- **Direction:** WAIT — Gate 4 fail: no current M1 trigger at bullish FVG zone (4442.41–4443.33); M1 bearish FVG formed 09:51 UTC at 4446.15 (micro-rejection); spread 3.4 pips > 2.0 blocks execution. London SSL sweep to 4438.35 (09:30 UTC) with recovery — structure building. M15 TRANSITIONING BULLISH (BoS UP@4464.18, 07:45 UTC), price inside H4 OTE (4415–4453). High-quality LONG setup pending retap + trigger.
-- **Watch A:** Price retaps M1 bullish FVG (4442.41–4443.33) + M1 bullish engulf + spread ≤ 2.0 → LONG ~4443, SL 4437, TP1 4456.39 / TP2 4462.71 (R:R 2.23:1 / 3.29:1) — Lot 0.08, Risk $48.00 ⚠️ COUNTER-TREND vs D1
-- **Watch B:** Price rallies to M5 bearish OB/FVG (4465–4472) + M15 CHoCH DOWN + M1 bearish engulf + spread ≤ 2.0 → SHORT ~4467, SL 4473, TP1 4443 (R:R 4.0:1) — Lot 0.08, Risk $48.00 — WITH D1 TREND
-- **Invalidation:** Watch A: M15 close below 4438.35; Watch B: M15 BoS UP above 4474.43; Both: spread > 2.0 at trigger
+## Analysis #2 — 2026-06-03 13:55 UTC (LONG)
+- **Direction:** LONG B+ (70/100) — M15 SSL sweep of CHoCH DOWN (wick 4426.55, close 4446.94) + M5 FVG touch at 4443.76 + inside M15/H4 OTE. All gates passed. Grade exactly B+ at minimum.
+- **Entry:** ~4447 | SL: 4435 | TP: 4474.43 | R:R 2.28:1 | Lot 0.04 | Risk $48
+- **Counter-trend vs D1/H4/H1** — partial at M15 EQ (4452.98), trail after 4453
+- **Invalidation:** M15 close below 4435 (M5 FVG bottom)
+
+---
+
+## Analysis #3 — 2026-06-03 13:01 UTC (WAIT)
+- **Direction:** WAIT — Gate 3 fail: LONG counter-trend P/D fail (price 4460.63 above H4 OTE ceiling 4453.62). SHORT with trend has 0 open M5/M1 supply zones near current price. Double BSL sweep at 4465–4467.6 just completed.
+- **Watch A:** Price rallies to double BSL zone (4465.02) + M1 bearish engulf → SHORT ~4465, SL 4469, TP 4438.35 (R:R 6.7:1) — Lot 0.12, Risk $48 — WITH D1/H4 TREND
+- **Watch B:** Price drops into M5 FVG (4444.55–4447.34) + M1 bullish engulf → LONG ~4446, SL 4443, TP 4465 (R:R 6.3:1) — Lot 0.16, Risk $48 — COUNTER-TREND vs D1/H4
+- **Invalidation:** Watch A: M15 close above 4467.6; Watch B: M15 close below 4438.35

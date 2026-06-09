@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-03 01:21 UTC (latest sync)
+updated: 2026-06-08 01:33 UTC (latest sync)
 synced_from: MT5 Bridge
 ---
 
@@ -10,16 +10,17 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $4,949.13 |
-| Equity | $4,949.13 |
-| Max risk per trade (1%) | $49.49 |
+| Balance | $4,957.69 |
+| Equity | $4,957.69 |
+| Max risk per trade (1%) | $49.58 |
 | Margin used | $0 |
-| Free margin | $4,949.13 |
+| Free margin | $4,957.69 |
 | Open positions | None |
 | Pending orders | None |
 
-## Session Status — 2026-06-03
-- Daily P&L: $0.00 (no trades yet — session start equity: $4,949.13)
+## Session Status — 2026-06-08
+- Daily P&L: $0.00 (session start)
+- Session start equity: $4,957.69
 - HTF bias: See Context/htf-context.md
 
 ## Lot Sizing Formula
@@ -39,5 +40,5 @@ Use `calculate lot [sl_pips]` command for precise value on current equity.
 - Commission per trade: $0.11
 - Risk model: dynamic 1% of current equity per trade
 - Update after every closed trade with "sync account"
-- Session start equity (06/03): $4,949.13
-- ⚠️ Equity dropped $31.03 from previous recorded balance ($4,980.16) — check trade log for 06/02 activity
+- Session start equity (06/08): $4,957.69
+- Previous session equity (06/05): $4,957.69 | Change: $0.00

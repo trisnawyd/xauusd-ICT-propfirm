@@ -1,175 +1,158 @@
 ---
-updated: 2026-06-04 01:15 UTC
-source: MCP (detect_structure D1/H4/H1, detect_fvg H4/H1, get_premium_discount H4, get_session_levels, get_current_tick, get_account_info)
-snapshot: "[[Analysis/HTF/20260604]]"
+updated: 2026-06-08 01:33 UTC
+source: MCP (detect_structure D1/H4/H1, detect_fvg H4/H1, get_premium_discount H4, get_session_levels, get_current_tick)
+snapshot: "[[Analysis/HTF/20260608]]"
 ---
 
 # HTF Context — XAU/USD
 
-## Bias: BEARISH — D1 TRANSITIONING BEARISH | H4 TRANSITIONING BULLISH (HIGH RISK — price below swing low) | H1 CONFIRMED BEARISH (NEW FLIP)
+## Bias: BEARISH — D1 BEARISH | H4 BEARISH | H1 BEARISH (TRANSITIONING)
 
-**Reason:** D1 algo BULLISH (lagging) — last event **BoS DOWN@4366.02** (05/28, unchanged). D1 still transitioning bearish. H4 algo **BEARISH** — last event **BoS UP@4595.35** (05/29 16:00) → reading rule label=BEARISH + last event=BoS UP → H4 **TRANSITIONING BULLISH (cautious)**. H4 swing low now **4488.2**; current price 4461.4 is ~27 pips below — price trading under H4 swing low with no new H4 BoS DOWN registered yet, suggesting H4 bullish transition is technically intact but under severe pressure. H1 algo **BEARISH** — **NEW: BoS DOWN@4433.44** (06/03 19:00 UTC) broke 4434.47 → H1 **CONFIRMED BEARISH** (was CONFIRMED BULLISH in previous HTF). H1 last swings: H4497.31 / L4462.71. H1 bearish FVG **4474.43–4481.7** (06/03 07:00) still open above price — supply cap confirmed. H4 bullish FVG **4396.55–4418.58** (05/28 12:00) remains the ONLY unmitigated institutional demand zone. **PRIMARY BIAS: BEARISH** — D1 transitioning bearish + H1 confirmed bearish = 2/3 TFs bearish. SHORT is the path of least resistance. LONG only valid at H4 demand FVG (4396–4418) as counter-trend play. Spread 2.2 pips — within 5.0 pip execution limit.
+**Reason:** D1 algo BEARISH — last event BoS UP@4595.35 (05/29), but current price 4310 is far below that level and below D1 range low 4401.89. The prior BULLISH TRANSITION bias from 06/05 has been fully reversed: D1, H4, and H1 BoS UP events have all been invalidated by subsequent price collapse. H4 algo BEARISH — last event BoS UP@4484.11 (06/04 04:00) broke 4353.79, but price is now at 4310, well below that breakout level. H1 algo BULLISH (label) — last event BoS UP@4475.99 (06/05 15:00) broke 4347.46, but current price 4310 is BELOW 4347.46 — BoS UP invalidated. H1 is transitioning bearish per reading rule: label BULLISH + last event invalidated by price = TRANSITIONING BEARISH. **PRIMARY BIAS: BEARISH** — all 3 TFs aligned bearish. Price at extreme discount extension below H4 range floor (4366.02). No institutional demand structure visible.
 
-**What changed since 20260603 11:41 UTC:**
-- **H1 NEW: BoS DOWN@4433.44 (06/03 19:00)** — H1 flipped CONFIRMED BEARISH; broke prior support 4434.47 in NY session
-- **H1 NEW: CHoCH UP@4468.15 (06/03 14:00)** + **BoS UP@4472.32 (06/03 10:00)** — London rally that preceded the NY reversal
-- **H1 swings updated: H4497.31 / L4462.71** (was H4525.4 / L4489.03)
-- **H4 swing low updated: L4488.2** (was L4467.16) — price 4461.4 now ~27 pips below H4 swing low
-- **H1 bullish FVG 4390.85–4418.58 — FILLED** (was open yesterday)
-- **H4 bullish FVG 4396.55–4418.58 — still OPEN** (last remaining institutional demand)
-- **Account equity: $4,913.18** (down from $4,949.13 — $35.95 drawdown)
+**What changed since 20260605 01:42 UTC:**
+- **MAJOR REVERSAL** — prior bullish transition bias fully invalidated. Price has collapsed from ~4448 to 4310, a move of ~138 pips.
+- **D1: BoS UP@4595.35 (05/29) remains the last event but price is 285 pips below it** — D1 bearish label now correct, no longer "transitioning bullish"
+- **H4: BoS UP@4484.11 (06/04 04:00)** — new last event vs prior; current price below breakout level 4353.79 → H4 BoS UP invalidated, H4 BEARISH
+- **H4 new bearish FVGs:** 4421.15–4428.57 (06/05 12:00) and 4347.46–4404.84 (06/05 16:00, now filled) — rapid bearish expansion candles
+- **H1: BoS UP@4475.99 (06/05 15:00)** — new last event; current price 4310 < 4347.46 → H1 BoS UP invalidated
+- **H1 new bearish FVGs open:** 4421.15–4458.31 (06/05 15:00) and 4379.31–4404.84 (06/05 16:00) — both above current price as supply
+- **H4 bullish FVG 4396.55–4418.58 (demand zone)** — was the primary demand; now price has blown through it (filled), no H4 demand visible
+- **Price: 4310.91** (was 4448.69 at prior HTF)
+- **Asian session low 4299.75** — most recent swing low / liquidity pool
 
 ---
 
 ## D1 Analysis
 
-- **D1 trend (algo): BULLISH** ← LAGGING — last event is BoS DOWN; label has not updated
-- **Most recent (algo): BoS DOWN@4366.02** — broke 4446.49 on 05/28 00:00 ← **D1 TRANSITIONING BEARISH (UNCHANGED)**
-- CHoCH UP@4589.3 — broke 4580.52 on 05/19 00:00 ← prior D1 bullish pivot
+- **D1 trend (algo): BEARISH** ← label correct; prior "transitioning bullish" narrative invalidated by price collapse
+- **Most recent (algo): BoS UP@4595.35** — broke 4515.59 on 05/29 00:00 (historical; price now 285 pips below)
+- CHoCH DOWN@4366.02 — broke 4446.49 on 05/28 00:00
+- CHoCH UP@4589.3 — broke 4580.52 on 05/19 00:00
 - BoS UP@4764.99 — broke 4589.3 on 05/07 00:00
-- CHoCH DOWN@4500.59 — broke 4637.9 on 05/04 00:00
-- CHoCH UP@4833.15 — broke 4660.4 on 04/21 00:00
-- BoS DOWN@4351.20 — broke 4599.23 on 03/26 00:00 ← next major bearish target if D1 confirms down
-- D1 algo last swings: H5597.96 / L4401.89
-- **D1 Bias: TRANSITIONING BEARISH (unchanged).** BoS DOWN@4366.02 (05/28) remains the definitive D1 structural event. LONG is counter-trend vs D1.
+- D1 algo last swings: H5092.38 / L4401.89
+- **Current price 4310 is BELOW D1 range low 4401.89** — price has extended beyond the D1 measured swing. Extreme bearish territory.
+- **D1 Bias: BEARISH.** No D1 BoS DOWN registered yet (structure hasn't formally confirmed new leg), but directional pressure is clearly bearish. Next D1 support: 4351.20 (prior BoS DOWN level from 03/26).
 
 ---
 
 ## H4 Analysis
 
-- **H4 trend (algo): BEARISH** — reading rule: label=BEARISH + last event=BoS UP → **H4 TRANSITIONING BULLISH (HIGH RISK)**
-- **Most recent (algo): BoS UP@4595.35** — broke 4496.77 on 05/29 16:00 ← **H4 LAST EVENT = BULLISH**
-- CHoCH DOWN@4366.02 — broke 4488.45 on 05/28 04:00 ← prior H4 bearish pivot
-- CHoCH UP@4540.88 — broke 4466.38 on 05/27 00:00
-- BoS UP@4541.08 — broke 4540.88 on 05/26 12:00
-- H4 algo last swings: H4542.87 / L4488.2
-- **H4 P/D (current range):** H4595.35 / L4366.02 | EQ: 4480.69 | OTE: 4415.10–4453.62 | Current 4461.4 → **DISCOUNT (above OTE top 4453.62 by ~8 pips, below EQ 4480.69 by ~19 pips)**
-- ⚠️ **Price 4461.4 is ~27 pips below H4 swing low 4488.2** — no new H4 BoS DOWN registered; H4 bullish transition technically intact but structurally compromised. A new H4 bar closing below 4488.2 would register H4 BoS DOWN → H4 CONFIRMED BEARISH.
-- **H4 FVGs open (4 bearish, 1 bullish):**
-  - **BULLISH 4396.55–4418.58 (05/28 12:00) — OPEN** ← **PRIMARY H4 DEMAND ZONE — only unmitigated H4 zone**
-  - BEARISH 4606.73–4613.43 (05/15 04:00) — OPEN ← distant supply (145+ pips above)
-  - BEARISH 4631.49–4644.39 (05/15 00:00) — OPEN ← distant supply
-  - BEARISH 4665.59–4666.28 (05/14 20:00) — OPEN ← distant supply
-  - BEARISH 4683.20–4688.11 (05/14 16:00) — OPEN ← distant supply
-  - ~~BULLISH 4497.31–4514.57 (06/02 04:00) — FILLED~~
-  - ~~BEARISH 4493.38–4513.14 (06/02 16:00) — FILLED~~
-- **H4 Bias: TRANSITIONING BULLISH but HIGH RISK.** No new H4 BoS DOWN, but price trading below H4 swing low. A H4 close below 4488.2 = new BoS DOWN → H4 CONFIRMED BEARISH. Until then, H4 bullish transition technically survives.
+- **H4 trend (algo): BEARISH** — label and price action aligned
+- **Most recent (algo): BoS UP@4484.11** — broke 4353.79 on 06/04 04:00 ← **BoS UP INVALIDATED: price now 4310 < 4353.79**
+- CHoCH DOWN@4422.93 — broke 4456.96 on 06/04 00:00
+- CHoCH UP@4496.77 — broke 4484.11 on 06/03 00:00
+- BoS UP@4595.35 — broke 4496.77 on 05/29 16:00
+- H4 algo last swings: H4537.07 / L4506.98
+- **H4 P/D (current range H4595.35–L4366.02):** EQ 4480.69 | OTE 4415.10–4453.62
+- **Current price 4310 is BELOW H4 range floor 4366.02** — price outside H4 range, extreme discount extension
+- **H4 FVGs open (4 bearish, 0 bullish):**
+  - **BEARISH 4421.15–4428.57 (06/05 12:00) — OPEN** ← nearest H4 supply, 111–118 pips above
+  - **BEARISH 4606.73–4613.43 (05/15 04:00) — OPEN** ← distant supply
+  - **BEARISH 4631.49–4644.39 (05/15 00:00) — OPEN** ← distant supply
+  - **BEARISH 4665.59–4666.28 (05/14 20:00) — OPEN** ← distant supply
+  - ~~BULLISH 4396.55–4418.58 (05/28 12:00)~~ — **FILLED** (demand zone swept by bearish expansion)
+- **H4 Bias: BEARISH.** No H4 demand zones remaining. Price extended below H4 range. First supply above: 4421–4428 H4 FVG.
 
 ---
 
 ## H1 Analysis
 
-- **H1 trend (algo): BEARISH** ← **H1 CONFIRMED BEARISH** (per reading rule: last event BoS DOWN)
-- **Most recent (algo): BoS DOWN@4433.44** — broke 4434.47 on 06/03 19:00 ← **NEW — H1 BEARISH CONFIRMED**
-- CHoCH UP@4468.15 — broke 4448.57 on 06/03 14:00
-- BoS UP@4472.32 — broke 4468.15 on 06/03 10:00
-- BoS UP@4496.77 — broke 4472.32 on 06/03 03:00 ← prior H1 bullish peak
-- CHoCH DOWN@4461.4 — broke 4463.87 on 06/03 02:00
-- H1 algo last swings: H4497.31 / L4462.71
-- **H1 FVGs open (1 bearish):**
-  - **BEARISH 4474.43–4481.7 (06/03 07:00) — OPEN** ← **immediate supply cap; SHORT entry zone**
-  - ~~BULLISH 4390.85–4418.58 — FILLED~~ (was open yesterday — now gone)
-  - ~~BEARISH 4507.29–4513.14 (06/02 16:00) — FILLED~~
-  - ~~BEARISH 4493.38–4499.83 (06/02 19:00) — FILLED~~
-- **H1 Bias: CONFIRMED BEARISH.** BoS DOWN@4433.44 at 19:00 UTC 06/03 is definitive. Prior bullish structure (multiple BoS UP) negated. Price at 4461.4 is above H1 swing low 4462.71 by ~1 pip — H1 bearish continuation expected. SHORT setups with H1 trend now fully valid.
+- **H1 trend (algo): BULLISH** ← LAGGING — last event BoS UP invalidated by current price
+- **Most recent (algo): BoS UP@4475.99** — broke 4347.46 on 06/05 15:00 ← **BoS UP INVALIDATED: price now 4310 < 4347.46**
+- BoS UP@4485.31 — broke 4470.46 on 06/04 19:00
+- CHoCH DOWN@4456.96 — broke 4472.54 on 06/04 17:00
+- CHoCH UP@4515.59 — broke 4485.31 on 06/04 16:00
+- H1 algo last swings: H4468.15 / L4438.35
+- **H1 FVGs open (2 bearish):**
+  - **BEARISH 4421.15–4458.31 (06/05 15:00) — OPEN** ← H1 supply zone above, overlaps H4 FVG
+  - **BEARISH 4379.31–4404.84 (06/05 16:00) — OPEN** ← immediate H1 supply, 69–94 pips above
+- **H1 Bias: TRANSITIONING BEARISH.** BoS UP on 06/05 is invalidated. H1 label "BULLISH" is lagging. Per reading rule: treat cautiously as BEARISH. Next H1 target area to watch for demand: 4299.75 Asian low or a new structural event below current price.
 
 ---
 
 ## Premium / Discount (H4)
 
 - **H4 range:** H4595.35 / L4366.02 | EQ: 4480.69 | OTE: 4415.10–4453.62
-- **Current price 4461.4 → DISCOUNT (above OTE top 4453.62 by ~8 pips, below EQ 4480.69 by ~19 pips)**
-- Price in DISCOUNT: SHORT counter-P/D requires H4 supply zone — none within 145 pips. SHORT from DISCOUNT is valid at H1 FVG (4474–4481) with M15 CHoCH DOWN (counter P/D, but WITH D1+H1 trend). LONG from DISCOUNT counter-trend vs D1+H1 — only at H4 demand FVG (4396–4418).
+- **Current price 4310.91 → BELOW H4 RANGE FLOOR (4366.02)** — extreme discount extension
+- SHORT setups require price to retrace INTO supply zones (4379–4404 H1 FVG, 4421–4428 H4 FVG) — do NOT short into extreme discount from current price. Wait for relief rally into supply before shorting.
+- LONG counter-trend setups at 4299.75 sweep only with very strong M15 reversal structure.
 
 ---
 
-## Session Levels (01:15 UTC — ASIAN active, 06/04)
+## Session Levels (01:33 UTC — ASIAN active, 06/08)
 
 | Session | High | Low | Open |
 |---------|------|-----|------|
-| Asian (06/04, active) | 4488.7 | 4422.93 | 4448.63 |
-| London (06/03, ended) | 4488.7 | 4426.55 | 4460.32 |
-| NY (06/03, ended) | 4468.15 | 4426.55 | 4438.6 |
+| Asian (06/08, active) | 4470.46 | 4299.75 | 4341.93 |
+| London (06/05, ended) | 4475.99 | 4364.60 | 4406.23 |
+| NY (06/05, ended) | 4475.99 | 4314.95 | 4342.31 |
 
-**Current:** 4461.4 | Spread: **2.2 pips — within 5.0 pip limit** | Session: ASIAN
-⚠️ Asian session — low volatility; wait for London open (08:00 UTC) for cleaner moves.
+**Current:** 4310.91 | Spread: **2 pips** | Session: ASIAN
+⚠️ Asian session — low liquidity. Price near Asian session low (4299.75). Wait for London (08:00 UTC).
 
 ---
 
 ## Key Levels
 
-### Resistance / Supply (above ~4461)
+### Supply / Resistance (above 4310.91)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **4462.71** | **H1 swing low (algo)** | **Immediate resistance — price is ~1 pip below** |
-| **4468.15** | **H1 CHoCH UP (06/03 14:00)** | H1 structural resistance |
-| **4472.32** | **H1 BoS UP (06/03 10:00)** | H1 structural resistance |
-| **4474.43–4481.7** | **H1 bearish FVG (06/03 07:00) — OPEN** | **PRIMARY SHORT ENTRY ZONE — WITH D1+H1 trend** |
-| 4480.69 | H4 EQ | Premium/discount boundary |
-| 4488.2 | H4 swing low (new) | H4 structural resistance — price must reclaim for H4 bullish |
-| 4488.7 | Asian/London high (06/04/06/03) | Session BSL above |
-| 4496.77 | H1 BoS UP / Asian high prior | H1 structural resistance |
-| 4497.31 | H4 swing high area | H4 resistance zone |
-| **4542.87** | **H4 swing high** | **Major BSL — H4 structural ceiling** |
-| **4595.35** | **H4 BoS UP swing high** | **H4 macro resistance** |
+| **4347.46** | H1 BoS UP breakout level | Structural resistance — BoS UP level that price fell back below |
+| **4364.60** | London session low | Session level |
+| **4366.02** | H4 range floor / CHoCH DOWN level | Broken support, now resistance |
+| **4379.31–4404.84** | **H1 FVG bearish [open] — 06/05 16:00** | **Immediate supply — first target for SHORT re-entries on rally** |
+| **4421.15–4428.57** | **H4 FVG bearish [open] — 06/05 12:00** | **Main H4 supply zone — confluence with H1 FVG** |
+| **4421.15–4458.31** | **H1 FVG bearish [open] — 06/05 15:00** | H1 supply overlap with H4 FVG |
+| **4470.46** | Asian session high | BSL above — liquidity pool |
+| **4475.99** | H1 BoS UP / London+NY session high | Key structural level |
+| **4606.73–4613.43** | H4 FVG bearish [open] | Distant supply |
 
-### Support / Demand (below ~4461)
+### Support / Demand (below 4310.91)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **4453.62** | **H4 OTE ceiling** | Top of OTE zone — just below price |
-| **4448.63** | **Asian open (06/04)** | Session reference |
-| **4438.6** | **NY open (06/03)** | Session support |
-| **4433.44** | **H1 BoS DOWN (06/03 19:00)** | H1 bearish structural level / next SSL target |
-| **4426.55** | **London/NY low (06/03)** | SSL level — sweep target |
-| 4422.93 | Asian low (06/04) | Current Asian session low |
-| 4415.10–4453.62 | H4 OTE zone | Retracement zone |
-| **4396.55–4418.58** | **H4 bullish FVG (05/28 12:00) — OPEN** | **PRIMARY DEMAND — counter-trend LONG zone only** |
-| 4366.02 | D1 BoS DOWN + H4 CHoCH DOWN | KEY SSL extreme — macro bearish target |
-| 4351.20 | D1 BoS DOWN (03/26) | Next major D1 bearish target |
-
----
-
-## Account Status
-
-- Balance: $4,913.18 | Equity: $4,913.18 | Margin: $0 | Free: $4,913.18
-- Max risk per trade (1%): $49.13
-- Spread: 2.2 pips — within 5.0 pip limit. Execution allowed.
+| **4299.75** | Asian session low | Most recent swing low / SSL |
+| **No H4/H1 demand zones identified** | — | H4 bullish FVG swept/filled; no institutional demand below current price |
 
 ---
 
 ## Trade Directional Guidance
 
-### PRIMARY BIAS: D1 TRANSITIONING BEARISH | H4 TRANSITIONING BULLISH (HIGH RISK) | H1 CONFIRMED BEARISH
-**Current state: Price 4461.4, DISCOUNT, H1 confirmed bearish (BoS DOWN@4433.44 06/03 19:00), spread 2.2. Asian session active — low volatility expected until London open.**
+### PRIMARY BIAS: D1 BEARISH | H4 BEARISH | H1 BEARISH (TRANSITIONING)
+
+**DO NOT SHORT from current price (4310) into extreme discount.** Optimal SHORT entries are on relief rallies into supply zones.
 
 ---
 
-**Setup A — SHORT from H1 bearish FVG (4474.43–4481.7) — WITH D1 + H1 TREND:**
-- Condition: Price retraces into H1 bearish FVG (4474–4481) + M15 CHoCH DOWN + M5 bearish OB/FVG + M1 bearish engulf + spread ≤ 5.0
-- SL: above H1 FVG high → 4483 (above 4481.7 + 1.3 pip buffer)
-- TP1: 4433.44 (H1 BoS DOWN level) | TP2: 4426.55 (London/NY low SSL)
-- R:R example (entry 4476, SL 4483, TP1 4433): (4476−4433)×10 ÷ (4483−4476)×10 = 430 ÷ 70 = 6.1:1 ✓
-- WITH D1 + H1 TREND. Requires M15 CHoCH DOWN for confirmation.
+**Setup A — SHORT from H1 FVG supply (4379–4404) — WITH ALL TF TREND:**
+- Condition: Price rallies to 4379–4404 H1 FVG + M15 CHoCH DOWN + M5 bearish OB/FVG + M1 bearish engulf
+- Entry: ~4390–4404 (inside H1 FVG supply)
+- SL: above 4404.84 + buffer → ~4408
+- TP1: 4347.46 (H1 BoS level) | TP2: 4314.95 (NY session low) | TP3: 4299.75 (Asian low)
+- R:R example (entry 4395, SL 4408, TP1 4347): (4395−4347)×10 ÷ (4408−4395)×10 = 480 ÷ 130 = 3.7:1 ✓
+- WITH D1 + H4 + H1 TREND. HTF/P/D aligned. Needs M15 confirmation at zone.
 
-**Setup B — SHORT on H4 swing low reclaim failure (4488–4497 zone) — WITH D1 + H1 TREND:**
-- Condition: Price rallies into 4488.2–4496.77 range (H4 swing low + H1 resistance cluster) + M15 CHoCH DOWN + M5 bearish OB/FVG + M1 bearish engulf
-- SL: above H1 BoS UP level → 4499
-- TP1: 4433.44 | TP2: 4426.55 / 4396–4418 zone
-- R:R example (entry 4490, SL 4499, TP1 4433): (4490−4433)×10 ÷ (4499−4490)×10 = 570 ÷ 90 = 6.3:1 ✓
-- WITH D1 + H1 TREND. High-quality SHORT zone if price rallies there.
+**Setup B — SHORT from H4/H1 FVG confluence (4421–4428) — WITH ALL TF TREND:**
+- Condition: Price rallies into H4 FVG 4421–4428 + M15 CHoCH DOWN + M5 bearish OB + M1 bearish engulf
+- Entry: ~4421–4428 (H4 FVG body)
+- SL: above H4 FVG top → ~4432
+- TP1: 4379.31 (H1 FVG top) | TP2: 4347.46 | TP3: 4299.75 (Asian low)
+- R:R example (entry 4425, SL 4432, TP1 4379): (4425−4379)×10 ÷ (4432−4425)×10 = 460 ÷ 70 = 6.6:1 ✓
+- WITH D1 + H4 + H1 TREND. Strongest SHORT zone. Wait for price to rally before entering.
 
-**Setup C — LONG from H4 demand FVG (4396.55–4418.58) — COUNTER-TREND vs D1 + H1:**
-- Condition: Price drops to H4 demand FVG (4396–4418) + M15 BoS UP from zone + M5 bullish OB/FVG + M1 bullish engulf + spread ≤ 5.0
-- SL: below H4 FVG low → 4392 (below 4396.55 − 4.5 pip buffer)
-- TP1: 4433.44 | TP2: 4453.62 (H4 OTE ceiling) | TP3: 4474 (H1 FVG)
-- ⚠️ COUNTER-TREND vs D1 + H1. Very high risk. Valid ONLY at H4 institutional demand zone. Requires clean M15 BoS UP confirmation from zone.
+**Setup C — LONG from Asian low sweep (4299.75) — COUNTER-TREND:**
+- Condition: Price sweeps 4299.75 → sharp bullish engulf on M1 + M15 CHoCH UP + M5 bullish FVG
+- Entry: ~4302–4310 (post-sweep confirmation)
+- SL: below sweep low → ~4295
+- TP1: 4347.46 | TP2: 4379 (H1 FVG base)
+- R:R example (entry 4305, SL 4295, TP1 4347): (4347−4305)×10 ÷ (4305−4295)×10 = 420 ÷ 100 = 4.2:1 ✓
+- ⚠️ COUNTER-TREND vs D1 + H4 + H1. Only valid as counter-trend scalp at Asian low sweep. Very high risk — bearish trend may continue.
 
 ### BIAS STRENGTHENING (more bearish)
-- H4 close below 4488.2 → H4 new BoS DOWN, H4 CONFIRMED BEARISH — all 3 TFs aligned bearish
-- H1 close below 4433.44 → H1 bearish continuation, next target 4426.55 / 4396–4418
-- Price breaks Asian low 4422.93 → macro bearish flush toward H4 demand (4396–4418)
+- Price breaks below 4299.75 (Asian low) with M15 BoS DOWN → bearish continuation confirmed
+- H4 close below 4299.75 → new H4 BoS DOWN, D1 low 4351.20 breached → macro bearish target next
 
-### BIAS STRENGTHENING (more bullish)
-- H4 close ABOVE 4488.2 + reclaim of 4496.77 → H4 bullish transition regains footing
-- H1 BoS UP above 4497.31 → H1 CHoCH UP possible
-- M15 BoS UP above 4488.7 (Asian high) → LTF bullish signal
+### BIAS INVALIDATION (bullish recovery)
+- M15 BoS UP above 4347.46 (H1 BoS UP level) + H1 close above 4366.02 → H1 demand re-emerging
+- H4 close above 4421.15 (H4 FVG supply) → H4 reclaims supply zone — bullish recovery possible
+- D1 close above 4401.89 (D1 range low) → D1 demand floor reclaimed

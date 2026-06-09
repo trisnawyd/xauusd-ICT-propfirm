@@ -2,11 +2,35 @@
 
 | ID | Label | Price | Direction | Set At |
 |----|-------|-------|-----------|--------|
-| #122 | M15 BoS UP above 4474.43 — Watch B SHORT invalidated; M15 bullish confirmed, run fresh LTF for LONG extension toward 4487–4496 | 4474.43 | above | 2026-06-03 09:52 UTC |
-| #121 | Watch B SHORT zone entering — M5 bearish FVG 4465–4468 / OB 4468–4472; need M15 CHoCH DOWN + M1 bearish engulf + spread ≤ 5.0 → SHORT ~4467, SL 4473, TP1 4443 (R:R 4.0:1) | 4465.10 | above | 2026-06-03 09:52 UTC |
-| #120 | Watch A LONG invalidated — SSL wick 4438.35 broken; bearish extension, run fresh LTF | 4438.35 | below | 2026-06-03 09:52 UTC |
-| #119 | Watch A LONG triggered — M1 bullish FVG (4442–4443) retapped; need M1 bullish engulf + spread ≤ 5.0 → LONG ~4443, SL 4437, TP1 4456.39 (R:R 2.23:1) | 4442.41 | below | 2026-06-03 09:52 UTC |
-| #110 | H4+H1 demand FVG 4396–4418 entered — Watch B LONG zone; M15 BoS UP + M5 OB/FVG + M1 engulf required | 4418.58 | below | 2026-06-02 (prev session) |
+| **#148** | M1 bearish FVG 4307.22–4310.56 entered [open] — first overhead supply; monitor for rejection vs break; break above → next target M5 OB 4316–4321; run LTF | 4307.22 | above | 2026-06-08 05:47 UTC |
+| **#149** | Dual trigger — M15 CHoCH UP level + M5 bearish OB zone (4316.73–4321.05); Watch A: need M5 bullish OB at 4290–4300 + M1 engulf → LONG ~4293 SL 4279 TP 4330 (R:R 2.6:1); Watch B: need M1 bearish engulf at OB → SHORT ~4318 SL 4323 TP 4280 (R:R 7.6:1); run LTF | 4316.33 | above | 2026-06-08 05:47 UTC |
+| **#150** | Watch A invalidated — price below sweep wick anchor (4281 area); bearish breakdown confirmed; Watch A LONG dead; run fresh LTF for bearish continuation | 4279.00 | below | 2026-06-08 05:47 UTC |
+| ~~**#147**~~ | ~~Asian low broken — bearish breakdown below 4299.75; Watch A LONG invalidated; run fresh LTF for bearish continuation~~ | ~~4299.75~~ | ~~below~~ | ~~2026-06-08 04:39 UTC~~ — gone (not in EA on list_alerts; price swept 4299.75 and recovered, level consumed) |
+| ~~**#146**~~ | ~~Watch B SHORT zone entered — M5 bearish FVG 4327.75–4331.33; need M15 in PREMIUM (above EQ 4332.74) + M1 bearish engulf → SHORT ~4329, SL 4332, TP 4299.75 (R:R 9.7:1); run LTF~~ | ~~4327.75~~ | ~~above~~ | ~~2026-06-08 04:39 UTC~~ — deleted 2026-06-08 05:47 UTC (FVG 4327–4331 filled; EQ shifted to 4311; levels stale) |
+| ~~**#145**~~ | ~~Watch A LONG trigger — M15 CHoCH UP above 4315.06; if M5 bullish OB/FVG forms + M1 engulf → LONG ~4313, SL 4299, TP 4347.46 (R:R 2.5:1); run LTF~~ | ~~4315.06~~ | ~~above~~ | ~~2026-06-08 04:39 UTC~~ — gone (not in EA on list_alerts; replaced by #149 with updated CHoCH level 4316.33) |
+| ~~**#144**~~ | ~~CHoCH DOWN macro floor hit — Watch B TP zone; H4 demand fully failed; run fresh HTF analysis~~ | ~~4366.02~~ | ~~below~~ | ~~2026-06-05 13:51 UTC~~ — gone (not in EA; price crashed through 4366 long ago; level no longer actionable) |
+| ~~**#141**~~ | ~~Watch B SHORT retest zone — SHORT ~4394, SL 4397.50, TP 4366~~ | ~~4394.00~~ | ~~above~~ | ~~2026-06-05 13:51 UTC~~ — deleted 2026-06-08 04:39 UTC (H4 demand swept, bullish bias gone) |
+| ~~**#142**~~ | ~~H4 demand FVG floor reclaimed — Watch A LONG ~4403, SL 4393, TP 4435~~ | ~~4396.55~~ | ~~above~~ | ~~2026-06-05 13:51 UTC~~ — deleted 2026-06-08 04:39 UTC (H4 FVG swept/filled) |
+| ~~**#143**~~ | ~~Watch A LONG TP hit — M15 EQ area; next target 4441~~ | ~~4435.00~~ | ~~above~~ | ~~2026-06-05 13:51 UTC~~ — deleted 2026-06-08 04:39 UTC (LONG bias invalid) |
+| ~~#140~~ | ~~M15 swing high / H4 bearish FVG 4470.46–4472.54 — run LTF~~ | ~~4470.46~~ | ~~triggered — price swept to 4475.99 (M15 BoS UP @ 12:15 UTC); alert fired~~ | 2026-06-05 02:06 UTC |
+| ~~#139~~ | ~~M5 bearish FVG 4451.66–4453.51 entered — supply cap~~ | ~~4451.66~~ | ~~triggered — price rallied through 4451 during London morning push~~ | 2026-06-05 02:06 UTC |
+| ~~#138~~ | ~~Asian low wick retested — Watch A demand zone~~ | ~~4441.84~~ | ~~triggered — price swept to 4428.57 (London low stop hunt @ 06:15 UTC)~~ | 2026-06-05 02:06 UTC |
+| ~~#110~~ | ~~H4+H1 demand FVG 4396–4418 entered — Watch B LONG zone~~ | ~~4418.58~~ | ~~triggered — price collapsed through 4418 during London/NY crash to 4382.35~~ | 2026-06-02 (prev session) |
+| ~~#136~~ | ~~H1 FVG bottom exited — price dropped below 4474.43; rejection forming, run LTF~~ | ~~4474.43~~ | ~~deleted 2026-06-05 02:06 UTC — H1 FVG (4474.43–4481.7) now FILLED; stale~~ | 2026-06-04 04:24 UTC |
+| ~~#135~~ | ~~Watch B INVALIDATED — M5 OB (4446.42–4451.59) broken~~ | ~~4448.00~~ | ~~gone — not in EA (lost on restart); stale~~ | 2026-06-04 03:38 UTC |
+| ~~#134~~ | ~~Watch B LONG entry — M5 FVG top (4451.59–4452.95)~~ | ~~4452.95~~ | ~~deleted 2026-06-05 02:06 UTC — M5 FVG (4451.59–4452.95) filled; stale~~ | 2026-06-04 03:38 UTC |
+| ~~#133~~ | ~~Watch A SHORT — H1 FVG second test (4474.43–4481.7)~~ | ~~4474.43~~ | ~~gone — not in EA (lost on restart); H1 FVG now filled~~ | 2026-06-04 03:38 UTC |
+| ~~#132~~ | ~~Watch A SHORT retrace — M1 bearish FVG (4468.48–4469.37)~~ | ~~4468.48~~ | ~~gone — not in EA (lost on restart); M1 FVG filled~~ | 2026-06-04 03:38 UTC |
+| ~~#128~~ | ~~Watch A INVALIDATED — M15 close above H1 FVG top 4481.7~~ | ~~4481.70~~ | ~~gone — not in EA (lost on restart); H1 FVG now filled, level irrelevant~~ | 2026-06-04 01:29 UTC |
+| ~~#131~~ | ~~Watch B LONG entry — M5 FVG top touched (4456.89–4459.19)~~ | ~~4459.19~~ | ~~deleted 2026-06-04 03:38 UTC — M5 FVG filled; replaced by #134~~ | 2026-06-04 01:47 UTC |
+| ~~#130~~ | ~~Watch B INVALIDATED — M5 FVG broken; bearish continuation to 4422.93~~ | ~~4453.00~~ | ~~deleted 2026-06-04 03:38 UTC — Watch B dead; replaced by #135~~ | 2026-06-04 01:29 UTC |
+| ~~#129~~ | ~~Watch B LONG entry — M5 FVG (4456.89–4459.19)~~ | ~~4456.89~~ | ~~deleted 2026-06-04 01:47 UTC — wrong price (FVG bottom); replaced by #131~~ | 2026-06-04 01:29 UTC |
+| ~~#127~~ | ~~Watch A SHORT entry — H1 bearish FVG (4474.43–4481.7)~~ | ~~4474.43~~ | ~~deleted 2026-06-04 03:38 UTC — H1 FVG already tapped; replaced by #132/#133~~ | 2026-06-04 01:29 UTC |
+| ~~#126~~ | ~~TP — H1 bearish FVG bottom / LONG target hit~~ | ~~4474.43~~ | ~~deleted 2026-06-04 01:29 UTC — stale label~~ | 2026-06-03 (prev session) |
+| ~~#122~~ | ~~M15 BoS UP above 4474.43 — Watch B SHORT invalidated; M15 bullish confirmed, run fresh LTF~~ | ~~4474.43~~ | ~~gone — not in EA (lost on restart); replaced by #127~~ | 2026-06-03 09:52 UTC |
+| ~~#121~~ | ~~Watch B SHORT zone entering — M5 bearish FVG 4465–4468 / OB 4468–4472; need M15 CHoCH DOWN + M1 bearish engulf + spread ≤ 5.0 → SHORT ~4467, SL 4473, TP1 4443 (R:R 4.0:1)~~ | ~~4465.10~~ | ~~gone — not in EA (lost on restart); price already above 4467~~ | 2026-06-03 09:52 UTC |
+| ~~#120~~ | ~~Watch A LONG invalidated — SSL wick 4438.35 broken; bearish extension, run fresh LTF~~ | ~~4438.35~~ | ~~gone — not in EA (lost on restart); stale from 06/03~~ | 2026-06-03 09:52 UTC |
+| ~~#119~~ | ~~Watch A LONG triggered — M1 bullish FVG (4442–4443) retapped; need M1 bullish engulf + spread ≤ 5.0 → LONG ~4443, SL 4437, TP1 4456.39 (R:R 2.23:1)~~ | ~~4442.41~~ | ~~gone — not in EA (lost on restart); stale from 06/03~~ | 2026-06-03 09:52 UTC |
 | ~~#118~~ | ~~M15 EQ breached — Watch B SHORT zone active; check M5 bearish FVG 4477–4484 + M15 CHoCH DOWN + spread ≤ 2.0~~ | ~~4476.51~~ | ~~deleted 2026-06-03 09:52 UTC — stale (old M15 EQ from 06:09 analysis; new EQ 4456.39, Watch B zone now 4465–4472)~~ | 2026-06-03 06:09 UTC |
 | ~~#117~~ | ~~H4 OTE entered — Watch A LONG zone active; need M5 bullish FVG/OB + M15 holds bullish + M1 engulf + spread ≤ 2.0~~ | ~~4453.62~~ | ~~gone — not in EA (lost on restart or never registered); replaced by #119~~ | 2026-06-03 06:09 UTC |
 | ~~#108~~ | ~~London BSL swept — Watch A SHORT trigger; wait for M5 bearish OB/FVG + M1 engulf + spread ≤ 2.0~~ | ~~4541.53~~ | ~~deleted 2026-06-03 09:52 UTC — stale (London high 06/02, price 96 pips below, not relevant to current session)~~ | 2026-06-02 (prev session) |

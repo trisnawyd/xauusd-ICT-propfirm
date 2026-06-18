@@ -6,3 +6,4 @@ node_modules/
 !.claude/CLAUDE.md
 mt5-mcp-server/.claude/*
 !mt5-mcp-server/.claude/settings.json
+.vercel

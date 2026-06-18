@@ -541,11 +541,14 @@ string GetTradeHistory(const string req)
       double cprice  = HistoryDealGetDouble(ticket, DEAL_PRICE);
       datetime ctime = (datetime)HistoryDealGetInteger(ticket, DEAL_TIME);
       long pos_id    = HistoryDealGetInteger(ticket, DEAL_POSITION_ID);
-      long dtype     = HistoryDealGetInteger(ticket, DEAL_TYPE);
 
-      // Find matching open deal for open_price + open_time
+      // Find matching open deal for open_price + open_time + direction.
+      // NOTE: the closing deal's DEAL_TYPE is the INVERSE of the position
+      // direction (a BUY position closes with a SELL deal). The trade
+      // direction must come from the OPENING deal (DEAL_ENTRY_IN).
       double oprice = 0;
       datetime otime = 0;
+      long otype = -1;
       for(int j = 0; j < total; j++)
         {
          ulong ot = HistoryDealGetTicket(j);
@@ -554,6 +557,7 @@ string GetTradeHistory(const string req)
          if(HistoryDealGetInteger(ot, DEAL_ENTRY) != DEAL_ENTRY_IN) continue;
          oprice = HistoryDealGetDouble(ot, DEAL_PRICE);
          otime  = (datetime)HistoryDealGetInteger(ot, DEAL_TIME);
+         otype  = HistoryDealGetInteger(ot, DEAL_TYPE);
          break;
         }
 
@@ -568,7 +572,7 @@ string GetTradeHistory(const string req)
          "\"profit\":%.2f,\"commission\":%.2f,\"swap\":%.2f,\"net_profit\":%.2f,"
          "\"duration_minutes\":%d,\"open_time\":\"%s\",\"close_time\":\"%s\"}",
          ticket,
-         (dtype == DEAL_TYPE_BUY ? "buy" : "sell"),
+         (otype == DEAL_TYPE_BUY ? "buy" : "sell"),
          vol, oprice, cprice,
          profit, comm, swap, net, dur,
          TimeToString(otime, TIME_DATE | TIME_SECONDS),

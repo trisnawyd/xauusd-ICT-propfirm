@@ -1,0 +1,10 @@
+.git
+.obsidian
+.claude
+node_modules
+**/node_modules
+web/.next
+web/out
+mt5-mcp-server
+Daily Journal
+Backtest

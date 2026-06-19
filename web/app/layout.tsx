@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
-import { NavSidebar, BottomNav } from "@/components/nav-sidebar";
+import { AppSidebar, type SidebarNavData } from "@/components/app-sidebar";
+import { BottomNav } from "@/components/nav-sidebar";
+import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { getHTFList, getLTFList, getNewsList, getTradeLogList } from "@/lib/content";
+import { formatDate, timeFromSlug } from "@/lib/format";
 
 const geistSans = Geist({ variable: "--font-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -12,31 +16,55 @@ export const metadata: Metadata = {
   description: "Live ICT/SMC trade analysis dashboard for XAU/USD",
 };
 
+const RECENT = 6;
+
+/** Build the recent-entry submenus once at build time (all reads are SSG). */
+function buildNav(): SidebarNavData {
+  return {
+    htf: getHTFList()
+      .slice(0, RECENT)
+      .map((e) => ({ href: `/htf/${e.date}`, label: formatDate(e.date) })),
+    ltf: getLTFList()
+      .slice(0, RECENT)
+      .map((e) => ({
+        href: `/ltf/${e.date}/${e.slug}`,
+        label: `${e.date.slice(6, 8)}-${e.date.slice(4, 6)} · ${timeFromSlug(e.slug)}`,
+        direction: e.direction,
+      })),
+    news: getNewsList()
+      .slice(0, RECENT)
+      .map((e) => ({
+        href: `/news/${e.slug.join("/")}`,
+        label: e.event ? `${e.date.slice(4)} · ${e.event}` : e.slug.join("/"),
+      })),
+    tradeLog: getTradeLogList()
+      .slice(0, RECENT)
+      .map((e) => ({ href: `/trade-log/${e.date}`, label: formatDate(e.date) })),
+  };
+}
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const nav = buildNav();
+
   return (
     <html
       lang="en"
       className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
-        <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-6 px-4 py-6 md:flex-row md:px-6">
-          {/* Desktop sidebar */}
-          <aside className="hidden w-full shrink-0 md:block md:w-52">
-            <div className="md:sticky md:top-6">
-              <Link href="/" className="mb-4 block md:mb-6">
-                <div className="text-lg font-bold tracking-tight">XAU/USD</div>
-                <div className="text-xs text-muted-foreground">ICT / SMC Desk</div>
+        <SidebarProvider>
+          <AppSidebar nav={nav} />
+          <SidebarInset>
+            <header className="flex h-14 shrink-0 items-center gap-2 border-b px-4">
+              <SidebarTrigger className="hidden md:flex" />
+              <Link href="/" className="font-bold tracking-tight md:hidden">
+                XAU/USD
+                <span className="ml-2 text-xs font-normal text-muted-foreground">ICT / SMC Desk</span>
               </Link>
-              <NavSidebar />
-            </div>
-          </aside>
-          {/* Mobile header */}
-          <Link href="/" className="block md:hidden">
-            <div className="text-lg font-bold tracking-tight">XAU/USD</div>
-            <div className="text-xs text-muted-foreground">ICT / SMC Desk</div>
-          </Link>
-          <main className="min-w-0 flex-1 pb-20 md:pb-0">{children}</main>
-        </div>
+            </header>
+            <main className="mx-auto min-w-0 w-full max-w-5xl flex-1 px-4 py-6 pb-24 md:px-6 md:pb-8">{children}</main>
+          </SidebarInset>
+        </SidebarProvider>
         <BottomNav />
       </body>
     </html>

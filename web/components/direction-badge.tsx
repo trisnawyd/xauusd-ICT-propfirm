@@ -1,7 +1,13 @@
 import { cn } from "@/lib/utils";
 import type { Direction } from "@/lib/types";
 
-export function DirectionBadge({ direction }: { direction: Direction }) {
+export function DirectionBadge({
+  direction,
+  className,
+}: {
+  direction: Direction;
+  className?: string;
+}) {
   const styles: Record<Direction, string> = {
     LONG: "bg-green-500/15 text-green-500 border-green-500/30",
     SHORT: "bg-red-500/15 text-red-500 border-red-500/30",
@@ -13,6 +19,7 @@ export function DirectionBadge({ direction }: { direction: Direction }) {
       className={cn(
         "inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-bold tracking-wide",
         styles[direction],
+        className,
       )}
     >
       {direction}

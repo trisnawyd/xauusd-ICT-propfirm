@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-16 14:19 UTC (latest sync)
+updated: 2026-06-19 11:57 UTC (latest sync)
 synced_from: MT5 Bridge
 ---
 
@@ -10,13 +10,20 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,011.93 |
-| Equity | $5,011.93 |
-| Max risk per trade (1%) | $50.12 |
+| Balance | $5,047.50 |
+| Equity | $5,047.50 |
+| Max risk per trade (1%) | $50.48 |
 | Margin used | $0 |
-| Free margin | $5,011.93 |
+| Free margin | $5,047.50 |
 | Open positions | None |
 | Pending orders | None |
+
+## Session Status — 2026-06-19
+- Daily P&L: **+$35.65** closed (1 win, 0 loss) — reconciled in [[Trade Log/20260619]]:
+  - T1 ticket 6937519 SELL 4167.31 → 4155.40, +119.1 pips, net +$35.65 (178 min, 0.03 lot) — H4 FVG rejection short, WITH-D1. Trailed SL to 4155 (too tight, $0.69 above swing high 4154.31), wick-hunted to ~4156 then reversed; runner toward TP 4121.81 given away. Green but mismanaged exit.
+- Session start equity: $5,011.85
+- HTF bias: See Context/htf-context.md (06-19 01:26 UTC — fresh). D1 BEARISH; overnight crash to day low 4121.32, corrective bounce to ~4178, now chopping M15 EQ 4152.55.
+- Market context: WAIT at EQ (11:57 UTC LONDON). No HIGH-impact USD events next 24h. Forward read: [[Analysis/LTF/20260619/20260619_1157_wait]].
 
 ## Session Status — 2026-06-16
 - Daily P&L: **+$12.29** closed (1 win, 1 loss) — reconciled in [[Trade Log/20260616]]:

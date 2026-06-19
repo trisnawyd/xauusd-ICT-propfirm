@@ -3,5 +3,7 @@
   "framework": null,
   "installCommand": "echo skip-root-install",
   "buildCommand": "cd web && npm install --legacy-peer-deps && npm run build",
-  "outputDirectory": "web/out"
+  "outputDirectory": "web/out",
+  "cleanUrls": true,
+  "trailingSlash": false
 }

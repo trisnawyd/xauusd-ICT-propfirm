@@ -4,6 +4,8 @@ import Link from "next/link";
 import "./globals.css";
 import { AppSidebar, type SidebarNavData } from "@/components/app-sidebar";
 import { BottomNav } from "@/components/nav-sidebar";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { getHTFList, getLTFList, getNewsList, getTradeLogList } from "@/lib/content";
 import { formatDate, timeFromSlug } from "@/lib/format";
@@ -49,23 +51,29 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html
       lang="en"
-      className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
-        <SidebarProvider>
-          <AppSidebar nav={nav} />
-          <SidebarInset>
-            <header className="flex h-14 shrink-0 items-center gap-2 border-b px-4">
-              <SidebarTrigger className="hidden md:flex" />
-              <Link href="/" className="font-bold tracking-tight md:hidden">
-                XAU/USD
-                <span className="ml-2 text-xs font-normal text-muted-foreground">ICT / SMC Desk</span>
-              </Link>
-            </header>
-            <main className="mx-auto min-w-0 w-full max-w-5xl flex-1 px-4 py-6 pb-24 md:px-6 md:pb-8">{children}</main>
-          </SidebarInset>
-        </SidebarProvider>
-        <BottomNav />
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          <SidebarProvider>
+            <AppSidebar nav={nav} />
+            <SidebarInset>
+              <header className="flex h-14 shrink-0 items-center gap-2 border-b px-4">
+                <SidebarTrigger className="hidden md:flex" />
+                <Link href="/" className="font-bold tracking-tight md:hidden">
+                  XAU/USD
+                  <span className="ml-2 text-xs font-normal text-muted-foreground">ICT / SMC Desk</span>
+                </Link>
+                <div className="ml-auto">
+                  <ThemeToggle />
+                </div>
+              </header>
+              <main className="mx-auto min-w-0 w-full max-w-5xl flex-1 px-4 py-6 pb-24 md:px-6 md:pb-8">{children}</main>
+            </SidebarInset>
+          </SidebarProvider>
+          <BottomNav />
+        </ThemeProvider>
       </body>
     </html>
   );

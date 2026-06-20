@@ -69,7 +69,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   <ThemeToggle />
                 </div>
               </header>
-              <main className="mx-auto min-w-0 w-full max-w-5xl flex-1 px-4 py-6 pb-24 md:px-6 md:pb-8">{children}</main>
+              <main className="min-w-0 w-full flex-1 px-4 py-6 pb-24 md:px-6 md:pb-8">{children}</main>
             </SidebarInset>
           </SidebarProvider>
           <BottomNav />

@@ -62,3 +62,15 @@ export interface TradeLogEntry {
   losses?: string;
   trades?: string;
 }
+
+export interface CalendarDay {
+  date: string; // YYYYMMDD
+  htfBias?: string; // headline bias label from Analysis/HTF/<date>.md
+  netPnl?: string; // raw P&L string from Trade Log/<date>.md
+  pnlSign: "pos" | "neg" | null;
+  wins?: string;
+  losses?: string;
+  ltfCount: number;
+  ltfBreakdown: { long: number; short: number; wait: number };
+  news: { event?: string; impact?: string }[];
+}

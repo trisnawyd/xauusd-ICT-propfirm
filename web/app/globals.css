@@ -128,3 +128,14 @@
     @apply font-sans;
   }
 }
+
+/* Subtle diagonal hatching for empty calendar days (Sage-style). */
+.cal-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--border) 0,
+    var(--border) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}

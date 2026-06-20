@@ -2,17 +2,26 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, TrendingUp, Activity, Newspaper, ScrollText, type LucideIcon } from "lucide-react";
+import {
+  CalendarDays,
+  LayoutDashboard,
+  TrendingUp,
+  Activity,
+  Newspaper,
+  ScrollText,
+  type LucideIcon,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type NavLink = { href: string; label: string; icon: LucideIcon; exact?: boolean };
 
 const LINKS: NavLink[] = [
-  { href: "/", label: "Context", icon: Home, exact: true },
-  { href: "/htf", label: "HTF Bias", icon: TrendingUp },
-  { href: "/ltf", label: "LTF Analysis", icon: Activity },
+  { href: "/", label: "Calendar", icon: CalendarDays, exact: true },
+  { href: "/dashboard", label: "Dash", icon: LayoutDashboard },
+  { href: "/htf", label: "HTF", icon: TrendingUp },
+  { href: "/ltf", label: "LTF", icon: Activity },
   { href: "/news", label: "News", icon: Newspaper },
-  { href: "/trade-log", label: "Trade Log", icon: ScrollText },
+  { href: "/trade-log", label: "Log", icon: ScrollText },
 ];
 
 /** Fixed bottom tab bar for mobile only (md:hidden). Desktop uses AppSidebar. */

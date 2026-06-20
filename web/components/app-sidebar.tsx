@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  Home,
+  CalendarDays,
+  LayoutDashboard,
   TrendingUp,
   Activity,
   Newspaper,
@@ -78,12 +79,24 @@ export function AppSidebar({ nav }: { nav: SidebarNavData }) {
         <SidebarContent>
           <SidebarGroup>
             <SidebarMenu>
-              {/* Context — flat link, no submenu */}
+              {/* Calendar & Dashboard — flat links, no submenu */}
               <SidebarMenuItem>
-                <SidebarMenuButton asChild isActive={pathname === "/"} tooltip="Context">
+                <SidebarMenuButton asChild isActive={pathname === "/"} tooltip="Calendar">
                   <Link href="/">
-                    <Home />
-                    <span>Context</span>
+                    <CalendarDays />
+                    <span>Calendar</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
+                  isActive={pathname === "/dashboard"}
+                  tooltip="Dashboard"
+                >
+                  <Link href="/dashboard">
+                    <LayoutDashboard />
+                    <span>Dashboard</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>

@@ -2,6 +2,12 @@
 
 | ID | Label | Price | Direction | Set At |
 |----|-------|-------|-----------|--------|
+| **#61** | Pullback into Watch A LONG demand approach — H1/H4 bullish FVG top 4200.56 + M15 EQ 4178.42; need pullback to 4165-4185 + M1 bullish engulf → LONG ~4175 SL 4150 TP 4245.25 (2.8:1); run LTF | 4185.00 | below | 2026-06-22 01:19 UTC |
+| **#62** | Deep LONG OTE 4154-4168 — M15 OTE + H4/H1 bullish FVG base 4161.81-4165.03; quality buy-the-dip zone, need M1 bullish engulf → LONG ~4165 SL 4140 TP1 4216/TP2 4245 (3.2:1); run LTF | 4168.00 | below | 2026-06-22 01:19 UTC |
+| **#63** | Asian/weekly high 4220.61 break — bullish continuation toward first supply 4233-4240 then H4 EQ 4245.25; retrace-long on displacement + M1 engulf (chasing = lower tier); run LTF | 4221.00 | above | 2026-06-22 01:19 UTC |
+| **#64** | Bullish invalidation — back toward weekend low 4136.24 (SSL scar); safe-haven rip failing, M15 close below 4136.24 = full bearish resume to 4121.32; run LTF | 4140.00 | below | 2026-06-22 01:19 UTC |
+| ~~**#60**~~ | ~~Break of NY low 4141.65 with displacement — Watch B momentum SHORT; ~4140, SL 4154, TP1 4106.72 (2.4:1); run LTF~~ | ~~4141.00~~ | ~~below~~ | ~~2026-06-19 15:14 UTC~~ — **deleted** 2026-06-22 01:19 UTC (bearish thesis dead — weekend Hormuz rip flipped bias bullish, price 4209) |
+| ~~**#54**~~ | ~~Break of day low 4121.32 (London/Asian low swept) — bearish continuation, next target H4 bearish FVG 4080.53-4106.72; run LTF~~ | ~~4121.00~~ | ~~below~~ | ~~2026-06-19 11:57 UTC~~ — **deleted** 2026-06-22 01:19 UTC (bearish continuation context gone — 843-pip bullish reversal off 4136.24) |
 | **#37** | Overhead H1 bear FVG cleared (4339-4349) — bullish continuation toward 4369.17; WITH-H4/H1 LONG on retrace + M1 bull engulf; OR rejection here = counter-trend gap-fill short; run LTF | 4349.48 | above | 2026-06-16 08:08 UTC |
 | **#36** | Breakout FAILED back into box — 4335.6 reclaim was a BSL sweep not a real break; gap-fill SHORT re-arms toward 4305.8 then 4285.37; needs M15 CHoCH DOWN + M1 trigger; run LTF | 4327.00 | below | 2026-06-16 08:08 UTC |
 | **#34** | Asian box LOW broken — gap-fill SHORT continuation: M15 close below 4305.8 → next leg into 4285.37 gap-demand (WITH-D1/counter-H4H1); break 4285 → 4259/4235; needs M1 bearish trigger, no pre-empt; run LTF | 4305.80 | below | 2026-06-16 01:08 UTC |

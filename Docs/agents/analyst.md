@@ -55,6 +55,7 @@ Using data already in bundle (OBs, FVGs, sweeps, P/D, tick):
   SHORT + COUNTER-TREND    → price must be at H4 supply zone (from htf-context.md) OR H4 OTE premium
   Fail → WAIT with specific reason → STOP
 - Verify spread ≤ 5.0 pips (from TICK in bundle)
+  - **The spread limit is EXACTLY 5.0 pips. Do NOT invent a stricter gate (1.5/2.0/2.2 pips).** Gold routinely trades 2–4 pips; only flag/WAIT on spread when it is strictly > 5.0. A spread of 2.0–4.0 is NORMAL and must not block a setup. (A backfill review found ~31% of WAITs were caused by a phantom sub-2-pip threshold that exists in no rule file.)
 
 ### GATE 4 — M1 Trigger
 - Read OHLCV_M1_LAST_30 from bundle

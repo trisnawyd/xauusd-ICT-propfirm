@@ -1,6 +1,10 @@
-# PROPOSAL — Armed-WAIT → Pending-Order Workflow
+# Armed-WAIT → Pending-Order Workflow
 
-> Status: **DRAFT, not active.** Needs your sign-off before any rule file changes.
+> Status: **ACTIVE** (approved 2026-06-22). Implemented in `CLAUDE.md` (ARMED-WAIT BRANCH +
+> WAIT template Armed Order block), `Docs/agents/analyst.md` (ARMED-WAIT CHECK),
+> `Docs/agents/collector.md` (get_pending_orders added to bundle).
+> Activated settings: **CONFIRM required** (no auto-fire) · expiry = session end / structural
+> invalidation / HTF stale · concurrency cap = **2** resting pendings · ships behind the reconciler.
 > Author: Claude · Context: outcome-tracking backfill (branch `feature/outcome-tracking-eval`)
 
 ## Problem this solves

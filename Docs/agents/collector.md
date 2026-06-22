@@ -20,6 +20,7 @@ tool calls):
 8. detect_liquidity_sweeps M15  — { timeframe: "M15", count: 50 }
 9. get_premium_discount M15     — { timeframe: "M15" }
 10. get_ohlcv M1                — { symbol: "XAUUSD", timeframe: "M1", count: 30 }
+11. get_pending_orders          — resting orders (for the armed-WAIT concurrency cap)
 
 ## Output Format
 
@@ -42,6 +43,10 @@ TICK:
 ACCOUNT:
   equity: | balance:
   daily_pnl: | daily_pnl_pct:
+
+PENDING_ORDERS:
+  count: [number of resting orders]
+  list: [ticket, type, price, sl, tp per order — or "none"]
 
 STRUCTURE_M15:
   trend_label: [BULLISH/BEARISH]

@@ -55,12 +55,18 @@ Using data already in bundle (OBs, FVGs, sweeps, P/D, tick):
   SHORT + COUNTER-TREND    → price must be at H4 supply zone (from htf-context.md) OR H4 OTE premium
   Fail → WAIT with specific reason → STOP
 - Verify spread ≤ 5.0 pips (from TICK in bundle)
+  - **The spread limit is EXACTLY 5.0 pips. Do NOT invent a stricter gate (1.5/2.0/2.2 pips).** Gold routinely trades 2–4 pips; only flag/WAIT on spread when it is strictly > 5.0. A spread of 2.0–4.0 is NORMAL and must not block a setup. (A backfill review found ~31% of WAITs were caused by a phantom sub-2-pip threshold that exists in no rule file.)
 
 ### GATE 4 — M1 Trigger
 - Read OHLCV_M1_LAST_30 from bundle
 - Check last 5–10 candles for: bullish/bearish engulf, pin bar, or displacement into OB/FVG
-- If no trigger → WAIT with Watch A/B levels → STOP
+- If no trigger → WAIT with Watch A/B levels (consider ARMED, see below) → STOP
 - If trigger confirmed → continue to Gate 5
+
+### ARMED-WAIT CHECK (after a Gate 3 P/D-timing or Gate 4 WAIT)
+Apply ONLY if the WAIT reason is **Gate 3 P/D-timing** (LONG-in-premium / SHORT-in-discount with a known retrace entry at a real OB/FVG zone) or **Gate 4** (zone + P/D pass, only trigger missing). NOT for no-zone / counter-trend-no-H4 / unclear / stale.
+- Score the setup AS IF price retraced to the Watch A entry and triggered. If projected grade ≥ B+ (70), R:R ≥ 2:1, SL ≤ max risk, and PENDING_ORDERS in bundle shows < 2 resting → mark **ARMED**.
+- ARMED → emit the WAIT template WITH the "⚡ ARMED" block (propose `place_pending_order` at Watch A entry + SL/TP, requires CONFIRM; never auto-place). Else → plain WAIT.
 
 ### GATE 5 — Setup Score
 - Use the `<scoring_rubric>` block from your prompt as the scoring reference

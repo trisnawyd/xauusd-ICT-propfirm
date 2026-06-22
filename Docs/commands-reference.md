@@ -308,6 +308,7 @@ After every closed trade:
    ```
    - R:R achieved: TP hit → same as planned. SL hit → 0. Manual close → |exit−entry| / |SL−entry|
    - Scan `Analysis/LTF/YYYYMMDD/` for a file whose HHMM is within 30 min of trade open time — link it if found
+4. **WRITE OUTCOME BACK:** run `python3 scripts/reconcile_outcomes.py --write-back` so the matched analysis file's `outcome`/`actual_r`/`pnl_usd`/`trade_ticket` frontmatter is filled in. This is what makes `performance` grade-correlation work later. If the script reports the trade as *discretionary* (no matching plan), note that explicitly in the journal block — a trade with no graded signal behind it is itself the finding.
 
 ---
 
@@ -328,6 +329,7 @@ Pull today's closed trade history from MT5 and update the trade log file.
 3. Add any missing trades; correct P&L if different
 4. Update session summary
 5. Run `sync account` after
+6. Run `python3 scripts/reconcile_outcomes.py --write-back` to join the synced trades to their plans and patch outcome frontmatter
 
 ---
 
@@ -362,7 +364,7 @@ Show trading statistics from closed trade history.
    ```
 3. Flag if profit factor < 1.0 ("below breakeven — review setup criteria")
 4. Flag if win rate < 40% ("low win rate — review entry triggers")
-5. **Grade Correlation logic:** scan `Analysis/LTF/` files for `setup_grade` frontmatter, cross-reference with `Trade Log/` entries by matching timestamps (analysis HHMM within 30 min of trade open time), group win/loss by grade. If fewer than 5 graded trades exist, show "Insufficient data — need 5+ graded trades for correlation."
+5. **Grade Correlation logic:** prefer the deterministic join — run `python3 scripts/reconcile_outcomes.py` and read the `outcome`/`actual_r` fields it wrote into `Analysis/LTF/**` frontmatter, then group win/loss by `setup_grade`. (The script neutralises the `get_trade_history` buy/sell label-inversion bug by deriving effective direction from price move + P&L sign — do not trust the raw label.) If fewer than 5 *matched* graded trades exist, show "Insufficient data — need 5+ graded trades for correlation." Note: as of the last backfill, **0 of 10 logged trades matched a graded plan** — all were discretionary — so correlation is not yet computable; this gap is the first thing to close.
 6. **AUTO-SAVE:** Save full report to `Stats/YYYYMMDD_[period]_review.md` (e.g. `Stats/20260412_7d_review.md`). Include frontmatter:
    ```
    ---

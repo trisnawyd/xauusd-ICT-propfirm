@@ -7,3 +7,10 @@ node_modules/
 mt5-mcp-server/.claude/*
 !mt5-mcp-server/.claude/settings.json
 .vercel
+
+# Generated reconciliation / performance reports (regenerate via scripts/reconcile_outcomes.py)
+Stats/
+
+# Python bytecode cache
+__pycache__/
+*.pyc

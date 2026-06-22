@@ -12,13 +12,17 @@ import {
   type IPriceLine,
   type UTCTimestamp,
 } from "lightweight-charts";
-import { fetchGoldQuote } from "@/lib/price-feed";
+import { fetchGoldQuote, fetchTwelveCandles, TWELVEDATA_KEY } from "@/lib/price-feed";
 import type { OhlcSnapshot, WatchLevel } from "@/lib/types";
 
-const POLL_MS = 10_000;
-// 1 pip = $0.10 on XAU/USD. A level counts "touched" once observed price has
-// reached within this tolerance (in price, ~2 pips) or crossed it.
+// Twelve Data free tier = 8 req/min, ~800/day. 30s poll (2/min) while visible
+// stays well under per-minute and survives a multi-hour session on the daily cap.
+const TD_POLL_MS = 30_000;
+const SPOT_POLL_MS = 10_000;
+// 1 pip = $0.10. A level counts "touched" once observed price reaches within
+// this tolerance (~2 pips) or crosses it.
 const TOUCH_TOLERANCE = 0.2;
+const HAS_TD = !!TWELVEDATA_KEY;
 
 function pipsBetween(a: number, b: number): number {
   return Math.round(Math.abs(a - b) * 10);
@@ -53,9 +57,14 @@ export default function WatchBoard({
   const livePriceLineRef = useRef<IPriceLine | null>(null);
   const lastTimeRef = useRef<number>(0);
   const brokerPriceRef = useRef<number | null>(null);
+  const barsRangeRef = useRef<{ lo: number; hi: number } | null>(null);
+  const fittedRef = useRef(false);
 
-  // Spot → broker offset, so the live (spot) marker aligns with broker candles + levels.
+  const timeframe = ohlc?.timeframe ?? "M5";
+  // Spot → broker offset, so live candles/marker align with broker levels.
   const offset = ohlc ? ohlc.brokerRef - ohlc.spotRef : 0;
+  // Candles when Twelve Data is configured, or when a snapshot is committed.
+  const useCandles = HAS_TD || !!ohlc;
 
   const [brokerPrice, setBrokerPrice] = useState<number | null>(null);
   const [updatedAt, setUpdatedAt] = useState<string | null>(null);
@@ -85,13 +94,11 @@ export default function WatchBoard({
     });
 
     // Pin the y-axis to span every level (+ candles + live), so levels are
-    // always visible on first render instead of the scale collapsing.
+    // always visible instead of the scale collapsing onto the live marker.
     const levelPrices = levels.map((l) => l.price);
-    const barLo = ohlc ? Math.min(...ohlc.bars.map((b) => b.low)) : Infinity;
-    const barHi = ohlc ? Math.max(...ohlc.bars.map((b) => b.high)) : -Infinity;
     const autoscaleInfoProvider = () => {
       const prices = [...levelPrices];
-      if (Number.isFinite(barLo)) prices.push(barLo, barHi);
+      if (barsRangeRef.current) prices.push(barsRangeRef.current.lo, barsRangeRef.current.hi);
       if (brokerPriceRef.current != null) prices.push(brokerPriceRef.current);
       const min = Math.min(...prices);
       const max = Math.max(...prices);
@@ -100,7 +107,7 @@ export default function WatchBoard({
     };
 
     let series: ISeriesApi<"Candlestick"> | ISeriesApi<"Line">;
-    if (ohlc) {
+    if (useCandles) {
       const cs = chart.addSeries(CandlestickSeries, {
         upColor: "#22c55e",
         downColor: "#ef4444",
@@ -110,12 +117,21 @@ export default function WatchBoard({
         priceLineVisible: false,
         autoscaleInfoProvider,
       });
-      cs.setData(ohlc.bars.map((b) => ({ ...b, time: b.time as UTCTimestamp })));
-      lastTimeRef.current = ohlc.bars[ohlc.bars.length - 1].time;
-      chart.timeScale().fitContent();
+      // Seed with the committed snapshot if present (live candles replace it
+      // on the first Twelve Data fetch).
+      if (ohlc) {
+        cs.setData(ohlc.bars.map((b) => ({ ...b, time: b.time as UTCTimestamp })));
+        barsRangeRef.current = {
+          lo: Math.min(...ohlc.bars.map((b) => b.low)),
+          hi: Math.max(...ohlc.bars.map((b) => b.high)),
+        };
+        lastTimeRef.current = ohlc.bars[ohlc.bars.length - 1].time;
+        chart.timeScale().fitContent();
+        fittedRef.current = true;
+      }
       series = cs;
     } else {
-      // No snapshot: fall back to a live line that grows from polls.
+      // No candles available: live line that grows from spot polls.
       series = chart.addSeries(LineSeries, {
         color: dark ? "#fafafa" : "#18181b",
         lineWidth: 2,
@@ -146,60 +162,100 @@ export default function WatchBoard({
       chartRef.current = null;
       seriesRef.current = null;
       livePriceLineRef.current = null;
+      barsRangeRef.current = null;
+      fittedRef.current = false;
     };
-  }, [levels, ohlc]);
+  }, [levels, ohlc, useCandles]);
 
-  // Poll live spot — only while the tab is visible (cuts request volume).
+  // Poll the live feed — only while the tab is visible (cuts request volume).
   useEffect(() => {
     let cancelled = false;
     let timer: ReturnType<typeof setTimeout> | null = null;
+    const pollMs = HAS_TD ? TD_POLL_MS : SPOT_POLL_MS;
+
+    // Update the live horizontal marker (broker scale) on the active series.
+    const updateMarker = (broker: number) => {
+      const series = seriesRef.current;
+      if (!series) return;
+      if (livePriceLineRef.current) {
+        livePriceLineRef.current.applyOptions({ price: broker });
+      } else {
+        livePriceLineRef.current = series.createPriceLine({
+          price: broker,
+          color: "#3b82f6",
+          lineWidth: 2,
+          lineStyle: LineStyle.Solid,
+          axisLabelVisible: true,
+          title: "LIVE",
+        });
+      }
+    };
+
+    const onLive = (broker: number, ts: string) => {
+      brokerPriceRef.current = broker;
+      setBrokerPrice(broker);
+      setUpdatedAt(ts);
+      setZone(killzone());
+      setError(null);
+      setRange((r) =>
+        r ? { low: Math.min(r.low, broker), high: Math.max(r.high, broker) } : { low: broker, high: broker },
+      );
+      updateMarker(broker);
+    };
 
     const tick = async () => {
       if (cancelled) return;
       if (document.visibilityState !== "visible") {
-        timer = setTimeout(tick, POLL_MS);
+        timer = setTimeout(tick, pollMs);
         return;
       }
       try {
-        const q = await fetchGoldQuote();
-        if (cancelled) return;
-        const broker = q.price + offset; // map spot → broker scale
-        brokerPriceRef.current = broker;
-        setBrokerPrice(broker);
-        setUpdatedAt(q.updatedAt);
-        setZone(killzone());
-        setError(null);
-        setRange((r) =>
-          r ? { low: Math.min(r.low, broker), high: Math.max(r.high, broker) } : { low: broker, high: broker },
-        );
-
-        const series = seriesRef.current;
-        if (series) {
-          // Live horizontal marker (works for both candles and line).
-          if (livePriceLineRef.current) {
-            livePriceLineRef.current.applyOptions({ price: broker });
-          } else {
-            livePriceLineRef.current = series.createPriceLine({
-              price: broker,
-              color: "#3b82f6",
-              lineWidth: 2,
-              lineStyle: LineStyle.Solid,
-              axisLabelVisible: true,
-              title: "LIVE",
-            });
+        if (HAS_TD) {
+          const candles = await fetchTwelveCandles(timeframe);
+          if (cancelled || candles.length === 0) {
+            timer = setTimeout(tick, pollMs);
+            return;
           }
-          // No snapshot → also grow the line series from polls.
+          const series = seriesRef.current as ISeriesApi<"Candlestick"> | null;
+          if (series) {
+            // Shift spot candles → broker scale so they align with the levels.
+            series.setData(
+              candles.map((c) => ({
+                time: c.time as UTCTimestamp,
+                open: c.open + offset,
+                high: c.high + offset,
+                low: c.low + offset,
+                close: c.close + offset,
+              })),
+            );
+            barsRangeRef.current = {
+              lo: Math.min(...candles.map((c) => c.low)) + offset,
+              hi: Math.max(...candles.map((c) => c.high)) + offset,
+            };
+            if (!fittedRef.current) {
+              chartRef.current?.timeScale().fitContent();
+              fittedRef.current = true;
+            }
+          }
+          const lastClose = candles[candles.length - 1].close + offset;
+          onLive(lastClose, new Date().toISOString());
+        } else {
+          // No Twelve Data key: gold-api spot marker (over committed candles or line).
+          const q = await fetchGoldQuote();
+          if (cancelled) return;
+          const broker = q.price + offset;
+          onLive(broker, q.updatedAt);
           if (!ohlc) {
             let t = Math.floor(Date.now() / 1000);
             if (t <= lastTimeRef.current) t = lastTimeRef.current + 1;
             lastTimeRef.current = t;
-            (series as ISeriesApi<"Line">).update({ time: t as UTCTimestamp, value: broker });
+            (seriesRef.current as ISeriesApi<"Line">)?.update({ time: t as UTCTimestamp, value: broker });
           }
         }
       } catch (e) {
         if (!cancelled) setError(e instanceof Error ? e.message : "fetch failed");
       }
-      timer = setTimeout(tick, POLL_MS);
+      timer = setTimeout(tick, pollMs);
     };
 
     tick();
@@ -207,7 +263,7 @@ export default function WatchBoard({
       cancelled = true;
       if (timer) clearTimeout(timer);
     };
-  }, [offset, ohlc]);
+  }, [offset, ohlc, timeframe]);
 
   const isTouched = (lv: WatchLevel): boolean =>
     range !== null && range.low - TOUCH_TOLERANCE <= lv.price && lv.price <= range.high + TOUCH_TOLERANCE;
@@ -222,20 +278,21 @@ export default function WatchBoard({
     return [...m.entries()];
   }, [levels]);
 
+  const sourceLabel = HAS_TD
+    ? `${timeframe} · live · Twelve Data`
+    : useCandles
+      ? `${timeframe} · spot marker · gold-api`
+      : `spot XAU/USD · gold-api`;
+
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-baseline gap-3">
         <span className="font-mono text-2xl">{brokerPrice !== null ? brokerPrice.toFixed(2) : "—"}</span>
-        <span className="text-xs uppercase tracking-wide text-muted-foreground">
-          {ohlc ? `${ohlc.timeframe} · ${zone}` : `spot XAU/USD · ${zone}`}
-        </span>
+        <span className="text-xs uppercase tracking-wide text-muted-foreground">{sourceLabel} · {zone}</span>
         {error ? (
           <span className="text-xs text-red-500">feed error: {error}</span>
         ) : updatedAt ? (
-          <span className="text-xs text-muted-foreground">
-            live {new Date(updatedAt).toLocaleTimeString()}
-            {ohlc ? ` · candles frozen ${new Date(ohlc.generatedAt).toLocaleString()}` : ""}
-          </span>
+          <span className="text-xs text-muted-foreground">updated {new Date(updatedAt).toLocaleTimeString()}</span>
         ) : (
           <span className="text-xs text-muted-foreground">connecting…</span>
         )}

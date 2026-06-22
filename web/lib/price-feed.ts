@@ -90,3 +90,45 @@ export async function fetchTwelveCandles(
     .filter((c) => Number.isFinite(c.time) && Number.isFinite(c.close))
     .sort((a, b) => a.time - b.time);
 }
+
+// ---------------- MT5 dev bridge (local broker candles + tick) ----------------
+//
+// LOCAL DEV ONLY. When NEXT_PUBLIC_MT5_BRIDGE_URL points at the running bridge
+// (mt5-mcp-server `npm run bridge`, requires MT5 + EA up), the watch chart uses
+// real broker candles/tick instead of spot — already on the broker price scale,
+// so no spot→broker offset is needed. Unset in production: the chart falls back
+// to Twelve Data / gold-api exactly as before.
+
+export const MT5_BRIDGE_URL = process.env.NEXT_PUBLIC_MT5_BRIDGE_URL;
+
+function bridgeBase(): string {
+  if (!MT5_BRIDGE_URL) throw new Error("MT5 bridge URL missing");
+  return MT5_BRIDGE_URL.replace(/\/$/, "");
+}
+
+export async function fetchMt5Candles(
+  timeframe = "M5",
+  count = 120,
+  signal?: AbortSignal,
+): Promise<Candle[]> {
+  const url = `${bridgeBase()}/ohlcv?tf=${timeframe.toUpperCase()}&count=${count}`;
+  const res = await fetch(url, { signal, cache: "no-store" });
+  if (!res.ok) throw new Error(`mt5 bridge ${res.status}`);
+  const data = (await res.json()) as { error?: string; candles?: Candle[] };
+  if (data.error) throw new Error(data.error);
+  return (data.candles ?? []).filter((c) => Number.isFinite(c.time) && Number.isFinite(c.close));
+}
+
+export interface Mt5Tick {
+  bid: number;
+  ask: number;
+  spread: number;
+}
+
+export async function fetchMt5Tick(signal?: AbortSignal): Promise<Mt5Tick> {
+  const res = await fetch(`${bridgeBase()}/tick`, { signal, cache: "no-store" });
+  if (!res.ok) throw new Error(`mt5 bridge ${res.status}`);
+  const data = (await res.json()) as { error?: string; bid?: number; ask?: number; spread?: number };
+  if (data.error) throw new Error(data.error);
+  return { bid: Number(data.bid), ask: Number(data.ask), spread: Number(data.spread) };
+}

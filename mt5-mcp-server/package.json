@@ -8,6 +8,7 @@
     "build": "tsc",
     "dev": "npm run build && node dist/server.js",
     "start": "node dist/server.js",
+    "bridge": "npm run build && node dist/bridge.js",
     "test": "vitest run",
     "test:watch": "vitest"
   },

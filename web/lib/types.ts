@@ -24,6 +24,39 @@ export interface MarkdownDoc {
   body: string;
 }
 
+export type LevelKind = "entry" | "sl" | "tp";
+
+/** A single horizontal price level to render + watch on the live board. */
+export interface WatchLevel {
+  price: number;
+  label: string; // e.g. "Watch A · Entry"
+  kind: LevelKind;
+  scenario: "A" | "B" | "primary";
+  direction: Direction; // direction of the scenario this level belongs to
+}
+
+export interface OhlcBar {
+  time: number; // UTC epoch seconds
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+}
+
+/**
+ * Per-analysis OHLC snapshot committed alongside the LTF markdown
+ * (`<slug>_ohlc.json`). Candles + levels are broker (MT5) price; the live
+ * gold-api spot marker is mapped to broker scale via offset = brokerRef - spotRef.
+ */
+export interface OhlcSnapshot {
+  symbol: string;
+  timeframe: string;
+  generatedAt: string;
+  brokerRef: number; // MT5 mid at snapshot
+  spotRef: number; // gold-api spot at snapshot
+  bars: OhlcBar[];
+}
+
 export interface LTFEntry {
   date: string; // YYYYMMDD
   slug: string; // filename without .md
@@ -37,6 +70,8 @@ export interface LTFEntry {
   sl?: string;
   tp?: string;
   rr?: string;
+  /** Parsed key levels (only populated by getLTF, not in list views). */
+  levels?: WatchLevel[];
 }
 
 export interface HTFEntry {

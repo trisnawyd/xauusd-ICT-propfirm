@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Markdown } from "@/components/markdown";
 import { DirectionBadge, GradeBadge } from "@/components/direction-badge";
+import WatchBoardClient from "@/components/watch-board-client";
 import { getLTF, getLTFList } from "@/lib/content";
 import { formatDate } from "@/lib/format";
 import type { Direction } from "@/lib/types";
@@ -59,6 +60,17 @@ export default async function LTFDetailPage({
           <CardContent className="py-4">
             <div className="text-xs uppercase tracking-wide text-muted-foreground">Gate failed</div>
             <div className="mt-1 text-sm">{e.gateFailed}</div>
+          </CardContent>
+        </Card>
+      )}
+
+      {e.levels && e.levels.length > 0 && (
+        <Card>
+          <CardContent className="py-4">
+            <div className="mb-3 text-xs uppercase tracking-wide text-muted-foreground">
+              Live Watch — spot price vs. this analysis&apos;s key levels
+            </div>
+            <WatchBoardClient levels={e.levels} ohlc={doc.ohlc} />
           </CardContent>
         </Card>
       )}

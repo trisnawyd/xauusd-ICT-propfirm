@@ -8,7 +8,9 @@ import type {
   LTFEntry,
   MarkdownDoc,
   NewsEntry,
+  OhlcSnapshot,
   TradeLogEntry,
+  WatchLevel,
 } from "./types";
 
 // On Vercel set Root Directory = web AND enable "Include files outside of the
@@ -60,6 +62,50 @@ function readDoc(filePath: string): MarkdownDoc {
 function str(v: unknown): string | undefined {
   if (v === undefined || v === null) return undefined;
   return String(v);
+}
+
+function num(v: unknown): number | undefined {
+  if (v === undefined || v === null) return undefined;
+  const n = Number(String(v).replace(/[^0-9.]/g, ""));
+  return Number.isFinite(n) && n > 0 ? n : undefined;
+}
+
+/** Build the entry/sl/tp levels for one scenario (a trade or a Watch leg). */
+function scenarioLevels(
+  scenario: "A" | "B" | "primary",
+  entry: number | undefined,
+  sl: number | undefined,
+  tp: number | undefined,
+  direction?: Direction,
+): WatchLevel[] {
+  if (entry === undefined) return [];
+  // Watch legs don't store direction in frontmatter — infer from TP side.
+  const dir: Direction =
+    direction ?? (tp !== undefined ? (tp > entry ? "LONG" : "SHORT") : "UNKNOWN");
+  const tag = scenario === "primary" ? "" : `Watch ${scenario} · `;
+  const out: WatchLevel[] = [
+    { price: entry, label: `${tag}Entry`, kind: "entry", scenario, direction: dir },
+  ];
+  if (sl !== undefined) out.push({ price: sl, label: `${tag}Stop Loss`, kind: "sl", scenario, direction: dir });
+  if (tp !== undefined) out.push({ price: tp, label: `${tag}Take Profit`, kind: "tp", scenario, direction: dir });
+  return out;
+}
+
+/**
+ * Extract key levels from LTF frontmatter — reliable, structured, already
+ * maintained by the desk system (no body regex). For LONG/SHORT reads we use
+ * the primary entry/sl/tp; for WAIT reads we use the watch_a/watch_b legs.
+ */
+function extractLevels(meta: Record<string, unknown>, entry: LTFEntry): WatchLevel[] {
+  const levels: WatchLevel[] = [];
+  if (entry.direction === "LONG" || entry.direction === "SHORT") {
+    levels.push(
+      ...scenarioLevels("primary", num(entry.entry), num(entry.sl), num(entry.tp), entry.direction),
+    );
+  }
+  levels.push(...scenarioLevels("A", num(meta.watch_a_entry), num(meta.watch_a_sl), num(meta.watch_a_tp)));
+  levels.push(...scenarioLevels("B", num(meta.watch_b_entry), num(meta.watch_b_sl), num(meta.watch_b_tp)));
+  return levels;
 }
 
 function directionFromName(name: string): Direction {
@@ -143,7 +189,22 @@ export function getLTFList(): LTFEntry[] {
   return out.sort((a, b) => (b.date + b.slug).localeCompare(a.date + a.slug));
 }
 
-export function getLTF(date: string, slug: string): (MarkdownDoc & { entry: LTFEntry }) | null {
+/** Sibling OHLC snapshot (`<slug>_ohlc.json`) for the live watch board, if present. */
+function getLTFOhlc(date: string, slug: string): OhlcSnapshot | null {
+  const p = dir("Analysis", "LTF", date, `${slug}_ohlc.json`);
+  if (!fs.existsSync(p)) return null;
+  try {
+    const snap = JSON.parse(fs.readFileSync(p, "utf8")) as OhlcSnapshot;
+    return Array.isArray(snap.bars) && snap.bars.length > 0 ? snap : null;
+  } catch {
+    return null;
+  }
+}
+
+export function getLTF(
+  date: string,
+  slug: string,
+): (MarkdownDoc & { entry: LTFEntry; ohlc: OhlcSnapshot | null }) | null {
   const p = dir("Analysis", "LTF", date, `${slug}.md`);
   if (!fs.existsSync(p)) return null;
   const doc = readDoc(p);
@@ -162,7 +223,8 @@ export function getLTF(date: string, slug: string): (MarkdownDoc & { entry: LTFE
     tp: str(d.tp),
     rr: str(d.rr),
   };
-  return { ...doc, entry };
+  entry.levels = extractLevels(d, entry);
+  return { ...doc, entry, ohlc: getLTFOhlc(date, slug) };
 }
 
 // ---------------- News (variable depth under Analysis/News) ----------------

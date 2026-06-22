@@ -33,6 +33,13 @@ source: MCP (tools used)
 setup_grade: "[A+/A/B+/B/C]"
 setup_score: [0-100]
 score_breakdown: "HTF:[X] Zone:[X] Sweep:[X] PD:[X] Trigger:[X] Session:[X] RR:[X]"
+# --- outcome fields: blank at save time, filled later by reconcile_outcomes.py ---
+outcome:          # tp | sl | manual | expired | no_fill   (no_fill = price never reached entry)
+trade_ticket:     # MT5 ticket of the matched trade
+exit_price:       # actual fill exit
+actual_r:         # realised R, signed: (exit-entry)/(entry-sl) for LONG, (entry-exit)/(sl-entry) for SHORT
+pnl_usd:          # net $ of the matched trade
+closed_at:        # YYYY-MM-DD HH:MM UTC
 ---
 
 # LTF Analysis — YYYY-MM-DD HH:MM UTC ([LONG/SHORT])
@@ -65,6 +72,10 @@ source: MCP (tools used)
 setup_grade: "[B/C]"           # only if Gate 4 passed but grade < B+
 setup_score: [0-100]           # only if Gate 4 passed but grade < B+
 score_breakdown: "HTF:[X] Zone:[X] Sweep:[X] PD:[X] Trigger:[X] Session:[X] RR:[X]"  # only if Gate 4 passed
+# --- outcome fields: blank at save time, filled later by reconcile_outcomes.py ---
+watch_a_outcome:  # triggered_win | triggered_loss | invalidated | untriggered
+watch_b_outcome:  # triggered_win | triggered_loss | invalidated | untriggered
+trade_ticket:     # MT5 ticket if a trade fired off either watch scenario
 ---
 
 # LTF Analysis — YYYY-MM-DD HH:MM UTC (WAIT)
@@ -161,6 +172,13 @@ source: MCP (tools used)
 setup_grade: "[A+/A/B+/B/C]"
 setup_score: [0-100]
 score_breakdown: "HTF:[X] Zone:[X] Sweep:[X] PD:[X] Trigger:[X] Session:[X] RR:[X]"
+# --- outcome fields: blank at save time, filled later by reconcile_outcomes.py ---
+outcome:          # tp1 | tp2 | sl | manual | expired | no_fill
+trade_ticket:     # MT5 ticket of the matched trade
+exit_price:       # actual fill exit
+actual_r:         # realised R vs SL, signed
+pnl_usd:          # net $ of the matched trade
+closed_at:        # YYYY-MM-DD HH:MM UTC
 ---
 
 # Scalp Analysis — YYYY-MM-DD HH:MM UTC ([LONG/SHORT])
@@ -206,3 +224,21 @@ score_breakdown: "HTF:[X] Zone:[X] Sweep:[X] PD:[X] Trigger:[X] Session:[X] RR:[
 ## Key Levels
 ## Invalidation
 ```
+
+---
+
+## Outcome Resolution (post-trade backfill)
+
+The `outcome:` block in every analysis file is **blank at save time** and filled in later by `scripts/reconcile_outcomes.py`, which joins each closed MT5 trade (from `Trade Log/YYYYMMDD.md`, or live `get_trade_history`) back to the analysis that planned it.
+
+**Match rule:** same UTC date, same *effective* direction, and trade entry within `--entry-tol` (default 2.0 price = 20 pips) of the analysis `entry`. When live `open_time` is available, also require `|open_time − analysis.time| ≤ 30 min`.
+
+**Effective direction** is derived from price movement + P&L sign, NOT the `buy`/`sell` label — `get_trade_history` is known to invert the label intermittently (logs flag suspect rows with `*`). Rule: a WIN where price rose, or a LOSS where price fell ⇒ effective LONG; the opposite ⇒ effective SHORT.
+
+**`actual_r`** uses the analysis `sl` as the 1R unit so realised R is comparable to the planned `rr`:
+- LONG: `(exit − entry) / (entry − sl)`
+- SHORT: `(entry − exit) / (sl − entry)`
+
+**`outcome` classification:** `|exit − tp| ≤ 0.5` → `tp`; `|exit − sl| ≤ 0.5` → `sl`; otherwise `manual`. `no_fill` when a planned entry was never reached (no trade that day in tolerance) and the plan has expired.
+
+Run `python3 scripts/reconcile_outcomes.py` (dry-run report) or `--write-back` to mutate the analysis frontmatter. It also writes a `Stats/YYYYMMDD_[period]_review.md` summary.

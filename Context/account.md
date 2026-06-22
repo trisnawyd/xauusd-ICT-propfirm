@@ -15,7 +15,7 @@ synced_from: MT5 Bridge
 | Max risk per trade (1%) | $50.48 |
 | Margin used | $0 |
 | Free margin | $5,047.50 |
-| Open positions | None |
+| Open positions | #8952061 BUY 0.03 @4189.66, **SL 4189.76 (BE+1)**, TP 4214.66 — risk-free runner — [[Analysis/LTF/20260622/20260622_1340_long]] |
 | Pending orders | None |
 
 ## Session Status — 2026-06-19

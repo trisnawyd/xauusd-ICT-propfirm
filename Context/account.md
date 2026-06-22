@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-19 11:57 UTC (latest sync)
+updated: 2026-06-22 14:30 UTC (latest sync)
 synced_from: MT5 Bridge
 ---
 
@@ -10,13 +10,20 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,047.50 |
-| Equity | $5,047.50 |
-| Max risk per trade (1%) | $50.48 |
+| Balance | $5,048.69 |
+| Equity | $5,048.69 |
+| Max risk per trade (1%) | $50.49 |
 | Margin used | $0 |
-| Free margin | $5,047.50 |
-| Open positions | #8952061 BUY 0.03 @4189.66, **SL 4189.76 (BE+1)**, TP 4214.66 — risk-free runner — [[Analysis/LTF/20260622/20260622_1340_long]] |
+| Free margin | $5,048.69 |
+| Open positions | None |
 | Pending orders | None |
+
+## Session Status — 2026-06-22
+- Daily P&L: **+$1.27** closed (0 win, 0 loss, 1 BE scratch) — reconciled in [[Trade Log/20260622]]:
+  - T1 ticket 8952061 (hist 6971129) BUY 4189.66 → 4190.11, +4.5 pips, net +$1.27 (44 min, 0.03 lot) — B+ (77) range-low sweep-reclaim long. Pushed to 4210.97 (~+$60 floating) but failed to reach TP 4214.66/London high 4215.44, rotated back through EQ and tagged the BE stop. Risk-free scratch. Lesson: bank/trail B+ range trades into strength — a trail to 4197 = locked +$22 vs BE.
+- Session start equity: $5,047.50
+- HTF bias: See Context/htf-context.md (06-22 01:19 UTC — fresh). D1 BULLISH-lean/range 4121–4369, H4 BULLISH (OTE reclaimed), H1 BoS UP. Choppy M15 range 4188.54–4215.44.
+- Market context: flat after BE scratch (14:30 UTC OVERLAP). Bullish thesis intact above 4136.24. Forward read: [[Analysis/LTF/20260622/20260622_1340_long]].
 
 ## Session Status — 2026-06-19
 - Daily P&L: **+$35.65** closed (1 win, 0 loss) — reconciled in [[Trade Log/20260619]]:

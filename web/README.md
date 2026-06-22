@@ -18,6 +18,24 @@ pnpm dev      # http://localhost:3000  (reads ../ vault)
 pnpm build    # static export of all pages
 ```
 
+## Live watch chart feed
+The LTF watch board (`components/watch-board.tsx`) shows live price vs. a plan's
+levels. Feed priority is resolved per poll:
+
+1. **MT5 dev bridge** — real broker candles + tick, already on the broker price
+   scale (no spot→broker offset). **Local dev only.**
+2. **Twelve Data** — spot candles (`NEXT_PUBLIC_TWELVEDATA_KEY`), the prod feed.
+3. **gold-api** — keyless spot marker, final fallback.
+
+To use MT5 candles in dev (requires the MT5 terminal + MT5Bridge EA running):
+```bash
+cd ../mt5-mcp-server && npm run bridge   # serves http://localhost:5556
+# then in web/.env.local, set:
+#   NEXT_PUBLIC_MT5_BRIDGE_URL=http://localhost:5556
+```
+If the bridge is down, the chart degrades to Twelve Data, then gold-api. Leave
+`NEXT_PUBLIC_MT5_BRIDGE_URL` **unset** for production (Vercel has no broker).
+
 ## Redaction
 `lib/redact.ts` masks account financials (balance/equity/margin ≥ $1,000) and MT5
 ticket numbers before rendering, while keeping prices, pips, R:R, and grades.

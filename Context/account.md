@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-22 14:30 UTC (latest sync)
+updated: 2026-06-23 14:10 UTC (latest sync)
 synced_from: MT5 Bridge
 ---
 
@@ -10,13 +10,20 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,048.69 |
-| Equity | $5,048.69 |
-| Max risk per trade (1%) | $50.49 |
+| Balance | $5,050.63 |
+| Equity | $5,050.63 |
+| Max risk per trade (1%) | $50.51 |
 | Margin used | $0 |
-| Free margin | $5,048.69 |
+| Free margin | $5,050.63 |
 | Open positions | None |
 | Pending orders | None |
+
+## Session Status — 2026-06-23
+- Daily P&L: **+$2.02** closed (0 win, 0 loss, 1 win-side scratch) — reconciled in [[Trade Log/20260623]]:
+  - T1 ticket 8986441 (hist 7001190) SELL 4139.6 → 4138.9, +7 pips, net +$2.02 (11 min, 0.03 lot) — B+ (76) range-high bull-trap short off the 4140.24 BSL sweep. Moved to BE early, then closed manually at 4138.9 on spike-above-4140 risk before the move developed (thesis target was EQ 4112 / range low 4090.5). Win-side scratch. Lesson: once BE is locked, let structure (M5 close back above 4140.24, alert #93) define the exit, not a single wick — keeps the 4.3:1 asymmetry intact.
+- Session start equity: $5,048.69
+- HTF bias: See Context/htf-context.md (06-23 01:56 UTC — fresh). BEARISH-lean (D1 ranging / H4 below OTE / H1 bearish); hawkish Fed + de-escalation unwind. Range 4090.5–4133.45, swept highs to 4140.24.
+- Market context: flat after scratch (~14:10 UTC OVERLAP). Price ~4136.6, inside upper range below the swept high. Forward read: [[Analysis/LTF/20260623/20260623_1357_wait]].
 
 ## Session Status — 2026-06-22
 - Daily P&L: **+$1.27** closed (0 win, 0 loss, 1 BE scratch) — reconciled in [[Trade Log/20260622]]:

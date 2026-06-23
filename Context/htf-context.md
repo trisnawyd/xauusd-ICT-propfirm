@@ -1,113 +1,104 @@
 ---
-updated: 2026-06-23 01:05 UTC
-source: MCP (detect_structure D1/H4/H1, detect_fvg H4/H1, get_premium_discount H4, get_session_levels, get_current_tick, get_account_info, get_economic_calendar)
+updated: 2026-06-23 01:56 UTC
+source: MCP (detect_structure D1/H4/H1, detect_fvg H4, get_premium_discount H4, get_session_levels, get_current_tick) + WebSearch fundamentals (hawkish Fed SEP, US-Iran de-escalation)
 snapshot: "[[Analysis/HTF/20260623]]"
+news: "[[Analysis/News/20260623/20260623_0156_gold-selloff-hawkish-fed-iran-deescalation]]"
 ---
 
 # HTF Context — XAU/USD
 
-## Bias: BULLISH-lean / buy-the-dip — Monday's 843-pip safe-haven rip pulled back into deep H4 discount/OTE; price holds the 4161–4200 demand but H1 momentum has rolled over (BoS DOWN@4169.21). This is a dip to be bought ABOVE 4161, NOT a fresh breakout. D1 ranging (label flipped BEARISH) | H4 BULLISH in DISCOUNT + OTE | H1 BULLISH-label but last event BoS DOWN (short-term pullback) — wait for a fresh M15/H1 CHoCH UP off demand to confirm continuation.
+## Bias: BEARISH-lean / neutral (downgraded from BULLISH-lean) — Monday's safe-haven rip has been fully unwound. Price sliced the entire H4 demand and fell OUT of the H4 OTE (below 4171.34) on an orderly, tight-spread markdown. **Fundamental driver confirmed: hawkish Fed SEP (9 officials see a rate HIKE) + US-Iran de-escalation premium unwind** — both bearish for gold. D1 RANGING | H4 BULLISH-label but price below OTE / last event BoS DOWN | H1 rolling over. The dip-buy thesis is broken; 4136.24 is the last bull line and is now more likely to break than hold.
 
-**Reason:** The weekend Hormuz-closure rip to 4220.61 (06/22 Asian) has fully retraced — price sold from 4220.61 → NY low **4169.21** (swept SSL) → now basing **4187.82**. This dropped price into the **H4 DISCOUNT + OTE 4171.34–4210.62**, filling the H4 bullish demand FVG 4161.81–4170.32. The bullish flip is intact as long as 4161/4136.24 hold, but H1's last structural event is a **BoS DOWN@4169.21** — the up-impulse has paused and needs a fresh CHoCH UP to resume. First overhead supply: H4+H1 bear FVG **4233.39–4239.57** capped by H4 EQ **4238.2**. No HIGH-impact USD news 24h (only 2-Year Note Auction 20:00 UTC, MEDIUM). Spread 2.2 ✓.
+**Reason:** Web research (see news snapshot) confirms the sell-off is fundamentally backed, not a liquidity quirk: (1) the updated **Fed SEP turned hawkish — nine officials forecasting at least one rate hike this year** (structurally bearish for gold, not on the MT5 calendar); (2) the Monday Hormuz-closure risk premium is **unwinding** as the US-Iran MOU (signed Jun 17, ceasefire +60d, Hormuz reopening since Jun 18) holds as base case despite negotiators walking out of the Switzerland talks. Price action matches: BSL bull-trap at 4198.57 (01:00 UTC) → cascade through 4176.85/4170.32/4169.21/4161/4150 with **zero reclaim**, spread held ~2.0 (orderly real selling). FXStreet quotes ~$4,154 on a 3-day losing streak = our live 4157. Draw on liquidity: **4136.24 SSL → 4121.32**.
 
-**What changed since 20260622 01:19 UTC:**
-- **Asian/weekly high 4220.61 rejected** → full retrace of the rip to NY low **4169.21** (SSL swept), now basing 4188
-- **Price dropped into H4 DISCOUNT + OTE 4171.34–4210.62** (was sitting in premium near 4210); H4 bull demand FVG 4161.81–4170.32 now **filled/tested**
-- **H1 last event flipped to BoS DOWN@4169.21** (06/22 18:00) — the vertical impulse paused; H1/M15 need a fresh CHoCH UP off demand
-- **D1 algo label flipped to BEARISH** (was BULLISH-lean) — but last D1 event is still BoS UP@4382.31 (06/17, stale); D1 = large range, no fresh direction
-- **H4 range reset: 4355.08 / 4121.32, EQ 4238.2** (was 4369.17/4121.32, EQ 4245.25)
-- News: no USD HIGH events 24h; 2-Year Note Auction 20:00 UTC (MEDIUM)
+**What changed since 20260623 01:05 UTC (this morning's BULLISH-lean read):**
+- **Bias downgraded BULLISH-lean → BEARISH-lean/neutral** — the buy-the-dip failed; price broke the H4 demand 4161–4170 AND fell below the H4 OTE floor 4171.34 to **4149.83**
+- **Fundamental driver identified:** hawkish Fed SEP + de-escalation unwind (was unknown this morning; HTF read was geopolitics-only and missed the Fed shift)
+- **H1 effectively bearish** (rolling over after the 4169.21 BoS DOWN); M15 cascaded down out of its range
+- Open overhead supply unchanged: H4 bear FVG 4233.39–4239.57, far 4421.15–4428.57; all bull demand below now mitigated/broken
+- No USD HIGH events 24h on MT5 calendar (the Fed SEP repricing is already in the tape); 2-Year Note Auction 20:00 UTC (MEDIUM)
 
 ---
 
 ## D1 Analysis
-- **D1 trend (algo): BEARISH** — label flipped from bullish-lean, but last event is **BoS UP@4382.31** (06/17 00:00, stale). Label and last event disagree → no fresh D1 direction.
-- **D1 read:** large multi-week range **~4121–4595** since the 06/11 collapse; currently mid-range ~4188 after the Monday spike-and-fade.
-- **D1 Bias: RANGING / neutral.** A LONG here is broadly range-buy off the lower-half demand (not strongly counter-trend). Close above 4355 reopens upside; close below 4121.32 resumes the down-leg.
+- **D1 trend (algo): BEARISH** — last event BoS UP@4382.31 (06/17, stale); label and last event disagree → no fresh D1 direction, large range ~4121–4595.
+- **D1 read:** mid-to-lower range ~4157 after the spike-and-fade. Close below 4121.32 resumes the down-leg; the macro (hawkish Fed) tilts the range lower.
+- **D1 Bias: RANGING, bearish tilt.**
 
 ## H4 Analysis
-- **H4 trend (algo): BULLISH** — label holds, but last algo event **BoS DOWN@4136.24** (06/22 00:00) is the stale Monday-open dump since reversed.
-- **H4 P/D (range 4355.08 / 4121.32):** EQ **4238.2** | OTE **4171.34–4210.62**
-- **Current price 4188 → DISCOUNT, inside OTE** — constructive buy-the-dip location as long as 4161 holds.
-- **H4 FVGs open:**
-  - **BEARISH 4233.39–4239.57** ← first overhead supply (paired with H1 bear FVG + EQ)
-  - **BEARISH 4421.15–4428.57** ← far supply
-  - (bullish demand FVG 4161.81–4170.32 now **filled** — tested on the pullback)
-- **H4 Bias: BULLISH, in discount.** Hold above 4161 keeps the up-leg alive; reclaim/close above 4238.2 EQ targets 4276 then 4355 range high.
+- **H4 trend (algo): BULLISH** — label lags; last event BoS DOWN@4136.24. **Price 4157 has fallen BELOW the H4 OTE (4171.34–4210.62)** — the reclaimed-OTE bullish structure is now negated.
+- **H4 P/D (range 4355.08 / 4121.32):** EQ **4238.2** | OTE **4171.34–4210.62** (price below it)
+- **H4 FVGs open:** BEARISH **4233.39–4239.57** (overhead supply), BEARISH 4421.15–4428.57 (far). Bull FVG 4161.81–4170.32 **filled & broken below**.
+- **H4 Bias: BEARISH-lean.** Below 4136.24 targets 4121.32; only a reclaim back above OTE floor 4171 + EQ 4187 (M15) repairs the bull case.
 
 ## H1 Analysis
-- **H1 trend (algo): BULLISH** — but last event **BoS DOWN@4169.21** (06/22 18:00) broke 4178.03 → short-term pullback. Prior: CHoCH UP@4210.97 (17:00), BoS UP@4215.44 (14:00) — the 4215.44 high was made and given back.
-- **Real H1:** swept NY low 4169.21, now recovering to 4188. Needs a **CHoCH UP** (reclaim above ~4202–4210) to confirm the dip is bought.
-- **H1 FVGs open:** BEARISH 4233.49–4236.59 (supply), BEARISH 4293.12–4296 (supply). All bullish H1 FVGs filled.
-- **H1 Bias: BULLISH-label, paused.** Holding above 4161 keeps the structure constructive; loss of 4161 = pullback deepens toward 4136.24 weekend low.
+- **H1 trend (algo): BULLISH-label but rolling over** — the 4215.44 high was made and fully given back; price cascaded to 4149.83.
+- **H1 FVGs:** all bullish FVGs filled/broken; overhead bear FVGs 4233.49–4236.59 / 4293.12–4296 distant.
+- **H1 Bias: BEARISH.** Needs a reclaim above ~4187 to neutralize.
 
 ## Premium / Discount (H4)
 - **H4 range:** 4355.08 / 4121.32 | EQ **4238.2** | OTE **4171.34–4210.62**
-- **Current price 4188 → DISCOUNT, inside OTE.** A LONG off the 4161–4200 demand is WITH the bullish-lean bias and in discount = quality location — but requires a fresh M15/M1 trigger (H1 just made BoS DOWN).
-- **Quality LONG zone:** **4161–4188** (H4 OTE + filled bull FVG 4161.81–4170.32 + NY low reclaim 4169.21) with M1 bullish engulf.
-- **SHORT (counter-bias, low quality):** only on a clean M15 close below 4161 + CHoCH DOWN → fade toward 4136.24. Fading inside H4 discount is skip-tier.
+- **Current price 4157 → DISCOUNT, below OTE.** In a discount but with bearish momentum + bearish macro → discount is NOT automatically a buy here; price is being drawn to deeper SSL at 4136.24/4121.32.
+- **SHORT (WITH new lean):** retrace UP into M5/M15 supply 4165–4187 + M1 bearish rejection → SHORT toward 4140/4121.
+- **LONG (counter, deep-demand only):** ONLY on a clean sweep of 4136.24 + strong reclaim back above 4150 — fading the macro, skip-tier unless the reclaim is textbook.
 
 ---
 
-## Session Levels (01:05 UTC — ASIAN active, 06/23)
+## Session Levels (01:56 UTC — ASIAN active, 06/23)
 
 | Session | High | Low | Open |
 |---------|------|-----|------|
-| Asian (06/23, active) | **4220.61** | 4170.32 | 4193.56 |
+| Asian (06/23, active) | 4220.61 | **4149.83** | 4193.56 |
 | London (06/22, ended) | 4215.44 | 4170.32 | 4193.8 |
-| NY (06/22, ended) | 4215.44 | **4169.21** | 4183.42 |
+| NY (06/22, ended) | 4215.44 | 4169.21 | 4183.42 |
 
-**Current:** 4187.82 / 4188.04 | Spread **2.2 pips ✓** | Session ASIAN
-Price basing 4188 mid-range after the 4220.61→4169.21 fade. Headline-driven volatility persists — expect spread spikes on fresh Hormuz/Switzerland news.
+**Current:** 4157.26 / 4157.48 | Spread **2.2 pips ✓** | Session ASIAN
+Orderly markdown continues; ~21 pips above the 4136.24 bull line. Headline risk both ways — a confirmed de-escalation or dovish Fed walk-back could snap it back up fast.
 
 ---
 
 ## Key Levels
 
-### Supply / Resistance (above 4188)
+### Supply / Resistance (above 4157)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **4210.62** | H4 OTE top | Immediate — discount/OTE ceiling |
-| **4215.44** | London/NY high (BSL) | First liquidity target |
-| **4220.61** | Asian/weekly high (BSL) | Break+retrace = continuation long / TP2 |
-| **4233.39–4239.57** | H4 + H1 bearish FVG [open] | **First major overhead supply** |
-| **4238.2** | H4 EQ | Premium/discount pivot — break targets 4276 |
-| **4293.12–4296** | H1 bearish FVG [open] | Next supply |
-| **4355.08** | H4 range high | Close above reopens upside |
+| **4165.32–4167.81** | M5 bearish FVG [open] | First overhead supply (short retrace zone) |
+| **4170.27–4176.63** | M5 bearish FVG [open] | Short retrace zone / OTE floor |
+| **4171.34** | H4 OTE bottom | Lost — reclaim repairs bull case |
+| **4187.71** | M15 EQ | Short-invalidation / neutralize line |
+| **4198.57** | M15 range high (BSL swept) | Bull-trap origin |
+| **4233.39–4239.57** | H4+H1 bearish FVG [open] | Major overhead supply |
 
-### Support / Demand (below 4188)
+### Support / Demand (below 4157)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **4171.34** | H4 OTE bottom | Deep LONG zone floor |
-| **4170.32** | London/Asian low | Shelf |
-| **4169.21** | NY low (SSL swept) | Reclaim level — held = dip bought |
-| **4161.81–4170.32** | H4 bullish FVG [filled] | **Key demand — quality LONG zone** |
-| **4136.24** | Weekend low (SSL swept) | **Bullish invalidation — close below = rip failed** |
-| **4121.32** | H4 range low / day low | Full bearish resume below here |
+| **4149.83** | Asian low (session low) | Immediate; just swept |
+| **4140** | alert #68 | Approach to invalidation |
+| **4136.24** | Weekend low (SSL) | **Last bull line — decision point: sweep+reclaim = deep buy / clean break = bearish resume** |
+| **4121.32** | H4 range low / day low | Bearish target below 4136 |
 
 ---
 
 ## Trade Directional Guidance
 
-### BIAS: BULLISH-lean / buy-the-dip — long the 4161–4200 demand on a fresh M15/M1 CHoCH UP; do NOT short inside H4 discount, do NOT chase
-**Current state: price 4188 has fully retraced the Monday rip into H4 discount/OTE 4171.34–4210.62, holding the 4161–4200 demand. H1 just printed BoS DOWN@4169.21 — the up-impulse paused, so the dip needs a fresh M15/M1 reclaim (CHoCH UP) to confirm before buying. The play: M1 bullish engulf / displacement at 4169–4188 → LONG toward 4210.62 OTE top / 4215.44–4220.61 BSL / 4233 supply. Counter-bias short only on a clean M15 close below 4161 + CHoCH DOWN.**
+### BIAS: BEARISH-lean / neutral — short retraces into supply toward 4136/4121; do NOT reflexively buy the dip
+**Current state: price 4157 has fully unwound Monday's rip and fallen below the H4 OTE floor on a fundamentally-backed markdown (hawkish Fed + de-escalation). Bias is now bearish-lean. The play: short a retrace UP into the M5 bearish FVG supply 4165–4176 / M15 EQ 4187 with an M1 bearish rejection, targeting 4140/4136.24 then 4121.32. The buy-the-dip only re-activates on a CLEAN sweep of 4136.24 + strong reclaim — and even then it fights the macro, so size down.**
 
 ---
 
-**Setup A — LONG on reclaim off 4161–4188 demand — WITH bias (primary):**
-- Condition: hold above 4169.21 + M1 bullish engulf / M5 CHoCH UP at 4170–4188 (H4 OTE + filled bull FVG)
-- Entry: ~4180 | SL: ~4160 (below OTE floor 4171.34 / demand FVG) → (4180−4160)×10 = 200 pips
-- TP1: 4215.44 (London/NY high BSL) → 354 pips (1.8:1 — tighten SL for 2:1) | TP2: 4233.39 (H4 supply) → 533 pips (2.7:1)
-- Deeper/better: entry ~4172 (OTE/FVG base), SL 4155 → 170 pips, TP1 4215.44 (2.6:1) / TP2 4233.39 (3.6:1)
-- The textbook buy-the-pullback into discount after the safe-haven impulse — but only after a fresh trigger; H1 momentum has rolled over.
+**Setup A — SHORT on retrace into supply — WITH new lean (primary):**
+- Condition: retrace into **4165–4187** (M5 bear FVG 4165.32–4176.63 / M15 EQ 4187.71) + M1 bearish rejection / M5 CHoCH DOWN
+- Entry: ~4172 | SL: ~4189 (above M15 EQ / structure) → (4189−4172)×10 = 170 pips
+- TP1: 4140 (just above 4136.24 SSL) → 320 pips (1.9:1 — tighten SL for 2:1) | TP2: 4121.32 → 507 pips (3.0:1)
+- Note: ASIAN session, extended move — wait for the retrace + rejection, don't chase 4157.
 
-**Setup B — LONG continuation on reclaim of 4210/4215 — momentum (secondary):**
-- Condition: M5 displacement close above 4210.62 OTE top → retrace into M5 FVG + M1 bullish engulf
-- Entry: ~4212 | SL: ~4190 → 220 pips | TP1: 4238.2 EQ (1.2 — thin) — only if RR ≥ 2:1 at trigger; otherwise skip
-- Lower quality (chasing into supply 4233) — prefer Setup A.
+**Setup B — LONG on 4136.24 sweep+reclaim — counter (deep-demand, skip-tier):**
+- Condition: wick below **4136.24** (sweep SSL) + strong M1/M5 displacement reclaim back above 4150
+- Entry: ~4145 | SL: ~4128 → 170 pips | TP1: 4171 (OTE floor) → 260 pips (1.5 — thin) / TP2 4187 (2.5:1)
+- Only if reclaim is textbook; fading hawkish-Fed macro = low quality.
 
 ### BIAS RESOLUTION (watch these)
-- **Bullish continues (favored):** hold 4161+ → M1/M5 reclaim → 4210.62 → break 4215.44/4220.61 → 4233/4238 EQ
-- **Pullback deepens (still bullish):** flush to 4161 demand + M1 trigger → quality LONG; only invalid below 4136.24
-- **Bear resume (counter):** M15 close below 4161 + CHoCH DOWN → fade toward 4136.24; close below 4136.24 = full bearish resume to 4121.32
-- **The honest read:** the bullish flip held its first test (NY low 4169.21 reclaimed), but the easy momentum is spent — H1 made BoS DOWN and price is mid-range. This is a buy-the-dip-with-a-trigger, not a chase. Headline risk cuts both ways; no fresh USD HIGH news for 24h removes one catalyst.
+- **Bearish continues (favored):** retrace into 4165–4187 rejected → 4140 → sweep 4136.24 → 4121.32
+- **Deep-demand bounce (counter):** clean 4136.24 sweep + reclaim >4150 → relief bounce to 4171/4187 (short-covering, not necessarily trend change)
+- **Bull repair (needs proof):** reclaim + M15 close above 4187.71 EQ → back toward 4198/4215; only then is the dip-buy alive again
+- **The honest read:** this morning's BULLISH-lean was geopolitics-only and missed the hawkish Fed. With the macro now bearish and price below the H4 OTE, treat rallies as selling opportunities into 4165–4187 and respect 4136.24 as the pivot. Two-sided headline risk remains — keep size small.

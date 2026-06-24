@@ -190,6 +190,8 @@ Apply ONLY when the WAIT was produced by **Gate 3 P/D-timing** (LONG-in-premium 
 25. Output trade plan using Output Template below (include Setup Grade line)
 26. AUTO-SAVE (see File Saving Rules below)
 
+> ⚠️ **The `===` Output Templates below are DISPLAY-ONLY** — they are the chat/terminal render. **NEVER write the `===` ASCII box to a saved `.md` file.** Saved analysis files MUST use the markdown-with-frontmatter schema in `Docs/file-formats.md` (YAML frontmatter + `##` section headings), because the web vault renders them as markdown: a `===` line becomes a setext heading and a stray code fence swallows the page. Display the box in chat; save the markdown schema.
+
 ## Output Template — LONG/SHORT
 ```
 ===================================
@@ -395,6 +397,12 @@ After Gate 4 passes (M1 trigger confirmed), score the setup across 7 categories 
 
 → File format templates (LTF/HTF frontmatter, ltf-memory.md structure): `Docs/file-formats.md`
 → **Before saving any analysis file, read `Docs/file-formats.md` for the exact format.**
+
+**CRITICAL — saved files are markdown, NOT the terminal box:**
+- The `===` Output Templates in the Commands section are for **chat display only**. NEVER save them to disk.
+- Every saved analysis `.md` (LTF/Scalp/HTF) MUST be the schema in `Docs/file-formats.md`: **YAML frontmatter + `##`/`###` section headings + bullet lists**. No `===` separator lines, no wrapping code fence.
+- The web vault renders these as markdown — a `===` line is parsed as a setext heading and an unbalanced ``` fence eats the rest of the page (this broke `20260624_0736_wait.md`).
+- Frontmatter keys MUST match exactly what `web/lib/content.ts` reads, or badges/levels/watch-board won't populate: WAIT uses `gate_fail`, `watch_a_entry/sl/tp/rr`, `watch_b_entry/sl/tp/rr`, `setup_grade`, `setup_score`; LONG/SHORT uses `entry`, `sl`, `tp`, `rr`, `setup_grade`, `setup_score`. (NOT `grade`/`score`/`gateFailed`/`armed`.)
 
 ---
 

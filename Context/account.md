@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-23 14:10 UTC (latest sync)
+updated: 2026-06-24 02:15 UTC (latest sync)
 synced_from: MT5 Bridge
 ---
 
@@ -10,13 +10,20 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,050.63 |
-| Equity | $5,050.63 |
-| Max risk per trade (1%) | $50.51 |
+| Balance | $5,112.05 |
+| Equity | $5,112.05 |
+| Max risk per trade (1%) | $51.12 |
 | Margin used | $0 |
-| Free margin | $5,050.63 |
+| Free margin | $5,112.05 |
 | Open positions | None |
 | Pending orders | None |
+
+## Session Status — 2026-06-24
+- Daily P&L: **+$61.52** closed (1 win, 0 loss) — reconciled in [[Trade Log/20260624]]:
+  - T1 ticket 8999451 SELL 4102.02 (armed limit), scaled out: 0.02 @4091.25 +$21.49 (partial, +1R) and 0.02 @4081.98 +$40.03 (runner, ~200 pips) — B+ (76) short into H4 bear FVG 4097.98–4107.40 on the new bearish down-leg. **First trade with full [[Playbooks/trade-management-checklist]] adherence** (armed entry → partial+BE at +1R → let runner run). Best result of the week. Minor note: runner closed discretionarily at 4081.98 ("200 enough") vs TP 4068 — sound here, but keep runner exits rule-based.
+- Session start equity: $5,050.63
+- HTF bias: See Context/htf-context.md (06-24 01:13 UTC — fresh). BEARISH (D1/H4/H1 aligned); hawkish Fed + de-escalation unwind. Range floor 4090.5 broken, swept Asian low 4068.25; draw on liquidity 4068.25 → 4052.79 → 4023.56.
+- Market context: flat after +$61.52 win (~02:15 UTC ASIAN). Price ~4082. 🚨 HIGH-impact 12:30 UTC PCE/GDP cluster — no positioning into it. Forward read: [[Analysis/LTF/20260624/20260624_0113_wait]].
 
 ## Session Status — 2026-06-23
 - Daily P&L: **+$2.02** closed (0 win, 0 loss, 1 win-side scratch) — reconciled in [[Trade Log/20260623]]:

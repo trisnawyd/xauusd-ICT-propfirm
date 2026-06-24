@@ -77,3 +77,4 @@ feel scared / want to "just close it" ..... NOT a valid action. Check the tree a
 | Date | Ticket | R1 SL-beyond-liq | R2 +1R partial+BE | R3 structure exit | Followed all 3? | Note |
 |------|--------|------------------|-------------------|-------------------|-----------------|------|
 | 2026-06-23 | 8986441 | N (SL above wick ok, but no buffer plan) | N (BE early, no partial) | N (closed on wick) | **No** | Win-side scratch +$2.02; textbook case of all 3 rules violated |
+| 2026-06-24 | 8999451 | Y (SL 4113 above H4 FVG + BSL wick) | Y (0.02 partial @+1R 4091.25, SL→BE+) | ~ (runner closed 4081.98 on "200 enough", not TP/structure) | **Yes (R3 discretionary but sound)** | +$61.52 (+108 partial / +200 runner). First full-adherence trade — direct fix of the 06-22/06-23 exit leaks |

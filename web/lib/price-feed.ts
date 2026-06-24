@@ -101,6 +101,13 @@ export async function fetchTwelveCandles(
 
 export const MT5_BRIDGE_URL = process.env.NEXT_PUBLIC_MT5_BRIDGE_URL;
 
+// The bridge talks to MT5 over a brittle ZMQ REQ socket that can wedge (a lost
+// reply leaves the socket unable to ever answer again). Without a bound, a hung
+// `/ohlcv`/`/tick` never rejects, the chart's tick() loop awaits forever, and it
+// can never fall through to Twelve Data / gold-api — the watch board sticks on
+// "connecting…". Cap each bridge call so a dead bridge degrades gracefully.
+const MT5_TIMEOUT_MS = 2_500;
+
 function bridgeBase(): string {
   if (!MT5_BRIDGE_URL) throw new Error("MT5 bridge URL missing");
   return MT5_BRIDGE_URL.replace(/\/$/, "");
@@ -112,7 +119,7 @@ export async function fetchMt5Candles(
   signal?: AbortSignal,
 ): Promise<Candle[]> {
   const url = `${bridgeBase()}/ohlcv?tf=${timeframe.toUpperCase()}&count=${count}`;
-  const res = await fetch(url, { signal, cache: "no-store" });
+  const res = await fetch(url, { signal: signal ?? AbortSignal.timeout(MT5_TIMEOUT_MS), cache: "no-store" });
   if (!res.ok) throw new Error(`mt5 bridge ${res.status}`);
   const data = (await res.json()) as { error?: string; candles?: Candle[] };
   if (data.error) throw new Error(data.error);
@@ -126,7 +133,10 @@ export interface Mt5Tick {
 }
 
 export async function fetchMt5Tick(signal?: AbortSignal): Promise<Mt5Tick> {
-  const res = await fetch(`${bridgeBase()}/tick`, { signal, cache: "no-store" });
+  const res = await fetch(`${bridgeBase()}/tick`, {
+    signal: signal ?? AbortSignal.timeout(MT5_TIMEOUT_MS),
+    cache: "no-store",
+  });
   if (!res.ok) throw new Error(`mt5 bridge ${res.status}`);
   const data = (await res.json()) as { error?: string; bid?: number; ask?: number; spread?: number };
   if (data.error) throw new Error(data.error);

@@ -7,7 +7,9 @@ snapshot: "[[Analysis/LTF/20260625/20260625_0424_wait]]"
 
 ## Current Market Structure (as of 2026-06-25 04:24 UTC)
 
-**Account:** Flat (no open positions). **Resting pending #9035118 SELL_LIMIT 0.02 @4050, SL 4074, TP 3964.32 (armed + CONFIRMED 06-25 04:24 UTC, risk $48, 3.57:1).** Equity **$5,112.05**, max risk **$51.12**. Daily P&L flat (last close +$61.52 on 06/24). Spread 2.0 ✓. ASIAN (04:24 UTC). Bridge clock field frozen at 01:24 — real time from M1 stream is 04:24.
+**Account:** Flat, no positions/pending. **Pending #9035118 SELL_LIMIT @4050 was placed (04:24) then CANCELLED (~05:31) — went stale: price never retraced, bounce capped at 3990 (lower high), 4050 ended ~70 pips offside.** Equity **$5,112.05**, max risk **$51.12**. Daily P&L flat (last close +$61.52 on 06/24). Spread 2.0 ✓. ASIAN. Bridge clock field frozen at 01:24 — real time from M1 stream ~05:31.
+
+**Re-arm logic (post-cancel):** decision pivot is **3958.57 SSL** (unswept, ~21 pips below price 3980). Sweep + reject → short into the open M5 bear FVG **4006–4010** (SL 4022, TP 3958.57, ~3.5:1). Break+hold below 3958.57 → continuation into open air = shorting the bottom in discount, Gate 3 NO — let it go. Do NOT short the 3980–3996 chop (discount, FVGs filled, target only ~21 pips away = sub-1.5:1).
 
 **🔴 BIAS BEARISH — WAIT ⚡ARMABLE SHORT (post-PCE bounce, not yet at supply):** PCE (06/24 12:30) crashed price ~700 pips from ~4042 to a new low **3958.57**, consuming the entire prior draw. Price 3996 now in discovery below 4000, in a relief bounce. SHORT is WITH bias but the premium supply zone is **~4047–4069** (H4 bear FVG 4042–4060 / H1 FVG cluster 4049–4072 / OTE) — ~50 pips above. Gate 3 P/D-timing WAIT: wait for the retrace UP into the zone + M1 bearish rejection. Chasing a short at 3996 mid-range = wrong (micro-discount-of-leg, no clean target). LONG counter-macro = skip-tier. Armable sell-limit @4050, projected B+ (77).
 

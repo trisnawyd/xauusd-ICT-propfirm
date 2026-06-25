@@ -16,7 +16,7 @@ synced_from: MT5 Bridge
 | Margin used | $0 |
 | Free margin | $5,112.05 |
 | Open positions | None |
-| Pending orders | #9035118 SELL_LIMIT 0.02 @4050 SL 4074 TP 3964.32 (armed 06-25 04:24 UTC, risk $48) |
+| Pending orders | None (cancelled #9035118 @4050 at ~05:31 UTC — went stale, never retraced; bounce capped 3990 lower-high) |
 
 ## Session Status — 2026-06-24
 - Daily P&L: **+$61.52** closed (1 win, 0 loss) — reconciled in [[Trade Log/20260624]]:

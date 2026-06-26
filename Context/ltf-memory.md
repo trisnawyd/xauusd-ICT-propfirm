@@ -7,7 +7,7 @@ snapshot: "[[Analysis/LTF/20260626/20260626_0309_wait]]"
 
 ## Current Market Structure (as of 2026-06-26 03:09 UTC)
 
-**Account:** Flat, no positions/pending. Equity **$5,112.05**, max risk **$51.12**. Daily P&L flat (last close +$61.52 on 06/24). Spread 2.0 ✓. ASIAN (03:09 UTC). ⚠️ Bridge `get_session_levels` clock + session label LAG ~3h — read real time off M1 candle timestamps (M1 last candle 03:09), not the clock field (showed 00:08).
+**Account:** Flat (no open positions). **1 resting pending: #9066665 SELL_LIMIT 0.02 @4050, SL 4074, TP 3973.49 (3.2:1, risk $48)** — armed/CONFIRMED 03:11 UTC into 4049–4072 supply. Equity **$5,112.05**, max risk **$51.12**. Daily P&L flat (last close +$61.52 on 06/24). Spread 2.0 ✓. ASIAN (03:09 UTC). ⚠️ Bridge `get_session_levels` clock + session label LAG ~3h — read real time off M1 candle timestamps (M1 last candle 03:09), not the clock field (showed 00:08).
 
 **🟡 BIAS BEARISH (aligned) — WAIT, Gate 3 P/D-timing (ARMABLE short):** The 06/24 PCE crash to 3958.57 mean-reverted: a multi-leg relief bounce ran to NY high **4044.58** (06/25 21:15), tagged the lower H4 OTE/supply edge, **rejected**, and price is now chopping 4019–4044 and leaking to **~4013**. Bounce stopped ~5 pips shy of the prime H1 bear-FVG cluster **4049–4072 (OPEN)**. Price 4013 is in M15/H4 DISCOUNT, below the supply → a WITH-bias short here is chasing into discount (Gate 3 fail). **Clean tape: NO USD news next 24h** — the prior flip risk is gone. The WITH-bias play is to short the next push UP into 4049–4072 with an M1 rejection toward 3973/3958/3950. Watch 4087 (H4 EQ) — M15 close above = bear bias dead.
 
@@ -21,14 +21,14 @@ snapshot: "[[Analysis/LTF/20260626/20260626_0309_wait]]"
 - **4044.58 — NY high / bounce BSL (reclaim = back into short zone, alert #112)** | **4032.18 — M15 EQ** | **4019.77 — M15 swing low (broken)**
 - **3973.49 — NY low / first support / short TP1 (alert #113)** | **3958.57 — session low / bear pivot (#109)** | **3950 — downside draw (#106)**
 
-**Setup:** WAIT — Gate 3 P/D-timing. Watch A SHORT (WITH bias, ⚡ARMABLE not placed): push into 4049–4072 + M1 rejection → ~4050, SL 4074, TP1 3973.49 (3.2:1)/TP2 3958.57 (3.8:1), projected B+ (77), risk $48, lot 0.02. Watch B counter-long skip-tier (3958.57 sweep+reclaim). Alerts: #106 3950, #107 4047, #108 4070, #109 3958.57, #111 4087, #112 4044.58 (added), #113 3973.49 (added). **Stale-fill caveat: price leaking down with no news catalyst — a 4050 limit may never fill (same as 06/25 04:24); arm only if you accept missing a straight-down move.**
+**Setup:** WAIT → ⚡ARMED+CONFIRMED. Placed pending **#9066665 SELL_LIMIT 0.02 @4050, SL 4074, TP 3973.49** (3.2:1, risk $48) into 4049–4072 supply at 03:11 UTC. Projected B+ (77). Watch B counter-long skip-tier (3958.57 sweep+reclaim). Alerts: #106 3950, #107 4047, #108 4070, #109 3958.57, #111 4087, #112 4044.58 (added), #113 3973.49 (added). **Stale-fill caveat: price leaking down with no news catalyst — a 4050 limit may never fill (same as 06/25 04:24); arm only if you accept missing a straight-down move.**
 
 ---
 
 ## Analysis #1 — 2026-06-26 03:09 UTC (WAIT — Gate 3 P/D-timing, ARMABLE short)
 
 - **Direction:** WAIT ⚡ARMABLE — SHORT WITH bias but price 4013 in M15/H4 discount, below the 4049–4072 supply. Bounce ran to 4044.58, rejected lower OTE, now leaking down. Clean tape (no news 24h). Don't chase shorts at 4013 mid-range; short the next push into supply.
-- **Watch A (SHORT, WITH bias, ARMABLE not placed):** push into 4049–4072 + M1 rejection → ~4050, SL 4074, TP1 3973.49 (3.2:1)/TP2 3958.57 (3.8:1), projected B+ (77), risk $48. CONFIRM required to place; stale-fill risk noted.
+- **Watch A (SHORT, WITH bias) → ARMED+CONFIRMED:** placed pending #9066665 SELL_LIMIT 0.02 @4050, SL 4074, TP 3973.49 (3.2:1, risk $48) into 4049–4072 supply. Projected B+ (77). Cancel if M5 closes >4072 / session end unfilled / HTF stale. Stale-fill risk: price leaking down with no catalyst — may not fill.
 - **Watch B (LONG, counter, skip-tier):** 3958.57 sweep + reclaim >3990 → ~3970, SL 3954, TP 4006 (2.3:1) — counter-macro, do not take.
 - **Invalidation:** M5 close back above 4072 then 4087 → bull repair, refresh HTF; break+hold below 3958.57 → open air to 3950.
 

@@ -1,103 +1,103 @@
 ---
-updated: 2026-06-26 03:09 UTC
-source: MCP (detect_structure D1/H4/H1, detect_fvg H4/H1, get_premium_discount H4, get_session_levels, get_current_tick, get_economic_calendar) — carries forward established fundamentals (hawkish Fed SEP + US-Iran de-escalation unwind); 06/24 PCE crash + 06/25 relief bounce into supply now priced in
+updated: 2026-06-26 14:03 UTC
+source: MCP (detect_structure D1/H4/H1, detect_fvg H4/H1, get_premium_discount H4, get_swing_levels H4, get_session_levels, get_current_tick, get_economic_calendar) — refreshed after the relief bounce became a structural continuation and stopped the WITH-bias short at 4074.92
 snapshot: "[[Analysis/HTF/20260626]]"
 ---
 
 # HTF Context — XAU/USD
 
-## Bias: BEARISH (aligned, relief bounce into supply) — The 06/24 PCE crash to **3958.57** then mean-reverted: a multi-leg relief bounce carried price all the way back up to NY high **4044.58** (06/25 21:15), which tagged the lower edge of the H4 OTE (4013.54–4056.69) and the bottom of the H4 bear FVG 4042.07–4060.36, **then rejected**. Price has since been chopping the 4019–4044 zone and is now leaking to **~4013** (ASIAN, 06/26 03:09). The bounce reached ~5 pips shy of the prime H1 bear-FVG supply cluster **4049.09–4072.75 (still OPEN)**. Bias unchanged and bearish: D1 trades below its 06/11 swing low 4023.56, H4 is BEARISH (last event BoS DOWN@3958.57), H4 EQ 4087.01 sits far overhead. The macro driver is intact (hawkish Fed SEP + Hormuz risk-premium unwind). **The edge is unchanged: SELL the bounce into overhead supply ~4049–4072, NOT chase shorts at 4013 mid-range.** No USD high/medium-impact events in the next 24h — news risk that flipped prior reads is OFF the table.
+## Bias: NEUTRAL → BULLISH-lean (relief bounce became continuation, now at the H4 EQ decision line) — The 06/24 PCE crash to **3958.57** has fully mean-reverted: the bounce did NOT reject at supply as the prior bearish read expected — it **cleared the entire H1 bear-FVG cluster 4049–4072.75**, broke above the H4 swing high **4044.58** to a new high **4077.92** (London/NY 06/26), and reclaimed the **D1 CHoCH-DOWN trigger 4023.56**. D1/H4/H1 structure labels are now all BULLISH. Price ~**4071** sits in H4 DISCOUNT but jammed directly under **H4 EQ 4087.01** — the bull-repair line. This is a genuine decision point: an **H4 close above 4087** confirms bull continuation (next draw 4102–4107 supply, then 4145); **rejection at 4087 / the 4102–4107 H4 bear FVG** means the bounce was a deep retrace into premium of the down-leg and range/bear pressure can resume toward 4053/4039/3982. **The edge is no longer "sell the bounce" — it is "wait for 4087 to resolve."** Only MEDIUM USD events next 24h (Michigan sentiment 14:00, Goods Trade 15:30) — no HIGH-impact block.
 
-**Reason:** Bearish HTF has paid out repeatedly (06-23 bull trap → markdown → 06-24 PCE crash → 06-25 bounce rejected at 4044.58). Price mean-reverted off 3958.57 into the overhead imbalance and rejected the lower OTE. No structural reclaim — H4 EQ 4087 is untouched. A retrace back UP into the H1 bear-FVG cluster 4049–4072 / H4 OTE / H4 FVG 4042–4060 with an M1 bearish rejection is the WITH-trend short. Any long is counter-macro, skip-tier.
+**Reason:** The bearish thesis that paid out 06/23–06/25 broke on 06/26: price reclaimed 4023.56 (D1), made a higher high above 4044.58 (H4), and ran the full overhead supply that the WITH-bias short @4050 was resting in (that short stopped at 4074.92, −$49.89). A bounce that consumes its own supply zone and prints a new high is a continuation, not a corrective leg. Bias is now bullish-lean BUT unconfirmed — price is at the 50% EQ of the 4215/3958 range, the classic spot for either a bull breakout or a bearish-leg rejection. Respect 4087 as the binary.
 
-**What changed since 20260625 04:24 UTC:**
-- **Relief bounce extended and rejected** — 3958.57 → **4044.58** (NY high 06/25 21:15) → rejected at the lower OTE/supply edge → now chopping 4019–4044, leaking to ~4013
-- **H4 bear FVG 4042.07–4060.36 now FILLED** (the 4044.58 high reached into it); **H1 bear-FVG cluster 4049.09–4072.75 remains OPEN** = refined prime short zone
-- **Bias remains BEARISH, aligned** — D1 below 4023.56, H4 BEARISH (BoS DOWN@3958.57), H1 last event BoS UP@4044.58 = near-term bounce only (EQ 4087 far above)
-- **H4 range unchanged:** 4215.44 / 3958.57 | EQ **4087.01** | OTE **4013.54–4056.69**
-- **NO USD high/medium events in next 24h** — the 06/25 15:30 cluster (Durable Goods/Core PCE/GDP/Jobless) is done; clean tape, no positioning block
+**What changed since 20260626 03:09 UTC:**
+- **Bounce became a continuation, NOT a corrective leg** — 3958.57 → **4077.92** (new high), cleared 4049–4072.75 H1 supply (all FVGs now FILLED), broke H4 swing high 4044.58
+- **D1 CHoCH-DOWN trigger 4023.56 RECLAIMED** — the daily bearish break is negated; D1 neutral-to-bullish
+- **H4 and H1 labels now BULLISH** — H1 BoS UP@4044.58 extended; H4 printing a higher high above 4044.58
+- **Price in H4 DISCOUNT (4071 < EQ 4087)** but at the EQ decision line; H4 OTE 4013.54–4056.69 now below price
+- **New open supply overhead:** H4 bear FVG **4102.44–4107.40**; H4 EQ 4087.01 is the breakout pivot
+- **New open demand below:** H1 bull FVG **4061.26–4067.52**, H4 bull FVG **4039.92–4042.99**
+- **Only MEDIUM USD events next 24h** — no HIGH-impact; clean-ish tape
 
 ---
 
 ## D1 Analysis
-- **D1 trend (algo): BULLISH** — label lags badly; last registered event BoS UP@4382.31 (06/17, stale). The live D1 swing is CHoCH DOWN@4023.56 (06/11), which price has broken below (low 3958.57) and still trades under (~4013).
-- **D1 read:** macro markdown intact; price reverting inside the broken structure but capped below 4023.56. A daily close back above 4023.56 would be the first repair tell.
-- **D1 Bias: BEARISH** (practical — trades below 4023.56).
+- **D1 trend (algo): BULLISH** — stale BoS UP@4382.31 (06/17). The live relevant event was CHoCH DOWN@4023.56 (06/11) — price broke below it (low 3958.57) but has now **reclaimed back above 4023.56** (~4071).
+- **D1 read:** the daily bearish trigger is negated. Not a clean bull trend (still far below 4382 structure), but the markdown attempt failed and reverted. Neutral-to-bullish.
+- **D1 Bias: NEUTRAL/bullish-lean** (4023.56 reclaimed).
 
 ## H4 Analysis
-- **H4 trend (algo): BEARISH** — last registered event BoS DOWN@3958.57 (06/24 20:00). The 4044.58 bounce is a corrective leg inside it.
-- **H4 P/D (range 4215.44 / 3958.57):** EQ **4087.01** | OTE **4013.54–4056.69** (premium short zone)
-- **H4 FVGs open:** BEARISH 4102.44–4107.40 (06/24), BEARISH 4233.39–4239.57 (major), BEARISH 4421.15–4428.57 (far). The 4042.07–4060.36 crash FVG is now FILLED. No bull demand holding above price.
-- **H4 Bias: BEARISH.** Only a reclaim + H4 close above EQ 4087 repairs anything.
+- **H4 trend (algo): BULLISH** — flipped from BEARISH. The 06/24–25 BoS DOWN@3958.57/3962.05 events are being negated by a higher high (4077.92 > prior swing 4044.58).
+- **H4 P/D (range 4215.44 / 3958.57):** EQ **4087.01** | OTE 4013.54–4056.69 (now below price). Price 4071 = upper DISCOUNT, approaching EQ.
+- **H4 FVGs open:** BEARISH **4102.44–4107.40** (next overhead supply), BEARISH 4233.39–4239.57 / 4421.15–4428.57 (far), BULLISH **4039.92–4042.99** (demand below). The 4042–4060 crash FVG is filled.
+- **H4 Bias: BULLISH-lean, capped at EQ 4087.** H4 close above 4087 = continuation confirmed.
 
 ## H1 Analysis
-- **H1 trend (algo): BULLISH** — label lags the bounce; **last event BoS UP@4044.58** (06/25 21:00) → near-term bullish bounce structure, but inside the H4 downtrend.
-- **H1 FVGs open:** BEARISH **4066.58–4072.75 / 4058.73–4063.89 / 4049.09–4054.36** (06/24 cluster — prime overhead supply, aligns with H4 OTE), BEARISH 4163.49–4178.03 (distant). No bull FVG holding below price.
-- **H1 Bias: BEARISH** (relief bounce inside the downtrend). Needs a reclaim + hold above ~4072 to even neutralize.
+- **H1 trend (algo): BULLISH** — BoS UP@4044.58 (06/25 21:00) extended; bounce continued to 4077.92.
+- **H1 FVGs open:** BULLISH **4061.26–4067.52** (06/26 16:00 — nearest demand), BEARISH 4163.49–4178.03 (distant). The entire 4049–4072.75 bear cluster is now FILLED.
+- **H1 Bias: BULLISH.** Pullbacks into 4061–4067 demand are buyable on confirmation; loss of 4039 weakens it.
 
 ## Premium / Discount (H4)
-- **H4 range:** 4215.44 / 3958.57 | EQ **4087.01** | OTE **4013.54–4056.69**
-- **Current price ~4013 → DISCOUNT, below EQ, at the lower OTE edge.** Discount + bearish momentum + bearish macro = NOT a buy. The play is to wait for the next push UP into the 4049–4072 supply, then short.
-- **SHORT (WITH bias, primary):** retrace UP into H1 bear-FVG cluster 4049.09–4072.75 / H4 OTE / H4 FVG 4042–4060 (zone ~4049–4072) + M1 bearish rejection → SHORT toward 3973 / 3958.57 / 3950.
-- **LONG (counter, deep-demand only):** ONLY on a clean sweep of 3958.57 + textbook reclaim above ~3990. Fades the macro; skip-tier.
+- **H4 range:** 4215.44 / 3958.57 | EQ **4087.01** | OTE 4013.54–4056.69
+- **Current price ~4071 → DISCOUNT, just below EQ.** Upper discount + bullish momentum = pullback-buy bias toward EQ; but EQ 4087 is resistance — do not chase premium.
+- **LONG (with new bias, primary):** pullback into 4061–4067 (H1 bull FVG) / 4039–4047 (H4 bull FVG / M15 OTE) + M1 bullish rejection → long toward 4087, break = 4102.
+- **SHORT (counter / fade, supply-only):** rejection at H4 EQ 4087 / H4 bear FVG 4102–4107 with M5 CHoCH DOWN → short toward 4053/4039. Counter to fresh bull lean; supply-tag only.
 
 ---
 
-## Session Levels (03:09 UTC — ASIAN active, 06/26)
+## Session Levels (14:03 UTC — OVERLAP active, 06/26)
 
 | Session | High | Low | Open |
 |---------|------|-----|------|
-| Asian (06/26, active) | 4043.97 | 3962.05 | 4014.31 |
-| London (06/25, ended) | 4034.13 | 3971.14 | 4012.29 |
-| NY (06/25, ended) | **4044.58** | 3973.49 | 4034.41 |
+| Asian (06/26, ended) | 4043.97 | 3982.74 | 4004.56 |
+| London (06/26, active) | **4077.92** | 3999.06 | 4059.57 |
+| NY (06/26, active) | **4077.92** | 3998.86 | 4073.73 |
 
-**Current:** 4013.39 / 4013.59 | Spread **2.0 ✓** | Session ASIAN
-Bounce rejected at 4044.58 (lower supply edge); H1 FVG cluster 4049–4072 caps the upside. NO USD news next 24h.
+**Current:** 4070.66 / 4070.88 | Spread **2.2 ✓** | Session OVERLAP
+New high 4077.92; price testing under H4 EQ 4087. Only MEDIUM USD news next 24h.
 
 ---
 
 ## Key Levels
 
-### Supply / Resistance (above ~4013)
+### Supply / Resistance (above ~4071)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **4049.09–4072.75** | H1 bear FVG cluster [open] | **Prime overhead supply — short zone; aligns with H4 OTE** |
-| **4044.58** | NY high (06/25) / BSL | Bounce high; reclaim = price pushing back into the short zone |
-| **4042.07–4060.36** | H4 bear FVG [filled] | Crash imbalance — touched by the 4044.58 high |
-| **4013.54–4056.69** | H4 OTE | Prime premium short zone of the 4215/3958 leg |
-| **4087.01** | H4 EQ | Bull repair only above here (M15 close) |
-| **4102.44–4107.40** | H4 bear FVG [open] | Deeper overhead supply |
+| **4087.01** | H4 EQ | **THE decision line — H4 close above = bull continuation confirmed; rejection = bear-leg resume** |
+| **4102.44–4107.40** | H4 bear FVG [open] | Next overhead supply / Watch B short zone |
+| **4077.92** | London/NY high (06/26) | New session high / BSL |
+| **4145.04** | H4 swing high (06/23) | Higher draw if 4087 breaks |
 
-### Support / Demand (below ~4013)
+### Support / Demand (below ~4071)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **3973.49** | NY low (06/25) / M15 low | First downside structural support / short TP1 |
-| **3971.14** | London low (06/25) | SSL cluster with 3973.49 |
-| **3962.05 / 3958.57** | Asian low / NY session low | Loss = open air, freefall continuation |
-| **3950** | round number | Provisional downside draw in discovery |
+| **4061.26–4067.52** | H1 bull FVG [open] | **Nearest demand — Watch A long zone on pullback** |
+| **4053.56** | M15 EQ | Pullback midpoint |
+| **4039.92–4042.99** | H4 bull FVG [open] | Deeper demand; loss of 4039 weakens bull lean |
+| **3982.74 / 3958.57** | Asian low / session low | Full bear-invalidation floor; below = freefall resumes |
 
 ---
 
 ## Trade Directional Guidance
 
-### BIAS: BEARISH — sell the relief bounce into supply ~4049–4072 toward 3973/3958/3950; do NOT chase shorts at 4013 mid-range, do NOT buy the dip. Clean tape — no USD news next 24h.
-**Current state: price bounced 3958.57 → 4044.58, rejected the lower OTE/supply, now chopping 4019–4044 and leaking to ~4013. The play: short the next push UP into the H1 bear-FVG cluster 4049–4072 / H4 OTE with an M1 bearish rejection, targeting 3973 then 3958/3950. Chasing shorts at 4013 (discount, mid-range, no clean nearby zone) is wrong. Any long is counter-macro — skip-tier.**
+### BIAS: NEUTRAL → BULLISH-lean. Wait for H4 EQ 4087 to resolve. Buy pullbacks into 4061–4067 / 4039–4047 demand on M1 confirmation toward 4087/4102; fade only a clean rejection at 4087/4102 supply. Do NOT chase price at the highs (premium). Do NOT re-short the trend just because it stopped a short — that is the revenge trap.
+**Current state: price 4071 in H4 discount, jammed under EQ 4087 after a continuation rally 3958.57→4077.92 that reclaimed D1 4023.56 and consumed the 4049–4072 supply. The play: wait for either (a) a pullback to 4061–4067 demand + M1 bullish rejection = long toward 4087/4102, or (b) a rejection at 4087/4102 supply = short toward 4053/4039. Both require confirmation. Chasing the high here is premium-buying into resistance.**
 
 ---
 
-**Setup A — SHORT on retrace into supply — WITH bias (primary, ARMABLE):**
-- Condition: retrace into **4049–4072** (H1 bear FVG cluster / H4 OTE / H4 FVG 4042–4060) + M1 bearish rejection / M5 CHoCH DOWN
-- Entry: ~4050 | SL: ~4074 (above H1 FVG top 4072.75 + buffer) → (4074−4050)×10 = 240 pips
-- TP1: 3973.49 (NY low) → 765 pips (3.2:1) | TP2: 3958.57 → 914 pips (3.8:1) | further: 3950 / open air below 3958.57
-- Note: ASIAN session, post-bounce — wait for the push back into the zone + rejection. No news block.
+**Setup A — LONG on pullback into demand — WITH new bias (primary):**
+- Condition: pullback into **4061–4067** (H1 bull FVG) or **4039–4047** (H4 bull FVG / M15 OTE) + M1 bullish rejection / M5 CHoCH UP
+- Entry: ~4058 | SL: ~4046 (below M15 OTE low / structure) → (4058−4046)×10 = 120 pips
+- TP1: 4087 (H4 EQ) → 290 pips (2.4:1) | TP2: 4102 (H4 bear FVG) → 440 pips (3.7:1)
+- Note: capped by 4087 resistance until it breaks; size for the 4087 target, extend only on a clean EQ break.
 
-**Setup B — LONG on 3958.57 sweep+reclaim — counter (deep-demand, skip-tier):**
-- Condition: wick below **3958.57** (sweep session low) + strong M1/M5 displacement reclaim back above ~3990
-- Entry: ~3970 | SL: ~3954 → 160 pips | TP1: 4006 → 360 pips (2.3:1)
-- Counter to bearish macro = low quality; only if reclaim is textbook. Do not take by default.
+**Setup B — SHORT on rejection at H4 EQ/supply — counter (fade, supply-only):**
+- Condition: tag of **4087 EQ** or **4102–4107 H4 bear FVG** + M5 CHoCH DOWN / M1 bearish rejection
+- Entry: ~4087 | SL: ~4103 → 160 pips | TP1: 4053 (M15 EQ) → 340 pips (2.1:1) | TP2: 4039
+- Counter to fresh bullish lean — supply-tag rejection only; do not pre-empt.
 
 ### BIAS RESOLUTION (watch these)
-- **Bearish continues (favored):** retrace into 4049–4072 rejected → 3973 → 3958.57 → 3950 → open air
-- **Deep-demand bounce (counter):** clean 3958.57 sweep + reclaim >3990 → relief bounce (short-covering, not trend change)
-- **Bull repair (needs heavy proof):** reclaim + H4 close above EQ 4087.01 → neutralize; nothing below that changes the bearish read
-- **No news pivot:** calendar clear next 24h — structure-driven tape, no event flatten required
+- **Bull continuation (favored if 4087 breaks):** H4 close above 4087.01 → 4102 → 4145
+- **EQ rejection (bear-leg resume):** clean rejection at 4087/4102 → back to 4053 → 4039 → 3982
+- **Full bear invalidation of the bounce:** H4 close back below 4039 → the rally was a deep retrace, range/bear pressure resumes toward 3958.57
+- **News:** only MEDIUM events next 24h — structure-driven tape, no HIGH-impact flatten required

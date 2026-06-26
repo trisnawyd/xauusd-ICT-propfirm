@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-26 13:03 UTC (order triggered)
+updated: 2026-06-26 13:57 UTC (short stopped out — flat)
 synced_from: MT5 Bridge
 ---
 
@@ -10,21 +10,22 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,100.48 |
-| Equity | $5,107.70 |
-| Max risk per trade (1%) | $51.01 |
-| Margin used | $810 (open #9066665 hold) |
-| Free margin | $4,297.70 |
-| Open positions | **#9066665 SELL 0.02 @4050** (SL 4074, TP 3973.49, 3.2:1, risk $48) — FILLED 06/26 ~12:35 UTC off the retrace into 4049–4072 supply (rally to 4054.32 + BSL sweep + reject); floating +$7.36. Manage: +1R at 4026 → SL to BE 4050; runner TP 3973.49 → 3958.57 → 3950. Exit if M5 close >4072 / M15 close >4087 |
+| Balance | $5,050.59 |
+| Equity | $5,050.59 |
+| Max risk per trade (1%) | $50.51 |
+| Margin used | $0 (flat) |
+| Free margin | $5,050.59 |
+| Open positions | **None** — flat |
 | Pending orders | None |
 
 ## Session Status — 2026-06-26
-- Daily P&L: **−$4.23** total (closed −$11.47 + floating +$7.24). Closed: 0 win, 1 loss — reconciled in [[Trade Log/20260626]]:
-  - T1 ticket 7077413 BUY 4000.00 → 3994.29, −57 pips, net −$11.47 (7 min, 0.02 lot) — **counter-trend dip-buy, NOT from a plan.** Bought 4000 mid-range in discount against a fully-aligned BEARISH HTF; price continued down, cut after 7 min. Exactly the "do NOT buy the dip" the model warns against. Small, fast loss.
-- Session start equity: $5,112.05
-- **OPEN: #9066665 SELL 0.02 @4050** (SL 4074, TP 3973.49, 3.2:1, risk $48) — armed 03:11 UTC, TRIGGERED ~12:35 UTC when price retraced UP into 4049–4072 supply (tagged 4054.32). Graded A (87) as filled. Floating +$7.36. Forward read: [[Analysis/LTF/20260626/20260626_1303_short]].
-- HTF bias: See Context/htf-context.md (06-26 03:09 UTC — fresh). BEARISH (D1/H4 aligned); relief bounce 3958.57→4044.58 rejected lower OTE/supply. Short zone 4049–4072 (H1 bear-FVG cluster, open). NO USD news next 24h.
-- Market context: flat (1 pending) after −$11.47 (~03:15 UTC ASIAN). Price ~4013. Daily DD −0.22%, well within −20% limit. Forward read: [[Analysis/LTF/20260626/20260626_0309_wait]].
+- Daily P&L: **−$61.36** total closed (0 win, 2 loss) — reconciled in [[Trade Log/20260626]]:
+  - T1 ticket 7077413 BUY 4000.00 → 3994.29, −57 pips, net −$11.47 (7 min, 0.02 lot) — **counter-trend dip-buy, NOT from a plan.** Bought 4000 mid-range in discount against a fully-aligned BEARISH HTF; price continued down, cut after 7 min. The "do NOT buy the dip" loss.
+  - T2 ticket 7094096 (= live #9066665) SELL 4050.00 → 4074.92, −249 pips, net −$49.89 (272 min, 0.02 lot) — **planned A-grade armed short, STOPPED OUT.** Armed @4050 into 4049–4072 supply, filled ~12:35 UTC. Bounce extended THROUGH the zone (broke 4072 → 4074 → stopped at 4074.92, new high 4077.31). Textbook WITH-bias setup; supply simply didn't hold. Full-risk loss.
+- Session start equity: $5,112.05 → **end $5,050.59 (−$61.46 day, −1.20%)**
+- **FLAT** — no open positions, no pendings. Forward read: [[Analysis/LTF/20260626/20260626_1352_short]] (HOLD call that got stopped).
+- HTF bias: ⚠️ **STALE / needs refresh.** Was BEARISH (06-26 03:09 UTC) but the relief bounce 3958.57→**4077.31** has now CLEARED the H1 bear-FVG cluster 4049–4072.75 AND the H4 OTE. A reclaim + H4 close above EQ 4087.01 neutralizes the bearish read. Run `analyze HTF` before the next trade.
+- Market context: flat after 2 losses (~13:57 UTC OVERLAP). Price ~4076, broke supply to new session high 4077.31. Daily DD −1.20%, within −20% limit. **Suggest standing down — no revenge trades into a bounce that just stopped a WITH-bias short.**
 
 ## Session Status — 2026-06-24
 - Daily P&L: **+$61.52** closed (1 win, 0 loss) — reconciled in [[Trade Log/20260624]]:

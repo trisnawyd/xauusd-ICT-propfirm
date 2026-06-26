@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-24 02:15 UTC (latest sync)
+updated: 2026-06-26 03:15 UTC (latest sync)
 synced_from: MT5 Bridge
 ---
 
@@ -10,13 +10,21 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,112.05 |
-| Equity | $5,112.05 |
-| Max risk per trade (1%) | $51.12 |
-| Margin used | $0 |
-| Free margin | $5,112.05 |
+| Balance | $5,100.53 |
+| Equity | $5,100.53 |
+| Max risk per trade (1%) | $51.01 |
+| Margin used | $810 (pending #9066665 hold) |
+| Free margin | $4,290.53 |
 | Open positions | None |
 | Pending orders | **#9066665 SELL_LIMIT 0.02 @4050** (SL 4074, TP 3973.49, 3.2:1, risk $48) — armed 06/26 03:11 UTC into 4049–4072 H1 bear-FVG supply; cancel if M5 closes >4072, session end unfilled, or HTF stale |
+
+## Session Status — 2026-06-26
+- Daily P&L: **−$11.47** closed (0 win, 1 loss) — reconciled in [[Trade Log/20260626]]:
+  - T1 ticket 7077413 BUY 4000.00 → 3994.29, −57 pips, net −$11.47 (7 min, 0.02 lot) — **counter-trend dip-buy, NOT from a plan.** Bought 4000 mid-range in discount against a fully-aligned BEARISH HTF; price continued down, cut after 7 min. Exactly the "do NOT buy the dip" the model warns against. Small, fast loss.
+- Session start equity: $5,112.05
+- Resting pending: **#9066665 SELL_LIMIT 0.02 @4050** (SL 4074, TP 3973.49, 3.2:1, risk $48) — armed 03:11 UTC into 4049–4072 supply; unfilled (price ~4013, leaking down).
+- HTF bias: See Context/htf-context.md (06-26 03:09 UTC — fresh). BEARISH (D1/H4 aligned); relief bounce 3958.57→4044.58 rejected lower OTE/supply. Short zone 4049–4072 (H1 bear-FVG cluster, open). NO USD news next 24h.
+- Market context: flat (1 pending) after −$11.47 (~03:15 UTC ASIAN). Price ~4013. Daily DD −0.22%, well within −20% limit. Forward read: [[Analysis/LTF/20260626/20260626_0309_wait]].
 
 ## Session Status — 2026-06-24
 - Daily P&L: **+$61.52** closed (1 win, 0 loss) — reconciled in [[Trade Log/20260624]]:

@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-29 10:13 UTC (3rd trade — counter-trend long lost — flat)
+updated: 2026-06-29 14:01 UTC (T4 long recovered the day — flat, +$2.36)
 synced_from: MT5 Bridge
 ---
 
@@ -10,23 +10,26 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,026.35 |
-| Equity | $5,026.35 |
-| Max risk per trade (1%) | $50.26 |
+| Balance | $5,052.69 |
+| Equity | $5,052.69 |
+| Max risk per trade (1%) | $50.53 |
 | Margin used | $0 (flat) |
-| Free margin | $5,026.35 |
+| Free margin | $5,052.69 |
 | Open positions | **None** — flat |
 | Pending orders | None |
 
 ## Session Status — 2026-06-29
-- Daily P&L: **−$24.06** total closed (0 win, 2 loss, 1 scratch) — reconciled in [[Trade Log/20260629]]:
-  - T1 ticket 7114992 SELL 4054.08 → 4053.83, +2.5 pips, net **+$0.45** (8 min, 0.02 lot) — discretionary range-mid short, no edge. Scratched to BE before the breakdown it would have caught.
-  - T2 ticket 7120352 BUY 4049.94 → 4039.85, −101 pips, net **−$20.23** (27 min, 0.02 lot) — Watch A long, FAILED. Bought the 4039-4043 H4 demand pre-confirmation; demand broke (breakdown = Watch B). Cut manually before the 4034 SL.
-  - T3 ticket 7121316 BUY 4032.64 → 4031.24, −14 pips, net **−$4.28** (16 min, 0.03 lot) — **2nd counter-trend long into the same breakdown.** Bounce-off-4024.38-sweep long, SL set ~BE (4032.76); price reached +$17 float (4038.6) then rolled over and stopped out below entry. User read it as "BE" but it's a small loss. Continued down to 4028+. **3rd anticipatory trade, 2nd long fighting the breakdown leg.**
-- Session start equity: $5,050.59 → **current $5,026.35 (−$24.24 day, −0.48%)**
-- **FLAT** — no open positions, no pendings. Forward read: [[Analysis/LTF/20260629/20260629_0538_wait]].
-- HTF bias: NEUTRAL range 3958.57-4106 (htf-context 06-29 00:47 UTC, fresh to 06-30 00:47). Breakdown leg ACTIVE below the failed 4039-4043 demand — price 4028, drawing on 3982/3958.57 floor. Bias bearish-within-range until reclaimed.
-- Market context: LONDON (10:13 UTC), price ~4028 and falling. Daily DD −0.48%, well within −20%. ⚠️ Behavioral flag: 3 trades, 2 longs fighting a clean breakdown = fading the tape. 🚨 HIGH-impact US data 16:45 / 17:00 UTC (~6.5h out). **Suggest standing down or trading WITH the breakdown (short retraces), not against it.**
+- Daily P&L: **+$2.36** total closed (1 win, 2 loss, 1 scratch) — reconciled in [[Trade Log/20260629]]:
+  - T1 ticket 7114992 SELL 4054.08 → 4053.83, +2.5 pips, net **+$0.45** (8 min, 0.02 lot) — discretionary range-mid short, no edge. Scratched to BE before the breakdown.
+  - T2 ticket 7120352 BUY 4049.94 → 4039.85, −101 pips, net **−$20.23** (27 min, 0.02 lot) — Watch A long, FAILED. Bought the 4039-4043 demand pre-confirmation; demand broke. Cut before the 4034 SL.
+  - T3 ticket 7121316 BUY 4032.64 → 4031.24, −14 pips, net **−$4.28** (16 min, 0.03 lot) — 2nd counter-trend long into the breakdown. Floated +$17, rolled over, stopped ~BE (small loss).
+  - **T4 position #9163615 BUY 4030.15 (0.03 lot) — THE WIN, +$26.42 total, well managed.** Bounce-off-4024.38-sweep long (good location: discount/OTE), but again a no-trigger instinct entry (3rd long). This time let it run + scaled out:
+    - 7123464 partial 0.01 @4051.03, +208 pips, net **+$20.85** (40 min) — banked the 200-pip pop into the EQ/4052 BoS.
+    - 7127696 runner 0.02 @4032.96, +28 pips, net **+$5.57** (143 min) — risk-free BE+ stop did its job when the rally faded back from 4052; locked profit instead of a giveback.
+- Session start equity: $5,050.59 → **current $5,052.69 (+$2.10 balance / +$2.36 closed P&L, +0.05% day)**
+- **FLAT** — no open positions, no pendings. Forward read: [[Analysis/LTF/20260629/20260629_1350_wait]].
+- HTF bias: NEUTRAL range 3958.57-4106 (htf-context 06-29 00:47 UTC, fresh to 06-30 00:47). Intraday compressed to a 4024.38↔4066.87 sub-range; price 4031 back in the lower half / discount.
+- Market context: OVERLAP (14:01 UTC), price ~4031. Daily +0.05%, within limits. 🚨 HIGH-impact US data 16:45 Chicago PMI / 17:00 CB Consumer Confidence + JOLTS (~3h out) = range-resolver. ⚠️ Behavioral: 4 longs/shorts, 3 were no-trigger instinct entries; the day was saved by ONE well-managed long. Green, but process (entering pre-trigger) needs fixing — keep the location read, wait for the M1 confirmation.
 
 ## Session Status — 2026-06-26
 - Daily P&L: **−$61.36** total closed (0 win, 2 loss) — reconciled in [[Trade Log/20260626]]:

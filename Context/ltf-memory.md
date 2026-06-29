@@ -1,54 +1,52 @@
 ---
-updated: 2026-06-29 05:38 UTC
-snapshot: "[[Analysis/LTF/20260629/20260629_0538_wait]]"
+updated: 2026-06-29 11:36 UTC
+snapshot: "[[Analysis/LTF/20260629/20260629_1136_wait]]"
 ---
 
 # LTF Memory — Last 3 Analyses
 
-## Current Market Structure (as of 2026-06-29 05:38 UTC)
+## Current Market Structure (as of 2026-06-29 11:36 UTC)
 
-**Account:** **FLAT** — no positions, no pendings. Equity **$5,050.99**, max risk **$50.51**. Daily P&L **+$0.45** (scratch short #7114992 closed BE). Spread 2.0 ✓. ASIAN (05:38 UTC). ⏱️ Clock: session_levels UTC authoritative; M1 stamps broker GMT+3 (08:xx = 05:xx UTC).
+**Account:** 1 open LONG #9163615 BUY @4030.15 (0.03 lot, SL 4030.65 = risk-free BE+, TP 4050.15, float ~+$8). Equity **$5,026.35**, max risk **$50.26**. Daily P&L **−$24.06** closed (0W/2L/1 scratch). Spread 2.0 ✓. LONDON (11:36 UTC). ⏱️ session_levels UTC authoritative; M1 stamps broker GMT+3 (14:xx = 11:xx UTC).
 
-**⏸️ WAIT — Gate 4, H4 demand tap with no M1 trigger (no arm):** The 02:29 EQ pin resolved DOWN — price broke below the M15 range low 4046.96 (displacement 4049→4040.57) and now sits at **4042 inside the 4039-4043 H4 bull FVG** (real HTF demand, Watch A long zone; alert #122 @4044 fired). M15 DISCOUNT = correct side for a long, but NO M1 reclaim yet and a fresh bearish M5 FVG 4045.83-4047.8 printed overhead. Projected long grade B (~60) < B+ (capped by Asian timing + neutral/counter HTF + falling-knife tape) = **no arm** — a resting BUY_LIMIT into a knife is the 06/26 stop-out mechanic. Decision line: hold 4039 + M1 reclaim = LONG; M5 close <4035 = breakdown SHORT to 3982 floor. News: Hormuz upside wildcard; HIGH-impact US data 16:45-17:00 UTC (~11h out) = range-resolver.
+**⏸️ WAIT — Gate 3, SHORT-in-discount (right direction, wrong location):** The day resolved DOWN — price broke 4090→4024.38 (M15 last event BoS DOWN@4024.38) then bounced to 4038.78 and rejected (lower high under 4039.87). M15 DISCOUNT (EQ 4045.63, price 4033.6, OTE floor). Proposed SHORT is WITH the breakdown but shorting discount = chasing lows; the clean short is a RETRACE into the open 4040.57-4044.58 M5 bear OB (OTE top / under EQ). Projected retrace-short grade B (~62) < B+ (capped by P/D upper-discount-not-premium + neutral/counter-D1 HTF) = **no arm**. A LONG here is counter to M15 BoS DOWN (the mistake made 2× today). News: HIGH-impact US data 16:45-17:00 UTC (~5h) = range-resolver.
 
-**Today's trade:** #7114992 SELL 4054.08 → 4053.83, net **+$0.45** (8 min, scratch) — discretionary counter-move short at range mid, chopped just before the breakdown. Not a planned A/B setup.
+**Behavioral flag:** 3 closed trades today, 2 longs fighting this exact breakdown (T2 −$20.23, T3 −$4.28). Open #9163615 is a 3rd counter-trend long — risk-free but counter-structure; bank into 4038-40 or let BE scratch, do NOT add. Trade WITH the breakdown (short retraces) or stand down.
 
-**M15 Status:** trend BEARISH (label), last BoS UP@4075.78 (06:15) then reversed + broke swing low 4046.96 → now 4042 below range. Range 4075.78 / 4046.96, EQ 4061.37 → deep DISCOUNT. OTE 4053.13-4057.97.
-**M5 Status:** 10 OBs all filled. 2 open FVGs — BEARISH 4061.87-4063.85 (overhead) + BEARISH 4045.83-4047.8 (just above price = Watch B short zone if 4039 fails).
-**M1 Status:** displacement down 08:30, then chop 4041-4046, last close 4042.41. No bullish reclaim, no trigger.
-**HTF frame (00:47 UTC, fresh):** NEUTRAL range 3958.57-4106; price now at the LOWER edge (4039-4043 H4 demand). Overhead supply 4102-4107 / 4090. Floor 3982.74 → 3958.57.
+**M15 Status:** trend BULLISH (label, lagging), last event BoS DOWN@4024.38. Range 4066.87 / 4024.38, EQ 4045.63 → DISCOUNT. OTE 4033.47-4040.61 (price at floor).
+**M5 Status:** trend BEARISH, last BoS DOWN@4031.27. 2 open bear OBs: **4040.57-4044.58** (retrace-short zone) + 4060.65-4066.87. Open bear FVG 4057.55-4060.81. Bull OB 4027.23-4033.53 (price sitting in it).
+**M1 Status:** swept 4024.38 low → 4027.15, bounced to 4038.78, rejected, faded to 4033 = lower high, no reclaim, no trigger.
+**HTF frame (00:47 UTC, fresh to 06-30 00:47):** NEUTRAL range 3958.57-4106; breakdown leg active in the lower third, drawing on 3982/3958.57 floor. D1 BULLISH label (deep discount) / H4 BEARISH / H1 chop = net neutral, LTF momentum DOWN.
 
 **Key Levels:**
-- **4102-4107 — H4 bear FVG / ceiling (#117 @4102)** | **4090 — Asian high BSL (#120 @4090)**
-- **4061.37 — M15 EQ (Watch A long target / reclaim line)**
-- **4039.92-4042.99 — H4 bull FVG demand = price NOW (decision line: hold=long, break=short)**
-- **4035 — breakdown trigger (#123) | 3982 — range-floor (#121) | 3958.57 — bear-invalidation floor (#109)**
+- **4066.87 — range high / bear OB | 4057-4061 — open bear FVG/OB**
+- **4045.63 — M15 EQ (long-reclaim line) | 4040.57-4044.58 — open bear OB / OTE top (Watch A short, #124 @4044)**
+- **4024.38 — NY / range low (break = continuation, #125 @4024) | 4012 → 3982 (#121) → 3958.57 (#109)**
 
-**Setup:** WAIT — at H4 demand, no M1 trigger, projected long < B+. Watch A LONG on M1 reclaim above ~4047 (entry ~4044, SL 4034, TP 4064/4090, 2:1). Watch B SHORT on M5 close <4035 → retrace into 4045-4048 bear FVG (entry ~4046, SL 4056, TP 4012/3982, 3.4:1). Alerts: #109 3958.57, #117 4102, #120 4090, #121 3982, #123 4035 (added; #122 4044 fired on the demand tap).
-
----
-
-## Analysis #1 — 2026-06-29 05:38 UTC (WAIT — Gate 4, H4 demand tap, no trigger)
-
-- **Direction:** WAIT — EQ pin resolved down; price broke M15 range low 4046.96, now 4042 inside the 4039-4043 H4 bull FVG in deep discount (Watch A long location, #122 @4044 fired). No M1 reclaim + fresh bear M5 FVG overhead = no trigger. Projected long grade B (~60) < B+ → no arm (no resting limit into a falling knife). Scratch short #7114992 closed BE (+$0.45).
-- **Watch A (LONG, demand reclaim):** hold 4039-4043 + M1 bullish reclaim >~4047 / M5 CHoCH up → ~4044, SL 4034, TP1 4064 (2:1) / TP2 4090 (4.6:1). Needs M1 trigger.
-- **Watch B (SHORT, breakdown):** M5 close <4035 (demand fails) → short retrace into 4045.83-4047.8 bear M5 FVG → ~4046, SL 4056, TP1 4012 (3.4:1) / TP2 3982 (6.4:1). Alert #123 @4035.
-- **Invalidation:** Watch A void M5 close <4034 (→ flips to B); Watch B void M5 close >4056. Range breaks down H4 close <3982 → 3958.57; up H4 close >4107 → 4145.
+**Setup:** WAIT — short right direction wrong location. Watch A SHORT (preferred) on retrace into 4040-44 bear OB + M5 CHoCH-down (entry ~4042, SL 4051, TP 4024/4012, 2:1). Watch B LONG (counter, observe) only on M5 close >4045.63 EQ reclaim (entry ~4047, SL 4034, TP 4067, 1.5:1 — sub-min, needs deeper entry). Alerts: #109 3958.57, #117 4102, #121 3982, #124 4044 (added, short zone/long invalidation), #125 4024 (added, breakdown trigger); deleted #120 4090 (stale).
 
 ---
 
-## Analysis #2 — 2026-06-29 02:29 UTC (WAIT — Gate 3, no zone + SHORT-in-discount)
+## Analysis #1 — 2026-06-29 11:36 UTC (WAIT — Gate 3, SHORT-in-discount)
 
-- **Direction:** WAIT — EQ pin held, price ~4070. M15 last event flipped BoS DOWN@4053.65 (proposed SHORT) but price in M15 DISCOUNT = wrong side; all M5 OB/FVG filled = no live zone. #119 @4055 confirmed stale, deleted. No arm (supply short discretionary, not a resting limit). [Subsequently resolved DOWN to the 4039-4043 H4 demand — see #1.]
-- **Watch A (LONG, range-low fade):** pullback into 4039-4043 H4 bull FVG + M1 reclaim → ~4042, SL 4028, TP1 4071 (2.1:1) / TP2 4090 (3.4:1).
-- **Watch B (SHORT, range-high fade, DISCRETIONARY):** tag 4090/4096 or 4102-4107 + M5 CHoCH-DOWN → ~4099, SL 4114, TP1 4064 (2.3:1) / TP2 4042 (3.8:1).
-- **Invalidation:** both void on range break (H4 close >4107 bull / <3982 bear).
+- **Direction:** WAIT — price broke down 4090→4024.38 (M15 BoS DOWN@4024.38), bounced to 4038.78 and rejected (lower high). Proposed SHORT is with the breakdown but price in M15 discount = chasing lows; clean short = retrace into 4040-44 bear OB. Projected short grade B (~62) < B+ = no arm. Open long #9163615 counter to structure (risk-free, manage tight). 3rd counter-trend long warning.
+- **Watch A (SHORT, retrace into supply — preferred):** rally into 4040.57-4044.58 M5 bear OB / OTE top + M5 CHoCH-down → ~4042, SL 4051, TP1 4024 (2:1) / TP2 4012 (3.3:1) / TP3 3982. Alert #124 @4044.
+- **Watch B (LONG, reclaim only — counter, observe):** M5 close >4045.63 EQ + reclaim 4050.87 → ~4047, SL 4034, TP1 4067 (1.5:1 — sub-min, needs deeper entry ~4036 for 2:1). Lower probability.
+- **Invalidation:** Watch A void M5 close >4051; Watch B void M5 close <4024.38. Range breaks down H4 close <3982 → 3958.57.
 
 ---
 
-## Analysis #3 — 2026-06-29 00:47 UTC (WAIT — Gate 4, mid-range no-edge)
+## Analysis #2 — 2026-06-29 05:38 UTC (WAIT — Gate 4, H4 demand tap, no trigger)
 
-- **Direction:** WAIT — HTF downgraded to NEUTRAL range 3958-4106 (06/26 bull-lean stalled at 4096, reverted to EQ). M15 proposed LONG but price 4066 mid-range at EQ = no trigger, no edge. No arm (projected long B 59).
-- **Watch A (LONG):** pullback into 4057-4063 M5 bull FVG / M15 OTE + M1 confirm → ~4060, SL 4046, TP1 4088 (2:1) / TP2 4096 (2.6:1).
-- **Watch B (SHORT):** tag 4096.36 / 4102-4107 + M5 CHoCH DOWN → ~4099, SL 4113, TP1 4069 (2.1:1) / TP2 4042 (4.1:1).
+- **Direction:** WAIT — price broke M15 range low 4046.96, tagged the 4039-4043 H4 bull FVG demand (#122 @4044 fired) in deep discount = Watch A long location, but no M1 reclaim + fresh bear M5 FVG overhead = no trigger. Projected long B (~60) < B+ = no arm. [Subsequently: demand FAILED — price broke down to 4024.38; the longs that bought it (T2/T3) lost. See #1.]
+- **Watch A (LONG):** hold 4039-43 + M1 reclaim >4047 → ~4044, SL 4034, TP 4064/4090 (2:1). [Demand broke — invalidated.]
+- **Watch B (SHORT, breakdown):** M5 close <4035 → short retrace into 4045-48 bear FVG → ~4046, SL 4056, TP 4012/3982 (3.4:1). [This scenario PLAYED OUT — breakdown to 4024.]
+
+---
+
+## Analysis #3 — 2026-06-29 02:29 UTC (WAIT — Gate 3, no zone + SHORT-in-discount)
+
+- **Direction:** WAIT — EQ pin ~4070, M15 BoS DOWN@4053.65 but price in discount = wrong side; all M5 OB/FVG filled = no live zone. No arm. [Subsequently resolved DOWN through the 4039-43 demand to 4024 — see #2/#1.]
+- **Watch A (LONG):** pullback into 4039-4043 H4 bull FVG → ~4042, SL 4028, TP 4071/4090 (2.1:1).
+- **Watch B (SHORT, discretionary):** tag 4090/4096-4107 + M5 CHoCH-down → ~4099, SL 4114, TP 4064/4042 (2.3:1).
 - **Invalidation:** both void on range break (H4 close >4107 bull / <3982 bear).

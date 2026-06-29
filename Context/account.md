@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-26 13:57 UTC (short stopped out — flat)
+updated: 2026-06-29 05:38 UTC (scratch short closed BE — flat)
 synced_from: MT5 Bridge
 ---
 
@@ -10,13 +10,21 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,050.59 |
-| Equity | $5,050.59 |
+| Balance | $5,050.99 |
+| Equity | $5,050.99 |
 | Max risk per trade (1%) | $50.51 |
 | Margin used | $0 (flat) |
-| Free margin | $5,050.59 |
+| Free margin | $5,050.99 |
 | Open positions | **None** — flat |
 | Pending orders | None |
+
+## Session Status — 2026-06-29
+- Daily P&L: **+$0.45** total closed (0 win, 0 loss, 1 scratch) — reconciled in [[Trade Log/20260629]]:
+  - T1 ticket 7114992 SELL 4054.08 → 4053.83, +2.5 pips, net **+$0.45** (8 min, 0.02 lot) — **discretionary counter-move short at the range mid (~4054), NOT a planned A/B setup.** Shorted into the EQ pin; price chopped then BROKE DOWN out of the 4046-4075 M15 range minutes later. Scratched to BE before the move it would have caught. Lesson: the planned Watch B short was a 4090-4107 supply fade — 4054 is the range middle, no edge. No harm done (BE), but it's an un-planned trade.
+- Session start equity: $5,050.59 → **current $5,050.99 (+$0.40 day, +0.01%)**
+- **FLAT** — no open positions, no pendings. Forward read: [[Analysis/LTF/20260629/20260629_0538_wait]].
+- HTF bias: NEUTRAL range 3958.57-4106 (htf-context 06-29 00:47 UTC, fresh to 06-30 00:47). Price at the LOWER edge (4039-4043 H4 bull FVG demand) — decision line: hold = long fade, break = breakdown to 3982/3958.57.
+- Market context: ASIAN (05:38 UTC), price ~4042 testing H4 demand. WAIT — no M1 trigger. 🚨 HIGH-impact US data 16:45 Chicago PMI / 17:00 CB Consumer Confidence + JOLTS (~11h out) = range-resolver. Daily DD flat, within -20%.
 
 ## Session Status — 2026-06-26
 - Daily P&L: **−$61.36** total closed (0 win, 2 loss) — reconciled in [[Trade Log/20260626]]:

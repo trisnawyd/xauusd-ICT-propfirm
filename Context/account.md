@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-30 02:36 UTC (floor-reclaim long cut −$9.11 — flat)
+updated: 2026-06-30 09:19 UTC (chop day −$23.43 — flat; floor held + reversed +745 pips)
 synced_from: MT5 Bridge
 ---
 
@@ -10,21 +10,25 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,043.53 |
-| Equity | $5,043.53 |
-| Max risk per trade (1%) | $50.44 |
+| Balance | $5,028.92 |
+| Equity | $5,028.92 |
+| Max risk per trade (1%) | $50.29 |
 | Margin used | $0 (flat) |
-| Free margin | $5,043.53 |
+| Free margin | $5,028.92 |
 | Open positions | **None** — flat |
 | Pending orders | None |
 
 ## Session Status — 2026-06-30
-- Daily P&L: **−$9.11** closed (0 win, 1 loss) — reconciled in [[Trade Log/20260630]]:
-  - T1 #9181531 BUY 3962.85 → ~3958.40, −44 pips, net **−$9.11** (~33 min, 0.02 lot) — **floor-reversal long (B+ 72), cut on a failed reclaim.** Asian session swept the full range floor 3958.57 → 3942.86 + reclaimed (higher-low 3949.93, higher-high 3970.24); armed BUY_LIMIT @3963 filled ~02:00 UTC. Floated +$12.66 at the 3981 high, then the reclaim FAILED to hold the floor (lower highs 3981→3973→3965, sagged back under 3958.57). Cut at market for −$9.11 rather than ride to the 3948 stop (−$30). Correct location, absent follow-through — the bounce was a bounce, not a reversal (flagged live). Good discipline: small loss on a broken thesis.
-- Session start equity: $5,052.69 → **current $5,043.53 (−$9.11, −0.18% day)**
-- **FLAT** — no positions, no pendings. Forward read: [[Analysis/LTF/20260630/20260630_0236_wait]].
-- HTF bias: NEUTRAL range 3958.57–4106 RESOLVING DOWN (htf-context 06-30 00:18 UTC, fresh). Price 3956 coiling below the floor in deep discount, 14 pips above the 3942.86 Asian sweep low.
-- Market context: ASIAN (02:36 UTC), price ~3957. Daily −0.18%, within limits. 🚨 HIGH-impact US data 16:45 Chicago PMI / 17:00 CB Consumer Confidence + JOLTS (~14h out) = range-resolver. Next edges: break <3942.86 (short continuation) or reclaim >3974 (long retry / short-from-supply 3990).
+- Daily P&L: **−$23.43** closed (2 win, 3 loss) — reconciled in [[Trade Log/20260630]]:
+  - T1 #9181531 BUY 3962.85 → 3958.32, −44 pips, net **−$9.11** (~47 min, 0.02 lot) — floor-reversal long (B+ 72), cut on a failed reclaim. Correct location, early entry (the floor reversal was ultimately right — ran to 4055 hours later — the reclaim just needed more basing).
+  - T2 deal 7141502 SELL 3963.54 → 3972.24, −87 pips, net **−$26.18** (~29 min, 0.03 lot) — **breakdown short (old Watch B), FAILED.** Shorted into the already-swept 3942.86 floor; price reclaimed + squeezed up. Largest loss = chasing the bottom.
+  - T3 deal 7141735 SELL 3972.8 → 3978.1, −53 pips, net **−$15.98** (~4 min, 0.03 lot) — 2nd breakdown short re-entry, cut in 4 min as the reversal ran. T2+T3 = −$42.16 = two stabs at a wrong directional thesis.
+  - T4 deal 7142459 SELL 3995.14 → 3987.05, +81 pips, net **+$8.06** (~27 min, partial) — **short-from-supply (old Watch C), WIN.** Retrace into the 3990–3994 bear OB.
+  - T5 deal 7142525 SELL 3995.14 → 3990.17, net **+$19.78** (~32 min, runner) — same 3995 supply short, runner tranche. T4+T5 = **+$27.84**, the only edge that worked.
+- Session start equity: $5,052.69 → **current $5,028.92 (−$23.43, −0.46% day)**
+- **FLAT** — no positions, no pendings. Forward read: [[Analysis/LTF/20260630/20260630_0919_wait]].
+- HTF bias: NEUTRAL range 3942.86–4106 **RECOVERING UP off the swept floor** (htf-context 06-30 09:19 UTC, fresh). Price 4019 pulled back into M15 premium after the 745-pip rally; fresh H4 bull FVG 3998.33–4014.69 [open] = demand below.
+- Market context: LONDON (09:19 UTC), price ~4019. Daily −0.46%, within limits. 🚨 HIGH-impact US data TODAY 16:45 Chicago PMI / 17:00 CB Consumer Confidence + JOLTS (~7.5h out) = range-resolver, flatten before it. Lesson logged: trade EDGE rejections (supply/floor reactions), not breakdowns into a swept level or the mid-range.
 
 ## Session Status — 2026-06-29
 - Daily P&L: **+$2.36** total closed (1 win, 2 loss, 1 scratch) — reconciled in [[Trade Log/20260629]]:

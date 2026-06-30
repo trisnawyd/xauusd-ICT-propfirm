@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-30 09:19 UTC (chop day −$23.43 — flat; floor held + reversed +745 pips)
+updated: 2026-06-30 14:25 UTC (chop day −$23.43 — flat; recovery ran to London high 4055, failed-breakout lean voided, no new trades since 09:19)
 synced_from: MT5 Bridge
 ---
 

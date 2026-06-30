@@ -139,14 +139,22 @@ export function getHTFList(): HTFEntry[] {
     .filter((f) => f.endsWith(".md"))
     .map((f) => {
       const date = f.replace(/\.md$/, "");
-      const { data } = safeMatter(fs.readFileSync(path.join(base, f), "utf8"));
-      const biasMatch = fs
-        .readFileSync(path.join(base, f), "utf8")
-        .match(/^##\s+Bias:\s*(.+)$/m);
+      const raw = fs.readFileSync(path.join(base, f), "utf8");
+      const { data } = safeMatter(raw);
+      // The bias may be inline ("## Bias: NEUTRAL — …") or on the line(s) below
+      // a bare "## Bias" heading ("## Bias\n**NEUTRAL — …**"). Capture either,
+      // up to the next blank line or heading, then strip markdown bold.
+      const biasMatch = raw.match(
+        /^##\s+Bias\b:?\s*([\s\S]*?)(?:\r?\n\s*\r?\n|\r?\n##|$)/m,
+      );
+      const biasLabel = biasMatch?.[1]
+        ?.replace(/\*\*/g, "")
+        .split(/[—\-|]/)[0]
+        .trim();
       return {
         date,
         updated: str(data.updated),
-        biasLabel: biasMatch?.[1]?.split(/[—\-|]/)[0].trim(),
+        biasLabel: biasLabel || undefined,
       };
     })
     .sort((a, b) => b.date.localeCompare(a.date));
@@ -294,8 +302,13 @@ export function getTradeLogList(): TradeLogEntry[] {
     .map((f) => {
       const date = f.replace(/\.md$/, "");
       const raw = fs.readFileSync(path.join(base, f), "utf8");
-      const pnl = raw.match(/Net P&L:\s*\*\*([^*]+)\*\*/);
-      const wl = raw.match(/Wins:\s*(\d+)\s*\|\s*Losses:\s*(\d+)/);
+      // Tolerate both formats: "Net P&L: **+$2.36**" (label outside bold) and
+      // "**Daily P&L: −$23.43**" (label inside bold). Capture the amount itself.
+      const pnl = raw.match(/(?:Net|Daily) P&L:\s*\**\s*([+\-−]?\$[\d.,]+)/);
+      // Tolerate "Wins: 2 | Losses: 3" and the inline "(2 win, 3 loss)" form.
+      const wl =
+        raw.match(/Wins:\s*(\d+)\s*\|\s*Losses:\s*(\d+)/) ||
+        raw.match(/\((\d+)\s*wins?,\s*(\d+)\s*loss/i);
       const trades = raw.match(/Trades:\s*(\d+)/);
       return {
         date,

@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-29 14:01 UTC (T4 long recovered the day — flat, +$2.36)
+updated: 2026-06-30 02:36 UTC (floor-reclaim long cut −$9.11 — flat)
 synced_from: MT5 Bridge
 ---
 
@@ -10,13 +10,21 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,052.69 |
-| Equity | $5,052.69 |
-| Max risk per trade (1%) | $50.53 |
+| Balance | $5,043.53 |
+| Equity | $5,043.53 |
+| Max risk per trade (1%) | $50.44 |
 | Margin used | $0 (flat) |
-| Free margin | $5,052.69 |
+| Free margin | $5,043.53 |
 | Open positions | **None** — flat |
 | Pending orders | None |
+
+## Session Status — 2026-06-30
+- Daily P&L: **−$9.11** closed (0 win, 1 loss) — reconciled in [[Trade Log/20260630]]:
+  - T1 #9181531 BUY 3962.85 → ~3958.40, −44 pips, net **−$9.11** (~33 min, 0.02 lot) — **floor-reversal long (B+ 72), cut on a failed reclaim.** Asian session swept the full range floor 3958.57 → 3942.86 + reclaimed (higher-low 3949.93, higher-high 3970.24); armed BUY_LIMIT @3963 filled ~02:00 UTC. Floated +$12.66 at the 3981 high, then the reclaim FAILED to hold the floor (lower highs 3981→3973→3965, sagged back under 3958.57). Cut at market for −$9.11 rather than ride to the 3948 stop (−$30). Correct location, absent follow-through — the bounce was a bounce, not a reversal (flagged live). Good discipline: small loss on a broken thesis.
+- Session start equity: $5,052.69 → **current $5,043.53 (−$9.11, −0.18% day)**
+- **FLAT** — no positions, no pendings. Forward read: [[Analysis/LTF/20260630/20260630_0236_wait]].
+- HTF bias: NEUTRAL range 3958.57–4106 RESOLVING DOWN (htf-context 06-30 00:18 UTC, fresh). Price 3956 coiling below the floor in deep discount, 14 pips above the 3942.86 Asian sweep low.
+- Market context: ASIAN (02:36 UTC), price ~3957. Daily −0.18%, within limits. 🚨 HIGH-impact US data 16:45 Chicago PMI / 17:00 CB Consumer Confidence + JOLTS (~14h out) = range-resolver. Next edges: break <3942.86 (short continuation) or reclaim >3974 (long retry / short-from-supply 3990).
 
 ## Session Status — 2026-06-29
 - Daily P&L: **+$2.36** total closed (1 win, 2 loss, 1 scratch) — reconciled in [[Trade Log/20260629]]:

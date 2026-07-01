@@ -2,8 +2,10 @@
 
 | ID | Label | Price | Direction | Set At |
 |----|-------|-------|-----------|--------|
-| **#171** | Ceiling-short TP1 zone (NY high flip) reached — manage/trail toward M15 EQ 4039.61; run LTF | 4063.60 | below | 2026-07-01 14:29 UTC |
-| **#170** | Ceiling-short invalidation — wick/close above 4110 kills the H4 4102-4107 rejection thesis, opens continuation toward 4145; run LTF | 4110.00 | above | 2026-07-01 14:29 UTC |
+| **#173** | SHORT invalidation — reclaim/close above H4 ceiling top 4107.40 kills the sweep-reject thesis, opens continuation toward 4145; run LTF | 4108.00 | above | 2026-07-01 14:45 UTC |
+| **#172** | SHORT entry retest — M1 bear FVG 4099.44-4104.83 / H4 ceiling confluence; pending SELL_LIMIT 0.09 @4103 SL 4108 TP 4063.6 awaiting CONFIRM | 4103.00 | above | 2026-07-01 14:45 UTC |
+| **#171** | Ceiling-short TP1 zone (NY high flip) reached — manage/trail toward M15 EQ 4039.61; also TP for the 14:45 sweep-reject SHORT plan; run LTF | 4063.60 | below | 2026-07-01 14:29 UTC |
+| ~~**#170**~~ | ~~Ceiling-short invalidation — wick/close above 4110 kills the H4 4102-4107 rejection thesis, opens continuation toward 4145; run LTF~~ | ~~4110.00~~ | ~~above~~ | ~~2026-07-01 14:29 UTC~~ — **fired** (17:34-17:36 broker: 2 closes above 4110, session high 4115.74 — but this was itself a confirmed BSL liquidity sweep@4108.21, immediately reversed and closed back to 4095.96; see [[Analysis/LTF/20260701/20260701_1445_short]]) |
 | **#167** | Pullback into M5 bull FVG 3991.4-3993.55 (M15 discount) — Watch A LONG entry zone, ARMED order pending (never filled — rally ran straight through); run LTF | 3993.00 | below | 2026-07-01 13:28 UTC |
 | ~~**#169**~~ | ~~NY high 4063.6 test — rejection/CHoCH DOWN = short fade; clean push through = bullish continuation toward H4 ceiling 4102-4107; run LTF~~ | ~~4063.60~~ | ~~above~~ | ~~2026-07-01 13:28 UTC~~ — **fired** (clean push through, no rejection — continuation confirmed all the way to the H4 ceiling 4106.99; superseded by #170/#171 SHORT plan at the ceiling) |
 | ~~**#152**~~ | ~~Approaching H4 ceiling 4102-4107 = primary short-rejection zone~~ | ~~4101.00~~ | ~~above~~ | ~~(prior session)~~ — **fired** (price tagged the ceiling, wick to 4106.99 at 17:25 broker time / ~14:25 UTC, confirmed M1 rejection — see [[Analysis/LTF/20260701/20260701_1429_short]]) |

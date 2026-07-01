@@ -1,5 +1,5 @@
 ---
-updated: 2026-06-30 14:25 UTC (chop day −$23.43 — flat; recovery ran to London high 4055, failed-breakout lean voided, no new trades since 09:19)
+updated: 2026-07-01 06:09 UTC (sweep-reclaim long stopped out −$48.70 — flat, no pendings)
 synced_from: MT5 Bridge
 ---
 
@@ -10,13 +10,20 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,028.92 |
-| Equity | $5,028.92 |
-| Max risk per trade (1%) | $50.29 |
+| Balance | $4,980.12 |
+| Equity | $4,980.12 |
+| Max risk per trade (1%) | $49.80 |
 | Margin used | $0 (flat) |
-| Free margin | $5,028.92 |
+| Free margin | $4,980.12 |
 | Open positions | **None** — flat |
-| Pending orders | **1** — BUY_LIMIT #9218593 @3976, SL 3965, TP 4001.95, 0.04 lot (risk $44) — sweep-reclaim long retest, armed 07/01 ~02:20 UTC |
+| Pending orders | None |
+
+## Session Status — 2026-07-01
+- Daily P&L: **−$48.70** closed (0 win, 1 loss) — reconciled in [[Trade Log/20260701]]:
+  - T1 #7177967 BUY 3975.93 → 3963.78, −121.5 pips, net **−$48.70** (~124 min, 0.04 lot) — sweep-reclaim long (B+ 71) from [[Analysis/LTF/20260701/20260701_0220_long]]. Filled on the retest ~04:00 UTC; the reclaim did NOT hold — price re-broke below the 3969.95 sweep low and ran the 3965 stop (slipped to 3963.78). Second consecutive sweep+reclaim ASIAN-discount long to fail this way in 48h (06/30 01:21 was the first, −$9.11 cut early instead of riding to stop) — this one rode the full stop. Pattern flag: ASIAN-session reclaim confirmations at range lows have a poor hit rate lately: treat the next one with a tighter invalidation or smaller size, not blind full-risk.
+- Session start equity: $5,028.92 → **current $4,980.12 (−$48.70, −0.97% day)**
+- **FLAT** — no positions, no pendings.
+- Market context: ASIAN (06:09 UTC), price near the stop-out zone. Daily −0.97%, within limits.
 
 ## Session Status — 2026-06-30
 - Daily P&L: **−$23.43** closed (2 win, 3 loss) — reconciled in [[Trade Log/20260630]]:

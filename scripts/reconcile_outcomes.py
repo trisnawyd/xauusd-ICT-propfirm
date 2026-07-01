@@ -263,13 +263,15 @@ def write_back(a: Analysis, t: Trade, outcome: str, actual_r: float | None):
     for key, val in vals.items():
         pat = re.compile(rf"^{re.escape(key)}:.*$")
         for i, ln in enumerate(lines):
-            # only replace a blank schema placeholder, never an existing value
-            if pat.match(ln) and ln.split(":", 1)[1].strip() in ("", ""):
+            # overwrite any existing line for this key (blank placeholder or a
+            # stale value from a prior write-back, e.g. an armed-pending ticket
+            # superseded by the actual fill/close ticket) — never leave a dupe key
+            if pat.match(ln):
                 lines[i] = f"{key}: {val}"
                 break
         else:
             lines.append(f"{key}: {val}")  # field absent (pre-schema file) -> insert
-    a.file.write_text("\n".join(lines) + body, encoding="utf-8")
+    a.file.write_text("\n".join(lines) + "\n" + body, encoding="utf-8")
 
 
 # --------------------------------------------------------------------------- #

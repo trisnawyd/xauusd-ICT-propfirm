@@ -16,7 +16,7 @@ synced_from: MT5 Bridge
 | Margin used | $0 (flat) |
 | Free margin | $5,028.92 |
 | Open positions | **None** — flat |
-| Pending orders | None |
+| Pending orders | **1** — BUY_LIMIT #9218593 @3976, SL 3965, TP 4001.95, 0.04 lot (risk $44) — sweep-reclaim long retest, armed 07/01 ~02:20 UTC |
 
 ## Session Status — 2026-06-30
 - Daily P&L: **−$23.43** closed (2 win, 3 loss) — reconciled in [[Trade Log/20260630]]:

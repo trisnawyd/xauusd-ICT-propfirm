@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-01 08:01 UTC (Watch B LONG filled 3973.78 — 1 open position)
+updated: 2026-07-01 11:21 UTC (position closed — FLAT, synced)
 synced_from: MT5 Bridge
 ---
 
@@ -10,21 +10,21 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $4,980.02 |
-| Equity | $4,976.02 |
-| Max risk per trade (1%) | $49.80 |
-| Margin used | $1,589.51 |
-| Free margin | $3,386.51 |
-| Open positions | **1** — #9226130 BUY 0.04 @3973.78, SL 3965, TP 4001 |
+| Balance | $5,000.36 |
+| Equity | $5,000.36 |
+| Max risk per trade (1%) | $50.00 |
+| Margin used | $0 |
+| Free margin | $5,000.36 |
+| Open positions | **None** |
 | Pending orders | None |
 
 ## Session Status — 2026-07-01
-- **Open position:** #9226130 BUY XAUUSD 0.04 lot @3973.78, SL 3965 / TP 4001 (3.1:1), filled ~08:00 UTC off Watch B (M15 EQ 3973.52 breakout-continuation, alert #165) from [[Analysis/LTF/20260701/20260701_0745_wait]]. Discretionary user-executed entry; logged/graded B+ (70) in [[Analysis/LTF/20260701/20260701_0801_long]]. Risk $35.12 of $49.80 max.
-- Daily P&L: **−$48.70** closed (0 win, 1 loss) — reconciled in [[Trade Log/20260701]]:
-  - T1 #7177967 BUY 3975.93 → 3963.78, −121.5 pips, net **−$48.70** (~124 min, 0.04 lot) — sweep-reclaim long (B+ 71) from [[Analysis/LTF/20260701/20260701_0220_long]]. Filled on the retest ~04:00 UTC; the reclaim did NOT hold — price re-broke below the 3969.95 sweep low and ran the 3965 stop (slipped to 3963.78). Second consecutive sweep+reclaim ASIAN-discount long to fail this way in 48h (06/30 01:21 was the first, −$9.11 cut early instead of riding to stop) — this one rode the full stop. Pattern flag: ASIAN-session reclaim confirmations at range lows have a poor hit rate lately: treat the next one with a tighter invalidation or smaller size, not blind full-risk.
-- Session start equity: $5,028.92 → **current $4,980.12 (−$48.70, −0.97% day)**
-- **FLAT** — no positions, no pendings.
-- Market context: ASIAN (06:09 UTC), price near the stop-out zone. Daily −0.97%, within limits.
+- **FLAT** — no open positions, no pendings.
+- Daily P&L: **−$28.36** closed (2 win, 1 loss) — reconciled in [[Trade Log/20260701]]:
+  - T1 #7177967 BUY 3975.93 → 3963.78, −121.5 pips, net **−$48.70** (~124 min, 0.04 lot) — sweep-reclaim long (B+ 71) from [[Analysis/LTF/20260701/20260701_0220_long]]. Filled on the retest ~04:00 UTC; the reclaim did NOT hold — price re-broke below the 3969.95 sweep low and ran the 3965 stop (slipped to 3963.78). Second consecutive sweep+reclaim ASIAN-discount long to fail this way in 48h.
+  - T2+T3 #9226130 BUY 3973.78 (0.04 lot), closed in two manual pieces: 7182024 partial @3983.86 **+$20.11** (20 min) + 7182748 remainder @3973.92 **+$0.23** (36 min) — Watch B breakout-continuation long (B+ 70) from [[Analysis/LTF/20260701/20260701_0801_long]]. The 4th test of the demand sequence finally held; partial banked real profit into strength, remainder closed near breakeven ahead of the SL/TP resolving — left most of the 3.1:1 R:R uncollected but avoided holding into the 12:15–14:00 UTC news block.
+- Session start equity: $5,028.92 → **current $5,000.36 (−$28.56, −0.57% day)**
+- Market context: LONDON (11:21 UTC), flat and reset for a fresh read. 🚨 HIGH-impact US data TODAY 12:15 ADP NFP, 13:45 S&P Manu PMI, 14:00 ISM Manufacturing PMI + Prices Paid (~1–3h out) — range-resolver, stand down into it.
 
 ## Session Status — 2026-06-30
 - Daily P&L: **−$23.43** closed (2 win, 3 loss) — reconciled in [[Trade Log/20260630]]:

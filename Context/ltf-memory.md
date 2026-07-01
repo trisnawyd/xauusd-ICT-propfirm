@@ -1,53 +1,56 @@
 ---
-updated: 2026-07-01 07:45 UTC
-snapshot: "[[Analysis/LTF/20260701/20260701_0745_wait]]"
+updated: 2026-07-01 13:28 UTC
+snapshot: "[[Analysis/LTF/20260701/20260701_1328_wait]]"
 ---
 
 # LTF Memory — Last 3 Analyses
 
-## Current Market Structure (as of 2026-07-01 07:45 UTC)
+## Current Market Structure (as of 2026-07-01 13:28 UTC)
 
-**Account:** **FLAT** — no positions, no pendings. Equity **$4,980.12**, max risk **$49.80**. Daily P&L **−$48.70**. Spread 2.2 ✓. ASIAN (07:45 UTC).
+**Account:** **FLAT** — no positions, no pendings. Equity **$5,000.36**, max risk **$50.00**. Daily P&L **−$28.36** (2 win, 1 loss). Spread 2.2 ✓. OVERLAP (13:28 UTC).
 
-**Alert #162 (@3972, OTE-clear reclaim confirm) fired** — after the cancelled 07:23 long, price based at a **higher low (3960.65, vs. the prior 3959.73)** and pushed cleanly through 3968 → 3972 → 3973.14. M5 structure flipped BEARISH → BULLISH. This is the 4th test of the same demand level this session with shrinking sweep depth each time — constructive, but price has now run PAST the entry zone (OTE 3965.63–3970.26, FVG 3965.24–3968.13) with nothing to retest at current price (3971.79) → **Gate 3 WAIT, no zone at price, do not chase.**
+**Big picture:** since the last read (07:45 UTC, price ~3971), the session ran the full bullish recovery leg the HTF context called for — 3973 fill → EQ break → 4013 → 4020 → 4034 → now **4039.64**, testing H4 EQ 4043.95. The 08:01 Watch B long (#9226130) was closed in two manual pieces (+$20.11 partial @3983.86, +$0.23 scratch remainder @3973.92) well before this extension — R:R was mostly left on the table but avoided holding into the 12:15–14:00 UTC news block.
 
-**News:** 🚨 HIGH-impact US TODAY — 12:15 UTC ADP NFP, 13:45 S&P Manu PMI, 14:00 ISM Manufacturing PMI + Prices Paid (~4.5h out) = range-resolver, flatten before it.
+**News:** 🚨 HIGH-impact US data firing NOW/imminent — 12:15 ADP (past), 13:45 S&P Manu PMI, 14:00 ISM Manufacturing PMI/Prices Paid, 14:30 EIA Crude. Do not add risk until ~14:30 UTC clears.
 
-**M15 Status:** label BULLISH now (flipped); last logged event still stale (BoS UP@3979.14, 05:45 UTC) — detector hasn't caught up to the 3959.73→3960.65→reclaim sequence. EQ 3973.52, OTE 3965.63–3970.26, price 3971.79 = just above OTE, approaching EQ.
-**M5 Status:** label BULLISH; last event also stale (BoS DOWN@3959.73, 07:15 UTC). 0 open OBs (all consumed by the reclaim). Open FVGs: BULLISH 3965.24–3968.13 (below price, Watch A retest zone) and BEARISH 3990.56–3993.78 (well above, supply).
-**M1 Status:** clean uptrend off the 3960.65 low — 3966.01→3967.71→3968.8→3969.93→3971.26→3971.94, high 3973.14, no pullback yet to test if the breakout holds.
-**HTF frame (00:20 UTC, ~7.5h old, fresh):** NEUTRAL range 3942.86–4106 RECOVERING UP.
+**M15 Status:** label BULLISH, last event BoS UP@4035.73 (14:45). EQ 3997.73, OTE 3975.99–3988.76, price 4039.64 = PREMIUM (above the range high used for P/D — rally has outrun its own frame).
+**M5 Status:** label BEARISH (lagging), last event BoS UP@4033.33 (15:30) — transition to bullish, label hasn't caught up. 0 open OBs (all consumed). 7 open bull FVGs stacked 3991.4→4037.55.
+**M1 Status:** impulsive push 4022→4039, now consolidating 4039–4043, no pullback yet.
+**HTF frame (00:20 UTC, ~13h old, fresh):** NEUTRAL range 3942.86–4106 RECOVERING UP — this move is tracking the HTF's stated bullish-continuation path almost exactly (cleared 4013→4020→4034, now at H4 EQ 4043.95).
 
 **Key Levels:**
-- **4102–4107 — H4 ceiling | 4043.95 — H4 EQ | 4013–4016 — old M15 reclaim line**
-- **3990–3994 — open M5 bear FVG (supply) | 3983.1–3987.3 — recent M5 bear OB (filled, resistance-on-retest) | 3973.52 — M15 EQ (Watch B trigger)**
-- **3965.24–3968.13 — open M5 bull FVG (Watch A retest zone) | 3960.65 — latest higher low (invalidation ref) | 3959.73 / 3942.86 — prior sweep low / Asian swept floor**
+- **4102–4107 — H4 ceiling | 4063.60 — NY high | 4043.95 — H4 EQ (price testing now)**
+- **4035.73/4034 — M15 recovery high | 3997.73 — M15 EQ | 3991.4–3993.55 — M5 bull FVG (Watch A zone)**
+- **3975.99–3988.76 — M15 OTE (deeper alt zone) | 3959.73 — today's ASIAN low / session floor (thesis-killer)**
 
-**Setup:** 🟢 **LONG OPEN — Watch B filled.** Alert #165 fired (M5 close above EQ 3973.52 confirmed at 3976.31), user entered #9226130 BUY 0.04 @3973.78, SL 3965 / TP 4001 (3.1:1), graded B+ (70) in [[Analysis/LTF/20260701/20260701_0801_long]]. Watch A (#164, pullback retest) deleted — moot with a live position on. #163 (3960.65 breakdown) left active as a structural backstop below the SL.
+**Setup:** ⏳ **WAIT — Gate 3 P/D-timing, ARMED.** LONG proposed (M15/M5 last event BoS UP, WITH D1 trend) but price is in PREMIUM, not discount — no chase. Watch A (pullback to 3991–3993.5 FVG) proposed as an ARMED BUY_LIMIT 0.05 @3993.5, SL 3984, TP 4034 (4.3:1), projected B+ (75/100) — awaiting user CONFIRM. Watch B (counter-trend SHORT rejection at H4 EQ 4043.95) noted but not armed.
 
----
-
-## Analysis #1 — 2026-07-01 07:45 UTC (WAIT — Gate 3, no zone / do not chase)
-
-- **Direction:** WAIT — alert #162 fired (price cleared 3972), 4th test of the demand level held with a genuine higher low (3960.65) and M5 flipped bullish, but price has run past the OTE/FVG entry zone to 3971.79 with EQ (3973.52) next — nothing to retest at price.
-- **Watch A (preferred):** pullback into M5 bull FVG 3965.24–3968.13 + M1 reaction → LONG ~3967, SL 3957, TP 3990 (2.3:1).
-- **Watch B:** M5/M15 close above EQ 3973.52 → LONG ~3974, SL 3965, TP 4001 (3.0:1).
-- **Invalidation:** Watch A void on close below 3960.65 (4th reclaim failure); Watch B void on rejection below 3968.
+**Live update (post-save, same cycle):** H4 EQ 4043.95 alert (#168) fired almost instantly — price was already running through it as the alert was set, clean push with **no rejection wick** to 4046.64+. Watch B's rejection premise at H4 EQ is now dead for this leg; bullish continuation is confirming exactly as the HTF path described. Alert replaced with #169 @ NY high 4063.6 (next real resistance before the H4 4102–4107 ceiling). Watch A (discount pullback long, 3991–3993.5) is unaffected and still the primary armed idea if a retrace comes.
 
 ---
 
-## Analysis #2 — 2026-07-01 07:23 UTC (LONG — CANCELLED, no_fill)
+## Analysis #1 — 2026-07-01 13:28 UTC (WAIT — Gate 3 P/D-timing, ARMED)
 
-- **Direction:** LONG — alert #161 fired on a sweep through 3961 to a fresh low 3959.73, M15-confirmed SSL sweep+reclaim (close back 3969.63), fresh M5 bullish FVG + M15 OTE overlap at price. B+ (71/100).
-- **Outcome:** User CONFIRMed, but price broke back below the entry FVG (3970.6→3962.8, 3 consecutive bearish M1 closes) before fill — order held, never placed. calculate_lot_size tool bug found (10x correct risk) — flagged, manual formula used instead.
-- **Invalidation (as written):** M5 close back below 3958 (would have been the 3rd reclaim failure — instead a higher low at 3960.65 printed, superseding this).
+- **Direction:** WAIT — M15/M5 last event BoS UP proposes LONG (WITH D1 trend), but price 4039.64 is in M15 PREMIUM after a fast recovery leg from 3973→4039 — no zone to chase at price.
+- **Watch A (preferred, ARMED):** pullback into M5 bull FVG 3991.4–3993.55 + M1 bullish reaction → LONG ~3993.5, SL 3984, TP 4034 (4.3:1). Projected B+ (75/100). BUY_LIMIT proposed, awaiting CONFIRM.
+- **Watch B:** rejection + M5 CHoCH DOWN at H4 EQ 4043.95 → SHORT ~4044, SL 4054, TP 4020 (2.4:1). Counter-trend, not armed.
+- **Invalidation:** both watches void on M15 close below 3959.73 (today's low); Watch B additionally voids on M5 close above 4107.40 (H4 ceiling).
 
 ---
 
-## Analysis #3 — 2026-07-01 06:28 UTC (WAIT — Gate 3, no zone / no arm)
+## Analysis #2 — 2026-07-01 08:01 UTC (LONG — Watch B breakout-continuation, executed)
 
-- **Direction:** WAIT — the 02:20 sweep-reclaim long (#7177967) stopped out −$48.70; the H1 demand zone 3971–3975 it was built on had been breached to a fresh low 3962.97. No open M5 OB/FVG at price 3967.82 at the time.
-- **Outcome:** superseded ~55 min later when price swept deeper to 3959.73 and reclaimed, producing a fresh M5 FVG and the 07:23 LONG setup above.
-- **Invalidation (as written):** Watch A void M5 close <3961; Watch B void M5 close >3975 — both technically overtaken by the fresh sweep.
+- **Direction:** LONG — BUY #9226130 @3973.78, SL 3965 / TP 4001 (3.1:1), B+ (70). Watch B from the 07:45 WAIT: confirmed M5 close above M15 EQ 3973.52, pullback fill at EQ.
+- **Outcome:** ran to 3983.86 — user closed in two manual pieces: partial +$20.11 (20 min), remainder scratch +$0.23 (36 min), well before either SL or the 4001 TP. Price then continued to 4039.64 without the position on — R:R mostly uncollected but the early exit sidestepped the 12:15–14:00 UTC news block.
+- **Invalidation (as written):** M5 close back below 3965 — never tested, position closed manually first.
+
+---
+
+## Analysis #3 — 2026-07-01 07:45 UTC (WAIT — Gate 3, no zone / do not chase)
+
+- **Direction:** WAIT — alert #162 fired (price cleared 3972), 4th test of the demand level held with a genuine higher low (3960.65) and M5 flipped bullish, but price had run past the OTE/FVG entry zone to 3971.79 with EQ (3973.52) next — nothing to retest at price.
+- **Watch A:** pullback into M5 bull FVG 3965.24–3968.13 + M1 reaction → LONG ~3967, SL 3957, TP 3990 (2.3:1).
+- **Watch B:** M5/M15 close above EQ 3973.52 → LONG ~3974, SL 3965, TP 4001 (3.0:1). **This fired and became Analysis #2 above.**
+- **Invalidation:** Watch A void on close below 3960.65; Watch B void on rejection below 3968.
 
 ---

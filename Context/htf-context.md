@@ -1,106 +1,100 @@
 ---
-updated: 2026-07-01 00:20 UTC
-source: MCP (detect_structure D1/H4/H1, detect_fvg H4/H1, get_premium_discount H4/D1, get_swing_levels D1/H4, get_session_levels, get_current_tick, get_economic_calendar) — refreshed early Asian 07/01 after the recovery extended overnight (NY higher high 4063.6) and pulled back to ~4004 (H4 discount/OTE)
+updated: 2026-07-01 14:48 UTC
+source: MCP (detect_structure D1/H4/H1, detect_fvg H4/H1, get_premium_discount H4, get_session_levels, get_current_tick, get_account_info) — refreshed OVERLAP 07/01 after the ceiling (4102.44-4107.40) was tested twice: a pin-bar rejection at 4106.99 (17:25 broker) then a confirmed BSL liquidity sweep to 4115.74 (17:36) that immediately reversed and round-tripped back to ~4090 within 9 minutes
 snapshot: "[[Analysis/HTF/20260701]]"
 ---
 
 # HTF Context — XAU/USD
 
-## Bias: NEUTRAL — range 3942.86 / 4106, RECOVERING UP off the swept floor. The 06/30 floor-reversal recovery EXTENDED overnight: after the London push to 4055.51, the NY session printed a fresh higher high **4063.6** (06/30 17:00) before pulling back through the Asian open to **~4004**. Price now sits in **DISCOUNT of H4 (EQ 4043.95) and inside the upper H4 OTE 3986.13–4020.09** — the retrace-into-demand the 06/30 read was waiting for has arrived. Structure is bullish across H1/H4/M15 labels, but this is still a NEUTRAL RANGE, not a trend (D1 deep discount, EQ 4269.11). The honest read stays **fade the edges, don't chase the middle**, with the actionable edge now on the LONG side: a hold/reclaim of the 4000–4014 discount → long toward EQ 4043.95 → 4063, OR a rejection at 4043.95 / 4063.6 / 4102–4107 → short back toward the floor. **Fresh HIGH-impact US block today (12:15 ADP, 13:45 S&P Manu PMI, 14:00 ISM Manufacturing PMI + Prices Paid, ~12–14h out) = the likely range-resolver** — stand down into it, do not hold size across it.
+## Bias: NEUTRAL — range **3942.86 / 4145.04**, RECOVERING but twice-rejected at the internal ceiling. The 06/30 floor-reversal recovery ran uninterrupted from 3973 all the way to the H4 bear FVG ceiling (4102.44–4107.40), tagged it at 4106.99 (M1 pin-bar rejection), then displaced through it on the 14:00 UTC ISM release to a session high of **4115.74** — this looked like a genuine H4 range-break but wasn't: `detect_liquidity_sweeps` confirmed it as a **BSL sweep@4108.21** (wick 4115.74, close back to 4095.96), and price round-tripped the entire breakout leg back to ~4090 in under 10 minutes. Crucially, **4115.74 never came close to the true H4 structural high (4145.04, set 06/23)** — this was a sweep of an internal LTF/H4-FVG level, not a break of the actual range boundary. Both H4 and H1 detectors' **most recent captured event is bearish** (H4: BoS DOWN@3942.86 06/30; H1: BoS DOWN@3959.73 07/01) even though their lagging trend labels still read BULLISH — per the reading rule, both timeframes are in **transition-to-bearish**, not confirmed uptrends. Combined with the double rejection at the ceiling, the near-term edge now leans **short-the-premium**, not chase-the-breakout. A genuine bullish resolution requires an H4 close above **4145.04** (not 4107/4110) — until then this is a range-fade market.
 
-**Reason:** detect_structure labels are now bullish on all three HTFs but lag a two-sided, range-bound tape. D1 BULLISH (last BoS UP@4220.61, 06/22) is stale — price 4004 sits in DEEP D1 discount (EQ 4269.11), far below the 4082.49–4192.11 D1 OTE. H4 BULLISH, last event BoS UP@4096.36 (06/26); freshest swings L3942.86 (06/30 04:00) → H4063.6 (06/30 16:00) = floor swept, reclaimed, and pushed to a new recovery high. H1 BULLISH, last event BoS UP@4033.95 (06/30 21:00) — the overnight recovery chain (BoS UP 4063.6 → 4033.95). No timeframe gives a clean directional trend; the edge is location (price back in H4 discount/OTE after the recovery leg) + the recovery structure.
+**Reason:** D1 BULLISH (last BoS UP@4220.61, 06/22) remains stale/irrelevant — price 4090 sits far below the D1 OTE (4082.49–4192.11 is roughly in range now, but D1 structure itself hasn't registered anything since the 06/22 high). H4 BULLISH label, but last event is BoS DOWN@3942.86 (06/30 04:00) → per the detect_structure Reading Rule, this is TRANSITION TO BEARISH, not a confirmed uptrend — treat the bullish label cautiously. H1 same pattern: BULLISH label, last event BoS DOWN@3959.73 → TRANSITION TO BEARISH. Today's ADP/ISM data cluster (all three misses — bearish USD) produced the expected bullish spike, but it was swept and faded rather than held, which is itself informative: the fundamental tailwind exists but the technical structure at the ceiling won, at least for this attempt.
 
-**What changed since 20260630 09:19 UTC:**
-- **The recovery extended to a higher high:** NY printed **4063.6** (above the 4055.51 London high) = the floor-reversal is still in control; the "resolving down" lean remains fully void.
-- **Price pulled back into H4 discount/OTE:** from 4063.6 down to ~4004 = the retrace INTO demand (the 09:19 read wanted this instead of chasing 4019–4055 premium). Price 4004 is now inside OTE 3986.13–4020.09.
-- **Prior H4 bull FVG 3998.33–4014.69 is now FILLED** (mitigated on the pullback). Fresh demand below = H1 bull FVG **3971.34–3974.95 [open]**.
-- **New micro-supply overhead:** H1 bear FVG **4020.97–4028.01 [open]** (06/30 22:00) = first resistance just above price.
-- **Overhead supply unchanged:** H4 bear FVG **4102.44–4107.40 [open]** = THE ceiling; H4 bear FVG 4233.39–4239.57 [open] (distant).
-- **News rolled to a NEW day's block:** HIGH-impact US TODAY 12:15 ADP NFP Change, 13:45 S&P Global Manu PMI, 14:00 ISM Manufacturing PMI + Prices Paid — the range-resolver, ~12–14h out.
+**What changed since 20260701 00:20 UTC:**
+- **Recovery ran the full leg to the ceiling:** 3973 → 4106.99 (pin-bar reject) → swept to 4115.74 → reversed to ~4090. The prior "resolving up toward 4106 ceiling" path played out exactly, and the ceiling held (twice).
+- **H4 range re-scoped:** true H4 high is **4145.04** (06/23, untested this leg), not 4107/4110 — the earlier "range-up break level" (4107.40) was an internal H4 FVG, not the actual H4 swing high. Updated bull-break trigger: **H4 close above 4145.04**, not 4107.40.
+- **New H4 bullish FVG formed:** 3984.74–4012.55 (07/01 12:00, open) — fresh intraday demand floor, below current price.
+- **New H1 bullish FVG formed:** 4033.93–4082.22 (07/01 16:00, open) — spans the H4 EQ (4043.95) and sits directly below current price; this is now the first real demand shelf on a deeper pullback, and roughly matches the SHORT plan's TP zone (4063.6 / 4039.61).
+- **News cluster released:** ADP 98K (vs 118K fcst/122K prev), ISM Manufacturing PMI 53.3 (vs 53.8/54.0), ISM Prices Paid 73.0 (vs 77.7/82.1) — clean triple-miss, bearish USD / bullish gold fundamentally (see [[Analysis/News/20260701/20260701_1436_us-manufacturing-data-miss]]), but the immediate technical reaction was sweep-and-fade at the ceiling, not sustained continuation.
 
 ---
 
 ## D1 Analysis
-- **D1 trend (algo): BULLISH** — last event BoS UP@4220.61 (06/22); stale. Prior CHoCH DOWN@4023.56 (06/11) broke to 3958.57/3942.86; price 4004 back near that broken level.
-- **D1 P/D:** range 4595.35 / 3942.86 | EQ **4269.11** | OTE 4082.49–4192.11. Price 4004 = DEEP DISCOUNT.
-- **D1 read:** multi-week markdown off 4833/4595; last 2 weeks ranged off the 3958/3942 low. Far below EQ = not a bull trend; a deep-discount range.
-- **D1 Bias: NEUTRAL (deep discount of a larger downtrend).**
+- **D1 trend (algo): BULLISH** — last event BoS UP@4220.61 (06/22); stale, ~9 days old, predates the entire 4350→3942→4145 range this context now covers.
+- **D1 read:** multi-week markdown/recovery structure; last week+ has ranged entirely within 3942.86–4145.04, well below the old 4220.61/4350 highs. Not a live D1 signal either direction right now.
+- **D1 Bias: NEUTRAL (stale label, price action confined to a sub-range below it).**
 
 ## H4 Analysis
-- **H4 trend (algo): BULLISH** — last event BoS UP@4096.36 (06/26); freshest swings L3942.86 (06/30 04:00) → H4063.6 (06/30 16:00) = floor swept + reclaimed + new recovery high.
-- **H4 P/D (range 4145.04 / 3942.86):** EQ **4043.95** | OTE 3986.13–4020.09. Price 4004 = DISCOUNT, inside the upper OTE.
-- **H4 FVGs open:** BEARISH **4102.44–4107.40** (the ceiling), BEARISH 4233.39–4239.57 (distant). The prior bull FVG 3998–4014 is now FILLED.
-- **H4 Bias: NEUTRAL/range, recovering — pulled back into discount/OTE. EQ 4043.95 = pivot; 4106 = ceiling; 3971–3975 = deeper demand; 3942.86 = swept floor.**
+- **H4 trend (algo): BULLISH**, but **last event BoS DOWN@3942.86** (06/30 04:00, broke 3959.73) → **TRANSITION TO BEARISH** per the reading rule — the label is lagging a bearish structural break.
+- **H4 P/D (range 4145.04 / 3942.86):** EQ **4043.95** | OTE 3986.13–4020.09. Price 4089.88 = **PREMIUM**.
+- **H4 FVGs open:** BULLISH **3984.74–4012.55** (fresh, 07/01 12:00, intraday demand floor); BEARISH **4233.39–4239.57** (06/18, distant, only relevant above 4145.04). The bear FVG at 4102.44–4107.40 is formally [filled] per the H4 detector's own criteria (mitigated on an earlier visit), but has behaved as live intraday resistance twice today — treat it as an active S/R flip zone regardless of the algo's "filled" tag.
+- **H4 Bias: NEUTRAL/range — twice-rejected at the 4102–4107 internal ceiling, has not tested the true range high 4145.04. EQ 4043.95 = pivot; 4145.04 = real ceiling; 3984.74–4012.55 = fresh demand; 3942.86 = swept floor.**
 
 ## H1 Analysis
-- **H1 trend (algo): BULLISH** — last event BoS UP@4033.95 (06/30 21:00). Recovery chain: BoS UP@4063.6 (17:00) after CHoCH DOWN@4007.51 (15:00) / CHoCH UP@4037.78 (11:00) off the 3942.86 sweep.
-- **H1 FVGs open:** BULLISH **3971.34–3974.95** (06/30 07:00, demand below); BEARISH **4020.97–4028.01** (06/30 22:00, micro-supply just overhead).
-- **H1 Bias: NEUTRAL/recovering — bullish structure, price consolidating at the discount low ~4004.**
+- **H1 trend (algo): BULLISH**, but **last event BoS DOWN@3959.73** (07/01, broke 4012.55) → **TRANSITION TO BEARISH** per the reading rule.
+- **H1 FVGs open:** BULLISH **3986–3997.64** (07/01 13:00, deeper demand, aligns with H4 OTE); BULLISH **4033.93–4082.22** (07/01 16:00, first demand shelf directly below current price, spans H4 EQ).
+- **H1 Bias: NEUTRAL/recovering-but-rejected — bullish label lagging, most recent structural event and today's price action both bearish-leaning.**
 
 ## Premium / Discount (H4)
 - **H4 range:** 4145.04 / 3942.86 | EQ **4043.95** | OTE 3986.13–4020.09
-- **Current price ~4004 → DISCOUNT, inside the upper OTE.** Discount favors longs on a hold/reclaim of 4000–4014, targeting EQ 4043.95 → 4063. A close back below 3982.74 → 3942.86 re-opens the breakdown.
+- **Current price ~4090 → PREMIUM.** Premium + twice-rejected ceiling favors fading rallies back toward EQ/OTE over chasing longs. A close above 4145.04 flips this to genuine bullish continuation; a close below 3942.86 re-opens the breakdown.
 
 ---
 
-## Session Levels (00:20 UTC — ASIAN active, 07/01)
+## Session Levels (14:48 UTC — OVERLAP active, 07/01)
 
 | Session | High | Low | Open |
 |---------|------|-----|------|
-| Asian (07/01, active) | 4029.53 | 3942.86 | 4005.52 |
-| London (06/30, prev) | 4037.78 | 3967.58 | 4009.46 |
-| NY (06/30, prev) | 4063.60 | 4007.51 | 4030.55 |
+| Asian (07/01) | 4029.53 | 3969.95 | 3980.88 |
+| London (07/01) | 4108.21 | 3959.73 | 4022.02 |
+| NY (07/01, active) | 4115.74 | 3979.43 | 4091.48 |
 
-**Current:** 4003.40 / 4003.60 | Spread **2 ✓** | Session ASIAN
-Price coiling ~4004 at the M15 discount low after a shallow SSL sweep (4001.15 wick). HIGH-impact US data 12:15–14:00 UTC today.
+**Current:** 4089.64 / 4089.84 | Spread **2 ✓** | Session OVERLAP
+Price retracing off the 4115.74 sweep high, back toward the H4 EQ/H1 FVG shelf (4033.93–4082.22).
 
 ---
 
 ## Key Levels
 
-### Supply / Resistance (above ~4004)
+### Supply / Resistance (above ~4090)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **4013–4016** | M15 OTE top / filled M5 OB cluster | Reclaim line — M5 close above = discount-long confirmation |
-| **4019.92** | M15 EQ | Intraday pivot — reclaim+hold flips M15 fully up |
-| **4020.97–4028.01** | H1 bear FVG [open] | First micro-supply overhead |
-| **4034–4035** | M15 swing high | Break = continuation toward H4 EQ |
-| **4043.95** | H4 EQ | Pivot / first short-rejection line |
-| **4063.60** | NY high (BSL) | Recovery high — break = up to 4106 |
-| **4102.44–4107.40** | H4 bear FVG [open] | **THE ceiling — primary short-rejection zone** |
-| **4145.04** | H4 swing high | Range high |
+| **4102.44–4107.40** | H4 bear FVG (formally filled, live intraday resistance) | Rejected twice today (pin-bar 4106.99, sweep-reject 4115.74) |
+| **4115.74** | Session/NY high, swept BSL | Liquidity already taken here — low-probability repeat target near-term |
+| **4145.04** | H4 swing high (06/23) | **The real range ceiling** — H4 close above here = genuine bullish break |
+| **4233.39–4239.57** | H4 bear FVG [open] | Next supply, only relevant if 4145.04 breaks |
 
-### Support / Demand (below ~4004)
+### Support / Demand (below ~4090)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **4004.79 / 4001.15** | M15 SSL swept low / wick | Fresh sweep — reclaim+hold = long trigger; close below = breakdown |
-| **4000** | Round psych | First support under the sweep |
-| **3971.34–3974.95** | H1 bull FVG [open] | Deeper HTF demand / knife-catch long zone |
-| **3982.74** | H4 swing / structure | M5 close below re-opens the breakdown |
-| **3942.86** | Asian low / swept floor | **Floor — close below re-opens breakdown to 3920/3900** |
+| **4063.60** | NY high (06/30) / flip zone | First support on the retrace; also SHORT plan TP1 |
+| **4043.95** | H4 EQ | Pivot |
+| **4033.93–4082.22** | H1 bull FVG [open] | First real demand shelf directly below price |
+| **3986–3997.64** | H1 bull FVG [open] | Deeper demand, aligns with H4 OTE top |
+| **3984.74–4012.55** | H4 bull FVG [open] | Fresh intraday demand floor |
+| **3942.86** | Swept floor | **Close below re-opens breakdown to 3920/3900** |
 
 ---
 
 ## Trade Directional Guidance
 
-### BIAS: NEUTRAL — range 3942.86 / 4106, RECOVERING UP. No HTF trend, but bullish structure H1/H4/M15 + price back in H4 discount/OTE. The actionable edge: (a) hold/reclaim of the 4000–4014 discount = long toward EQ 4043.95 → 4063; (b) rejection at 4043.95 EQ / 4063.6 / 4102–4107 = short back toward the floor. Do NOT chase price in the 4020–4063 mid-band (no edge). HIGH-impact US data 12:15–14:00 UTC today is the resolver — stand down into it.
-**Current state: price ~4004 coiling at the M15 discount low after a shallow SSL sweep (4001.15). Wait for a confirmed reclaim (M5 close back above ~4013) for the long, or a rejection at supply for the short — no clean M5 OB/FVG at price yet, so a long here is mid-air.**
+### BIAS: NEUTRAL — range 3942.86 / 4145.04, twice-rejected at the internal 4102–4107 ceiling. Both H4 and H1's most recent structural event is bearish (transition-to-bearish under the lagging bullish label). Near-term edge favors fading premium (short toward EQ/H1 FVG shelf) over chasing the breakout — the breakout trigger is now 4145.04, not 4107/4110.
+**Current state: price ~4090, retracing off the 4115.74 sweep. Live SHORT plan in play — see [[Analysis/LTF/20260701/20260701_1445_short]] (entry 4103 retest, SL 4108, TP 4063.6, awaiting CONFIRM).**
 
 ---
 
-**Setup A — LONG from the discount low (recovery retrace):**
-- Condition: hold of 4000–4004 + M5 close back above **4013** (reclaim of OTE/discount) OR a clean M1 reclaim holding >4008 after retesting the 4001–4004 sweep.
-- Entry: ~4006 | SL: ~3995 (below 4000 psych / 4001.15 sweep wick) → (4006−3995)×10 = 110 pips
-- TP1: 4019.92 (M15 EQ) → 139 pips | TP2: 4034 (M15 high) → 280 pips (2.5:1) → ext 4043.95 (H4 EQ)
-- Note: with the recovery; invalid on M5 close below 3995/4000 → 3971 H1 FVG / 3942 floor.
+**Setup A — SHORT the premium / ceiling rejection (current live plan):**
+- Condition: retest of the swept ceiling zone (already in progress — see LTF file).
+- Entry: ~4103 | SL: 4108 | TP1: 4063.6 | TP2 (extension): 4039.61 (H4 EQ)
+- Invalidation: H4/M5 close back above 4108 → reopens the breakout path toward 4145.04.
 
-**Setup B — SHORT rejection at supply (range premium / ceiling):**
-- Condition: rejection wick + M5 CHoCH DOWN at **4043.95 EQ**, **4063.6** (NY high), or **4102–4107** ceiling.
-- Entry: ~4044 (EQ) | SL: ~4058 → 140 pips | TP1: 4020 → 240 pips | TP2: 4005 → 390 pips (2.8:1)
-- Note: counter to the recovery — lower confidence unless from the 4102–4107 ceiling; invalid on H4 close above 4066.
+**Setup B — LONG the reclaim (if 4145.04 eventually breaks, or a clean H1 FVG hold):**
+- Condition: hold/reclaim of the H1 bull FVG 4033.93–4082.22 with a clean M15 CHoCH UP, OR an H4 close above 4145.04 with retrace-and-hold above it.
+- Entry: ~4045 (EQ reclaim) or ~4148 (post-breakout retest) | SL: below the respective zone
+- Note: lower priority than Setup A until one of these triggers — do not chase mid-range.
 
 ### BIAS RESOLUTION (watch these)
-- **Recovery continuation (bull):** M5 close above 4013 → EQ 4019.92 → 4034 → H4 EQ 4043.95 → 4063 → 4106 ceiling
-- **Range-down re-break (bear):** M5/H4 close below 3982.74 → 3942.86 → open air to 3920/3900
-- **Range-up break (bull):** H4 close above 4107.40 → 4145
-- **News:** HIGH-impact US data 12:15–14:00 UTC today = volatility spike / resolver — do not hold size into it
+- **Range-up break (bull, revised):** H4 close above **4145.04** (NOT 4107/4110 — that was proven to be an internal sweep level) → continuation toward 4233–4239 supply
+- **Ceiling holds (bear, near-term):** rejection confirmed at 4102–4107 (already twice) → fade toward H4 EQ 4043.95 → H1 FVG shelf 4033.93–4082.22 → deeper toward 3984.74–4012.55
+- **Range-down re-break (bear, macro):** close below 3942.86 → open air to 3920/3900
+- **News:** ADP/ISM triple-miss already released (bearish USD / bullish gold fundamentally) but technically faded at the ceiling — Fed Chairman Warsh speech (13:00 UTC) also passed; no further HIGH-impact USD events flagged in the next few hours per this morning's calendar pull — reconfirm with a fresh `economic calendar` call before extending risk further into NY.

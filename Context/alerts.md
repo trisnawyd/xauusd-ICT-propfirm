@@ -2,8 +2,10 @@
 
 | ID | Label | Price | Direction | Set At |
 |----|-------|-------|-----------|--------|
-| **#161** | Fresh London low breakdown trigger — short continuation (Watch B); M5 close below → SHORT ~3961 SL 3972 TP1 3942.86/TP2 3920 (3.7:1); run LTF | 3961.00 | below | 2026-07-01 06:28 UTC |
-| **#160** | H1 FVG reclaim trigger — long re-entry line (Watch A); M5 close above → LONG ~3973 SL 3961 TP 4013 (3.3:1), lower conf (zone already failed once); run LTF | 3975.00 | above | 2026-07-01 06:28 UTC |
+| **#163** | 4th reclaim-failure trigger — M5 close below 3960.65 (the latest higher low) kills the reclaim a 4th time, hands credibility to the breakdown thesis → next stop 3942.86; run LTF | 3960.00 | below | 2026-07-01 07:37 UTC |
+| **#162** | OTE-clear reclaim confirmation — M5 close above 3972 (tighter replacement for #160/3975) confirms the 4th-test higher-low reclaim → LONG re-entry line; run LTF | 3972.00 | above | 2026-07-01 07:37 UTC |
+| ~~**#161**~~ | ~~Fresh London low breakdown trigger — short continuation (Watch B); M5 close below → SHORT ~3961 SL 3972 TP1 3942.86/TP2 3920 (3.7:1); run LTF~~ | ~~3961.00~~ | ~~below~~ | ~~2026-07-01 06:28 UTC~~ — **fired** (07:07–07:15 UTC swept through to fresh low 3959.73, but M15 closed back 3969.63 same candle — sweep+reclaim, not continuation; SHORT thesis died on arrival, flipped into a LONG setup instead — see 07:23 analysis) |
+| ~~**#160**~~ | ~~H1 FVG reclaim trigger — long re-entry line (Watch A); M5 close above → LONG ~3973 SL 3961 TP 4013 (3.3:1), lower conf (zone already failed once); run LTF~~ | ~~3975.00~~ | ~~above~~ | ~~2026-07-01 06:28 UTC~~ — deleted 2026-07-01 07:37 UTC (superseded by tighter #162 @3972 after the 4th-test structure clarified) |
 | **#61** | Pullback into Watch A LONG demand approach — H1/H4 bullish FVG top 4200.56 + M15 EQ 4178.42; need pullback to 4165-4185 + M1 bullish engulf → LONG ~4175 SL 4150 TP 4245.25 (2.8:1); run LTF | 4185.00 | below | 2026-06-22 01:19 UTC |
 | **#62** | Deep LONG OTE 4154-4168 — M15 OTE + H4/H1 bullish FVG base 4161.81-4165.03; quality buy-the-dip zone, need M1 bullish engulf → LONG ~4165 SL 4140 TP1 4216/TP2 4245 (3.2:1); run LTF | 4168.00 | below | 2026-06-22 01:19 UTC |
 | **#63** | Asian/weekly high 4220.61 break — bullish continuation toward first supply 4233-4240 then H4 EQ 4245.25; retrace-long on displacement + M1 engulf (chasing = lower tier); run LTF | 4221.00 | above | 2026-06-22 01:19 UTC |

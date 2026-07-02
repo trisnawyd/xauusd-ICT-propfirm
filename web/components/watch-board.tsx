@@ -11,6 +11,7 @@ import {
   type ISeriesApi,
   type IPriceLine,
   type UTCTimestamp,
+  type AutoscaleInfo,
 } from "lightweight-charts";
 import { Maximize2, Minimize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -38,6 +39,19 @@ const MT5_POLL_MS = 5_000;
 const TOUCH_TOLERANCE = 0.2;
 const HAS_TD = !!TWELVEDATA_KEY;
 const HAS_MT5 = !!MT5_BRIDGE_URL;
+// fitContent() squeezes every fetched bar into the container width — with the
+// full 120-bar fetch that renders candles a couple px wide. Default-zoom to the
+// most recent window instead so each candle is readable; users can still scroll
+// out to see the rest.
+const DEFAULT_VISIBLE_BARS = 60;
+
+function zoomToDefault(chart: IChartApi, totalBars: number) {
+  if (totalBars <= DEFAULT_VISIBLE_BARS) {
+    chart.timeScale().fitContent();
+    return;
+  }
+  chart.timeScale().setVisibleLogicalRange({ from: totalBars - DEFAULT_VISIBLE_BARS, to: totalBars });
+}
 
 function pipsBetween(a: number, b: number): number {
   return Math.round(Math.abs(a - b) * 10);
@@ -132,12 +146,19 @@ export default function WatchBoard({
       },
     });
 
-    // Pin the y-axis to span every level (+ candles + live), so levels are
-    // always visible instead of the scale collapsing onto the live marker.
+    // Base the y-axis on whatever bars are actually ON SCREEN (baseImplementation
+    // reflects the current visible range/zoom), then extend it just enough to
+    // keep every level + the live marker visible — instead of always spanning the
+    // full fetched dataset, which flattens candles once you zoom/scroll in.
     const levelPrices = levels.map((l) => l.price);
-    const autoscaleInfoProvider = () => {
+    const autoscaleInfoProvider = (baseImplementation: () => AutoscaleInfo | null) => {
+      const base = baseImplementation();
       const prices = [...levelPrices];
-      if (barsRangeRef.current) prices.push(barsRangeRef.current.lo, barsRangeRef.current.hi);
+      if (base?.priceRange) {
+        prices.push(base.priceRange.minValue, base.priceRange.maxValue);
+      } else if (barsRangeRef.current) {
+        prices.push(barsRangeRef.current.lo, barsRangeRef.current.hi);
+      }
       if (brokerPriceRef.current != null) prices.push(brokerPriceRef.current);
       const min = Math.min(...prices);
       const max = Math.max(...prices);
@@ -165,7 +186,7 @@ export default function WatchBoard({
           hi: Math.max(...ohlc.bars.map((b) => b.high)),
         };
         lastTimeRef.current = ohlc.bars[ohlc.bars.length - 1].time;
-        chart.timeScale().fitContent();
+        zoomToDefault(chart, ohlc.bars.length);
         fittedRef.current = true;
       }
       series = cs;
@@ -263,8 +284,8 @@ export default function WatchBoard({
         lo: Math.min(...candles.map((c) => c.low)) + off,
         hi: Math.max(...candles.map((c) => c.high)) + off,
       };
-      if (!fittedRef.current) {
-        chartRef.current?.timeScale().fitContent();
+      if (!fittedRef.current && chartRef.current) {
+        zoomToDefault(chartRef.current, candles.length);
         fittedRef.current = true;
       }
     };

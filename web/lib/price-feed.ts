@@ -115,7 +115,7 @@ function bridgeBase(): string {
 
 export async function fetchMt5Candles(
   timeframe = "M5",
-  count = 120,
+  count = 180,
   signal?: AbortSignal,
 ): Promise<Candle[]> {
   const url = `${bridgeBase()}/ohlcv?tf=${timeframe.toUpperCase()}&count=${count}`;

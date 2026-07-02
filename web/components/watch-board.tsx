@@ -12,6 +12,9 @@ import {
   type IPriceLine,
   type UTCTimestamp,
 } from "lightweight-charts";
+import { Maximize2, Minimize2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import {
   fetchGoldQuote,
   fetchTwelveCandles,
@@ -63,6 +66,7 @@ export default function WatchBoard({
   levels: WatchLevel[];
   ohlc?: OhlcSnapshot | null;
 }) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const chartRef = useRef<IChartApi | null>(null);
   const seriesRef = useRef<ISeriesApi<"Candlestick"> | ISeriesApi<"Line"> | null>(null);
@@ -86,6 +90,21 @@ export default function WatchBoard({
   const [zone, setZone] = useState<string>(() => killzone());
   // Active feed label — switches at runtime as MT5 degrades to TD / gold-api.
   const [source, setSource] = useState<string>(HAS_MT5 ? "MT5" : HAS_TD ? "Twelve Data" : "gold-api");
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // In-page "maximize" overlay (fixed inset-0), not the native Fullscreen API —
+  // that requires an `allow="fullscreen"` permission when embedded in an iframe
+  // and adds OS-level chrome we don't want for a chart panel.
+  useEffect(() => {
+    if (!isFullscreen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsFullscreen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [isFullscreen]);
+
+  const toggleFullscreen = () => setIsFullscreen((v) => !v);
 
   // Build + tear down the chart once.
   useEffect(() => {
@@ -105,7 +124,12 @@ export default function WatchBoard({
         horzLines: { color: dark ? "#27272a" : "#f4f4f5" },
       },
       rightPriceScale: { borderVisible: false },
-      timeScale: { borderVisible: false, timeVisible: true, secondsVisible: false },
+      timeScale: {
+        borderVisible: false,
+        timeVisible: true,
+        secondsVisible: false,
+        rightOffset: 16,
+      },
     });
 
     // Pin the y-axis to span every level (+ candles + live), so levels are
@@ -332,7 +356,13 @@ export default function WatchBoard({
   const sourceLabel = useCandles ? `${timeframe} · ${source}` : `spot XAU/USD · ${source}`;
 
   return (
-    <div className="space-y-4">
+    <div
+      ref={wrapperRef}
+      className={cn(
+        "space-y-4",
+        isFullscreen && "fixed inset-0 z-50 flex flex-col overflow-auto bg-background p-4",
+      )}
+    >
       <div className="flex flex-wrap items-baseline gap-3">
         <span className="font-mono text-2xl">{brokerPrice !== null ? brokerPrice.toFixed(2) : "—"}</span>
         <span className="text-xs uppercase tracking-wide text-muted-foreground">{sourceLabel} · {zone}</span>
@@ -343,11 +373,21 @@ export default function WatchBoard({
         ) : (
           <span className="text-xs text-muted-foreground">connecting…</span>
         )}
+        <Button
+          variant="outline"
+          size="icon-sm"
+          className="ml-auto"
+          onClick={toggleFullscreen}
+          title={isFullscreen ? "Exit fullscreen" : "Fullscreen chart"}
+          aria-label={isFullscreen ? "Exit fullscreen" : "Fullscreen chart"}
+        >
+          {isFullscreen ? <Minimize2 /> : <Maximize2 />}
+        </Button>
       </div>
 
-      <div ref={containerRef} className="h-[360px] w-full" />
+      <div ref={containerRef} className={cn("w-full", isFullscreen ? "min-h-0 flex-1" : "h-[360px]")} />
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className={cn("grid gap-4 sm:grid-cols-2", isFullscreen && "shrink-0")}>
         {groups.map(([name, lvs]) => (
           <div key={name} className="rounded-lg border p-3">
             <div className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">

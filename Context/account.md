@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-02 05:17 UTC (position closed — FLAT, synced)
+updated: 2026-07-02 06:5x UTC (position closed — FLAT, synced)
 synced_from: MT5 Bridge
 ---
 
@@ -10,21 +10,25 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,018.04 |
-| Equity | $5,018.04 |
-| Max risk per trade (1%) | $50.18 |
+| Balance | $4,978.13 |
+| Equity | $4,978.13 |
+| Max risk per trade (1%) | $49.78 |
 | Margin used | $0 |
-| Free margin | $5,018.04 |
+| Free margin | $4,978.13 |
 | Open positions | **None** |
-| Pending orders | None |
+| Pending orders | **1 — SELL_LIMIT #9266059 @4068.35, SL 4071, TP 4055.25, lot 0.05** |
 
 ## Session Status — 2026-07-02
-- Daily P&L: **+$17.94** closed (1 win, 1 loss) — reconciled in [[Trade Log/20260702]]:
+- Daily P&L: **−$21.61** closed (2 win, 3 loss) — reconciled in [[Trade Log/20260702]]:
   - T1 #7212602 SELL 4062.28 → 4068.95, net **−$33.48** (15 min) — entered the 4054.46–4064.20 supply shelf per [[Analysis/LTF/202607/20260702/20260702_0137_wait]] Watch B zone, but off-plan price/lot; supply didn't hold on first test, session extended to new Asian high 4074.23.
   - T2 #7213838 SELL 4068.25 → 4057.94, net **+$51.42** (85 min) — re-short near the sweep-reject zone after T1 stopped out, SL 4078.25 / TP 4038.25 (thesis covered live in [[Analysis/LTF/202607/20260702/20260702_0427_wait]] Watch B). Price worked down toward the discount OTE/floor as expected but was closed manually at 4057.94, well short of TP — banked profit early rather than riding the full R:R, same pattern as 07/01's early exits.
-- Session start equity: $5,000.36 → **current $5,018.04 (+$17.68, +0.35% day)**
-- **FLAT** — no open positions, no pendings. User is standing down, waiting for a better short opportunity rather than chasing price at 4057.36 — consistent with the 04:27 UTC read (Gate 3 no entry zone).
-- Market context: ASIAN (05:17 UTC), price 4057.36/4057.56, spread 2 ✓. HTF NEUTRAL range 3942.86–4145.04. 🚨 HIGH-impact NFP cluster 12:30 UTC — no new positions 12:15–13:00 UTC.
+  - T3 #7216281 SELL 4067.39 → 4072.68, net **−$15.95** (2 min) — off-plan manual short, premature entry into the still-extending rally toward 4079.9.
+  - T4 #7216512 SELL 4070.75 → 4075.75, net **−$25.13** (3 min) — 2nd off-plan manual re-short, same premature-entry pattern, stopped at the fresh high.
+  - T5 #7217042 SELL 4074.42 → 4074.14, net **+$1.53** (12 min, scratch) — off-plan manual short taken almost exactly at the 4079.9 cascade top; same location/direction as the ARMED retest plan in [[Analysis/LTF/202607/20260702/20260702_0644_wait]] but closed early near BE instead of riding toward 4055.25/4029.13.
+- Session start equity: $5,000.36 → **current $4,978.13 (−$22.23, −0.44% day)**
+- ARMED SELL_LIMIT confirmed and **placed** 07:19 UTC: #9266059 @4068.35, SL 4071, TP 4055.25, R:R 4.94:1. Layer 3 (EA) rejected the dynamic 0.18 lot (MaxLot capped at 0.05) — placed at 0.05 lot instead ($13.25 risk vs the $49.78 the 1% model called for). No open positions — resting pending only.
+- ⚠️ Behavioral note: trades 3–5 were placed directly in MT5 outside Claude's confirm flow during the fast 06:15–06:44 UTC cascade — correct direction/thesis each time, but entered before or at the move's top rather than at a planned retest zone. Net −$39.55 across the three. Worth flagging alongside the existing "banking profit early" pattern already logged on 07/01 and 06/29.
+- Market context: ASIAN (~06:5x UTC), price 4071.46/4071.66, spread 2 ✓. HTF NEUTRAL range 3942.86–4145.04. 🚨 HIGH-impact NFP cluster 12:30 UTC — no new positions 12:15–13:00 UTC.
 
 ## Session Status — 2026-07-01
 - **FLAT** — no open positions, no pendings.

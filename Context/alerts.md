@@ -2,9 +2,11 @@
 
 | ID | Label | Price | Direction | Set At |
 |----|-------|-------|-----------|--------|
+| **#187** | ARMED retest — M1 bear FVG 4067.61-4069.1, SHORT trigger zone; SELL_LIMIT #9266059 0.05 @4068.35 SL 4071 TP 4055.25 **PLACED** 07:19 UTC (lot cut from 0.18→0.05, Layer 3 MaxLot cap); run LTF | 4068.35 | above | 2026-07-02 06:44 UTC |
 | **#185** | M15 close above supply top — bullish continuation confirmed, Watch B dead, opens 4102-4107 ceiling; run LTF | 4088.70 | above | 2026-07-02 05:31 UTC |
-| **#184** | Watch B SHORT zone — fade into 4082.22-4088.70 supply shelf; need M1 bearish trigger; run LTF | 4082.00 | above | 2026-07-02 05:31 UTC |
-| **#182** | Watch A LONG zone — M15 discount OTE 4039.93-4047.26; need M1 bullish trigger; run LTF | 4046.00 | below | 2026-07-02 05:17 UTC |
+| ~~**#184**~~ | ~~Watch B SHORT zone — fade into 4082.22-4088.70 supply shelf; need M1 bearish trigger; run LTF~~ | ~~4082.00~~ | ~~above~~ | ~~2026-07-02 05:31 UTC~~ — superseded 2026-07-02 06:44 UTC (mis-scoped: true H4 supply shelf is 4068.59-4088.70, wider than this alert's 4082 boundary; price never needed to reach 4082 — it tagged 4079.9 already inside the real zone, rejected, and cascaded to 4066.76; replaced by #187 at the retest) |
+| ~~**#186**~~ | ~~M15 support-on-retest broken — BSL sweep-reject confirmed bearish, Watch B gains confluence; run LTF~~ | ~~4074.00~~ | ~~below~~ | ~~2026-07-02 06:34 UTC~~ — **fired** (confirmed the bearish break; fresh M5 BoS DOWN@4066.97 followed, price cascaded to 4066.76 before a market SHORT could be presented — pivoted to ARMED retest #187) |
+| **#182** | Watch A LONG zone — M15 discount OTE 4041.14-4049.43 (updated 06:34); need M1 bullish trigger; run LTF | 4046.00 | below | 2026-07-02 05:17 UTC |
 | **#178** | H4 bull FVG 3984.74-4012.55 entered — primary demand test, LONG reload zone; run LTF | 4012.55 | below | 2026-07-02 00:15 UTC |
 | **#175** | Overnight floor 4029.2 broken — Watch A dead, bearish continuation toward H4 FVG top 4012.55; run LTF | 4029.00 | below | 2026-07-02 00:15 UTC |
 | **#158** | Floor breakdown → open air 3920/3900 | 3942.00 | below | (prior session — confirmed live in EA 2026-07-02) |

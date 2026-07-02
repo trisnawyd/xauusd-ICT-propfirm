@@ -44,13 +44,21 @@ const HAS_MT5 = !!MT5_BRIDGE_URL;
 // most recent window instead so each candle is readable; users can still scroll
 // out to see the rest.
 const DEFAULT_VISIBLE_BARS = 60;
+// Must match timeScale.rightOffset below — setVisibleLogicalRange's `to` is an
+// explicit logical index, so it overrides rightOffset unless the offset is
+// folded in here too (otherwise every setData call snaps the right edge back
+// to the last bar with zero whitespace).
+const RIGHT_OFFSET_BARS = 12;
 
 function zoomToDefault(chart: IChartApi, totalBars: number) {
   if (totalBars <= DEFAULT_VISIBLE_BARS) {
     chart.timeScale().fitContent();
     return;
   }
-  chart.timeScale().setVisibleLogicalRange({ from: totalBars - DEFAULT_VISIBLE_BARS, to: totalBars });
+  chart.timeScale().setVisibleLogicalRange({
+    from: totalBars - DEFAULT_VISIBLE_BARS,
+    to: totalBars + RIGHT_OFFSET_BARS,
+  });
 }
 
 function pipsBetween(a: number, b: number): number {
@@ -142,7 +150,7 @@ export default function WatchBoard({
         borderVisible: false,
         timeVisible: true,
         secondsVisible: false,
-        rightOffset: 16,
+        rightOffset: RIGHT_OFFSET_BARS,
       },
     });
 

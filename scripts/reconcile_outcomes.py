@@ -89,6 +89,8 @@ class Trade:
     exit_type: str
     suspect_label: bool
     file: str
+    seq: str = ""              # "#" column — row order within the day
+    linked_file: str | None = None  # analysis slug from a [[wikilink]] in its Trade Notes block
 
     @property
     def is_win(self) -> bool:
@@ -124,11 +126,44 @@ class Analysis:
 # parsing
 # --------------------------------------------------------------------------- #
 
+WIKILINK_RE = re.compile(r"\[\[([^\]|]+)(?:\|[^\]]*)?\]\]")
+TRADE_NOTE_HEADER_RE = re.compile(r"^#{2,4}\s*Trade\s+(\d+)\b", re.IGNORECASE)
+
+
+def parse_note_links(lines: list[str]) -> dict[str, str]:
+    """Map trade '#' (as string) -> first analysis wikilink found in its
+    Trade Notes block. This is a stronger signal than price proximity: it's
+    the same link a human (or Claude) already wrote down when journaling the
+    trade, so it survives cases where two same-day same-direction trades
+    happen to sit closer in price to the WRONG plan than the right one."""
+    links: dict[str, str] = {}
+    current_seq: str | None = None
+    in_notes = False
+    for line in lines:
+        if line.strip().lower().startswith("## trade notes"):
+            in_notes = True
+            continue
+        if not in_notes:
+            continue
+        if line.strip().startswith("## "):  # next top-level section ends notes
+            break
+        m = TRADE_NOTE_HEADER_RE.match(line.strip())
+        if m:
+            current_seq = m.group(1)
+            continue
+        if current_seq is not None and current_seq not in links:
+            wm = WIKILINK_RE.search(line)
+            if wm:
+                links[current_seq] = wm.group(1).strip()
+    return links
+
+
 def parse_trade_logs() -> list[Trade]:
     trades: list[Trade] = []
     for fp in sorted(TRADE_LOG_DIR.glob("2*.md")):
         date = fp.stem
         lines = fp.read_text(encoding="utf-8").splitlines()
+        note_links = parse_note_links(lines)
         header_cols: list[str] | None = None
         for line in lines:
             if not line.lstrip().startswith("|"):
@@ -144,7 +179,8 @@ def parse_trade_logs() -> list[Trade]:
             if set("".join(cells)) <= set("-: "):    # separator row |---|---|
                 continue
             row = dict(zip(header_cols, cells))
-            if not (row.get("#", "").isdigit()):
+            seq = row.get("#", "")
+            if not seq.isdigit():
                 continue
             label = row.get("dir") or row.get("type") or ""
             entry = num(row.get("entry") or row.get("open"))
@@ -161,6 +197,8 @@ def parse_trade_logs() -> list[Trade]:
                 exit_type=row.get("exit type", ""),
                 suspect_label="*" in label,
                 file=fp.name,
+                seq=seq,
+                linked_file=note_links.get(seq),
             ))
     return trades
 
@@ -215,11 +253,39 @@ def classify_outcome(a: Analysis, t: Trade) -> tuple[str, float | None]:
     return outcome, actual_r
 
 
+def _slug(path_str: str) -> str:
+    """Normalise a wikilink target or analysis file path to a bare slug for
+    comparison, e.g. 'Analysis/LTF/202607/20260702/20260702_0719_short.md'
+    and '[[Analysis/LTF/202607/20260702/20260702_0719_short]]' both -> the
+    same slug."""
+    s = path_str.strip()
+    if s.endswith(".md"):
+        s = s[:-3]
+    return s.rsplit("/", 1)[-1]
+
+
 def match(trades: list[Trade], analyses: list[Analysis], tol: float):
     actionable = [a for a in analyses if a.direction in ("LONG", "SHORT")]
-    matched: list[tuple[Trade, Analysis, str, float | None]] = []
+    by_slug = {_slug(str(a.file)): a for a in actionable}
+    matched: list[tuple[Trade, Analysis, str, float | None, str]] = []
     unmatched_trades: list[Trade] = []
+    remaining: list[Trade] = []
+
+    # Pass 1: explicit [[wikilink]] in the trade's own Trade Notes block wins
+    # outright — it's a stronger signal than price proximity and immune to
+    # the "two same-day same-direction trades, wrong one is numerically
+    # closer" collision that pure entry-tolerance matching can't resolve.
     for t in trades:
+        a = by_slug.get(_slug(t.linked_file)) if t.linked_file else None
+        if a is not None and a.matched_ticket is None:
+            a.matched_ticket = t.ticket
+            outcome, actual_r = classify_outcome(a, t)
+            matched.append((t, a, outcome, actual_r, "link"))
+        else:
+            remaining.append(t)
+
+    # Pass 2: entry-price tolerance match over whatever's left.
+    for t in remaining:
         ed = t.eff_dir
         cands = [
             a for a in actionable
@@ -235,7 +301,7 @@ def match(trades: list[Trade], analyses: list[Analysis], tol: float):
         a = min(cands, key=lambda a: abs(a.f("entry") - t.entry))
         a.matched_ticket = t.ticket
         outcome, actual_r = classify_outcome(a, t)
-        matched.append((t, a, outcome, actual_r))
+        matched.append((t, a, outcome, actual_r, "tol"))
     unmatched_analyses = [a for a in actionable if a.matched_ticket is None]
     return matched, unmatched_trades, unmatched_analyses
 
@@ -331,13 +397,13 @@ def build_report(trades, analyses, matched, un_trades, un_analyses, tol) -> str:
     if matched:
         L.append("### Matched trades")
         L.append("| Ticket | Date | Dir | Trade entry | Plan entry | Exit | Outcome | "
-                 "Planned R:R | Actual R | Grade | P&L |")
-        L.append("|---|---|---|---|---|---|---|---|---|---|---|")
-        for t, a, outcome, ar in matched:
+                 "Planned R:R | Actual R | Grade | P&L | Via |")
+        L.append("|---|---|---|---|---|---|---|---|---|---|---|---|")
+        for t, a, outcome, ar, via in matched:
             L.append(f"| {t.ticket} | {t.date} | {a.direction} | {t.entry} | "
                      f"{a.f('entry')} | {t.exit} | {outcome} | {a.fm.get('rr','?')} | "
                      f"{'' if ar is None else ar} | {a.fm.get('setup_grade','—')} | "
-                     f"{fmt_money(t.pnl)} |")
+                     f"{fmt_money(t.pnl)} | {via} |")
         L.append("")
 
     if un_trades:
@@ -392,7 +458,7 @@ def main() -> int:
     print(report)
 
     if args.write_back:
-        for t, a, outcome, ar in matched:
+        for t, a, outcome, ar, via in matched:
             write_back(a, t, outcome, ar)
         print(f"\n[write-back] patched {len(matched)} analysis file(s).")
 

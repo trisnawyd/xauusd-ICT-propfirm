@@ -13,7 +13,7 @@ Analyze D1/4H/1H from chart **screenshots**. Use when you want visual confirmati
 2. Extract: trend, BoS/CHoCH, OBs, FVGs, key levels, session highs/lows
 3. **AUTO-SAVE:**
    - Overwrite `Context/htf-context.md`
-   - Save snapshot to `Analysis/HTF/YYYYMMDD.md`
+   - Save snapshot to `Analysis/HTF/YYYYMM/YYYYMMDD.md`
 4. Reply: **HTF Updated —** followed by a 2-sentence bias summary
 
 ---
@@ -31,7 +31,7 @@ Analyze D1/4H/1H using **live MT5 data**. Use at session start for quick bias up
 2. Analyze: D1 trend → H4 structure + FVGs → H1 entry zones → determine bias (BULLISH/BEARISH/UNCLEAR)
 3. **AUTO-SAVE:**
    - Overwrite `Context/htf-context.md`
-   - Save snapshot to `Analysis/HTF/YYYYMMDD.md`
+   - Save snapshot to `Analysis/HTF/YYYYMM/YYYYMMDD.md`
 4. Reply: **HTF Updated —** followed by bias direction, key levels, and unmitigated OB/FVG zones
 
 ---
@@ -43,7 +43,7 @@ Analyze M15/M5/M1 from chart **screenshots**. Use for visual entry confirmation.
 3. Extract: BoS/CHoCH, OBs, FVGs, swings, entry triggers
 4. Output trade plan using standard template
 5. **AUTO-SAVE:**
-   - Save to `Analysis/LTF/YYYYMMDD/YYYYMMDD_HHMM_[long|short|wait].md`
+   - Save to `Analysis/LTF/YYYYMM/YYYYMMDD/YYYYMMDD_HHMM_[long|short|wait].md`
    - Update `Context/ltf-memory.md` (keep last 3 summaries)
 
 ---
@@ -77,7 +77,7 @@ Fast M1/M5 entry scan aligned to HTF bias. Use when price is near a key level an
 - Target: nearest M1/M5 FVG or swing level (not full HTF swing)
 - SL: above/below most recent M1 swing high/low
 - Shows **TP1** (primary scalp target) and optional **TP2** (extension)
-- **AUTO-SAVE** to `Analysis/Scalp/YYYYMMDD/` (separate from LTF folder)
+- **AUTO-SAVE** to `Analysis/Scalp/YYYYMM/YYYYMMDD/` (separate from LTF folder)
 
 1. Call MCP tools (all in parallel — 9 calls):
    - `detect_structure` { timeframe: "M5", swing_count: 10 }
@@ -91,7 +91,7 @@ Fast M1/M5 entry scan aligned to HTF bias. Use when price is near a key level an
 2. Read `Context/htf-context.md` for HTF bias
 3. Follow the **Scalp Analysis Gates** below
 4. Output using **Scalp Output Template** (see CLAUDE.md)
-5. **AUTO-SAVE** to `Analysis/Scalp/YYYYMMDD/YYYYMMDD_HHMM_[long|short|wait].md`
+5. **AUTO-SAVE** to `Analysis/Scalp/YYYYMM/YYYYMMDD/YYYYMMDD_HHMM_[long|short|wait].md`
    - Do NOT update `Context/ltf-memory.md` for scalp analyses
 
 #### Scalp Analysis Gates
@@ -146,10 +146,10 @@ Analyze an economic event release and output a concise market impact summary.
 4. Read `Context/htf-context.md` — use current bias to frame the XAU/USD Implication line
 5. Output using the News Analysis template (see `Docs/news-analyzer.md`)
 6. **Trade warning:** if impact = HIGH → append "⚠️ HIGH-IMPACT — avoid new trades for 15 min after release"
-7. **AUTO-SAVE** to `Analysis/News/YYYYMMDD/YYYYMMDD_HHMM_[event-slug].md`
+7. **AUTO-SAVE** to `Analysis/News/YYYYMM/YYYYMMDD/YYYYMMDD_HHMM_[event-slug].md`
    - `event-slug` = event name lowercased, spaces replaced with hyphens (e.g., `unemployment-claims`)
    - YYYYMMDD and HHMM = UTC date/time using standard UTC Date Derivation rule
-   - Create `YYYYMMDD/` subdirectory if it doesn't exist
+   - Create `YYYYMM/YYYYMMDD/` subdirectories if they don't exist
 
 **File format:**
 ```markdown
@@ -300,14 +300,14 @@ After every closed trade:
    - **Setup:** [OB/FVG/Sweep/other] at [price zone]
    - **Entry:** [price] | **Exit:** [price] | **Result:** +/-$X ([pips] pips)
    - **R:R planned:** [X]:1 | **R:R achieved:** [actual ratio]
-   - **LTF Analysis:** [[Analysis/LTF/YYYYMMDD/YYYYMMDD_HHMM_direction]] ← link if file exists
+   - **LTF Analysis:** [[Analysis/LTF/YYYYMM/YYYYMMDD/YYYYMMDD_HHMM_direction]] ← link if file exists
    - **Setup Grade:** [A+/A/B+] ([score]/100) ← from linked LTF analysis frontmatter, or "N/A" if no grade
    - **What worked:** [1 sentence — confluence, entry timing, etc.]
    - **What didn't:** [1 sentence or "N/A"]
    - **Lesson:** [1 sentence]
    ```
    - R:R achieved: TP hit → same as planned. SL hit → 0. Manual close → |exit−entry| / |SL−entry|
-   - Scan `Analysis/LTF/YYYYMMDD/` for a file whose HHMM is within 30 min of trade open time — link it if found
+   - Scan `Analysis/LTF/YYYYMM/YYYYMMDD/` for a file whose HHMM is within 30 min of trade open time — link it if found
 4. **WRITE OUTCOME BACK:** run `python3 scripts/reconcile_outcomes.py --write-back` so the matched analysis file's `outcome`/`actual_r`/`pnl_usd`/`trade_ticket` frontmatter is filled in. This is what makes `performance` grade-correlation work later. If the script reports the trade as *discretionary* (no matching plan), note that explicitly in the journal block — a trade with no graded signal behind it is itself the finding.
 
 ---
@@ -503,7 +503,7 @@ Run a full system verification. Read all context files and output a formatted st
 1. Read `Context/account.md` → report equity, max risk, open positions
 2. Read `Context/htf-context.md` → report bias direction, last update timestamp, and key levels summary
 3. Read `Context/ltf-memory.md` → report last analysis time, direction (LONG/SHORT/WAIT), and current watch level
-4. Scan `Analysis/LTF/` → find the most recent LTF analysis file and report filename + direction
+4. Scan `Analysis/LTF/` (latest `YYYYMM/` month folder, then latest `YYYYMMDD/` day folder) → find the most recent LTF analysis file and report filename + direction
 5. Scan `Trade Log/` → check if a log exists for today (YYYYMMDD.md); if yes, report trade count and session P&L; if no, report "No trades today"
 6. Check Obsidian connection — confirm IDE is connected (Obsidian MCP)
 7. Verify rules loaded — confirm CLAUDE.md has pip calc, hard rules, and playbooks present

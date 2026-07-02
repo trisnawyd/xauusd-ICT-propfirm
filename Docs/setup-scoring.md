@@ -137,7 +137,7 @@ Setups below B+ still get a full trade plan in the output (for learning), but th
 
 ### Example 1: A+ Setup (93/100)
 
-**File:** `Analysis/LTF/20260407/20260407_0815_short.md`
+**File:** `Analysis/LTF/202604/20260407/20260407_0815_short.md`
 **Context:** London open BSL sweep SHORT — D1+H4+H1 bearish, Asian high swept at 08:14, M1 lower high confirmed
 
 | Category | Score | Reasoning |
@@ -157,7 +157,7 @@ Setups below B+ still get a full trade plan in the output (for learning), but th
 
 ### Example 2: B Setup (64/100)
 
-**File:** `Analysis/LTF/20260408/20260408_1919_long.md`
+**File:** `Analysis/LTF/202604/20260408/20260408_1919_long.md`
 **Context:** NY session triple SSL sweep LONG — HTF bullish, M5 CHoCH up, awaiting pullback to M1 FVG
 
 | Category | Score | Reasoning |

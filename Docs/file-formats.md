@@ -10,11 +10,12 @@
 After EVERY LTF analysis (including WAIT), save two files:
 
 ### Step 1: Save analysis file
-- Path: `Analysis/LTF/YYYYMMDD/YYYYMMDD_HHMM_[long|short|wait].md`
+- Path: `Analysis/LTF/YYYYMM/YYYYMMDD/YYYYMMDD_HHMM_[long|short|wait].md`
 - YYYYMMDD = UTC date (derived using the UTC Date Derivation rule in CLAUDE.md)
 - HHMM = UTC hour+minute from `get_session_levels` (e.g., `1919` for 19:19 UTC)
 - Direction suffix: `long`, `short`, or `wait` (lowercase)
-- Create the `YYYYMMDD/` directory if it doesn't exist
+- YYYYMM = first 6 digits of the UTC date (month folder)
+- Create the `YYYYMM/YYYYMMDD/` directories if they don't exist
 - **Format: markdown with YAML frontmatter + `##` section headings** (NOT the raw `===` block)
 
 **LONG/SHORT file format:**
@@ -95,7 +96,7 @@ Rewrite the entire file using this exact structure:
 ```
 ---
 updated: YYYY-MM-DD HH:MM UTC
-snapshot: "[[Analysis/LTF/YYYYMMDD/YYYYMMDD_HHMM_direction]]"
+snapshot: "[[Analysis/LTF/YYYYMM/YYYYMMDD/YYYYMMDD_HHMM_direction]]"
 ---
 
 # LTF Memory — Last 3 Analyses
@@ -141,7 +142,7 @@ snapshot: "[[Analysis/LTF/YYYYMMDD/YYYYMMDD_HHMM_direction]]"
 
 ## HTF Analysis File Save
 - Overwrite `Context/htf-context.md` with full bias report
-- Save snapshot to `Analysis/HTF/YYYYMMDD.md`
+- Save snapshot to `Analysis/HTF/YYYYMM/YYYYMMDD.md` (create the `YYYYMM/` month folder if it doesn't exist)
 - If file exists for today, overwrite it (only 1 HTF snapshot per day)
 
 ---
@@ -150,9 +151,9 @@ snapshot: "[[Analysis/LTF/YYYYMMDD/YYYYMMDD_HHMM_direction]]"
 
 After EVERY scalp analysis (including WAIT), save one file. Do NOT update `Context/ltf-memory.md`.
 
-- Path: `Analysis/Scalp/YYYYMMDD/YYYYMMDD_HHMM_[long|short|wait].md`
+- Path: `Analysis/Scalp/YYYYMM/YYYYMMDD/YYYYMMDD_HHMM_[long|short|wait].md`
 - Same date/time derivation rules as LTF (UTC date, HHMM from `get_session_levels`)
-- Create the `YYYYMMDD/` subdirectory if it doesn't exist
+- Create the `YYYYMM/YYYYMMDD/` subdirectories if they don't exist
 - Multiple scalps per day → each gets its own timestamped file (no overwrite)
 
 **LONG/SHORT file format:**

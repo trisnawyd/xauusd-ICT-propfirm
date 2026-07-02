@@ -3,7 +3,7 @@
 reconcile_outcomes.py — close the feedback loop for the XAU/USD ICT model.
 
 Joins closed MT5 trades (parsed from `Trade Log/YYYYMMDD.md`) back to the
-analysis files that planned them (`Analysis/LTF/**/*.md` frontmatter), writes
+analysis files that planned them (`Analysis/LTF/YYYYMM/YYYYMMDD/*.md` frontmatter), writes
 the realised outcome into each matched analysis's frontmatter, and emits both a
 reconciliation report and a portfolio-stats summary.
 
@@ -185,7 +185,7 @@ def parse_frontmatter(text: str) -> dict:
 
 def parse_analyses() -> list[Analysis]:
     out: list[Analysis] = []
-    for fp in sorted(LTF_DIR.glob("*/*.md")):
+    for fp in sorted(LTF_DIR.glob("*/*/*.md")):  # <YYYYMM>/<YYYYMMDD>/<slug>.md
         text = fp.read_text(encoding="utf-8")
         fm = parse_frontmatter(text)
         if not fm:

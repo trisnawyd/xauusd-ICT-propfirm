@@ -1,7 +1,7 @@
 ---
 updated: 2026-07-02 00:15 UTC
 source: MCP (detect_structure D1/H4/H1, detect_fvg H4/H1, get_premium_discount H4, get_session_levels, get_current_tick, get_account_info) — refreshed ASIAN 07/02 after the ceiling-rejection short thesis played out overnight WITHOUT a fill: price never retested 4103, it fell straight from ~4092 to ~4028.6 (through TP1 4063.6) and is now basing at the H4 equilibrium
-snapshot: "[[Analysis/HTF/20260702]]"
+snapshot: "[[Analysis/HTF/202607/20260702]]"
 ---
 
 # HTF Context — XAU/USD
@@ -84,7 +84,7 @@ Basing 4029–4045 at the H4 EQ after the overnight fade; two consecutive M5 BoS
 
 ### BIAS: NEUTRAL — range 3942.86 / 4145.04, price at EQ mid-range. Both completed impulses (recovery rally, ceiling fade) are spent. NFP at 12:30 UTC is the likely range-resolver — do NOT carry positions into it. Until then, only edge trades: fade the 4054–4064 supply shelf or buy the 3984.74–4012.55 demand stack, each with an M1 trigger.
 
-**Current state: FLAT, WAIT — see [[Analysis/LTF/20260702/20260702_0011_wait]] (Grade B 61/100, below B+). Alerts #174–178 bracket the box.**
+**Current state: FLAT, WAIT — see [[Analysis/LTF/202607/20260702/20260702_0011_wait]] (Grade B 61/100, below B+). Alerts #174–178 bracket the box.**
 
 ---
 

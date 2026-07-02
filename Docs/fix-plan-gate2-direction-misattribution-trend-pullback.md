@@ -8,7 +8,7 @@
 
 ## Symptom
 
-The last analysis (`Analysis/LTF/20260610/20260610_0653_wait.md`) failed with:
+The last analysis (`Analysis/LTF/202606/20260610/20260610_0653_wait.md`) failed with:
 
 > `gate_fail: "Gate 3 — counter-trend LONG (M15 last event BoS UP) not at H4 demand/OTE; no WITH-trend SHORT trigger yet"`
 

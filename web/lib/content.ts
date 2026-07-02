@@ -135,11 +135,17 @@ export function getHtfContextRaw(): string {
 
 export function getHTFList(): HTFEntry[] {
   const base = dir("Analysis", "HTF");
+  // Layout: Analysis/HTF/<YYYYMM>/<YYYYMMDD>.md
   return safeReaddir(base)
-    .filter((f) => f.endsWith(".md"))
-    .map((f) => {
-      const date = f.replace(/\.md$/, "");
-      const raw = fs.readFileSync(path.join(base, f), "utf8");
+    .filter((m) => /^\d{6}$/.test(m) && fs.statSync(path.join(base, m)).isDirectory())
+    .flatMap((month) =>
+      safeReaddir(path.join(base, month))
+        .filter((f) => f.endsWith(".md"))
+        .map((f) => path.join(month, f)),
+    )
+    .map((relPath) => {
+      const date = path.basename(relPath, ".md");
+      const raw = fs.readFileSync(path.join(base, relPath), "utf8");
       const { data } = safeMatter(raw);
       // The bias may be inline ("## Bias: NEUTRAL — …") or on the line(s) below
       // a bare "## Bias" heading ("## Bias\n**NEUTRAL — …**"). Capture either,
@@ -161,7 +167,7 @@ export function getHTFList(): HTFEntry[] {
 }
 
 export function getHTF(date: string): MarkdownDoc | null {
-  const p = dir("Analysis", "HTF", `${date}.md`);
+  const p = dir("Analysis", "HTF", date.slice(0, 6), `${date}.md`);
   if (!fs.existsSync(p)) return null;
   return readDoc(p);
 }
@@ -171,9 +177,18 @@ export function getHTF(date: string): MarkdownDoc | null {
 export function getLTFList(): LTFEntry[] {
   const base = dir("Analysis", "LTF");
   const out: LTFEntry[] = [];
-  for (const date of safeReaddir(base)) {
-    const dayDir = path.join(base, date);
-    if (!fs.statSync(dayDir).isDirectory()) continue;
+  // Layout: Analysis/LTF/<YYYYMM>/<YYYYMMDD>/<slug>.md
+  const dayDirs: { date: string; dayDir: string }[] = [];
+  for (const month of safeReaddir(base)) {
+    const monthDir = path.join(base, month);
+    if (!/^\d{6}$/.test(month) || !fs.statSync(monthDir).isDirectory()) continue;
+    for (const date of safeReaddir(monthDir)) {
+      const dayDir = path.join(monthDir, date);
+      if (!fs.statSync(dayDir).isDirectory()) continue;
+      dayDirs.push({ date, dayDir });
+    }
+  }
+  for (const { date, dayDir } of dayDirs) {
     for (const file of safeReaddir(dayDir)) {
       if (!file.endsWith(".md")) continue;
       const slug = file.replace(/\.md$/, "");
@@ -199,7 +214,7 @@ export function getLTFList(): LTFEntry[] {
 
 /** Sibling OHLC snapshot (`<slug>_ohlc.json`) for the live watch board, if present. */
 function getLTFOhlc(date: string, slug: string): OhlcSnapshot | null {
-  const p = dir("Analysis", "LTF", date, `${slug}_ohlc.json`);
+  const p = dir("Analysis", "LTF", date.slice(0, 6), date, `${slug}_ohlc.json`);
   if (!fs.existsSync(p)) return null;
   try {
     const snap = JSON.parse(fs.readFileSync(p, "utf8")) as OhlcSnapshot;
@@ -213,7 +228,7 @@ export function getLTF(
   date: string,
   slug: string,
 ): (MarkdownDoc & { entry: LTFEntry; ohlc: OhlcSnapshot | null }) | null {
-  const p = dir("Analysis", "LTF", date, `${slug}.md`);
+  const p = dir("Analysis", "LTF", date.slice(0, 6), date, `${slug}.md`);
   if (!fs.existsSync(p)) return null;
   const doc = readDoc(p);
   const d = doc.meta;
@@ -254,15 +269,15 @@ function walkMd(base: string, rel: string[] = []): string[][] {
 export function getNewsList(): NewsEntry[] {
   const base = dir("Analysis", "News");
   return walkMd(base)
-    // Only the clean one-file-per-event analyses (Analysis/News/<date>/<file>).
+    // Only the clean one-file-per-event analyses (Analysis/News/<YYYYMM>/<date>/<file>).
     // Skip deeper working dirs like "June NFP/" (multi-model scratch dumps).
-    .filter((slug) => slug.length === 2)
+    .filter((slug) => slug.length === 3 && /^\d{6}$/.test(slug[0]) && /^\d{8}$/.test(slug[1]))
     .map((slug) => {
       const file = path.join(base, ...slug.slice(0, -1), `${slug[slug.length - 1]}.md`);
       const { data } = safeMatter(fs.readFileSync(file, "utf8"));
       return {
         slug,
-        date: str(data.date) ?? slug[0],
+        date: str(data.date) ?? slug[1],
         time: str(data.time),
         event: str(data.event),
         impact: str(data.impact),
@@ -283,7 +298,7 @@ export function getNews(slug: string[]): (MarkdownDoc & { entry: NewsEntry }) | 
     ...doc,
     entry: {
       slug,
-      date: str(d.date) ?? slug[0],
+      date: str(d.date) ?? slug.find((s) => /^\d{8}$/.test(s)) ?? slug[0],
       time: str(d.time),
       event: str(d.event),
       impact: str(d.impact),

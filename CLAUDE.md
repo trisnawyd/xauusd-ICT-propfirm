@@ -303,7 +303,7 @@ Invalidation: [M1 or M5 candle close condition]
 - Always show TP1; TP2 is optional (include when next demand/supply zone is within 2× SL distance)
 - SL must be above/below the M1 swing high/low that defines the setup — never wider than max risk
 - Grade minimum B+ (70) applies — same as LTF trades
-- AUTO-SAVE to `Analysis/Scalp/YYYYMMDD/` — do NOT update `Context/ltf-memory.md`
+- AUTO-SAVE to `Analysis/Scalp/YYYYMM/YYYYMMDD/` — do NOT update `Context/ltf-memory.md`
 
 ---
 
@@ -395,6 +395,8 @@ After Gate 4 passes (M1 trigger confirmed), score the setup across 7 categories 
 4. Example: local date says `2026-04-09`, UTC time is `16:14` → correct UTC date is **20260408**
 5. NEVER use `currentDate` directly without this check.
 
+**Monthly folder layer:** all Analysis subfolders (HTF/LTF/Scalp/News) group by month — the month folder is the first 6 digits of the UTC date (`YYYYMM`). Create the `YYYYMM/` (and `YYYYMMDD/` for LTF/Scalp/News) folders if they don't exist before saving.
+
 → File format templates (LTF/HTF frontmatter, ltf-memory.md structure): `Docs/file-formats.md`
 → **Before saving any analysis file, read `Docs/file-formats.md` for the exact format.**
 
@@ -414,10 +416,10 @@ Context/
   htf-context.md      ← HTF bias (D1/4H/1H); overwritten on "update htf"
   ltf-memory.md       ← last 3 LTF analysis summaries + current structure
 Analysis/
-  HTF/                ← D1/4H analysis snapshots
-  LTF/YYYYMMDD/       ← M15/M5/M1 trade plan files grouped by date: YYYYMMDD_HHMM_{long,short,wait}.md
-  Scalp/YYYYMMDD/     ← M1/M5 scalp plans grouped by date: YYYYMMDD_HHMM_{long,short,wait}.md
-  News/YYYYMMDD/      ← economic event analyses: YYYYMMDD_HHMM_[event-slug].md
+  HTF/YYYYMM/            ← D1/4H analysis snapshots grouped by month: YYYYMMDD.md
+  LTF/YYYYMM/YYYYMMDD/   ← M15/M5/M1 trade plan files grouped by month, then date: YYYYMMDD_HHMM_{long,short,wait}.md
+  Scalp/YYYYMM/YYYYMMDD/ ← M1/M5 scalp plans grouped by month, then date: YYYYMMDD_HHMM_{long,short,wait}.md
+  News/YYYYMM/YYYYMMDD/  ← economic event analyses grouped by month, then date: YYYYMMDD_HHMM_[event-slug].md
 Trade Log/            ← per-day trade logs: YYYYMMDD.md
 Daily Journal/        ← session notes, mindset, observations
 Playbooks/            ← setup definitions and rules

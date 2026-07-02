@@ -102,8 +102,8 @@ MANDATORY fields in every output:
 
 Use the `<file_format>` block as the exact frontmatter template.
 Save to:
-- TRADE: Analysis/LTF/YYYYMMDD/YYYYMMDD_HHMM_{long,short}.md
-- WAIT:  Analysis/LTF/YYYYMMDD/YYYYMMDD_HHMM_wait.md
+- TRADE: Analysis/LTF/YYYYMM/YYYYMMDD/YYYYMMDD_HHMM_{long,short}.md
+- WAIT:  Analysis/LTF/YYYYMM/YYYYMMDD/YYYYMMDD_HHMM_wait.md
 
 Then update Context/ltf-memory.md:
 - Shift existing analyses down (keep last 3 total)

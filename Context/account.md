@@ -21,8 +21,8 @@ synced_from: MT5 Bridge
 ## Session Status — 2026-07-01
 - **FLAT** — no open positions, no pendings.
 - Daily P&L: **−$28.36** closed (2 win, 1 loss) — reconciled in [[Trade Log/20260701]]:
-  - T1 #7177967 BUY 3975.93 → 3963.78, −121.5 pips, net **−$48.70** (~124 min, 0.04 lot) — sweep-reclaim long (B+ 71) from [[Analysis/LTF/20260701/20260701_0220_long]]. Filled on the retest ~04:00 UTC; the reclaim did NOT hold — price re-broke below the 3969.95 sweep low and ran the 3965 stop (slipped to 3963.78). Second consecutive sweep+reclaim ASIAN-discount long to fail this way in 48h.
-  - T2+T3 #9226130 BUY 3973.78 (0.04 lot), closed in two manual pieces: 7182024 partial @3983.86 **+$20.11** (20 min) + 7182748 remainder @3973.92 **+$0.23** (36 min) — Watch B breakout-continuation long (B+ 70) from [[Analysis/LTF/20260701/20260701_0801_long]]. The 4th test of the demand sequence finally held; partial banked real profit into strength, remainder closed near breakeven ahead of the SL/TP resolving — left most of the 3.1:1 R:R uncollected but avoided holding into the 12:15–14:00 UTC news block.
+  - T1 #7177967 BUY 3975.93 → 3963.78, −121.5 pips, net **−$48.70** (~124 min, 0.04 lot) — sweep-reclaim long (B+ 71) from [[Analysis/LTF/202607/20260701/20260701_0220_long]]. Filled on the retest ~04:00 UTC; the reclaim did NOT hold — price re-broke below the 3969.95 sweep low and ran the 3965 stop (slipped to 3963.78). Second consecutive sweep+reclaim ASIAN-discount long to fail this way in 48h.
+  - T2+T3 #9226130 BUY 3973.78 (0.04 lot), closed in two manual pieces: 7182024 partial @3983.86 **+$20.11** (20 min) + 7182748 remainder @3973.92 **+$0.23** (36 min) — Watch B breakout-continuation long (B+ 70) from [[Analysis/LTF/202607/20260701/20260701_0801_long]]. The 4th test of the demand sequence finally held; partial banked real profit into strength, remainder closed near breakeven ahead of the SL/TP resolving — left most of the 3.1:1 R:R uncollected but avoided holding into the 12:15–14:00 UTC news block.
 - Session start equity: $5,028.92 → **current $5,000.36 (−$28.56, −0.57% day)**
 - Market context: LONDON (11:21 UTC), flat and reset for a fresh read. 🚨 HIGH-impact US data TODAY 12:15 ADP NFP, 13:45 S&P Manu PMI, 14:00 ISM Manufacturing PMI + Prices Paid (~1–3h out) — range-resolver, stand down into it.
 
@@ -34,7 +34,7 @@ synced_from: MT5 Bridge
   - T4 deal 7142459 SELL 3995.14 → 3987.05, +81 pips, net **+$8.06** (~27 min, partial) — **short-from-supply (old Watch C), WIN.** Retrace into the 3990–3994 bear OB.
   - T5 deal 7142525 SELL 3995.14 → 3990.17, net **+$19.78** (~32 min, runner) — same 3995 supply short, runner tranche. T4+T5 = **+$27.84**, the only edge that worked.
 - Session start equity: $5,052.69 → **current $5,028.92 (−$23.43, −0.46% day)**
-- **FLAT** — no positions, no pendings. Forward read: [[Analysis/LTF/20260630/20260630_0919_wait]].
+- **FLAT** — no positions, no pendings. Forward read: [[Analysis/LTF/202606/20260630/20260630_0919_wait]].
 - HTF bias: NEUTRAL range 3942.86–4106 **RECOVERING UP off the swept floor** (htf-context 06-30 09:19 UTC, fresh). Price 4019 pulled back into M15 premium after the 745-pip rally; fresh H4 bull FVG 3998.33–4014.69 [open] = demand below.
 - Market context: LONDON (09:19 UTC), price ~4019. Daily −0.46%, within limits. 🚨 HIGH-impact US data TODAY 16:45 Chicago PMI / 17:00 CB Consumer Confidence + JOLTS (~7.5h out) = range-resolver, flatten before it. Lesson logged: trade EDGE rejections (supply/floor reactions), not breakdowns into a swept level or the mid-range.
 
@@ -47,7 +47,7 @@ synced_from: MT5 Bridge
     - 7123464 partial 0.01 @4051.03, +208 pips, net **+$20.85** (40 min) — banked the 200-pip pop into the EQ/4052 BoS.
     - 7127696 runner 0.02 @4032.96, +28 pips, net **+$5.57** (143 min) — risk-free BE+ stop did its job when the rally faded back from 4052; locked profit instead of a giveback.
 - Session start equity: $5,050.59 → **current $5,052.69 (+$2.10 balance / +$2.36 closed P&L, +0.05% day)**
-- **FLAT** — no open positions, no pendings. Forward read: [[Analysis/LTF/20260629/20260629_1350_wait]].
+- **FLAT** — no open positions, no pendings. Forward read: [[Analysis/LTF/202606/20260629/20260629_1350_wait]].
 - HTF bias: NEUTRAL range 3958.57-4106 (htf-context 06-29 00:47 UTC, fresh to 06-30 00:47). Intraday compressed to a 4024.38↔4066.87 sub-range; price 4031 back in the lower half / discount.
 - Market context: OVERLAP (14:01 UTC), price ~4031. Daily +0.05%, within limits. 🚨 HIGH-impact US data 16:45 Chicago PMI / 17:00 CB Consumer Confidence + JOLTS (~3h out) = range-resolver. ⚠️ Behavioral: 4 longs/shorts, 3 were no-trigger instinct entries; the day was saved by ONE well-managed long. Green, but process (entering pre-trigger) needs fixing — keep the location read, wait for the M1 confirmation.
 
@@ -56,7 +56,7 @@ synced_from: MT5 Bridge
   - T1 ticket 7077413 BUY 4000.00 → 3994.29, −57 pips, net −$11.47 (7 min, 0.02 lot) — **counter-trend dip-buy, NOT from a plan.** Bought 4000 mid-range in discount against a fully-aligned BEARISH HTF; price continued down, cut after 7 min. The "do NOT buy the dip" loss.
   - T2 ticket 7094096 (= live #9066665) SELL 4050.00 → 4074.92, −249 pips, net −$49.89 (272 min, 0.02 lot) — **planned A-grade armed short, STOPPED OUT.** Armed @4050 into 4049–4072 supply, filled ~12:35 UTC. Bounce extended THROUGH the zone (broke 4072 → 4074 → stopped at 4074.92, new high 4077.31). Textbook WITH-bias setup; supply simply didn't hold. Full-risk loss.
 - Session start equity: $5,112.05 → **end $5,050.59 (−$61.46 day, −1.20%)**
-- **FLAT** — no open positions, no pendings. Forward read: [[Analysis/LTF/20260626/20260626_1352_short]] (HOLD call that got stopped).
+- **FLAT** — no open positions, no pendings. Forward read: [[Analysis/LTF/202606/20260626/20260626_1352_short]] (HOLD call that got stopped).
 - HTF bias: ⚠️ **STALE / needs refresh.** Was BEARISH (06-26 03:09 UTC) but the relief bounce 3958.57→**4077.31** has now CLEARED the H1 bear-FVG cluster 4049–4072.75 AND the H4 OTE. A reclaim + H4 close above EQ 4087.01 neutralizes the bearish read. Run `analyze HTF` before the next trade.
 - Market context: flat after 2 losses (~13:57 UTC OVERLAP). Price ~4076, broke supply to new session high 4077.31. Daily DD −1.20%, within −20% limit. **Suggest standing down — no revenge trades into a bounce that just stopped a WITH-bias short.**
 
@@ -65,28 +65,28 @@ synced_from: MT5 Bridge
   - T1 ticket 8999451 SELL 4102.02 (armed limit), scaled out: 0.02 @4091.25 +$21.49 (partial, +1R) and 0.02 @4081.98 +$40.03 (runner, ~200 pips) — B+ (76) short into H4 bear FVG 4097.98–4107.40 on the new bearish down-leg. **First trade with full [[Playbooks/trade-management-checklist]] adherence** (armed entry → partial+BE at +1R → let runner run). Best result of the week. Minor note: runner closed discretionarily at 4081.98 ("200 enough") vs TP 4068 — sound here, but keep runner exits rule-based.
 - Session start equity: $5,050.63
 - HTF bias: See Context/htf-context.md (06-24 01:13 UTC — fresh). BEARISH (D1/H4/H1 aligned); hawkish Fed + de-escalation unwind. Range floor 4090.5 broken, swept Asian low 4068.25; draw on liquidity 4068.25 → 4052.79 → 4023.56.
-- Market context: flat after +$61.52 win (~02:15 UTC ASIAN). Price ~4082. 🚨 HIGH-impact 12:30 UTC PCE/GDP cluster — no positioning into it. Forward read: [[Analysis/LTF/20260624/20260624_0113_wait]].
+- Market context: flat after +$61.52 win (~02:15 UTC ASIAN). Price ~4082. 🚨 HIGH-impact 12:30 UTC PCE/GDP cluster — no positioning into it. Forward read: [[Analysis/LTF/202606/20260624/20260624_0113_wait]].
 
 ## Session Status — 2026-06-23
 - Daily P&L: **+$2.02** closed (0 win, 0 loss, 1 win-side scratch) — reconciled in [[Trade Log/20260623]]:
   - T1 ticket 8986441 (hist 7001190) SELL 4139.6 → 4138.9, +7 pips, net +$2.02 (11 min, 0.03 lot) — B+ (76) range-high bull-trap short off the 4140.24 BSL sweep. Moved to BE early, then closed manually at 4138.9 on spike-above-4140 risk before the move developed (thesis target was EQ 4112 / range low 4090.5). Win-side scratch. Lesson: once BE is locked, let structure (M5 close back above 4140.24, alert #93) define the exit, not a single wick — keeps the 4.3:1 asymmetry intact.
 - Session start equity: $5,048.69
 - HTF bias: See Context/htf-context.md (06-23 01:56 UTC — fresh). BEARISH-lean (D1 ranging / H4 below OTE / H1 bearish); hawkish Fed + de-escalation unwind. Range 4090.5–4133.45, swept highs to 4140.24.
-- Market context: flat after scratch (~14:10 UTC OVERLAP). Price ~4136.6, inside upper range below the swept high. Forward read: [[Analysis/LTF/20260623/20260623_1357_wait]].
+- Market context: flat after scratch (~14:10 UTC OVERLAP). Price ~4136.6, inside upper range below the swept high. Forward read: [[Analysis/LTF/202606/20260623/20260623_1357_wait]].
 
 ## Session Status — 2026-06-22
 - Daily P&L: **+$1.27** closed (0 win, 0 loss, 1 BE scratch) — reconciled in [[Trade Log/20260622]]:
   - T1 ticket 8952061 (hist 6971129) BUY 4189.66 → 4190.11, +4.5 pips, net +$1.27 (44 min, 0.03 lot) — B+ (77) range-low sweep-reclaim long. Pushed to 4210.97 (~+$60 floating) but failed to reach TP 4214.66/London high 4215.44, rotated back through EQ and tagged the BE stop. Risk-free scratch. Lesson: bank/trail B+ range trades into strength — a trail to 4197 = locked +$22 vs BE.
 - Session start equity: $5,047.50
 - HTF bias: See Context/htf-context.md (06-22 01:19 UTC — fresh). D1 BULLISH-lean/range 4121–4369, H4 BULLISH (OTE reclaimed), H1 BoS UP. Choppy M15 range 4188.54–4215.44.
-- Market context: flat after BE scratch (14:30 UTC OVERLAP). Bullish thesis intact above 4136.24. Forward read: [[Analysis/LTF/20260622/20260622_1340_long]].
+- Market context: flat after BE scratch (14:30 UTC OVERLAP). Bullish thesis intact above 4136.24. Forward read: [[Analysis/LTF/202606/20260622/20260622_1340_long]].
 
 ## Session Status — 2026-06-19
 - Daily P&L: **+$35.65** closed (1 win, 0 loss) — reconciled in [[Trade Log/20260619]]:
   - T1 ticket 6937519 SELL 4167.31 → 4155.40, +119.1 pips, net +$35.65 (178 min, 0.03 lot) — H4 FVG rejection short, WITH-D1. Trailed SL to 4155 (too tight, $0.69 above swing high 4154.31), wick-hunted to ~4156 then reversed; runner toward TP 4121.81 given away. Green but mismanaged exit.
 - Session start equity: $5,011.85
 - HTF bias: See Context/htf-context.md (06-19 01:26 UTC — fresh). D1 BEARISH; overnight crash to day low 4121.32, corrective bounce to ~4178, now chopping M15 EQ 4152.55.
-- Market context: WAIT at EQ (11:57 UTC LONDON). No HIGH-impact USD events next 24h. Forward read: [[Analysis/LTF/20260619/20260619_1157_wait]].
+- Market context: WAIT at EQ (11:57 UTC LONDON). No HIGH-impact USD events next 24h. Forward read: [[Analysis/LTF/202606/20260619/20260619_1157_wait]].
 
 ## Session Status — 2026-06-16
 - Daily P&L: **+$12.29** closed (1 win, 1 loss) — reconciled in [[Trade Log/20260616]]:

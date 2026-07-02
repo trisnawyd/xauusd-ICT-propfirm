@@ -1,54 +1,55 @@
 ---
-updated: 2026-07-02 04:27 UTC
-snapshot: "[[Analysis/LTF/202607/20260702/20260702_0427_wait]]"
+updated: 2026-07-02 05:31 UTC
+snapshot: "[[Analysis/LTF/202607/20260702/20260702_0531_wait]]"
 ---
 
 # LTF Memory — Last 3 Analyses
 
-## Current Market Structure (as of 2026-07-02 04:27 UTC)
+## Current Market Structure (as of 2026-07-02 05:31 UTC)
 
-**Account:** **1 OPEN position** — SELL #9260727 @4068.25, 0.05 lot, SL 4078.25, TP 4038.25, floating +$12.75. Equity $4,979.47, balance $4,966.62, max risk ~$49.79. Today: closed −$33.48 (ticket #7212602, stopped in 15 min on the first supply-shelf test), floating +$12.75 → total ≈ −$20.73. Spread 2 ✓. ASIAN (04:27 UTC).
+**Account:** **FLAT** — no open positions, no pendings. Equity $5,018.04, day P&L **+$17.94** (1 win, 1 loss, both closed today). Spread 2 ✓. ASIAN (05:31 UTC).
 
-**Big picture:** Since the 01:37 UTC read, price ran up through the ARMED short zone (never filled there), took out the Asian high three times (4068.75 → 4073.47/4074.23 → 4068.24), and rejected each time, closing back down to ~4065.5. The user shorted twice: first at 4062.28 (stopped out −$33.48 as the shelf broke on the first attempt) and again at 4068.25 (now open, floating small profit). M15/M5 structure both stayed BEARISH with clean continuation BoS DOWN events (M15 @4037.74, M5 @4062.76) — no transition, thesis intact. But every M5/M1 FVG and OB is now mitigated — **no open entry zone remains**, so a fresh LTF signal can't fire until a new imbalance prints.
+**Big picture:** M15 flipped BULLISH — confirmed BoS UP@4074.23 broke 4062.34 (03:45 UTC), a genuine structural break through the entire 4054–4074 shelf that both of today's shorts were built around (both shorts still closed net positive: −$33.48 then +$51.42). M5 label is still lagging bearish but its last event is also BoS UP@4065.37 (04:50 UTC) — transition to bullish, no contradiction between M15/M5 right now. Proposed direction LONG is WITH D1 (raw label), but price 4060.44 is M15 PREMIUM (EQ 4052.41) → Gate 3 WAIT. Projected the Watch A discount-retrace grade at only B (60/100) — HTF alignment is weak (H4 effective-bearish + H1 bearish outweigh the stale D1 bullish label) — so **no armed order** this cycle.
 
-**🚨 NFP DAY:** 12:30 UTC — Nonfarm Payrolls + Unemployment Rate + Initial Claims + AHE (all HIGH) + 14:00 Factory Orders. No new positions 12:15–13:00 UTC; manage/flatten the open short ahead of it.
+**🚨 NFP DAY:** 12:30 UTC — Nonfarm Payrolls + Unemployment Rate + Initial Claims + AHE (all HIGH) + 14:00 Factory Orders. No new positions 12:15–13:00 UTC.
 
-**M15 Status:** trend BEARISH, last event BoS DOWN@4037.74 (00:30 UTC). P/D: H4074.23/L4029.2, EQ 4051.72, price PREMIUM. OTE (discount) 4038.84–4046.4.
-**M5 Status:** trend BEARISH, last event BoS DOWN@4062.76 (00:45 UTC), aligned with M15 — no transition. All 8 OBs / 14 FVGs filled.
-**M1 Status:** all 5 recent FVGs filled. Repeated sweep-and-reject wicks (4067.89, 4070.84) closing back down — sellers defending the shelf, but no fresh displacement for a trigger yet.
+**M15 Status:** trend BULLISH, last event BoS UP@4074.23 (03:45 UTC). P/D: H4074.23/L4030.59, EQ 4052.41, price PREMIUM. OTE (discount) 4039.93–4047.26.
+**M5 Status:** label BEARISH (lagging) but last event BoS UP@4065.37 (04:50 UTC) → transition to bullish, aligned with M15.
+**M1 Status:** fresh open bullish FVG 4059.36–4060.30 (05:30 UTC) + confirmed SSL sweep (wick 4058.20, close 4061.24, 05:20 UTC) right at current price — real confluence, but premium-located so it doesn't satisfy the LTF WITH-trend rule; candidate for a `scalp setup` read instead.
 
 **Key Levels:**
-- **4074.23 — Asian high / BSL sweep wick (rejected 3×) | 4068.59–4088.70 — overnight descending-highs supply shelf (existing short's zone)**
-- **4051.72 — M15 EQ | 4038.84–4046.4 — M15 discount OTE**
-- **4029.20 — overnight floor / next SSL (existing short's TP) | 3984.74–4012.55 — H4 primary demand stack | 3942.86 — range floor**
+- **4074.23 — today's high / fresh BoS UP (support-on-retest) | 4082.22–4088.70 — next supply shelf (Watch B)**
+- **4052.41 — M15 EQ | 4039.93–4047.26 — M15 discount OTE (Watch A)**
+- **4029.20 — overnight floor | 3984.74–4012.55 — H4 primary demand stack | 3942.86 — range floor**
 
-**Setup:** WAIT — Gate 3, no entry zone (all M5/M1 FVGs and M5 OBs mitigated). Watch A: bounce off M15 discount OTE 4038.84-4046.4 → LONG ~4042, SL 4036, TP 4063.6 (3.6:1). Watch B: retest of the swept 4068-4074 shelf → SHORT ~4070, SL 4080, TP 4029.2 (4.08:1) — same thesis as the open #9260727 short, a confirmation add rather than a new signal. Both void at 12:15 UTC NFP lockout.
+**Setup:** WAIT — Gate 3 P/D timing (LONG WITH-D1 but premium). Watch A: discount retrace to 4039.93-4047.26 → LONG ~4044, SL 4034, TP 4074.23 (3.02:1), projected B (60/100), not armed. Watch B: fade of 4082.22-4088.70 supply → SHORT ~4085, SL 4093, TP 4052 (4.13:1), counter-trend vs D1. Both void at 12:15 UTC NFP lockout.
 
 ---
 
-## Analysis #1 — 2026-07-02 04:27 UTC (WAIT — Gate 3, no entry zone; all M5/M1 FVGs+OBs mitigated)
+## Analysis #1 — 2026-07-02 05:31 UTC (WAIT — Gate 3 P/D timing; M15 flipped bullish, price in premium, projected grade B not armed)
+
+- **Direction:** WAIT — M15 flipped BULLISH (BoS UP@4074.23, confirmed break of the day's shelf), M5 transitioning bullish too (last event BoS UP@4065.37). Proposed LONG is WITH D1 but price is PREMIUM → Gate 3 fail. Projected grade at the Watch A zone: B (60/100) — HTF 8/20, Zone 12/20, Sweep 5/15, PD 15/15, Trigger 10/10(projected), Session 3/10, RR 7/10 — below B+, not armed.
+- **Watch A:** discount retrace to M15 OTE 4039.93-4047.26 + M1 bullish trigger → LONG ~4044, SL 4034, TP 4074.23 (3.02:1). Not armed (projected grade B).
+- **Watch B:** fade of 4082.22-4088.70 supply shelf + M1 bearish trigger → SHORT ~4085, SL 4093, TP 4052 (4.13:1). Counter-trend vs D1, needs H4-supply confirmation.
+- **Invalidation:** 12:15 UTC NFP lockout kills both; M15 close below 4029.20 kills A; M15 close above 4088.70 kills B.
+
+---
+
+## Analysis #2 — 2026-07-02 04:27 UTC (WAIT — Gate 3, no entry zone; all M5/M1 FVGs+OBs mitigated)
 
 - **Direction:** WAIT — M15/M5 both BEARISH with clean continuation BoS DOWN events (no transition), reinforced by 3× BSL sweep-rejects at the new Asian high 4068-4074, but Gate 3 fails: zero open OB/FVG on M5 or M1 to enter from.
 - **Watch A:** pullback into M15 discount OTE 4038.84-4046.4 + fresh M1 bullish trigger → LONG ~4042, SL 4036, TP 4063.6 (3.6:1). Counter-trend tactical bounce only.
-- **Watch B:** retest of the swept 4068-4074 shelf + fresh M1 bearish trigger → SHORT ~4070, SL 4080, TP 4029.2 (4.08:1). Same thesis as the open #9260727 short (confirmation add, not standalone).
+- **Watch B:** retest of the swept 4068-4074 shelf + fresh M1 bearish trigger → SHORT ~4070, SL 4080, TP 4029.2 (4.08:1). Same thesis as the (then-)open #9260727 short.
 - **Invalidation:** 12:15 UTC NFP lockout kills both; M15 close above 4088.70 kills B; M15 close below 4029.20 kills A.
+- **Outcome note:** price did NOT retest the shelf for a reject (Watch B) — it broke straight through with a confirmed BoS UP@4074.23, invalidating the shelf-reject thesis this WAIT was watching for.
 
 ---
 
-## Analysis #2 — 2026-07-02 01:37 UTC (WAIT — Gate 4 ARMED, session-high sweep-reject confirms bearish continuation)
+## Analysis #3 — 2026-07-02 01:37 UTC (WAIT — Gate 4 ARMED, session-high sweep-reject confirms bearish continuation)
 
-- **Direction:** WAIT/ARMED — M15 BEARISH (BoS DOWN@4030.59) reinforced by confirmed BSL sweep-reject @4068.75; Gate 3 zone+P/D pass (premium, M5/M1 bear FVG shelf identified) but Gate 4 fails — price hasn't reached the shelf, no M1 trigger. Projected grade B+ (76/100): HTF 14/20 (H4+H1 bearish, D1 counter/stale), Zone 12/20, Sweep 15/15, P/D 15/15, Trigger 10/10 (projected), Session 3/10, R:R 7/10.
+- **Direction:** WAIT/ARMED — M15 BEARISH (BoS DOWN@4030.59) reinforced by confirmed BSL sweep-reject @4068.75; Gate 3 zone+P/D pass (premium, M5/M1 bear FVG shelf identified) but Gate 4 fails — price hasn't reached the shelf, no M1 trigger. Projected grade B+ (76/100).
 - **Watch A:** bounce off M1 bull FVG 4050.23-4050.81 + reclaim 4048.53 → LONG ~4051, SL 4046, TP 4063.6 (2.52:1). Not armed (counter to primary bias).
-- **Watch B (ARMED):** M1 bearish trigger at M5/M1 bear FVG shelf 4055.8-4064.2 → SHORT ~4058, SL 4065.5, TP 4029.2 (3.84:1), lot 0.06, risk $45 of $50. `place_pending_order` proposed, awaiting CONFIRM.
+- **Watch B (ARMED):** M1 bearish trigger at M5/M1 bear FVG shelf 4055.8-4064.2 → SHORT ~4058, SL 4065.5, TP 4029.2 (3.84:1). `place_pending_order` proposed — this was the zone that produced the day's two actual short trades (#7212602, #7213838).
 - **Invalidation:** 12:15 UTC NFP lockout kills both; M5 close above 4064.2 kills B; M15 close below 4029.2 kills A.
-
----
-
-## Analysis #3 — 2026-07-02 00:11 UTC (WAIT — grade B mid-range chop, NFP day)
-
-- **Direction:** WAIT — Gates 1–4 pass for a cautious LONG (M5 double BoS UP off the 4033.18 SSL sweep, M15 discount, open M5 bull FVG) but Gate 5 = B (61/100): HTF 10/20, Trigger 4/10 (chase), Session 3/10. Price on the H4 EQ + NFP at 12:30 UTC.
-- **Watch A:** pullback into M5 bull FVG 4036.66–4038.75 + M1 trigger → LONG ~4038, SL 4030, TP 4063.6 (3.2:1), lot 0.06.
-- **Watch B:** M1 bearish trigger at supply shelf 4054.46–4064.20 / M15 EQ → SHORT ~4058, SL 4065.5, TP 4033.2 (3.3:1), lot 0.06.
-- **Invalidation:** 12:15 UTC NFP lockout kills both; M15 close below 4029.2 kills A; M5 close above 4064.2 kills B.
 
 ---

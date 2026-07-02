@@ -2,12 +2,17 @@
 
 | ID | Label | Price | Direction | Set At |
 |----|-------|-------|-----------|--------|
+| **#185** | M15 close above supply top — bullish continuation confirmed, Watch B dead, opens 4102-4107 ceiling; run LTF | 4088.70 | above | 2026-07-02 05:31 UTC |
+| **#184** | Watch B SHORT zone — fade into 4082.22-4088.70 supply shelf; need M1 bearish trigger; run LTF | 4082.00 | above | 2026-07-02 05:31 UTC |
+| **#182** | Watch A LONG zone — M15 discount OTE 4039.93-4047.26; need M1 bullish trigger; run LTF | 4046.00 | below | 2026-07-02 05:17 UTC |
 | **#178** | H4 bull FVG 3984.74-4012.55 entered — primary demand test, LONG reload zone; run LTF | 4012.55 | below | 2026-07-02 00:15 UTC |
-| **#177** | Supply cluster broken — Watch B dead, bullish continuation toward 4082.22/4088.7 then ceiling 4102-4107; run LTF | 4065.00 | above | 2026-07-02 00:15 UTC |
-| **#176** | Watch B SHORT zone — M5 supply cluster 4054.46-4064.2 + M15 EQ 4058.95; need M1 bearish trigger; run LTF | 4054.50 | above | 2026-07-02 00:15 UTC |
 | **#175** | Overnight floor 4029.2 broken — Watch A dead, bearish continuation toward H4 FVG top 4012.55; run LTF | 4029.00 | below | 2026-07-02 00:15 UTC |
-| **#174** | Watch A LONG zone — M5 bull FVG 4036.66-4038.75 + M1 FVG stack; need M1 bullish trigger; run LTF | 4038.50 | below | 2026-07-02 00:15 UTC |
 | **#158** | Floor breakdown → open air 3920/3900 | 3942.00 | below | (prior session — confirmed live in EA 2026-07-02) |
+| ~~**#183**~~ | ~~Watch B SHORT zone — retest of swept 4068-4074 shelf; need M1 bearish trigger; run LTF~~ | ~~4068.00~~ | ~~above~~ | ~~2026-07-02 05:17 UTC~~ — deleted 2026-07-02 05:31 UTC (invalidated — M15 confirmed BoS UP@4074.23 through the shelf instead of rejecting; replaced by #184/#185 at the next supply shelf) |
+| ~~**#174**~~ | ~~Watch A LONG zone — M5 bull FVG 4036.66-4038.75 + M1 FVG stack; need M1 bullish trigger; run LTF~~ | ~~4038.50~~ | ~~below~~ | ~~2026-07-02 00:15 UTC~~ — deleted 2026-07-02 05:31 UTC (superseded — near-duplicate of #182's OTE zone, consolidating to one alert per watch) |
+| ~~**#177**~~ | ~~Supply cluster broken — Watch B dead, bullish continuation toward 4082.22/4088.7 then ceiling 4102-4107; run LTF~~ | ~~4065.00~~ | ~~above~~ | ~~2026-07-02 00:15 UTC~~ — fired (price cleared the shelf, ran to the new Asian high 4074.23; no longer in live EA at 2026-07-02 05:17 UTC sync) |
+| ~~**#176**~~ | ~~Watch B SHORT zone — M5 supply cluster 4054.46-4064.2 + M15 EQ 4058.95; need M1 bearish trigger; run LTF~~ | ~~4054.50~~ | ~~above~~ | ~~2026-07-02 00:15 UTC~~ — fired (superseded by the 4068-4074 shelf retest that #183 now covers; no longer in live EA at 2026-07-02 05:17 UTC sync) |
+| ~~**#179/#180**~~ | ~~referenced in the 2026-07-02 01:37 UTC analysis as newly set (4068.75 / 4058) — never actually registered via `set_alert`, confirmed absent from `list_alerts`~~ | — | — | ~~narration error, not a real alert — noting here so the gap isn't repeated~~ |
 | ~~**#173**~~ | ~~SHORT invalidation — reclaim/close above H4 ceiling top 4107.40 kills the sweep-reject thesis, opens continuation toward 4145; run LTF~~ | ~~4108.00~~ | ~~above~~ | ~~2026-07-01 14:45 UTC~~ — deleted 2026-07-02 00:15 UTC (moot — the fade resolved DOWN overnight without ever reclaiming; price 4042) |
 | ~~**#172**~~ | ~~SHORT entry retest — M1 bear FVG 4099.44-4104.83 / H4 ceiling confluence; pending SELL_LIMIT 0.09 @4103 SL 4108 TP 4063.6 awaiting CONFIRM~~ | ~~4103.00~~ | ~~above~~ | ~~2026-07-01 14:45 UTC~~ — deleted 2026-07-02 00:15 UTC (`no_fill` — price never retraced to 4103; it collapsed straight from ~4092 through TP1 4063.6 to 4028.61; thesis vindicated, zero risk taken) |
 | ~~**#171**~~ | ~~Ceiling-short TP1 zone (NY high flip) reached — manage/trail toward M15 EQ 4039.61; also TP for the 14:45 sweep-reject SHORT plan; run LTF~~ | ~~4063.60~~ | ~~below~~ | ~~2026-07-01 14:29 UTC~~ — **fired** (overnight fade traded through 4063.6 on the way to 4028.61; the SHORT plan it served never filled) |

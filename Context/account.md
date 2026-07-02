@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-02 04:24 UTC (1 open position — SELL #9260727, synced)
+updated: 2026-07-02 05:17 UTC (position closed — FLAT, synced)
 synced_from: MT5 Bridge
 ---
 
@@ -10,21 +10,21 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $4,966.62 |
-| Equity | $4,982.82 |
-| Max risk per trade (1%) | $49.83 |
-| Margin used | $2,034.13 |
-| Free margin | $2,948.69 |
-| Open positions | **1 — SELL #9260727 @4068.25, 0.05 lot, SL 4078.25, TP 4038.25, floating +$16.75** |
+| Balance | $5,018.04 |
+| Equity | $5,018.04 |
+| Max risk per trade (1%) | $50.18 |
+| Margin used | $0 |
+| Free margin | $5,018.04 |
+| Open positions | **None** |
 | Pending orders | None |
 
 ## Session Status — 2026-07-02
-- Daily P&L: closed **−$33.48** (0 win, 1 loss), floating **+$16.75**, total **−$16.73** — reconciled in [[Trade Log/20260702]]:
+- Daily P&L: **+$17.94** closed (1 win, 1 loss) — reconciled in [[Trade Log/20260702]]:
   - T1 #7212602 SELL 4062.28 → 4068.95, net **−$33.48** (15 min) — entered the 4054.46–4064.20 supply shelf per [[Analysis/LTF/202607/20260702/20260702_0137_wait]] Watch B zone, but off-plan price/lot; supply didn't hold on first test, session extended to new Asian high 4074.23.
-  - T2 #9260727 SELL 4068.25 (0.05 lot, **OPEN**) — re-short near the sweep-reject zone after T1 stopped out, SL 4078.25 / TP 4038.25, currently floating +$16.75 as price pulled back to ~4064.6.
-- Session start equity: $5,000.36 → **current $4,982.82 (−$17.54, −0.35% day)**
-- **1 OPEN position** (SELL #9260727) — no pendings. Manage/flatten before 12:15 UTC NFP lockout.
-- Market context: ASIAN (04:24 UTC), price 4064.64/4064.94, spread 3 ✓. HTF NEUTRAL range 3942.86–4145.04, price basing after the overnight ceiling-fade breakdown. 🚨 HIGH-impact NFP cluster 12:30 UTC — no new positions 12:15–13:00 UTC, manage the open short ahead of it.
+  - T2 #7213838 SELL 4068.25 → 4057.94, net **+$51.42** (85 min) — re-short near the sweep-reject zone after T1 stopped out, SL 4078.25 / TP 4038.25 (thesis covered live in [[Analysis/LTF/202607/20260702/20260702_0427_wait]] Watch B). Price worked down toward the discount OTE/floor as expected but was closed manually at 4057.94, well short of TP — banked profit early rather than riding the full R:R, same pattern as 07/01's early exits.
+- Session start equity: $5,000.36 → **current $5,018.04 (+$17.68, +0.35% day)**
+- **FLAT** — no open positions, no pendings. User is standing down, waiting for a better short opportunity rather than chasing price at 4057.36 — consistent with the 04:27 UTC read (Gate 3 no entry zone).
+- Market context: ASIAN (05:17 UTC), price 4057.36/4057.56, spread 2 ✓. HTF NEUTRAL range 3942.86–4145.04. 🚨 HIGH-impact NFP cluster 12:30 UTC — no new positions 12:15–13:00 UTC.
 
 ## Session Status — 2026-07-01
 - **FLAT** — no open positions, no pendings.

@@ -253,8 +253,8 @@ export default function WatchBoard({
         livePriceLineRef.current = series.createPriceLine({
           price: broker,
           color: "#3b82f6",
-          lineWidth: 2,
-          lineStyle: LineStyle.Solid,
+          lineWidth: 1,
+          lineStyle: LineStyle.Dashed,
           axisLabelVisible: true,
           title: "LIVE",
         });

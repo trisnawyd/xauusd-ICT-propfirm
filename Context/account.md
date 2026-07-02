@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-01 11:21 UTC (position closed — FLAT, synced)
+updated: 2026-07-02 04:24 UTC (1 open position — SELL #9260727, synced)
 synced_from: MT5 Bridge
 ---
 
@@ -10,13 +10,21 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,000.36 |
-| Equity | $5,000.36 |
-| Max risk per trade (1%) | $50.00 |
-| Margin used | $0 |
-| Free margin | $5,000.36 |
-| Open positions | **None** |
+| Balance | $4,966.62 |
+| Equity | $4,982.82 |
+| Max risk per trade (1%) | $49.83 |
+| Margin used | $2,034.13 |
+| Free margin | $2,948.69 |
+| Open positions | **1 — SELL #9260727 @4068.25, 0.05 lot, SL 4078.25, TP 4038.25, floating +$16.75** |
 | Pending orders | None |
+
+## Session Status — 2026-07-02
+- Daily P&L: closed **−$33.48** (0 win, 1 loss), floating **+$16.75**, total **−$16.73** — reconciled in [[Trade Log/20260702]]:
+  - T1 #7212602 SELL 4062.28 → 4068.95, net **−$33.48** (15 min) — entered the 4054.46–4064.20 supply shelf per [[Analysis/LTF/202607/20260702/20260702_0137_wait]] Watch B zone, but off-plan price/lot; supply didn't hold on first test, session extended to new Asian high 4074.23.
+  - T2 #9260727 SELL 4068.25 (0.05 lot, **OPEN**) — re-short near the sweep-reject zone after T1 stopped out, SL 4078.25 / TP 4038.25, currently floating +$16.75 as price pulled back to ~4064.6.
+- Session start equity: $5,000.36 → **current $4,982.82 (−$17.54, −0.35% day)**
+- **1 OPEN position** (SELL #9260727) — no pendings. Manage/flatten before 12:15 UTC NFP lockout.
+- Market context: ASIAN (04:24 UTC), price 4064.64/4064.94, spread 3 ✓. HTF NEUTRAL range 3942.86–4145.04, price basing after the overnight ceiling-fade breakdown. 🚨 HIGH-impact NFP cluster 12:30 UTC — no new positions 12:15–13:00 UTC, manage the open short ahead of it.
 
 ## Session Status — 2026-07-01
 - **FLAT** — no open positions, no pendings.

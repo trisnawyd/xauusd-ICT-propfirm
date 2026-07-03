@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-02 08:02 UTC (position closed — FLAT, synced)
+updated: 2026-07-03 03:03 UTC (re-synced — FLAT, no new trades since 07-02, balance unchanged)
 synced_from: MT5 Bridge
 ---
 

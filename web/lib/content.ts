@@ -64,6 +64,18 @@ function str(v: unknown): string | undefined {
   return String(v);
 }
 
+/** Normalize a bias value to its leading label: "BEARISH (all TF aligned)" ->
+ *  "BEARISH", "NEUTRAL → BULLISH" -> "NEUTRAL", "**STRONG BULLISH**" ->
+ *  "STRONG BULLISH". Strips bold and cuts at the first separator/qualifier. */
+function cleanBias(v: unknown): string | undefined {
+  if (v === undefined || v === null) return undefined;
+  const s = String(v)
+    .replace(/\*\*/g, "")
+    .split(/[—\-|(→\n]/)[0]
+    .trim();
+  return s || undefined;
+}
+
 function num(v: unknown): number | undefined {
   if (v === undefined || v === null) return undefined;
   const n = Number(String(v).replace(/[^0-9.]/g, ""));
@@ -147,16 +159,19 @@ export function getHTFList(): HTFEntry[] {
       const date = path.basename(relPath, ".md");
       const raw = fs.readFileSync(path.join(base, relPath), "utf8");
       const { data } = safeMatter(raw);
-      // The bias may be inline ("## Bias: NEUTRAL — …") or on the line(s) below
-      // a bare "## Bias" heading ("## Bias\n**NEUTRAL — …**"). Capture either,
-      // up to the next blank line or heading, then strip markdown bold.
-      const biasMatch = raw.match(
-        /^##\s+Bias\b:?\s*([\s\S]*?)(?:\r?\n\s*\r?\n|\r?\n##|$)/m,
-      );
-      const biasLabel = biasMatch?.[1]
-        ?.replace(/\*\*/g, "")
-        .split(/[—\-|]/)[0]
-        .trim();
+      // Prefer the frontmatter bias key — it's clean and reliable. Files use a
+      // few key variants (bias / primary_bias / overall_bias / htf_bias). Only
+      // if none is present fall back to the body "## Bias …" heading, which is
+      // fragile: some files title the section "## Bias Summary" or "## Summary",
+      // so a naive capture grabs "Summary"/"Resolution" as the bias.
+      const fmBias =
+        str(data.bias) ??
+        str(data.primary_bias) ??
+        str(data.overall_bias) ??
+        str(data.htf_bias);
+      const bodyBias = raw
+        .match(/^##\s+Bias\b:?\s*([\s\S]*?)(?:\r?\n\s*\r?\n|\r?\n##|$)/m)?.[1];
+      const biasLabel = cleanBias(fmBias ?? bodyBias);
       return {
         date,
         updated: str(data.updated),
@@ -278,7 +293,7 @@ export function getNewsList(): NewsEntry[] {
       return {
         slug,
         date: str(data.date) ?? slug[1],
-        time: str(data.time),
+        time: str(data.time) ?? str(data.time_utc),
         event: str(data.event),
         impact: str(data.impact),
         implication: str(data.xauusd_implication),
@@ -299,7 +314,7 @@ export function getNews(slug: string[]): (MarkdownDoc & { entry: NewsEntry }) | 
     entry: {
       slug,
       date: str(d.date) ?? slug.find((s) => /^\d{8}$/.test(s)) ?? slug[0],
-      time: str(d.time),
+      time: str(d.time) ?? str(d.time_utc),
       event: str(d.event),
       impact: str(d.impact),
       implication: str(d.xauusd_implication),
@@ -317,14 +332,16 @@ export function getTradeLogList(): TradeLogEntry[] {
     .map((f) => {
       const date = f.replace(/\.md$/, "");
       const raw = fs.readFileSync(path.join(base, f), "utf8");
-      // Tolerate both formats: "Net P&L: **+$2.36**" (label outside bold) and
-      // "**Daily P&L: −$23.43**" (label inside bold). Capture the amount itself.
-      const pnl = raw.match(/(?:Net|Daily) P&L:\s*\**\s*([+\-−]?\$[\d.,]+)/);
+      // Tolerate the label variants the log files use: "Net P&L: **+$2.36**"
+      // (label outside bold), "**Daily P&L: −$23.43**" (label inside bold), and
+      // "Closed P&L: **+$49.55**". Capture the amount itself.
+      const pnl = raw.match(/(?:Net|Daily|Closed) P&L:\s*\**\s*([+\-−]?\$[\d.,]+)/);
       // Tolerate "Wins: 2 | Losses: 3" and the inline "(2 win, 3 loss)" form.
       const wl =
         raw.match(/Wins:\s*(\d+)\s*\|\s*Losses:\s*(\d+)/) ||
         raw.match(/\((\d+)\s*wins?,\s*(\d+)\s*loss/i);
-      const trades = raw.match(/Trades:\s*(\d+)/);
+      // Tolerate "Trades: 3" and label variants like "Trades closed today: 8".
+      const trades = raw.match(/Trades[^:\n]*:\s*(\d+)/);
       return {
         date,
         netPnl: pnl?.[1]?.trim(),

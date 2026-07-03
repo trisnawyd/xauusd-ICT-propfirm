@@ -15,6 +15,16 @@ function biasColor(label?: string): string {
   return "text-muted-foreground";
 }
 
+/** Border + bg + text tint for a small bias pill, matching the impact badge. */
+function biasBadgeClass(label: string): string {
+  const u = label.toUpperCase();
+  if (u.includes("BULL")) return "border-green-500/30 bg-green-500/15 text-green-500";
+  if (u.includes("BEAR")) return "border-red-500/30 bg-red-500/15 text-red-500";
+  if (u.includes("RANG") || u.includes("NEUTRAL"))
+    return "border-amber-500/30 bg-amber-500/15 text-amber-500";
+  return "border-border bg-muted text-muted-foreground";
+}
+
 function Shell({
   href,
   icon: Icon,
@@ -111,7 +121,19 @@ export function CalendarHighlights({ data }: { data: Highlights }) {
               </span>
             )}
           </div>
-          <div className="mt-auto text-xs text-muted-foreground">{formatDate(data.news.date)}</div>
+          <div className="mt-auto flex items-center gap-2 text-xs text-muted-foreground">
+            {data.news.implication && (
+              <span
+                className={cn(
+                  "shrink-0 rounded-md border px-1.5 py-0.5 text-[10px] font-bold",
+                  biasBadgeClass(data.news.implication),
+                )}
+              >
+                {data.news.implication}
+              </span>
+            )}
+            <span>{formatDate(data.news.date)}</span>
+          </div>
         </Shell>
       )}
     </div>

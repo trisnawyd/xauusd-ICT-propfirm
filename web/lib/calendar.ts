@@ -19,7 +19,13 @@ export interface CalendarHighlights {
     wins?: string;
     losses?: string;
   };
-  news?: { date: string; slug: string[]; event?: string; impact?: string };
+  news?: {
+    date: string;
+    slug: string[];
+    event?: string;
+    impact?: string;
+    implication?: string;
+  };
 }
 
 function emptyDay(date: string): CalendarDay {
@@ -116,6 +122,7 @@ export function getCalendarHighlights(): CalendarHighlights {
       slug: news.slug,
       event: news.event,
       impact: news.impact,
+      implication: news.implication,
     },
   };
 }

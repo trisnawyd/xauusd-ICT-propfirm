@@ -16,7 +16,7 @@ synced_from: MT5 Bridge
 | Margin used | $0 |
 | Free margin | $5,048.90 |
 | Open positions | **None** |
-| Pending orders | **None** |
+| Pending orders | **1** — BUY_LIMIT #9309892 0.05 @ 4168 (SL 4160 / TP 4195.5), risk $40 — wedge-breakout retest LONG, [[Analysis/LTF/202607/20260703/20260703_0716_wait]] |
 
 ## Session Status — 2026-07-02
 - Daily P&L: **+$49.55** closed (5 win, 3 loss) — reconciled in [[Trade Log/20260702]]:

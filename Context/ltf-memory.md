@@ -1,33 +1,41 @@
 ---
-updated: 2026-07-03 00:40 UTC
-snapshot: "[[Analysis/LTF/202607/20260703/20260703_0040_wait]]"
+updated: 2026-07-03 00:53 UTC
+snapshot: "[[Analysis/LTF/202607/20260703/20260703_0053_wait]]"
 ---
 
 # LTF Memory — Last 3 Analyses
 
-## Current Market Structure (as of 2026-07-03 00:40 UTC)
+## Current Market Structure (as of 2026-07-03 00:53 UTC)
 
-**Account:** equity $5,048.90, max risk $50.49. **FLAT** — no open positions, no pendings. Daily P&L $0 (fresh UTC day). Spread 2 ✓. ASIAN (00:40 UTC).
+**Account:** equity $5,048.90, max risk $50.49. **FLAT** — no open positions, no pendings. Daily P&L $0 (fresh UTC day). Spread 2 ✓. ASIAN (00:53 UTC).
 
-**Big picture:** **NFP resolved the 3942–4145 range UP, then the ceiling rejected.** Price broke 4102–4107, ran to **4144.2** (wick of the true high 4145.04), rejected on a confirmed **BSL sweep@4140.66 (close 4136.36)**, faded to **H1 BoS DOWN@4100.08** (19:00), and through Asian has climbed **back to 4137**, re-testing the swept ceiling from below. Deep **PREMIUM** (H4 EQ 4043.53, M15 EQ 4123.37). Edge = fade the 4140–4144 ceiling (Watch B SHORT) or trade a genuine break above 4145.04 (bull → 4233). No live trigger at 4137 → **WAIT**.
+**Big picture:** **The 4145.04 range ceiling BROKE — but marginally.** After the 00:40 armed-short WAIT (never placed — glad, it'd have stopped at 4146), price pushed through the swept 4144.2 ceiling and the true high 4145.04, spiking to **4148.93**, tripping alerts #193 then #191. But the break is weak: the only M5 close since (03:50: c4145.44, +0.40 above, 3.5pt upper wick) rejected, and price sagged straight back to **4144.98 on the line** — leaning **false-break / BSL stop-run**, unconfirmed. Deep **PREMIUM** (M15 EQ 4123.37, H4 EQ 4043.53). Last confirmed structure still bearish on M15/H1. → **WAIT at the decision line**; the next M5 close is the arbiter.
 
-**News:** NFP done (~12h ago), no lockout. HTF refreshed this session (00:40 UTC) — fresh.
+**News:** NFP done (~12h ago), no lockout. HTF refreshed 00:40 UTC — fresh (bias note updated 00:53).
 
-**M15 Status:** trend label BEARISH; last event **BoS DOWN@4122.5 broke 4122.61** (07/03 01:30 broker) → proposed SHORT, aligned with H4/H1 bearish transition. Price 4137 rallied ~15 pts above the last break into the ceiling. P/D: EQ 4123.37, PREMIUM, OTE 4113.23–4119.18 (tight Asian range).
-**M5 Status:** trend label BEARISH but last event **BoS UP@4141.09 broke 4139.87** (03:20 broker) — Asian push made a new local high into the ceiling. Open M5 bull OB 4110.96–4113.79 + open M5 bull FVG 4114.3–4115.66 below (support). No open bearish zone at the ceiling.
-**M1 Status:** wicked Asian high 4141.09 at 03:23 (rejected to 4138.44), chopping 4133–4141, last close 4136.95 — grinding mildly UP, no bearish rejection trigger yet.
+**M15 Status:** trend label BEARISH; last CONFIRMED event **BoS DOWN@4122.5** (01:30 broker) — no bullish M15 BoS printed yet; the 4148 spike too fresh. P/D: H 4141.09 / L 4105.64, EQ 4123.37, price **deep PREMIUM**.
+**M5 Status:** trend label BEARISH; last event BoS UP@4141.09 (03:20). 03:50 candle spiked 4148.93 / closed 4145.44 (marginal, upper-wick reject). Confirmed M5 BoS UP needs a clean close-hold above 4145.04. Open M5 bull FVG 4114.3–4115.66 + bull OB 4110.96–4113.79 sit ~30pts below (range support).
+**M1 Status:** displacement up 03:51 (4141→4148.3, c4147.29), then immediate fade 4146.32 → 4145.49 → 4144.98. Upper wicks + fade to the line = sellers active above 4145; leans false-break, unconfirmed.
 
 **Key Levels:**
-- **4145.04 — true range ceiling (swept/rejected) | 4140.66–4144.2 — Watch B SHORT retest zone**
-- **4123.37 — M15 EQ | 4137 — current price**
-- **4100–4105 — H1 BoS@4100.08 / range low (Watch B TP + Watch A LONG bounce) | 4080–4100 — H4 NFP-leg demand**
-- **4078.81–4092.79 — M15 OTE (Watch A LONG) | 4012.55 / 3942.86 — deep H4 demand / swept floor**
+- **4148.93 — sweep-wick high (reclaim = genuine bull continuation, alert #196 @4149)**
+- **4145.04 — the decision line (hold above = bull → 4160/4233; close below = false break → range, alert #195 @4145)**
+- **4123.37 — M15 EQ (Watch A SHORT TP) | 4144.98 — current price (on the line)**
+- **4105 / 4100.08 — range low / H1 BoS (deeper down-leg, alert #194) | 4092 / 4012.55 / 3942.86 — deep zones (#192/#178/#158)**
 
-**Setup:** WAIT. Watch B armed-ELIGIBLE (SELL_LIMIT 0.05 @4141, SL 4146, TP 4102.6, R:R 7.68:1, projected A 81/100) — **NOT placed** (2nd retest of the swept ceiling = break-prone; thin Asian liquidity; awaiting CONFIRM). Alerts reset: #158 3942, #178 4012.55, #191 4145.5 (ceiling break/kill), #192 4092 (deep OTE long), **#193 4140.5 (retest short zone, NEW)**, **#194 4105 (down-leg TP / long bounce, NEW)**.
+**Setup:** WAIT at the decision line, no trade until the M5 close confirms. Watch A false-break-fade SHORT (M5 close < 4145.04 → SHORT ~4143, SL 4149.5, TP 4123/4105, R:R 3.08:1 — higher prob). Watch B break-retest LONG (hold > 4145.04 → LONG ~4146, SL 4139, TP 4160/4233, R:R 2.0:1 — weaker, deep-premium chase). Neither armed. Alerts: #196 @4149, #195 @4145, #194 @4105, #192 @4092, #178 @4012.55, #158 @3942 (#191/#193 fired/consumed).
 
 ---
 
-## Analysis #1 — 2026-07-03 00:40 UTC (WAIT — Asian retest of the swept ceiling, Watch B armed-eligible)
+## Analysis #1 — 2026-07-03 00:53 UTC (WAIT — marginal 4145.04 break, retesting the line, unresolved)
+- **Direction:** WAIT — 4145.04 ceiling broke to a 4148.93 spike but the M5 close (4145.44, +0.40, 3.5pt upper wick) is weak and price sagged back to 4144.98 on the line; last confirmed M15/H1 structure still bearish, deep premium. Break-hold vs false-break unresolved → next M5 close decides. No grade (pre-Gate-4).
+- **Watch A (SHORT, false-break fade — higher prob):** M5 close back below 4145.04 → SHORT ~4143, SL 4149.5, TP 4123 (2.81:1... 3.08:1 to 4123, 5.85:1 to 4105).
+- **Watch B (LONG, break-retest — weaker):** 4145.04 holds as support + M1 bullish rejection → LONG ~4146, SL 4139, TP 4160 (2.0:1).
+- **Invalidation:** resolves on next M5 close; Watch A dies on reclaim >4148.93 (#196); Watch B dies on M5 close <4139.
+
+---
+
+## Analysis #2 — 2026-07-03 00:40 UTC (WAIT — Asian retest of the swept ceiling, Watch B armed-eligible)
 
 - **Direction:** WAIT — price 4137 in deep PREMIUM retesting the swept 4144.2 ceiling; SHORT location valid but not yet inside 4140–4144 supply and no M1 rejection → imminent, not live. Projected grade A (81/100) for Watch B: HTF 13, Zone 13, Sweep 15, PD 15, Trigger 10(proj), Session 5(Asian), RR 10.
 - **Watch A (LONG, not armed):** fade off ceiling → pullback to 4078–4092 M15 OTE / 4080–4100 H4 NFP-leg demand + M1 bullish trigger → LONG ~4090, SL 4078, TP 4123 (2.75:1).
@@ -36,20 +44,11 @@ snapshot: "[[Analysis/LTF/202607/20260703/20260703_0040_wait]]"
 
 ---
 
-## Analysis #2 — 2026-07-02 16:27 UTC (WAIT — post-NFP premium chop, ceiling swept)
+## Analysis #3 — 2026-07-02 16:27 UTC (WAIT — post-NFP premium chop, ceiling swept)
 
 - **Direction:** WAIT — NFP resolved the range UP; price ran to 4144.2 (wicked true high 4145.04) and rejected (BSL sweep, close 4136.36). Price 4116.7 in PREMIUM (EQ 4102.6), no bullish zone at price, short not yet at ceiling supply → no edge. Projected grade A (84/100) for Watch B.
 - **Watch A (LONG, not armed):** pullback to M15 OTE 4078.81–4092.79 + M1 bullish trigger → LONG ~4085, SL 4069, TP 4130 (2.81:1).
 - **Watch B (SHORT, armed-eligible):** retest of swept ceiling 4140–4145 + M1 rejection → SHORT ~4139, SL 4146, TP 4102.6, R:R 5.20:1. SELL_LIMIT 0.05 proposed but **NOT placed** — post-NFP retest-and-break risk flagged; awaiting CONFIRM.
 - **Invalidation:** M5 close above 4145.04 kills Watch B; M15 close below 4062 kills Watch A; HTF contextually stale — re-run analyze HTF.
-
----
-
-## Analysis #3 — 2026-07-02 09:29 UTC (WAIT — ARMED; cascade #2 off the H4 shelf, SELL_LIMIT retest proposed)
-
-- **Direction:** WAIT — M15 last event (BoS UP@4079.9) proposed LONG WITH D1 TREND, but price was PREMIUM (Gate 3 fail). Second cascade off the H4 supply shelf (4068.59-4088.70): fresh BSL sweep-reject at 4080.41, price falling back through a fresh M1/M5 bear FVG stack. Projected grade A (81/100).
-- **Watch A:** discount retrace to M15 OTE 4046.87-4054.04 + M1 bullish trigger → LONG ~4050, SL 4036, TP 4079.9 (2.14:1). Not armed.
-- **Watch B (ARMED):** retest of fresh bear FVG 4068.05-4069.69 → SHORT 4068.35, SL 4071, TP 4059.08, R:R 3.50:1. SELL_LIMIT 0.19 proposed — awaited CONFIRM. (Superseded by NFP break; never filled.)
-- **Invalidation:** M5 close above 4071 cancels Watch B; M15 close below 4029.20 kills Watch A; both void at 12:15 UTC NFP lockout.
 
 ---

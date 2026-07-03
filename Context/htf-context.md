@@ -79,7 +79,7 @@ Asian has climbed from the 4030 low back to a 4141.09 high (just under the 4144.
 
 ### BIAS: NEUTRAL — range 3942.86 / 4145.04, price in deep PREMIUM retesting the swept 4144.2 ceiling. NFP's up-impulse is spent at the high. The edge is a range-high fade SHORT into 4140–4145 with an M1 rejection; a genuine M5/H4 close above 4145.04 flips the read bullish (→ 4233) and kills the short.
 
-**Current state: FLAT, WAIT — see [[Analysis/LTF/202607/20260703/20260703_0040_wait]] (Watch B armed-eligible SHORT, projected A 81/100). Alerts #193 @4140.5 (retest) + #191 @4145.5 (break/kill) bracket the ceiling; #194 @4105 marks the down-leg target.**
+**Current state (updated 00:53 UTC): FLAT, WAIT — the ceiling BROKE but marginally.** Price ran through 4145.04 to a **4148.93** spike, but the one M5 close since (03:50: c4145.44, +0.40 above, 3.5pt upper wick) is weak and price sagged straight back to **4144.98 on the line** — leaning **false-break / BSL stop-run**, unconfirmed. Alerts #191/#193 fired (consumed). See [[Analysis/LTF/202607/20260703/20260703_0053_wait]]: WAIT at the decision line — Watch A false-break-fade SHORT (M5 close back below 4145.04 → 4123/4105) vs Watch B break-retest LONG (hold above → 4160/4233). Live alerts: **#196 @4149 (continuation/reclaim)**, **#195 @4145 (line/false-break)**, #194 @4105, #192 @4092, #178 @4012.55, #158 @3942. Next M5 close is the arbiter.
 
 ---
 

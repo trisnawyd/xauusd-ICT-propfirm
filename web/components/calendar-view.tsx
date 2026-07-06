@@ -43,7 +43,10 @@ function biasColor(label?: string): string {
 }
 
 function hasContent(d?: CalendarDay): d is CalendarDay {
-  return !!d && (!!d.htfBias || d.ltfCount > 0 || !!d.netPnl || d.news.length > 0);
+  return (
+    !!d &&
+    (!!d.htfBias || d.ltfCount > 0 || d.scalpCount > 0 || !!d.netPnl || d.news.length > 0)
+  );
 }
 
 export function CalendarView({ days }: { days: CalendarDay[] }) {
@@ -202,6 +205,20 @@ export function CalendarView({ days }: { days: CalendarDay[] }) {
                       )}
                     </span>
                   )}
+                  {d!.scalpCount > 0 && (
+                    <span className="flex w-fit items-center gap-1 rounded-md bg-muted px-1.5 py-0.5 text-[11px] text-muted-foreground">
+                      <span className="font-semibold text-foreground/80">{d!.scalpCount} SC</span>
+                      {d!.scalpBreakdown.long > 0 && (
+                        <span className="text-green-500">{d!.scalpBreakdown.long}L</span>
+                      )}
+                      {d!.scalpBreakdown.short > 0 && (
+                        <span className="text-red-500">{d!.scalpBreakdown.short}S</span>
+                      )}
+                      {d!.scalpBreakdown.wait > 0 && (
+                        <span className="text-amber-500">{d!.scalpBreakdown.wait}W</span>
+                      )}
+                    </span>
+                  )}
                 </div>
               )}
             </>
@@ -243,6 +260,7 @@ export function CalendarView({ days }: { days: CalendarDay[] }) {
           <span className="text-green-500">L</span>/<span className="text-red-500">S</span>/
           <span className="text-amber-500">W</span> = Long / Short / Wait analyses
         </span>
+        <span>LTF = swing analyses · SC = scalp analyses</span>
       </div>
     </div>
   );

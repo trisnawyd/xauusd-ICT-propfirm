@@ -7,6 +7,7 @@ import {
   LayoutDashboard,
   TrendingUp,
   Activity,
+  Zap,
   Newspaper,
   ScrollText,
   type LucideIcon,
@@ -20,6 +21,7 @@ const LINKS: NavLink[] = [
   { href: "/dashboard", label: "Dash", icon: LayoutDashboard },
   { href: "/htf", label: "HTF", icon: TrendingUp },
   { href: "/ltf", label: "LTF", icon: Activity },
+  { href: "/scalp", label: "Scalp", icon: Zap },
   { href: "/news", label: "News", icon: Newspaper },
   { href: "/trade-log", label: "Log", icon: ScrollText },
 ];

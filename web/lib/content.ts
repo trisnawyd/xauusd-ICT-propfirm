@@ -9,6 +9,7 @@ import type {
   MarkdownDoc,
   NewsEntry,
   OhlcSnapshot,
+  ScalpEntry,
   TradeLogEntry,
   WatchLevel,
 } from "./types";
@@ -263,6 +264,80 @@ export function getLTF(
   };
   entry.levels = extractLevels(d, entry);
   return { ...doc, entry, ohlc: getLTFOhlc(date, slug) };
+}
+
+// ---------------- Scalp (same layout as LTF: Analysis/Scalp/<YYYYMM>/<YYYYMMDD>/<slug>.md) ----------------
+
+/**
+ * Map scalp frontmatter to a ScalpEntry. Identical to the LTF mapping except
+ * LONG/SHORT scalp files use `tp1`/`tp2`/`rr_tp1` (Docs/file-formats.md); we
+ * fold `tp1`→`tp` and `rr_tp1`→`rr` so shared level/UI code works unchanged.
+ */
+function scalpEntryFromMeta(date: string, slug: string, d: Record<string, unknown>): ScalpEntry {
+  return {
+    date,
+    slug,
+    time: str(d.time) ?? slug.split("_")[1] ?? "",
+    session: str(d.session) ?? "",
+    direction: (str(d.direction)?.toUpperCase() as Direction) || directionFromName(slug),
+    grade: str(d.setup_grade)?.replace(/"/g, ""),
+    score: d.setup_score != null ? Number(d.setup_score) : undefined,
+    gateFailed: str(d.gate_failed) ?? str(d.gate_fail),
+    entry: str(d.entry),
+    sl: str(d.sl),
+    tp: str(d.tp1) ?? str(d.tp),
+    tp2: str(d.tp2),
+    rr: str(d.rr_tp1) ?? str(d.rr),
+  };
+}
+
+export function getScalpList(): ScalpEntry[] {
+  const base = dir("Analysis", "Scalp");
+  const out: ScalpEntry[] = [];
+  const dayDirs: { date: string; dayDir: string }[] = [];
+  for (const month of safeReaddir(base)) {
+    const monthDir = path.join(base, month);
+    if (!/^\d{6}$/.test(month) || !fs.statSync(monthDir).isDirectory()) continue;
+    for (const date of safeReaddir(monthDir)) {
+      const dayDir = path.join(monthDir, date);
+      if (!fs.statSync(dayDir).isDirectory()) continue;
+      dayDirs.push({ date, dayDir });
+    }
+  }
+  for (const { date, dayDir } of dayDirs) {
+    for (const file of safeReaddir(dayDir)) {
+      if (!file.endsWith(".md")) continue;
+      const slug = file.replace(/\.md$/, "");
+      const { data } = safeMatter(fs.readFileSync(path.join(dayDir, file), "utf8"));
+      out.push(scalpEntryFromMeta(date, slug, data));
+    }
+  }
+  return out.sort((a, b) => (b.date + b.slug).localeCompare(a.date + a.slug));
+}
+
+/** Sibling OHLC snapshot for a scalp analysis, if present. */
+function getScalpOhlc(date: string, slug: string): OhlcSnapshot | null {
+  const p = dir("Analysis", "Scalp", date.slice(0, 6), date, `${slug}_ohlc.json`);
+  if (!fs.existsSync(p)) return null;
+  try {
+    const snap = JSON.parse(fs.readFileSync(p, "utf8")) as OhlcSnapshot;
+    return Array.isArray(snap.bars) && snap.bars.length > 0 ? snap : null;
+  } catch {
+    return null;
+  }
+}
+
+export function getScalp(
+  date: string,
+  slug: string,
+): (MarkdownDoc & { entry: ScalpEntry; ohlc: OhlcSnapshot | null }) | null {
+  const p = dir("Analysis", "Scalp", date.slice(0, 6), date, `${slug}.md`);
+  if (!fs.existsSync(p)) return null;
+  const doc = readDoc(p);
+  const entry = scalpEntryFromMeta(date, slug, doc.meta);
+  // extractLevels reads entry.tp (which holds tp1) for the primary TP line.
+  entry.levels = extractLevels(doc.meta, entry);
+  return { ...doc, entry, ohlc: getScalpOhlc(date, slug) };
 }
 
 // ---------------- News (variable depth under Analysis/News) ----------------

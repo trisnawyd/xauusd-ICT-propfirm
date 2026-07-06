@@ -74,6 +74,31 @@ export interface LTFEntry {
   levels?: WatchLevel[];
 }
 
+/**
+ * Scalp analysis summary. Same shape as LTFEntry — Scalp files share LTF's
+ * directory layout and WAIT frontmatter. The one difference: LONG/SHORT scalp
+ * files use `tp1`/`tp2`/`rr_tp1` (per Docs/file-formats.md). The reader maps
+ * `tp1`→`tp` and `rr_tp1`→`rr` so shared UI/level code works unchanged; `tp2`
+ * is the only extra field.
+ */
+export interface ScalpEntry {
+  date: string; // YYYYMMDD
+  slug: string; // filename without .md
+  time: string; // display time
+  session: string;
+  direction: Direction;
+  grade?: string;
+  score?: number;
+  gateFailed?: string;
+  entry?: string;
+  sl?: string;
+  tp?: string; // holds tp1 for scalps
+  tp2?: string; // optional second target
+  rr?: string; // holds rr_tp1 for scalps
+  /** Parsed key levels (only populated by getScalp, not in list views). */
+  levels?: WatchLevel[];
+}
+
 export interface HTFEntry {
   date: string; // YYYYMMDD
   updated?: string;
@@ -107,5 +132,7 @@ export interface CalendarDay {
   losses?: string;
   ltfCount: number;
   ltfBreakdown: { long: number; short: number; wait: number };
+  scalpCount: number;
+  scalpBreakdown: { long: number; short: number; wait: number };
   news: { event?: string; impact?: string }[];
 }

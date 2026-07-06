@@ -4,7 +4,7 @@ import { BiasGauge } from "@/components/bias-gauge";
 import { Markdown } from "@/components/markdown";
 import { DirectionBadge } from "@/components/direction-badge";
 import { parseBias } from "@/lib/parse-bias";
-import { getContextDoc, getHtfContextRaw, getLTFList } from "@/lib/content";
+import { getContextDoc, getHtfContextRaw, getLTFList, getScalpList } from "@/lib/content";
 import type { Direction } from "@/lib/types";
 
 export const dynamic = "force-static";
@@ -30,6 +30,7 @@ export default function DashboardPage() {
   const account = getContextDoc("account");
   const ltfMemory = getContextDoc("ltf-memory");
   const latestLtf = getLTFList()[0];
+  const latestScalp = getScalpList()[0];
 
   const currentStructure = ltfMemory
     ? section(ltfMemory.body, /^##\s+Current Market Structure/i, /^##\s+Analysis\s+#/i)
@@ -44,15 +45,26 @@ export default function DashboardPage() {
             HTF bias as of {bias.updated ?? "—"}
           </p>
         </div>
-        {latestLtf && (
-          <Link
-            href={`/ltf/${latestLtf.date}/${latestLtf.slug}`}
-            className="flex items-center gap-2 rounded-md border border-border px-3 py-1.5 text-sm hover:bg-muted"
-          >
-            <span className="text-muted-foreground">Latest read</span>
-            <DirectionBadge direction={latestLtf.direction as Direction} />
-          </Link>
-        )}
+        <div className="flex flex-wrap items-center gap-2">
+          {latestLtf && (
+            <Link
+              href={`/ltf/${latestLtf.date}/${latestLtf.slug}`}
+              className="flex items-center gap-2 rounded-md border border-border px-3 py-1.5 text-sm hover:bg-muted"
+            >
+              <span className="text-muted-foreground">Latest read</span>
+              <DirectionBadge direction={latestLtf.direction as Direction} />
+            </Link>
+          )}
+          {latestScalp && (
+            <Link
+              href={`/scalp/${latestScalp.date}/${latestScalp.slug}`}
+              className="flex items-center gap-2 rounded-md border border-border px-3 py-1.5 text-sm hover:bg-muted"
+            >
+              <span className="text-muted-foreground">Latest scalp</span>
+              <DirectionBadge direction={latestScalp.direction as Direction} />
+            </Link>
+          )}
+        </div>
       </header>
 
       <div className="grid gap-6 md:grid-cols-2">

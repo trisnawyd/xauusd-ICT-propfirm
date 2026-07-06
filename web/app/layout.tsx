@@ -7,7 +7,7 @@ import { BottomNav } from "@/components/nav-sidebar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { getHTFList, getLTFList, getNewsList, getTradeLogList } from "@/lib/content";
+import { getHTFList, getLTFList, getScalpList, getNewsList, getTradeLogList } from "@/lib/content";
 import { formatDate, timeFromSlug } from "@/lib/format";
 
 const geistSans = Geist({ variable: "--font-sans", subsets: ["latin"] });
@@ -30,6 +30,13 @@ function buildNav(): SidebarNavData {
       .slice(0, RECENT)
       .map((e) => ({
         href: `/ltf/${e.date}/${e.slug}`,
+        label: `${e.date.slice(6, 8)}-${e.date.slice(4, 6)} · ${timeFromSlug(e.slug)}`,
+        direction: e.direction,
+      })),
+    scalp: getScalpList()
+      .slice(0, RECENT)
+      .map((e) => ({
+        href: `/scalp/${e.date}/${e.slug}`,
         label: `${e.date.slice(6, 8)}-${e.date.slice(4, 6)} · ${timeFromSlug(e.slug)}`,
         direction: e.direction,
       })),

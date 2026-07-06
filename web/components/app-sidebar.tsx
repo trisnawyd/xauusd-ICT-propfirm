@@ -7,6 +7,7 @@ import {
   LayoutDashboard,
   TrendingUp,
   Activity,
+  Zap,
   Newspaper,
   ScrollText,
   ChevronRight,
@@ -39,6 +40,7 @@ export type NavChild = { href: string; label: string; direction?: Direction };
 export type SidebarNavData = {
   htf: NavChild[];
   ltf: NavChild[];
+  scalp: NavChild[];
   news: NavChild[];
   tradeLog: NavChild[];
 };
@@ -48,6 +50,7 @@ type SectionKey = keyof SidebarNavData;
 const SECTIONS: { key: SectionKey; href: string; label: string; icon: LucideIcon }[] = [
   { key: "htf", href: "/htf", label: "HTF Bias", icon: TrendingUp },
   { key: "ltf", href: "/ltf", label: "LTF Analysis", icon: Activity },
+  { key: "scalp", href: "/scalp", label: "Scalp", icon: Zap },
   { key: "news", href: "/news", label: "News", icon: Newspaper },
   { key: "tradeLog", href: "/trade-log", label: "Trade Log", icon: ScrollText },
 ];

@@ -8,7 +8,11 @@
       "Read(Context/**)",
       "Edit(Context/**)",
       "Read(Trade Log/**)",
-      "Write(Trade Log/**)"
+      "Write(Trade Log/**)",
+      "Bash(python3 scripts/*)",
+      "Bash(git push)",
+      "Bash(git push origin master:*)",
+      "Bash(vercel --prod:*)"
     ]
   }
 }

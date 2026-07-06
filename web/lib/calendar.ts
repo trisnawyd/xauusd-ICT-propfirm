@@ -1,4 +1,4 @@
-import { getHTFList, getLTFList, getNewsList, getTradeLogList } from "./content";
+import { getHTFList, getLTFList, getScalpList, getNewsList, getTradeLogList } from "./content";
 import type { CalendarDay, Direction } from "./types";
 
 export interface CalendarHighlights {
@@ -34,6 +34,8 @@ function emptyDay(date: string): CalendarDay {
     pnlSign: null,
     ltfCount: 0,
     ltfBreakdown: { long: 0, short: 0, wait: 0 },
+    scalpCount: 0,
+    scalpBreakdown: { long: 0, short: 0, wait: 0 },
     news: [],
   };
 }
@@ -72,6 +74,14 @@ export function getCalendarDays(): Map<string, CalendarDay> {
     if (l.direction === "LONG") d.ltfBreakdown.long += 1;
     else if (l.direction === "SHORT") d.ltfBreakdown.short += 1;
     else if (l.direction === "WAIT") d.ltfBreakdown.wait += 1;
+  }
+
+  for (const s of getScalpList()) {
+    const d = get(s.date);
+    d.scalpCount += 1;
+    if (s.direction === "LONG") d.scalpBreakdown.long += 1;
+    else if (s.direction === "SHORT") d.scalpBreakdown.short += 1;
+    else if (s.direction === "WAIT") d.scalpBreakdown.wait += 1;
   }
 
   for (const t of getTradeLogList()) {

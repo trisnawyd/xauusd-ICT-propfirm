@@ -8,6 +8,7 @@ function resolveWikiTarget(target: string): string | null {
   let m;
   if ((m = t.match(/^Analysis\/HTF\/(.+)$/))) return `/htf/${m[1]}`;
   if ((m = t.match(/^Analysis\/LTF\/([^/]+)\/(.+)$/))) return `/ltf/${m[1]}/${m[2]}`;
+  if ((m = t.match(/^Analysis\/Scalp\/([^/]+)\/(.+)$/))) return `/scalp/${m[1]}/${m[2]}`;
   if ((m = t.match(/^Analysis\/News\/(.+)$/))) return `/news/${m[1]}`;
   if ((m = t.match(/^Trade Log\/(.+)$/))) return `/trade-log/${m[1]}`;
   if (/^Context\//.test(t)) return "/";

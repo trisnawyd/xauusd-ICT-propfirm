@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-06 03:47 UTC (re-synced — FLAT after 6 off-plan trades, −$45.21 day)
+updated: 2026-07-06 15:05 UTC (re-synced — FLAT after T8 armed short stopped by Waller reclaim, −$33.98 day / RED)
 synced_from: MT5 Bridge
 ---
 
@@ -10,26 +10,29 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,002.80 |
-| Equity | $5,002.80 |
-| Max risk per trade (1%) | $50.03 |
+| Balance | $5,013.80 |
+| Equity | $5,013.80 |
+| Max risk per trade (1%) | $50.14 |
 | Margin used | $0 |
-| Free margin | $5,002.80 |
+| Free margin | $5,013.80 |
 | Open positions | **None** |
 | Pending orders | **None** |
 
 ## Session Status — 2026-07-06
-- Daily P&L: **−$45.21** closed (2 win, 4 loss) — reconciled in [[Trade Log/20260706]]:
+- Daily P&L: **−$33.98** closed (3 win, 5 loss) — reconciled in [[Trade Log/20260706]]:
+  - **T8 #7398113 SELL 0.06 @ 4135.14 → 4143.21, net −$48.57 (14 min) — first full-CONFIRM-flow trade, STOPPED.** Armed SELL_LIMIT off [[Analysis/LTF/202607/20260706/20260706_1444_short]] (B 66) after M5 confirmed a close below the 4131.22 session low. Filled 4135.14; **Waller's 15:00 UTC speech sparked a full reclaim of the 4128.32 low** (4128→4144 no pause) → SL 4143. Bear trap / failed breakdown. Structure was valid (with-trend, confirmed break, 4.1:1) but arming ~16 min before a Fed speaker was the error. Gave back T7's recovery → day red −$33.98. **Lesson: no breakdown shorts placed inside ~15 min of a Fed speaker.**
+  - *(T1–T7 below: T7 recovered the day to +$14.59 before T8.)*
   - T1 #7291240 SELL 4197.13 → 4202.33, net **−$10.45** (11 min) — off-plan short fading the range top; stopped on the wick to new Asian high 4203.17.
   - T2 #7291534 BUY 4202.48 → 4191.91, net **−$31.79** (2 min) — chased the 4202 breakout WITHOUT the required M5 break-and-hold; reversed straight back into the range.
   - T3 #7292716 BUY 4185.87 → 4179.94, net **−$29.78** (6 min) — third long, bought into the markdown off the trapped 4203.17 high; knife-catch, stopped.
   - T4 #7294168 BUY 4183.06 → 4176.14, net **−$34.73** (5 min) — fourth long, same knife-catch pattern lower; stopped as breakdown continued. T2–T4 = three longs fighting a downtrend = −$96.30.
   - T5 #7299220 SELL 4177.47 → 4165.88, net **+$11.56** (49 min) — finally flipped WITH the breakdown momentum; closed early (WIN).
-  - T6 #7300101 SELL 4177.47 → 4164.95, net **+$49.98** (58 min) — second short same entry, rode the markdown to 4164.95; best result of the day, the recovery trade (WIN).
-- Session start equity: ~$5,048.01 → **current $5,002.80 (−$45.21, −0.90% day)**
+  - T6 #7300101 SELL 4177.47 → 4164.95, net **+$49.98** (58 min) — second short same entry, rode the markdown to 4164.95 (WIN).
+  - **T7 #7373748 SELL 0.03 @ 4152.26 → 4132.30, net +$59.80 (94 min) — THE PLAN TRADE (WIN).** With-trend short off the M15 IFVG rejection at the 4152.55 box top (engulfing retest → break), rode the box breakdown 199.6 pips to the session low 4131.22. First trade of the day aligned with a Claude plan (Watch A box-breakdown short, [[Analysis/LTF/202607/20260706/20260706_1017_wait]]). Recovered the whole −$45.21 hole in one clean trade.
+- Session start equity: ~$5,048.01 → **current $5,062.52 (+$14.59, +0.29% day)**
 - **FLAT** — no open positions, no pendings.
-- ⚠️ Behavioral note: all 6 trades off-plan/discretionary against a **WAIT** read. Pattern of the day: 4 longs (fade top + chase break + 2 knife-catches) fought the 4203→4162 breakdown for −$106.75, then 2 shorts recovered +$61.54 by going WITH the intraday move. The profitable side (T5/T6) was counter-trend vs D1-BULLISH and against the model's "no shorts" WAIT — worked as a momentum scalp, but the danger is shorting into 4127–4146 demand. Expensive lesson stays the front half: **don't fade a range top, don't buy a knife into a breakdown.** Edge = patience at the boundary / wait for demand + trigger.
-- Market context: ASIAN (03:47 UTC), price ~4164 at the range low after the 4203.17 bull trap → markdown. Daily −0.90%, within limits. 🚨 HIGH-impact US cluster TODAY 13:45/14:00 UTC (S&P Services PMI, ISM Non-Mfg PMI + Prices Paid) + Waller 15:00 — no new positions 13:30–14:15 UTC.
+- ✅ Behavioral turn: T1–T6 were off-plan whipsaw (4 longs fading the breakdown −$106.75, 2 shorts recovering +$61.54). **T7 was the fix in action** — with-trend, entered on a rejection trigger at a real level (IFVG resistance), let it run ~200 pips instead of the usual early bank. One disciplined trade > six discretionary stabs. Lesson reinforced: **don't fade a range top / don't buy a knife; DO sell the rejection at resistance with the trend and hold to the demand target.**
+- Market context: LONDON (12:44 UTC), price ~4133 at the session low / into the 4127–4146 H4 demand floor after the box broke down. Daily +0.29%, green. 🚨 HIGH-impact US cluster TODAY 13:45/14:00 UTC (S&P Services PMI, ISM Non-Mfg PMI + Prices Paid) + Waller 15:00 — no new positions 13:30–14:15 UTC (~1h out).
 
 ## Session Status — 2026-07-02
 - Daily P&L: **+$49.55** closed (5 win, 3 loss) — reconciled in [[Trade Log/20260702]]:

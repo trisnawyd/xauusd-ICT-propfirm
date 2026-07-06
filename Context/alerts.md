@@ -2,9 +2,12 @@
 
 | ID | Label | Price | Direction | Set At |
 |----|-------|-------|-----------|--------|
+| ~~**#216**~~ | ~~Session low 4131.22 BROKEN → with-trend breakdown SHORT to 4102/4080; primary trigger~~ | ~~4131.00~~ | ~~below~~ | ~~2026-07-06 14:24 UTC~~ — **fired** 14:44 UTC (M5 closed 4128.56 below 4131.22, new low 4128.32; confirmed break → placed **ARMED SELL_LIMIT #9526988** 0.06 @4135 SL 4143 TP 4102 (4.1:1); invalidation M5 close above 4143) |
+| **#217** | M15 range high / **Watch B SHORT reload** zone — rally-reject short ~4170 SL 4178 TP 4131→4102 (~4.9:1); with-trend, higher-quality; run LTF | 4166.00 | above | 2026-07-06 14:24 UTC |
+| **#218** | Breakdown TP1 / next H4 demand 4080–4102 reached — manage/trail short, watch for bounce; run LTF | 4102.00 | below | 2026-07-06 14:24 UTC |
 | **#212** | Descending-trendline break test — H4 close above 4203.17 bull-trap high = downtrend broken, opens 4382; else every tag of the line is a sell; run LTF | 4204.00 | above | 2026-07-06 05:04 UTC |
 | **#215** | IFVG reclaim → bull back on — H1 CLOSE above 4176.28 un-inverts the 4151–4176 FVG, opens 4190 trendline as a real target; run LTF | 4176.00 | above | 2026-07-06 07:30 UTC |
-| **#214** | Demand-break SHORT trigger — M5/H1 close below the reclaimed 4136.58 range low → retest short ~4140 SL 4152 TP 4102 (3.2:1); clean continuation to 4080–4100; run LTF | 4143.00 | below | 2026-07-06 07:30 UTC |
+| ~~**#214**~~ | ~~Demand-break SHORT trigger — M5/H1 close below the reclaimed 4136.58 range low → retest short ~4140 SL 4152 TP 4102 (3.2:1); clean continuation to 4080–4100; run LTF~~ | ~~4143.00~~ | ~~below~~ | ~~2026-07-06 07:30 UTC~~ — **fired** (price broke below 4143 into the 14:00 UTC news drop, now 4133 pressing 4131.22; EA auto-cleared; replaced/refined by #216 @4131 at the true session-low trigger) |
 | **#189** | ARMED retest — cascade #2, fresh M1/M5 bear FVG 4068.05-4069.69, SHORT trigger zone; SELL_LIMIT 0.19 @4068.35 SL 4071 TP 4059.08 **PROPOSED** (awaiting CONFIRM); run LTF | 4068.35 | above | 2026-07-02 09:29 UTC |
 | **#188** | Watch A LONG zone — M15 discount OTE 4046.87-4054.04 (updated 09:29); need M1 bullish trigger; run LTF | 4046.87 | below | 2026-07-02 09:29 UTC |
 | ~~**#187**~~ | ~~ARMED retest — M1 bear FVG 4067.61-4069.1, SHORT trigger zone; SELL_LIMIT #9266059 0.05 @4068.35 SL 4071 TP 4055.25 **PLACED** 07:19 UTC (lot cut from 0.18→0.05, Layer 3 MaxLot cap); run LTF~~ | ~~4068.35~~ | ~~above~~ | ~~2026-07-02 06:44 UTC~~ — fired/gone (order filled, closed manual as Trade 7 +$20.57; alert auto-cleared by EA on fill; price rallied back to re-tag the shelf, superseded by #189 at the cascade-2 retest) |

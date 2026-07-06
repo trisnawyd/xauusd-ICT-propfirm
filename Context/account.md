@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-06 01:51 UTC (re-synced — FLAT after 2 off-plan losses, −$42.24 day)
+updated: 2026-07-06 03:47 UTC (re-synced — FLAT after 6 off-plan trades, −$45.21 day)
 synced_from: MT5 Bridge
 ---
 
@@ -10,22 +10,26 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,006.16 |
-| Equity | $5,006.16 |
-| Max risk per trade (1%) | $50.06 |
+| Balance | $5,002.80 |
+| Equity | $5,002.80 |
+| Max risk per trade (1%) | $50.03 |
 | Margin used | $0 |
-| Free margin | $5,006.16 |
+| Free margin | $5,002.80 |
 | Open positions | **None** |
 | Pending orders | **None** |
 
 ## Session Status — 2026-07-06
-- Daily P&L: **−$42.24** closed (0 win, 2 loss) — reconciled in [[Trade Log/20260706]]:
-  - T1 #7291240 SELL 4197.13 → 4202.33, net **−$10.45** (11 min) — off-plan discretionary short fading the range top; stopped when price wicked to a new Asian high 4203.17. No plan basis (plan was WAIT; the only short was HTF Setup C @4232).
-  - T2 #7291534 BUY 4202.48 → 4191.91, net **−$31.79** (2 min) — flipped long to chase the 4202 breakout WITHOUT the required M5 break-and-hold; price wicked 4203.17 then reversed back into the range, stopped in 2 min. The exact "premature breakout chase" the WAIT read warned against.
-- Session start equity: ~$5,048.40 → **current $5,006.16 (−$42.24, −0.84% day)**
+- Daily P&L: **−$45.21** closed (2 win, 4 loss) — reconciled in [[Trade Log/20260706]]:
+  - T1 #7291240 SELL 4197.13 → 4202.33, net **−$10.45** (11 min) — off-plan short fading the range top; stopped on the wick to new Asian high 4203.17.
+  - T2 #7291534 BUY 4202.48 → 4191.91, net **−$31.79** (2 min) — chased the 4202 breakout WITHOUT the required M5 break-and-hold; reversed straight back into the range.
+  - T3 #7292716 BUY 4185.87 → 4179.94, net **−$29.78** (6 min) — third long, bought into the markdown off the trapped 4203.17 high; knife-catch, stopped.
+  - T4 #7294168 BUY 4183.06 → 4176.14, net **−$34.73** (5 min) — fourth long, same knife-catch pattern lower; stopped as breakdown continued. T2–T4 = three longs fighting a downtrend = −$96.30.
+  - T5 #7299220 SELL 4177.47 → 4165.88, net **+$11.56** (49 min) — finally flipped WITH the breakdown momentum; closed early (WIN).
+  - T6 #7300101 SELL 4177.47 → 4164.95, net **+$49.98** (58 min) — second short same entry, rode the markdown to 4164.95; best result of the day, the recovery trade (WIN).
+- Session start equity: ~$5,048.01 → **current $5,002.80 (−$45.21, −0.90% day)**
 - **FLAT** — no open positions, no pendings.
-- ⚠️ Behavioral note: both trades were off-plan/discretionary against a **WAIT** read of a 4162–4202 range-chop. The two losses = the two classic range-boundary mistakes: fade the top (stopped on the break) then chase the break (stopped on the reversal). Watch B's break-and-HOLD filter existed precisely to avoid T2. Recurring theme: in a defined range with no open imbalance, the edge is patience at the boundary, not participation at the wick.
-- Market context: ASIAN (01:51 UTC), price ~4193, back inside the range after the 4203.17 sweep. Daily −0.84%, within limits. 🚨 HIGH-impact US cluster TODAY 13:45/14:00 UTC (S&P Services PMI, ISM Non-Mfg PMI + Prices Paid) + Waller 15:00 — no new positions 13:30–14:15 UTC.
+- ⚠️ Behavioral note: all 6 trades off-plan/discretionary against a **WAIT** read. Pattern of the day: 4 longs (fade top + chase break + 2 knife-catches) fought the 4203→4162 breakdown for −$106.75, then 2 shorts recovered +$61.54 by going WITH the intraday move. The profitable side (T5/T6) was counter-trend vs D1-BULLISH and against the model's "no shorts" WAIT — worked as a momentum scalp, but the danger is shorting into 4127–4146 demand. Expensive lesson stays the front half: **don't fade a range top, don't buy a knife into a breakdown.** Edge = patience at the boundary / wait for demand + trigger.
+- Market context: ASIAN (03:47 UTC), price ~4164 at the range low after the 4203.17 bull trap → markdown. Daily −0.90%, within limits. 🚨 HIGH-impact US cluster TODAY 13:45/14:00 UTC (S&P Services PMI, ISM Non-Mfg PMI + Prices Paid) + Waller 15:00 — no new positions 13:30–14:15 UTC.
 
 ## Session Status — 2026-07-02
 - Daily P&L: **+$49.55** closed (5 win, 3 loss) — reconciled in [[Trade Log/20260702]]:

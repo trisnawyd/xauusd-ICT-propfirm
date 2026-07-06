@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-03 03:03 UTC (re-synced — FLAT, no new trades since 07-02, balance unchanged)
+updated: 2026-07-06 01:51 UTC (re-synced — FLAT after 2 off-plan losses, −$42.24 day)
 synced_from: MT5 Bridge
 ---
 
@@ -10,13 +10,22 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,048.90 |
-| Equity | $5,048.90 |
-| Max risk per trade (1%) | $50.49 |
+| Balance | $5,006.16 |
+| Equity | $5,006.16 |
+| Max risk per trade (1%) | $50.06 |
 | Margin used | $0 |
-| Free margin | $5,048.90 |
+| Free margin | $5,006.16 |
 | Open positions | **None** |
-| Pending orders | **1** — BUY_LIMIT #9309892 0.05 @ 4168 (SL 4160 / TP 4195.5), risk $40 — wedge-breakout retest LONG, [[Analysis/LTF/202607/20260703/20260703_0716_wait]] |
+| Pending orders | **None** |
+
+## Session Status — 2026-07-06
+- Daily P&L: **−$42.24** closed (0 win, 2 loss) — reconciled in [[Trade Log/20260706]]:
+  - T1 #7291240 SELL 4197.13 → 4202.33, net **−$10.45** (11 min) — off-plan discretionary short fading the range top; stopped when price wicked to a new Asian high 4203.17. No plan basis (plan was WAIT; the only short was HTF Setup C @4232).
+  - T2 #7291534 BUY 4202.48 → 4191.91, net **−$31.79** (2 min) — flipped long to chase the 4202 breakout WITHOUT the required M5 break-and-hold; price wicked 4203.17 then reversed back into the range, stopped in 2 min. The exact "premature breakout chase" the WAIT read warned against.
+- Session start equity: ~$5,048.40 → **current $5,006.16 (−$42.24, −0.84% day)**
+- **FLAT** — no open positions, no pendings.
+- ⚠️ Behavioral note: both trades were off-plan/discretionary against a **WAIT** read of a 4162–4202 range-chop. The two losses = the two classic range-boundary mistakes: fade the top (stopped on the break) then chase the break (stopped on the reversal). Watch B's break-and-HOLD filter existed precisely to avoid T2. Recurring theme: in a defined range with no open imbalance, the edge is patience at the boundary, not participation at the wick.
+- Market context: ASIAN (01:51 UTC), price ~4193, back inside the range after the 4203.17 sweep. Daily −0.84%, within limits. 🚨 HIGH-impact US cluster TODAY 13:45/14:00 UTC (S&P Services PMI, ISM Non-Mfg PMI + Prices Paid) + Waller 15:00 — no new positions 13:30–14:15 UTC.
 
 ## Session Status — 2026-07-02
 - Daily P&L: **+$49.55** closed (5 win, 3 loss) — reconciled in [[Trade Log/20260702]]:

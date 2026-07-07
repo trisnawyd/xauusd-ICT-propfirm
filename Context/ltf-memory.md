@@ -1,56 +1,55 @@
 ---
-updated: 2026-07-07 00:48 UTC
-snapshot: "[[Analysis/LTF/202607/20260707/20260707_0048_wait]]"
+updated: 2026-07-07 11:41 UTC
+snapshot: "[[Analysis/LTF/202607/20260707/20260707_1141_short]]"
 ---
 
 # LTF Memory — Last 3 Analyses
 
-## Current Market Structure (as of 2026-07-07 00:48 UTC)
+## Current Market Structure (as of 2026-07-07 11:41 UTC)
 
-**Account:** equity $5,013.80, max risk $50.14. **FLAT** — 0 positions, 0 pendings. Daily P&L **$0** (fresh UTC day). Spread 2 ✓. ASIAN (00:48 UTC).
+**Account:** equity $5,013.07, max risk $50.13. **FLAT** — 0 positions, 0 pendings. Daily P&L **−$0.65** (one BE scratch long). Spread 2.2 ✓. LONDON (11:41 UTC).
 
-**HTF:** NEUTRAL / **bearish-at-resistance** (03:50 UTC 07-06 — **~21h old, aging; refresh before it passes 24h**). Dominant H4 downtrend respecting the descending trendline (~4180 today). Sell rallies into premium/the line.
+**HTF:** NEUTRAL / bearish-at-resistance. D1 range/discount; H4 BEARISH/premium (EQ 4073); H1 BEARISH. Sell rallies into 4148–4180 → downside draw 4128 → 4116 → 4100 → 4073. Bull needs H4/D1 close > ~4180–4200.
 
-**OVERNIGHT REJECTION AT RESISTANCE — with-trend short forming.** Price rallied 4139 → **NY high 4167.74** (tagging the 4166.54 range high + trendline), **swept BSL@4167.34 and rejected**, then sold off to 4147 as Asian opened (the 03:30 M15 broke down 4160→4148). Price 4147.72 now sits at M15 **EQ 4146.98 (marginal premium)**, basing after the drop. Bias DOWN toward the 4128.32 session low then 4102. **WAIT** — Gate 4: the clean with-trend short is a pullback into the 4151–4156 open M5 bear FVG with an M1 bearish rejection; shorting here at EQ mid-move is chasing.
+**THE SHORT SETUP FINALLY ARRIVED — SHORT at 4148–4157 supply (Grade A 82).** After a full session of P/D-blocked discount chop, price rallied off the failed-breakdown low (4116.44) straight into the pre-mapped **4148–4157 supply**. The 14:30-broker M15 wicked **4148.17**, **swept BSL @ 4146.23**, closed back at 4145.63 (rejection). M15 now reads **PREMIUM** (price 4145.68 vs EQ 4127.87) — first premium short location of the day. Stacked H1 + H4 bear FVG at the zone. **This is the with-trend short:** entry on retest into 4148–4153 + M1 displacement, SL 4160, TP 4128→4116→4100. Do NOT chase below 4145 (R:R collapses).
 
-**Behavioral:** yesterday closed RED −$33.98 (8 trades; T7 +$59.80 discipline win given back by T8's timing error — armed short ~16 min before Waller, stopped on the reclaim). Fresh day, flat. Discipline reset: wait for the pullback into premium + trigger; don't chase the EQ, don't fade the demand.
+**Behavioral:** the session's earlier scratch long (−$0.65) and all the WAITs were correct discipline — every prior short was in discount (chase). THIS one is premium + swept + FVG = the A-grade the model was holding out for. Execute the plan, don't fade it. (trade-cycle does not place the order — manual execution.)
 
-**News:** none flagged imminent (ASIAN). Refresh the economic calendar before London.
+**News:** MEDIUM only (Bowman 11:00 passed, Trade Balance 12:30 UTC). No lockout.
 
-**M15 Status:** range H4165.64 / L4128.32, EQ 4146.98; price 4147.72 = EQ / marginal PREMIUM; OTE 4136.31–4142.58. Overnight BSL sweep-reject at 4167.74, fresh bearish momentum (03:30 breakdown candle).
-**M5 Status:** open bear FVGs 4151.36–4156.52 (short reload) and 4166–4166.94 (upper). BSL sweeps rolling over — bearish near-term.
-**M1 Status:** sold 4160→4147.47, basing 4147–4149. No bearish trigger at a zone yet (price below the FVG, small bounce).
+**M15 Status:** bullish push into supply; 14:30 wick 4148.17 swept BSL 4146.23, closed 4145.63. PREMIUM (EQ 4127.87). Rejection forming.
+**M5 Status:** rejection wick 4148.17 → 4145.13; leaking to 4145. Fresh supply tapped/mitigating.
+**M1 Status:** lower highs 4148.17→4146.97→4146.51, holding 4145–4146. Awaiting decisive bearish displacement.
 
 **Key Levels:**
-- **4166–4168 — overnight rejection high / swept BSL / trendline resistance (short invalidation on reclaim-and-hold; alert #217)**
-- **4151.36–4156.52 — open M5 bear FVG (Watch A short reload; alert #219 @4154)**
-- **4146.98 — M15 EQ (P/D pivot; price here)**
-- **4136.31–4142.58 — M15 OTE | 4127–4146 H4 demand floor**
-- **4128.32 — session low (Watch A TP1 / Watch B reaction; alert #220 @4128)**
-- **4102 / 4080–4100 — next H4 demand (Watch A extension; alert #218)**
+- **4148.15–4156.69 — H1 + H4 bear FVG supply (SHORT zone; alert #221 @4148)**
+- **4146.23 — BSL swept (rejection pivot)**
+- **4127.87 — M15 EQ (P/D pivot)**
+- **4128 / 4116.44 — SSL draws (TP1/TP2)**
+- **4080.41–4100.08 — H4 demand (TP3 / bounce watch; alert #225 @4100)**
+- **4167.74 / ~4178 — NY high / trendline (short invalidation above; alerts #223/#224)**
 
-**Setup:** WAIT (Gate 4 — with-trend short forming, no trigger yet). Watch A (SHORT, with-trend, primary): pullback into 4151–4156 + M1 rejection → SHORT ~4153, SL 4162, TP 4128→4102 (2.8:1, 0.05 lot). Watch B (LONG bounce, counter-trend scalp, low): reaction at 4128 demand base + M1 trigger → LONG ~4130, SL 4120, TP 4147→4162 (3.2:1). No armed order (cycle read; live triggers only).
-
----
-
-## Analysis #1 — 2026-07-07 00:48 UTC (WAIT — overnight rejection at 4168 resistance, with-trend short forming)
-- **Direction:** WAIT — Gate 4, no M1 trigger at zone. Overnight rally to NY high 4167.74 swept BSL at trendline/range-high resistance and rejected → sold to 4147 (EQ). With-trend short setup on a pullback into the 4151–4156 M5 bear FVG; shorting at EQ mid-move is chasing. Bias DOWN toward 4128 → 4102.
-- **Watch A (SHORT, with-trend, primary):** pullback into 4151–4156 + M1 rejection → SHORT ~4153, SL 4162, TP 4128→4102 (2.8:1, 0.05 lot).
-- **Watch B (LONG bounce, counter-trend scalp, low):** reaction at 4128 demand base + M1 trigger → LONG ~4130, SL 4120, TP 4147→4162 (3.2:1).
-- **Invalidation:** M5 close above 4166.94 and hold → bullish reclaim, re-analyze. M5 close below 4128.32 and hold → breakdown to 4102.
+**Setup:** SHORT (Grade A 82) — with-trend rejection at 4148–4157 supply. Entry ~4150 (retest + M1 displacement), SL 4160, TP1 4128 (2.2:1) → TP2 4116 (3.4:1) → TP3 4100 (5:1), 0.05 lot, risk $50. Invalidation: M5 close-hold above 4156.69.
 
 ---
 
-## Analysis #2 — 2026-07-06 15:17 UTC (WAIT — post-Waller chop, failed breakdown, mid micro-range)
-- **Direction:** WAIT — Gate 3, no clean entry at price. The 4131 breakdown fully reclaimed on Waller (4128→4146, stopped T8), price 4139.65 mid 4128–4147 range in M15 discount. With-trend SHORT P/D-blocked (reload at premium 4147–4166); counter-trend LONG bull-trapped twice. No armed order.
-- **Watch A (SHORT, with-trend reload):** rally to 4153–4157 + M1 rejection → SHORT ~4154, SL 4162, TP 4118→4102 (~4.5:1).
-- **Watch B (LONG bounce, counter-trend scalp, low):** hold above 4128.32 + M1 trigger → LONG ~4136, SL 4126, TP 4147→4166 (~3:1).
-- **Invalidation:** M5 close above 4166.54 → bullish. M5 close-and-hold below 4128.32 → breakdown to 4102.
+## Analysis #1 — 2026-07-07 11:41 UTC (SHORT — Grade A 82, supply rejection at 4148–4157)
+- **Direction:** SHORT — with-trend rejection at HTF supply. Price rallied off 4116.44 into 4148–4157, swept BSL 4146.23, M15 PREMIUM. The A-grade short the model waited all session for. Entry on retest 4148–4153 + M1 displacement.
+- **Plan:** SHORT ~4150, SL 4160, TP1 4128 → TP2 4116 → TP3 4100 (2.2→5:1, 0.05 lot, risk $50).
+- **Invalidation:** M5 close-and-hold above 4156.69 → supply failed, next test 4167.74/4178.
 
 ---
 
-## Analysis #3 — 2026-07-06 14:13 UTC (WAIT — bounce off session low, counter-trend + news-blocked)
-- **Direction:** WAIT — news lockout (ISM tail + Waller 15:00) AND Gate 5 sub-grade. LONG bounce off 4131.22 triggered but counter-trend, capped at the 4151–4176 IFVG, grading B 63/100. *(Superseded: the 4131 break later confirmed → T8 armed short, stopped by the Waller reclaim.)*
-- **Watch A (LONG bounce, counter-trend scalp):** hold above 4133 → LONG ~4142, SL 4130, TP 4166→4176 (2.0:1).
-- **Watch B (SHORT, with-trend reload):** rally into 4166–4176 IFVG / trendline ~4190 + M1 rejection → SHORT ~4170, SL 4178, TP 4131→4102 (~4.9:1).
-- **Invalidation:** M5 close below 4131.22 → breakdown short. M5/H1 close above 4176 → IFVG reclaimed, bull back on.
+## Analysis #2 — 2026-07-07 05:15 UTC (WAIT — breakdown fired but chasing = poor location, sell the retest)
+- **Direction:** WAIT — Gate 3. 08:10 M5 closed 4122.20 below the 4124.16 low (first genuine close after 3 wicks) → new low 4121.29. But marginal close in deep M15 discount, selling into H4 demand 4080–4100 = poor location / likely SSL grab. Don't chase; sell the retest higher. *(Confirmed: breakdown failed, price reclaimed and rallied to 4148 supply.)*
+- **Watch A (retest SHORT):** bounce into 4130–4139 + M1 rejection → SHORT ~4132, SL 4141, TP 4100→4080.
+- **Watch B (LONG demand bounce):** reaction at 4080–4100 + M1 trigger → LONG ~4090, SL 4080, TP 4115→4130.
+- **Invalidation:** M5 reclaim-hold above 4124.16 → back into range. M5 close below 4100 → continuation.
+
+---
+
+## Analysis #3 — 2026-07-07 03:48 UTC (WAIT — compression at session low, breakdown unconfirmed on wicks)
+- **Direction:** WAIT — Gate 3. Price 4127 pinned at the 4125–4128 session low after falling from 4168. Low swept on wicks, no M5 close below 4125.43 (wick-trap = T8 pattern). With-trend SHORT P/D-chasing in discount; clean sell is the reload into 4148–4157 premium.
+- **Watch A (SHORT reload, primary):** rally into 4148–4157 + M1 rejection → SHORT ~4150, SL 4160, TP 4128→4100 (2.2→5:1). *(This is exactly what triggered at 11:41.)*
+- **Watch B (SHORT breakdown):** M5 close-and-HOLD below 4125.43 → SHORT ~4128, SL 4138, TP 4100→4080.
+- **Invalidation:** M5 reclaim-hold above 4167.74 / H4 close above ~4180.

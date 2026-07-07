@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-06 15:05 UTC (re-synced — FLAT after T8 armed short stopped by Waller reclaim, −$33.98 day / RED)
+updated: 2026-07-07 13:10 UTC (re-synced — FLAT, day recovered to ~breakeven; A82 mid-zone short stopped then a clean short at the 4178 trendline reject won it back)
 synced_from: MT5 Bridge
 ---
 
@@ -10,13 +10,23 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,013.80 |
-| Equity | $5,013.80 |
-| Max risk per trade (1%) | $50.14 |
+| Balance | $5,012.10 |
+| Equity | $5,012.10 |
+| Max risk per trade (1%) | $50.12 |
 | Margin used | $0 |
-| Free margin | $5,013.80 |
+| Free margin | $5,012.10 |
 | Open positions | **None** |
 | Pending orders | **None** |
+
+## Session Status — 2026-07-07
+- Daily P&L: **−$1.36** closed (1 win, 1 loss, 1 BE scratch) — day recovered to ~breakeven — reconciled in [[Trade Log/20260707]]:
+  - T1 #7446323 BUY 4122.56 → 4122.37, net **−$0.65** (2 min, scratch) — manual counter-trend long off the 4116–4124 session-low bounce ("instant break-even"). Off-plan (not at 4080–4100 demand, counter-trend), moved to BE instantly, scratched on noise. Right instinct on the bounce, wrong location + BE stop inside the M1 noise band.
+  - **T2 #7479968 SELL 0.05 @ 4150.47 → 4160.48, net −$50.18 (19 min) — the A82 supply short, STOPPED full-risk.** With-trend short into 4148–4157 supply per [[Analysis/LTF/202607/20260707/20260707_1141_short]] (A 82). Structure real (BSL 4146.23 swept, M15 premium, London), but **entered mid-zone at 4150.47 on a soft 4148.17 rejection wick that never confirmed** — price stair-stepped UP through the FVG (absorption, not rejection), broke the 4156.69 top, tagged SL 4160.47. Lesson: a soft wick ≠ an M1 trigger; the real supply/BSL was higher (4167.74/4178).
+  - **T3 #7487035 SELL 4173.40 → 4163.48, net +$49.47 (10 min) — the SAME short at the RIGHT level, WIN.** Price ran up to the session high **4178.6**, tagging the descending trendline (~4178) / above NY high 4167.74 = the real HTF supply + BSL, and rejected. Short from 4173.40 rode it down to 4163.48. **This is what T2 should have been** — identical bias, entered at the correct liquidity (trendline/NY-high) so the entry sat *above* the rejection, not below it. T2+T3 net −$0.71 on the short idea: right thesis, second attempt fixed the location.
+- Session start equity: ~$5,013.80 → **current $5,012.10 (−$1.36, −0.03% day)** — flat, within all limits.
+- **FLAT** — no open positions, no pendings.
+- ✅ Behavioral: all three manual/off-CONFIRM-flow. The takeaway is T2→T3: the A82 grade was inflated on an unconfirmed trigger and stopped mid-zone, but the **re-attempt at the actual resistance (4173/4178 trendline reject) was textbook and clawed the loss straight back.** Discipline reinforced: **short the rejection at the real liquidity level (trendline/NY-high), not mid-FVG; wait for the displacement.** T3 did exactly that.
+- Market context: OVERLAP (13:10 UTC), price ~4161 after rejecting the **4178.6 trendline high**. HTF bearish-at-resistance thesis just confirmed by that reject. Next: with-trend continuation down (draw 4148 → 4128 → 4116) OR another rejection short on a re-tag of 4167–4178. Forward read: [[Analysis/LTF/202607/20260707/20260707_1141_short]].
 
 ## Session Status — 2026-07-06
 - Daily P&L: **−$33.98** closed (3 win, 5 loss) — reconciled in [[Trade Log/20260706]]:

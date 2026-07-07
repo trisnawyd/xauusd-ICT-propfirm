@@ -2,8 +2,10 @@
 
 | ID | Label | Price | Direction | Set At |
 |----|-------|-------|-----------|--------|
+| **#219** | **Watch A SHORT reload** — M5 bear OB 4153–4157 / premium; need M1 bearish rejection → short ~4154 SL 4162 TP 4118→4102 (~4.5:1); with-trend, **LIVE trigger only** (not armed); run LTF | 4154.00 | above | 2026-07-06 15:17 UTC |
+| **#220** | Session low 4128.32 broken AGAIN — breakdown resumes **only on M5 close-and-HOLD below** (not a wick; a wick already stopped T8); with-trend short to 4102; run LTF | 4128.00 | below | 2026-07-06 15:17 UTC |
 | ~~**#216**~~ | ~~Session low 4131.22 BROKEN → with-trend breakdown SHORT to 4102/4080; primary trigger~~ | ~~4131.00~~ | ~~below~~ | ~~2026-07-06 14:24 UTC~~ — **fired** 14:44 UTC (M5 closed 4128.56 below 4131.22, new low 4128.32; confirmed break → placed **ARMED SELL_LIMIT #9526988** 0.06 @4135 SL 4143 TP 4102 (4.1:1); invalidation M5 close above 4143) |
-| **#217** | M15 range high / **Watch B SHORT reload** zone — rally-reject short ~4170 SL 4178 TP 4131→4102 (~4.9:1); with-trend, higher-quality; run LTF | 4166.00 | above | 2026-07-06 14:24 UTC |
+| **#217** | Overnight rejection high — **tagged 07-07 (NY high 4167.74), swept BSL & rejected** back to 4147. Now the with-trend SHORT invalidation: a reclaim-and-HOLD above 4166.94 kills the bearish read; else every tag is a sell into the trendline; run LTF | 4166.00 | above | 2026-07-06 14:24 UTC (re-tagged 07-07 00:48) |
 | **#218** | Breakdown TP1 / next H4 demand 4080–4102 reached — manage/trail short, watch for bounce; run LTF | 4102.00 | below | 2026-07-06 14:24 UTC |
 | **#212** | Descending-trendline break test — H4 close above 4203.17 bull-trap high = downtrend broken, opens 4382; else every tag of the line is a sell; run LTF | 4204.00 | above | 2026-07-06 05:04 UTC |
 | **#215** | IFVG reclaim → bull back on — H1 CLOSE above 4176.28 un-inverts the 4151–4176 FVG, opens 4190 trendline as a real target; run LTF | 4176.00 | above | 2026-07-06 07:30 UTC |

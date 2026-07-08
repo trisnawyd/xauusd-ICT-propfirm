@@ -46,17 +46,17 @@ snapshot: "[[Analysis/HTF/202607/20260708]]"
 ### Resistance / Supply (above ~4100)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **4115.83–4124.97** | Fresh H1 bear FVG (07/07 22:00) | First supply on a bounce (alert #232 @4120) |
+| **4115.83–4124.97** | Fresh H1 bear FVG (07/07 22:00) | First supply on a bounce (alert #234 @4120, live) |
 | **4119.56** | M15 EQ | Intraday premium/discount pivot |
-| **4127.84–4140.36** | H1 bear FVG + H4 bear FVG 4108.12–4135.38 + M5 bear FVG 4136.09–4139.65 | **THE with-trend sell zone** — bounce-rejection short (alert #233 @4135) |
-| **4147.14** | M15 swing high / BSL | Swept 07/07 20:30; M15 close-hold above = bullish CHoCH → 4180 (alert #234 @4147) |
-| **4180.61** | London/NY high 07/07 / trendline | Rejected 07/07; reclaim-hold above = range-top break test (alert #224 @4180) |
+| **4127.84–4140.36** | H1 bear FVG + H4 bear FVG 4108.12–4135.38 + M5 bear FVG 4136.09–4139.65 | **THE with-trend sell zone** — bounce-rejection short (alert #231 @4135, live) |
+| **4147.14** | M15 swing high / BSL | Swept 07/07 20:30; M15 close-hold above = bullish CHoCH → 4180 (alert #233 @4147, live) |
+| **4180.61** | London/NY high 07/07 / trendline | Rejected 07/07; reclaim-hold above = range-top break test (alert #235 @4180, live) |
 | **4233.39–4239.57** | H4 bear FVG | Supply if the line breaks |
 
 ### Support / Demand (below ~4100)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **4091.97** | Asian low 07/08 / SSL | Swept on a wick (02:45, close 4098.36); break-and-HOLD below resumes markdown (alert #235 @4092) |
+| **4091.97** | Asian low 07/08 / SSL | Swept on a wick (02:45, close 4098.36); break-and-HOLD below resumes markdown (alert #232 @4092, live) |
 | **4081.45** | H4 EQ | First downside pivot / target |
 | **4073.02** | H4 EQ (prior window) | Confluent support shelf |
 | **4052.75–4052.94** | H4 bull FVG [open, thin] | Minor demand / breakdown target |

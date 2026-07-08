@@ -22,11 +22,12 @@ snapshot: "[[Analysis/LTF/202607/20260708/20260708_0018_wait]]"
 **M1 Status:** chopping 4097–4104, no displacement. SSL 4095.8 swept 02:45 (wick 4095.78, close 4098.36) then bounced to 4100 — no continuation, no EQ reclaim.
 
 **Key Levels:**
-- **4127–4140 — stacked H1/H4/M5 bear FVG = with-trend sell zone (Watch A; alert #233 @4135)**
-- **4147.14 — M15 swing high / BSL (close-hold above flips bullish → 4180; alert #234)**
-- **4180.61 — London/NY high / trendline / range top (alert #224 @4180)**
+- **4127–4140 — stacked H1/H4/M5 bear FVG = with-trend sell zone (Watch A; alert #231 @4135, live)**
+- **4120 — first supply on a bounce / H1 bear FVG 4115.83–4124.97 (alert #234, live)**
+- **4147.14 — M15 swing high / BSL (close-hold above flips bullish → 4180; alert #233 @4147, live)**
+- **4180.61 — London/NY high / trendline / range top (alert #235 @4180, live)**
 - **4119.56 — M15 EQ (intraday P/D pivot)**
-- **4091.97 — Asian low / SSL (wick-swept; break-hold below resumes markdown; alert #235 @4092)**
+- **4091.97 — Asian low / SSL (wick-swept; break-hold below resumes markdown; alert #232 @4092, live)**
 - **4081.45 / 4073.02 — H4 EQ downside targets**
 - **3984–4012 — deep H4 demand / OTE (Watch B long; alert #178 @4012)**
 

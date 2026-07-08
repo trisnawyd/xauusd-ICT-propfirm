@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-07 13:10 UTC (re-synced — FLAT, day recovered to ~breakeven; A82 mid-zone short stopped then a clean short at the 4178 trendline reject won it back)
+updated: 2026-07-08 00:18 UTC (session start — FLAT, no new trades since 07/07; equity $5,011.79)
 synced_from: MT5 Bridge
 ---
 
@@ -10,13 +10,18 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,012.10 |
-| Equity | $5,012.10 |
+| Balance | $5,011.79 |
+| Equity | $5,011.79 |
 | Max risk per trade (1%) | $50.12 |
 | Margin used | $0 |
-| Free margin | $5,012.10 |
+| Free margin | $5,011.79 |
 | Open positions | **None** |
 | Pending orders | **None** |
+
+## Session Status — 2026-07-08
+- **FLAT** — no open positions, no pendings. Fresh UTC day, daily P&L $0. Equity **$5,011.79** (−$0.31 vs 07/07 close, swap/rounding; no new trades).
+- Market context: ASIAN (00:18 UTC), price ~4100. HTF NEUTRAL/bearish-lean into demand — the 07/07 rejection at 4180.61 sold to the Asian low 4091.97; price now at D1 discount / D1 OTE / H4 EQ, mid-range chop 4091.97↔4162.98. **WAIT** (no entry at price): sell the reload into 4127–4140 or buy the 3984–4012 deep demand. Forward read: [[Analysis/LTF/202607/20260708/20260708_0018_wait]].
+- News: no HIGH gold cluster in Asian/London; FOMC Minutes 18:00 UTC (MEDIUM), 10Y auction 20:00 (HIGH) — stand down ~15 min around each.
 
 ## Session Status — 2026-07-07
 - Daily P&L: **−$1.36** closed (1 win, 1 loss, 1 BE scratch) — day recovered to ~breakeven — reconciled in [[Trade Log/20260707]]:

@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-08 00:18 UTC (session start — FLAT, no new trades since 07/07; equity $5,011.79)
+updated: 2026-07-08 08:1x UTC (LONDON — 2 wins closed +$31.26, FLAT; equity $5,042.95)
 synced_from: MT5 Bridge
 ---
 
@@ -10,17 +10,22 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,011.79 |
-| Equity | $5,011.79 |
-| Max risk per trade (1%) | $50.12 |
+| Balance | $5,042.95 |
+| Equity | $5,042.95 |
+| Max risk per trade (1%) | $50.43 |
 | Margin used | $0 |
-| Free margin | $5,011.79 |
+| Free margin | $5,042.95 |
 | Open positions | **None** |
 | Pending orders | **None** |
 
 ## Session Status — 2026-07-08
-- **FLAT** — no open positions, no pendings. Fresh UTC day, daily P&L $0. Equity **$5,011.79** (−$0.31 vs 07/07 close, swap/rounding; no new trades).
-- Market context: ASIAN (00:18 UTC), price ~4100. HTF NEUTRAL/bearish-lean into demand — the 07/07 rejection at 4180.61 sold to the Asian low 4091.97; price now at D1 discount / D1 OTE / H4 EQ, mid-range chop 4091.97↔4162.98. **WAIT** (no entry at price): sell the reload into 4127–4140 or buy the 3984–4012 deep demand. Forward read: [[Analysis/LTF/202607/20260708/20260708_0018_wait]].
+- Daily P&L: **+$31.26** closed (**2 win, 0 loss**) — reconciled in [[Trade Log/20260708]]:
+  - T1 #7528202 BUY 4101.70 → 4102.73, net **+$2.01** (23 min) — manual scalp long off the early-London 4098–4102 M5 demand bounce. Small, off-plan, green.
+  - **T2 #7544896 SELL 4119.90 → 4105.25, net +$29.25 (69 min, 0.02 lot) — the breakdown short, day's edge (WIN).** With-trend short off the 4133.85 BSL sweep + rejection, expressed as the compression breakdown rather than the armed 4136.5 bounce-sell (which never filled — price broke down instead of bouncing, so the limit was correctly abandoned). Banked manually at **4105.25 = +146.5 pips** into the 4103.93–4110.32 OTE/support shelf (the pre-planned first target). Price then ran to **4088** through the 4091.97 SSL — full move was there; early bank captured the clean first leg. Linked: [[Analysis/LTF/202607/20260708/20260708_0634_wait]].
+- Session start equity: $5,011.79 → **current $5,042.95 (+$31.26, +0.62% day)** — flat, within all limits.
+- **FLAT** — no open positions, no pendings.
+- ✅ Behavioral: both manual/off-CONFIRM-flow, but disciplined — adapted the plan when price chose down over the bounce, sized small ($25) on a mid-range/EQ entry, and banked into the target shelf instead of stabbing for the low. Clean green day on the with-trend breakdown thesis.
+- Market context: LONDON (08:1x UTC), price ~4088 after the breakdown through 4091.97. HTF bearish-lean confirmed — the markdown resumed. Next: continuation toward 4081/4073/4052 on a bounce-reject, or watch for the 3984–4012 deep-demand reaction. Forward read: [[Analysis/LTF/202607/20260708/20260708_0634_wait]].
 - News: no HIGH gold cluster in Asian/London; FOMC Minutes 18:00 UTC (MEDIUM), 10Y auction 20:00 (HIGH) — stand down ~15 min around each.
 
 ## Session Status — 2026-07-07

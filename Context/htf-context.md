@@ -1,86 +1,88 @@
 ---
-updated: 2026-07-08 08:43 UTC (fresh MCP pull — markdown fully extended; the 4180 rejection down-leg cascaded through 4092/4081/4073 to the London low 4060.5, now ~4064 deep in D1/H4 demand INSIDE the bullish D1 IFVG 4044.58–4090.5)
+updated: 2026-07-09 04:35 UTC (fresh MCP pull — 07/08 crash to D1 low 4021.56 bought back overnight, H1 flipped BoS UP@4091.69; price now coiling 4062-4091 inside D1+H4 discount OTE)
 source: MCP (detect_structure D1/H4/H1, detect_fvg D1/H4/H1, detect_liquidity_sweeps H4, get_premium_discount D1/H4/H1, get_swing_levels D1, get_session_levels, get_current_tick, get_account_info, get_economic_calendar)
-snapshot: "[[Analysis/HTF/202607/20260708]]"
+snapshot: "[[Analysis/HTF/202607/20260709]]"
 ---
 
 # HTF Context — XAU/USD
 
-## Bias: NEUTRAL — bearish momentum EXHAUSTING into deep demand. The 07/07 rejection at **4180.61** delivered its full down-leg: price broke the 4091.97 SSL and cascaded through H4 EQ 4081 / 4073 to the London low **4060.5**, now ~**4064**. Price is now stacked deep in confluent demand: **D1 DISCOUNT + inside D1 OTE (4036.9–4110.73) + INSIDE the bullish D1 IFVG 4044.58–4090.5** (the 06/24 bearish D1 FVG, traded through to the upside in the late-June rally = now inverted to support) **+ H4 DISCOUNT approaching H4 OTE 4011.83–4052.72**. The clean with-trend short is spent — continuation now P/D-chases into the zone where reversals live. Bias flips to **watch for the counter-trend LONG reaction at 4044–4052 / 3984–4012**, but ONLY on an LTF reaction (M15/M5 bullish CHoCH + reclaim) — momentum is still technically down (H1 last event BoS DOWN@4094.09) so do NOT knife-catch. A bounce that rejects 4081–4092 is the last with-trend short (limited to 4052/4012); a clean break-hold below 3984–4012 re-opens 3942.
+## Bias: NEUTRAL — range, coiling. The 07/08 sell-off bottomed at the D1 low **4021.56** (NY session) and was fully bought back overnight; H1 flipped with a **BoS UP@4091.69**. Price now compresses **4062–4091** between the D1 bear-FVG / Asian-high supply cluster **4089.55–4091.97** above and the H1/M5 bull-FVG demand **4043–4059** below — still deep in **D1 DISCOUNT + inside D1 OTE 4036.9–4110.73** and **inside H4 OTE 4060.42–4090.94**, now with a confirmed floor at 4021.56. **Pivot = 4092:** a rejection there is the with-D1 short back toward 4044/4021; an M15 close-and-hold above 4092 is bull continuation to H4 EQ 4112. Macro stays bearish-for-gold (rising real yields + geopolitical premium unwind), so the cleaner edge remains the **bounce-reject SHORT into 4089–4092**; the counter-trend LONG needs a deeper tap + reclaim (4046–4053 or the 4021.56 floor), never a knife-catch.
 
-**Continuity note:** the 07/08 winner was this exact down-leg (breakdown short #7544896 4119.90 → 4105.25, +146.5 pips; price then ran to 4060.5). The markdown is now ~120 pts off the 4180 high and sitting in the D1 IFVG + double OTE. The recurring lesson: buying an IFVG *as price knifes into it* is the 06/30 & 07/01 sweep-reclaim-long failure — wait for the reclaim, don't anticipate it. Equally, adding shorts here is chasing into demand.
+**Continuity note:** this is the same 4090–4092 pivot that has governed the tape since 07/07 (the 4091.97 flipped Asian low). The 07/08 winner was the with-trend breakdown short (#7544896 4119.90→4105.25, +146.5 pips); its down-leg completed at 4021.56 and reversed. The recurring lesson holds: sell the reject into the 4090 supply with the trend; only buy the demand on a confirmed M15/M5 reclaim (the 06/30 & 07/01 anticipated-reclaim longs both failed).
 
 ---
 
-## The Pivot — deep demand confluence vs a spent down-leg
-- **Bullish D1 IFVG 4044.58–4090.5** (inverted 06/24 bearish D1 FVG) — price INSIDE it now; the structural reason downside is getting limited.
-- **Double OTE:** D1 OTE 4036.9–4110.73 + H4 OTE 4011.83–4052.72 overlap 4036.9–4052.72 = the highest-conviction demand shelf.
-- **Reversal trigger (bull activation):** M15 BoS UP + H4 close-reclaim of **4081.45** → 4092 → 4114. **Continuation trigger (bear):** clean break-and-HOLD below **3984–4012** → 3942.86.
+## The Pivot — 4092 supply cap vs 4021.56 confirmed floor
+- **D1 bear FVG 4089.55–4091.97 [open]** ∩ **Asian high BSL 4091.69** — the near-term supply cap; sweep-reject = short.
+- **H1 bull FVG 4043.84–4059.29 [open]** ∩ **M5 bull FVG 4046.53–4053.31** — first demand / LONG-reaction shelf.
+- **Bull trigger:** M15 close-hold above **4092** → 4112 → 4134. **Bear trigger:** clean M5 close-hold below **4021.56** → 3984–4012 → 3942.86.
 
 ## D1 Analysis
-- **D1 (algo): BEARISH label**; no fresh BoS in ~7 bars (last real break stale). Recent swings: 07/06 H4203.17 → 06/30 L3942.86 → drift; price now 4064 = lower third.
-- **D1 swings:** highs 4382.31 → 4220.61 → 4096.36 → 4203.17; lows 4023.56 → 3958.57 → 3942.86 = **RANGE 3942.86–4382**.
-- **D1 P/D (4382.31 / 3942.86):** EQ 4162.59 | OTE 4036.9–4110.73. Price ~4064 = **DISCOUNT, deep INSIDE OTE + inside the bullish D1 IFVG 4044.58–4090.5** — shorts here chase; the edge is the long reaction.
-- **D1 Bias: NEUTRAL / range, in discount demand** — needs a daily close below 3942.86 (bear break) or back above ~4162 EQ (bull) to resolve.
+- **D1 (algo): BEARISH label**; last real BoS DOWN@3942.86 (06/30) is stale (~9 bars). Recent: 07/06 H4203.17 → 07/08 L4021.56 → recovery to ~4090 → now 4071.
+- **D1 swings:** highs 4382.31 → 4220.61 → 4096.36 → 4203.17; lows 3958.57 → 3942.86 → 4021.56 = **RANGE 3942.86–4382.31**.
+- **D1 P/D (4382.31/3942.86):** EQ 4162.59 | OTE 4036.9–4110.73. Price ~4071 = **DISCOUNT, inside OTE**. Open D1 bear FVG **4089.55–4091.97** overhead = supply cap.
+- **D1 Bias: NEUTRAL / range, in discount demand** — needs a daily close below 3942.86 (bear) or back above ~4162 EQ (bull) to resolve.
 
 ## H4 Analysis
-- **H4 (algo): BULLISH label**, but last event BoS UP@4203.17 (07/06) is a failed high — price has since sold ~140 pts to 4060.5. Label lags; operative structure is down-into-demand.
-- **H4 P/D (4203.17 / 3959.73):** EQ 4081.45 | OTE 4011.83–4052.72. Price ~4064 = **DISCOUNT, just above the OTE top** — first real demand 4052 then 4012.
-- **H4 FVGs open:** BULLISH **4052.75–4052.94** (thin, just below); BULLISH **3984.74–4012.55** (deep demand / OTE). Overhead bear FVGs (4127–4140 etc.) all filled on the way down.
-- **H4 Bias: bearish-exhausting into discount demand.** First bounce target/resistance 4081.45; demand 4052 → 4012.
+- **H4 (algo): BEARISH label**, but last event **BoS UP@4134.08** (07/08 08:00) is lagging — price sold to 4021.56 after, then recovered. Operative: recovery inside discount.
+- **H4 P/D (4203.17/4021.56):** EQ 4112.37 | OTE **4060.42–4090.94**. Price ~4071 = **DISCOUNT, inside OTE** — the demand shelf.
+- **H4 FVGs open:** BULLISH **3984.74–4012.55** (deep demand / reload). Overhead bear FVGs all filled.
+- **H4 Bias: range, recovering inside discount OTE.** First resistance H4 EQ 4112; demand 4060 → 4021 → 3984–4012.
 
 ## H1 Analysis
-- **H1 (algo): BULLISH label** — but last event **BoS DOWN@4094.09 (07/08 01:00)** = near-term structure broke DOWN; the markdown that followed is in-thesis.
-- **H1 P/D (4180.61 / 4094.09):** EQ 4137.35 | OTE 4112.61–4127.14. Price ~4064 = **deep DISCOUNT, well below OTE** — stretched to the downside, mean-reversion risk building.
-- **H1 FVGs:** all filled (the 4115–4140 bear stack was consumed on the drop). No open H1 FVG at price.
-- **H1 Bias: near-term bearish but over-extended** into demand; a bounce to 4081–4092 is the natural retrace.
+- **H1 (algo): BULLISH label** — last event **BoS UP@4091.69 (07/08 21:00)**, the recovery off the 4021.56 CHoCH-DOWN low. Near-term structure is UP off the floor.
+- **H1 P/D (4134.08/4021.56):** EQ 4077.82 | OTE 4045.64–4064.54. Price ~4071 = **DISCOUNT**, just under EQ / just above OTE.
+- **H1 FVGs:** open BULLISH **4043.84–4059.29** (demand just below price). Overhead bear stack filled.
+- **H1 Bias: bullish off the floor** but capped at the 4090–4092 supply; a reject there resumes the with-D1 down-leg.
 
 ## Premium / Discount
-- **D1 (4382.31/3942.86):** EQ 4162.59 | price ~4064 = **DISCOUNT, inside OTE 4036.9–4110.73 + inside bull IFVG 4044.58–4090.5** → shorts chase; long-reaction zone.
-- **H4 (4203.17/3959.73):** EQ 4081.45 | price ~4064 = **DISCOUNT**, just above OTE 4011.83–4052.72.
-- **H1 (4180.61/4094.09):** EQ 4137.35 | price ~4064 = **deep DISCOUNT** below OTE → over-extended down.
+- **D1 (4382.31/3942.86):** EQ 4162.59 | price ~4071 = **DISCOUNT, inside OTE 4036.9–4110.73**.
+- **H4 (4203.17/4021.56):** EQ 4112.37 | price ~4071 = **DISCOUNT, inside OTE 4060.42–4090.94**.
+- **H1 (4134.08/4021.56):** EQ 4077.82 | price ~4071 = **DISCOUNT**, just under EQ.
 
 ---
 
 ## Key Levels
 
-### Resistance / Supply (above ~4064)
+### Resistance / Supply (above ~4071)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **4081.45** | H4 EQ | First bounce target / nearest resistance |
-| **4090.5–4091.97** | Top of D1 IFVG / Asian low (flipped) / H4 old SSL | Reclaim-hold needed to weaken the bear leg |
-| **4114–4140** | Old H1/H4 bear FVG supply (filled) + H1 EQ 4137.35 | The with-trend sell band if price bounces that far |
-| **4147.14** | M15 swing high / BSL | Close-hold above = bullish CHoCH (alert #233 @4147) |
+| **4077.82 / 4078.26** | H1 EQ / M15 EQ | Reclaim-hold above = short P/D invalid, bull lean |
+| **4089.55–4091.97** | D1 bear FVG [open] / Asian high BSL 4091.69 | **Primary sweep-reject SHORT (alerts #237 @4088, #242 @4090)** |
+| **4098** | Higher supply | Second sell tag (alert #243) |
+| **4112.37** | H4 EQ | Bull-continuation target above 4092 |
+| **4134.08** | H4 swing high | Next resistance on a bull run |
 | **4180.61** | Range top / trendline | H4 close-hold above breaks range → 4203/4382 (alert #235 @4180) |
 
-### Support / Demand (below/at ~4064)
+### Support / Demand (below/at ~4071)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **4060.5** | London low 07/08 / fresh SSL | Immediate support; break-hold below → 4052/4044 |
-| **4052.72 / 4052.75** | H4 OTE top / thin H4 bull FVG | First demand shelf on continuation |
-| **4044.58** | D1 IFVG mid / H4 BSL@4044.58 (06/29) | Confluent demand |
-| **4036.9–4052.72** | D1 OTE ∩ H4 OTE overlap | **Highest-conviction demand shelf — primary LONG-reaction zone** |
+| **4062.06–4065.09** | M15 low / SSL (just swept 04:30) | Immediate support; break-hold below → 4044/4021 (alert #245 @4062) |
+| **4043.84–4059.29** | H1 bull FVG [open] ∩ M5 bull FVG 4046.53–4053.31 | **LONG-reaction zone (alert #246 @4053)** |
+| **4036.9–4052.72** | D1 ∩ H4 OTE overlap | Highest-conviction demand shelf |
+| **4021.56** | D1 low / range floor | Break-hold below → deep demand (alert #247 @4021) |
 | **3984.74–4012.55** | H4 bull FVG [open] / deep OTE | Deep demand / LONG reload (alert #178 @4012) |
-| **3942.86** | Major swing low / range floor | Close below → range breaks, open air 3920/3900 (alert #158 @3942) |
+| **3942.86** | Major swing low / range floor | Close below → open air 3920/3900 (alert #158 @3942) |
 
 ---
 
 ## Trade Directional Guidance
 
-### BIAS: NEUTRAL — bear leg exhausting into deep D1/H4 demand. Watch the counter-trend LONG at 4036–4052 / 3984–4012 on an LTF reaction; the last with-trend SHORT is only a rejection of a bounce into 4081–4092. Do NOT knife-catch the IFVG, do NOT add shorts into discount.
+### BIAS: NEUTRAL — range 4021.56–4092 (inside the wider 3942–4382 D1 range). Sell the reject into 4089–4092 (with-D1); buy the demand reaction at 4046–4053 / 4021.56 only on a confirmed M15/M5 reclaim. Do NOT short mid-range (4072) and do NOT knife-catch the demand.
 
-**Setup A — LONG the demand reaction (now PRIMARY watch, counter-trend):**
-- Condition: reaction at **4036–4052** (D1 IFVG ∩ D1/H4 OTE ∩ thin H4 FVG) OR the deeper **3984–4012**, with an **M15/M5 bullish CHoCH + reclaim** (not a bare wick).
-- Entry on the reclaim | SL below the reaction low | TP 4081 → 4092 → 4114.
-- Invalidation: clean M5/M15 close-and-hold below the zone (no reaction) → continuation to the next shelf.
+**Setup A — SHORT the bounce-reject (with-D1, PRIMARY):**
+- Condition: bounce into **4089–4092**, sweep the 4091.69 Asian high, M1/M5 bearish rejection.
+- Entry ~4090 | SL 4098 | TP 4062 → 4044 → 4021.
+- Invalidation: M15 close-and-hold above 4092 → bull continuation.
 
-**Setup B — SHORT the bounce-reject (with-trend, limited downside):**
-- Condition: bounce into **4081–4092** (H4 EQ / flipped Asian low) with an M1/M5 bearish rejection.
-- Entry ~4085 | SL above 4095 | TP 4060 → 4052 → 4012.
-- Note: shorting at 4064 now is P/D-chasing into demand — WAIT for the bounce.
+**Setup B — LONG the demand reaction (counter-trend):**
+- Condition: deeper tap at **4046–4053** (M5/H1 bull FVG) or the **4021.56 floor** + M15/M5 bullish CHoCH/reclaim (not a wick).
+- Entry ~4050 | SL 4040 | TP 4078 → 4090 → 4112.
+- Invalidation: M5 close-hold below 4021.56 → 3984–4012 → 3942.86.
 
 ### BIAS RESOLUTION
-- **Reaction long (base case at demand):** reclaim off 4036–4052 or 3984–4012 → 4081 → 4092 → 4114.
-- **Bounce-reject short (with-trend):** rejection at 4081–4092 → 4060 → 4052 → 4012.
-- **Continuation (bear extension):** clean break-hold below 3984–4012 → 3942.86 → open air.
-- **News (UTC):** EIA Crude 14:30 (HIGH, oil-specific), Fed Consumer Credit 19:00 (MEDIUM), 10-Year Note Auction 20:00 (HIGH), FOMC Minutes 21:00 (MEDIUM — gold-relevant). No HIGH gold cluster in the London window; stand down ~15 min around 20:00 auction and 21:00 minutes.
+- **Bounce-reject short (base case, with-trend):** rejection at 4089–4092 → 4062 → 4044 → 4021.
+- **Reaction long (counter-trend at demand):** reclaim off 4046–4053 or 4021.56 → 4078 → 4090 → 4112.
+- **Bull continuation:** M15 close-hold above 4092 → 4112 → 4134.
+- **Bear continuation:** clean break-hold below 4021.56 → 3984–4012 → 3942.86.
+- **News (UTC):** 12:30 Initial Jobless Claims (HIGH), 14:00 Existing Home Sales (HIGH), 17:00 30-Year Bond Auction (HIGH). No HIGH gold cluster in the Asian window; stand down ~15 min around 12:30 and 14:00.

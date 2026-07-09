@@ -1,56 +1,57 @@
 ---
-updated: 2026-07-08 08:47 UTC
-snapshot: "[[Analysis/LTF/202607/20260708/20260708_0847_wait]]"
+updated: 2026-07-09 04:35 UTC
+snapshot: "[[Analysis/LTF/202607/20260709/20260709_0435_wait]]"
 ---
 
 # LTF Memory — Last 3 Analyses
 
-## Current Market Structure (as of 2026-07-08 08:47 UTC)
+## Current Market Structure (as of 2026-07-09 04:35 UTC)
 
-**Account:** equity $5,042.95, max risk $50.43. **FLAT** — 0 positions, 0 pendings. Daily **+$31.26 (2W/0L)**. Spread 2 ✓. LONDON (08:47 UTC).
+**Account:** balance $5,043.37, max risk $50.43. **FLAT** — 0 positions, 0 pendings. Daily $0.00 (fresh UTC day). Spread 2 ✓. ASIAN (04:35 UTC).
 
-**HTF (fresh 08:43 UTC):** NEUTRAL — bear leg EXHAUSTING into deep demand. The 4180 rejection cascaded through 4092/4081/4073 to the London low **4060.5**, now ~4069. Price is INSIDE the bullish **D1 IFVG 4044.58–4090.5** + D1 DISCOUNT/OTE + H4 discount approaching H4 OTE 4011.83–4052.72. Edge = watch the counter-trend LONG at **4036–4052 / 3984–4012** on an LTF reaction; last with-trend short is only a rejection of a bounce into 4081–4092. Do NOT knife-catch, do NOT add shorts into discount.
+**HTF (fresh this cycle):** NEUTRAL / range. The 07/08 crash to the D1 low **4021.56** was bought back overnight; H1 flipped **BoS UP@4091.69**. Price coils **4062–4091** inside D1+H4 discount OTE, between the D1 bear-FVG / Asian-high supply **4089.55–4091.97** and the H1/M5 bull-FVG demand **4043–4059**. Pivot = **4092**. Macro stays bearish-for-gold → cleaner edge is the bounce-reject SHORT; counter-trend LONG needs a confirmed reclaim. See [[Analysis/HTF/202607/20260709]].
 
-**WAIT — Gate 3, no valid entry at 4069 (plain WAIT, no armed order).** Between zones: LONG is above H4 OTE with only an M1-bounce (no M15/M5 CHoCH) = knife-catch; SHORT chases into M15 discount (EQ 4097.18). Both blocked. Watch A = LONG reaction at 4036–4052 + reclaim; Watch B = SHORT bounce-reject at 4081–4092.
+**WAIT — Gate 5 (grade B 58, below B+).** A counter-trend LONG is forming (M15 last event BoS UP@4080.06 + fresh SSL sweep @4062.06 at 04:30 closing to 4072, inside H4 OTE = P/D-valid) but it grades only B: thin ASIAN 26-pt range, chasing off the swept low with no fresh OB/FVG at price, TP capped by the 4090 supply. Not ARMED-eligible (not a clean Gate-3/4 miss) → plain WAIT. **Do NOT short 4072 mid-range; do NOT knife-catch the demand.**
 
-**Behavioral:** disciplined non-trade after a clean +$31.26 day. The memory's repeated lesson — buying a demand zone as price knifes into it (06/30, 07/01) fails — is exactly why this is a WAIT not an armed limit. Wait for the M15/M5 reclaim to confirm the IFVG holds before going long.
+**Behavioral:** correct hold. Mid-range in a thin overnight coil is a no-trade. Wait for price to be delivered to an edge — either up into 4089–4092 (sell the reject) or down into 4046–4053 / 4021.56 (buy the reclaim). Same discipline that produced the 07/08 green day.
 
-**News:** no HIGH gold cluster in London. EIA Crude 14:30 (HIGH, oil), Fed Consumer Credit 19:00, 10Y auction 20:00 (HIGH), FOMC Minutes 21:00 (MEDIUM, gold-relevant). Stand down ~15 min around 20:00 / 21:00.
+**News:** 12:30 Initial Jobless Claims (HIGH), 14:00 Existing Home Sales (HIGH), 17:00 30-Year Bond Auction (HIGH). No HIGH gold cluster in the Asian window; stand down ~15 min around 12:30 / 14:00.
 
-**M15 Status:** detection lags (BoS UP@4133.85 stale). Actual: markdown 4133 → 4060.5 lower low, nascent bounce. DISCOUNT, EQ 4097.18, OTE 4076.2–4088.52, range 4060.5–4133.85.
-**M5 Status:** BULLISH label stale (BoS UP@4121.42 invalidated by the drop). OBs all mitigated; open M5 FVGs bearish (4097.76–4116.6, 4121.93–4123.71) = overhead resistance, no demand at price.
-**M1 Status:** cascaded to 4060.5 (11:42), small reaction up — higher lows/closes to 4069. Real but tiny, unconfirmed on M5/M15.
+**M15 Status:** BULLISH — last event `BoS UP@4080.06` (01:45). Range 4065.09–4091.42, EQ 4078.26, price 4072 = DISCOUNT. Latest bar `SSL@4065.09` wick 4062.06 close 4072.2 (04:30) = fresh sweep + reclaim at the low.
+**M5 Status:** BULLISH — last events `BoS UP@4089.55`→`BoS UP@4081.89`, then faded to sweep 4062.06 and reclaim. All 8 M5 OBs **filled** (no fresh demand block at price). Open bull FVG 4046.53–4053.31 below.
+**M1 Status:** swept 4062.06 (04:31), mild bullish engulf 4065.8→4069.23 (04:32), now ~4071.9. Weak/Asian, no displacement.
 
 **Key Levels:**
-- **4036–4052 — D1 IFVG ∩ double OTE = primary LONG-reaction zone (Watch A; alert @4052)**
-- **4052.72–4052.75 — H4 OTE top / thin H4 bull FVG (first demand shelf)**
-- **4060.5 — London low / fresh SSL (immediate support; alert @4060.5)**
-- **4081.45 — H4 EQ (first bounce target / Watch B trigger)**
-- **4090.5–4092 — D1 IFVG top / flipped Asian low (reclaim weakens bear; alert @4088 for Watch B)**
-- **3984–4012 — deep H4 bull FVG / OTE (deep long reload; alert #178 @4012)**
-- **3942.86 — range floor (alert #158)**
+- **4089.55–4091.97 / 4091.69 — D1 bear FVG / Asian high BSL (primary sweep-reject SHORT; alerts #237 @4088, #242 @4090)**
+- **4098 — higher supply (alert #243)**
+- **4077.82 / 4078.26 — H1 EQ / M15 EQ (short only P/D-valid above; reclaim-hold = bull flip)**
+- **4062.06–4065.09 — M15 low / SSL (just swept; alert #245 @4062)**
+- **4046.53–4059.29 — M5 ∩ H1 bull FVG (LONG-reaction zone; alert #246 @4053)**
+- **4021.56 — D1 low / range floor (alert #247 @4021)** · 4012.55/3984.74 deep H4 FVG (alert #178) · 3942.86 floor (alert #158)
+- **4112.37 — H4 EQ (bull-continuation target above 4092)**
 
-**Setup:** WAIT (Gate 3, no armed order). Watch A: reaction at 4036–4052 + M15/M5 reclaim → LONG ~4050, SL 4034, TP 4090 (2.5:1). Watch B: bounce-reject at 4081–4092 → SHORT ~4088, SL 4098, TP 4052 (3.6:1). Invalidation: M5/M15 close-hold below 4036 (bear continuation) / M5 close-hold above 4095 (deeper bounce).
-
----
-
-## Analysis #1 — 2026-07-08 08:47 UTC (WAIT — Gate 3, no entry at price)
-- **Direction:** WAIT — price 4069 between zones. LONG above H4 OTE with M1-only bounce (no M15/M5 CHoCH) = knife-catch; SHORT chases into M15 discount. Bear leg exhausting into the D1 IFVG / double-OTE demand.
-- **Watch A (LONG reaction):** reaction at 4036–4052 (D1 IFVG ∩ OTE) + M15/M5 bullish CHoCH/reclaim → LONG ~4050, SL 4034, TP 4090 (2.5:1). Not pre-armed.
-- **Watch B (SHORT bounce-reject):** bounce into 4081–4092 + M1/M5 rejection → SHORT ~4088, SL 4098, TP 4052 (3.6:1).
-- **Invalidation:** M5/M15 close-hold below 4036 → continuation to 3984–4012; M5 close-hold above 4095 → deeper bounce to 4114/4137.
+**Setup:** WAIT (Gate 5, B 58). Watch A (SHORT, PRIMARY): bounce-reject 4089–4092 + M1/M5 rejection → SHORT ~4090, SL 4098, TP 4044 (5.75:1), projected B+ 73. Watch B (LONG, counter-trend): tap 4046–4053 or 4021.56 + M15/M5 bullish CHoCH/reclaim → LONG ~4050, SL 4040, TP 4090 (4.0:1). Invalidation: M15 close-hold above 4092 → bull continuation 4112/4134 (short dead); M5 close-hold below 4021.56 → 3984–4012 (long dead).
 
 ---
 
-## Analysis #2 — 2026-07-08 06:34 UTC (WAIT→ARMED→CLOSED GREEN — breakdown short paid)
-- **Direction:** WAIT→ARMED→CLOSED GREEN. Market short at 4126.4 graded B (63); armed a 4136.5 bounce-sell instead. Price broke *down* not up → limit abandoned, short taken on the breakdown. *(Outcome: #7544896 SELL 4119.90 → 4105.25, +$29.25; price then ran to 4060.5 through the SSL — thesis fully paid.)*
-- **Watch A (ARMED SHORT #9688934 — cancelled unfilled):** SELL LIMIT 0.05 @4136.5, SL 4146.5, TP 4096 (4.05:1). Never filled — price didn't bounce.
-- **Invalidation:** M15 close-hold above 4140 would have flipped bullish.
+## Analysis #1 — 2026-07-09 04:35 UTC (WAIT — Gate 5, grade B 58)
+- **Direction:** WAIT — counter-trend LONG forming (M15 BoS UP + SSL sweep-reclaim @4062, inside H4 OTE) but grades B: thin ASIAN 26-pt range 4062–4091, chasing off the low, TP capped by 4090 supply. No trade mid-range.
+- **Watch A (SHORT, primary):** bounce-reject 4089–4092 (sweep 4091.69 Asian high) + M1/M5 rejection → SHORT ~4090, SL 4098, TP 4044 (5.75:1). Projected B+ 73.
+- **Watch B (LONG, counter-trend):** tap 4046–4053 / 4021.56 + M15/M5 bullish reclaim → LONG ~4050, SL 4040, TP 4090 (4.0:1).
+- **Invalidation:** M15 close-hold above 4092 → bull continuation (short dead); M5 close-hold below 4021.56 → 3984–4012 (long dead).
 
 ---
 
-## Analysis #3 — 2026-07-08 00:18 UTC (WAIT — Gate 3/4, no entry at price)
-- **Direction:** WAIT — Gate 3/4. Price ~4100 mid-range in M15 discount, Asian chop 4091.97↔4162.98. With-trend short needed a bounce to 4127–4140 supply (no trigger); counter-trend long not at H4 demand. Projected short grade B (65) → not armed.
-- **Watch A (SHORT reload):** bounce into 4127–4140 + M1 bearish rejection → SHORT ~4135, SL 4149, TP 4092→4073 (3.1:1).
-- **Watch B (LONG deep demand):** reaction at 3984–4012 (H4 FVG + OTE) + M1 bullish trigger → LONG ~4010, SL 3982, TP 4073 (2.2:1).
-- **Invalidation:** M5 close-hold below 4091.97 = bear continuation; M15 close-hold above 4147.14 = bull flip to 4180.
+## Analysis #2 — 2026-07-08 12:47 UTC (WAIT — Gate 3+4, sell forming)
+- **Direction:** WAIT — sell alert #241 @4081 fired but short not valid: price 4081 in M15 discount (EQ 4087), M1 grinding up, no bearish trigger. Wait for the reject into 4088–4092 premium.
+- **Watch A (SHORT sweep-reject):** sweep 4091.97 BSL + M1/M5 rejection → SHORT ~4090, SL 4100, TP 4052→4040 (3.8:1). ARMED-eligible B+ 76, live-confirm preferred.
+- **Watch B (SHORT deeper FVG):** reject at 4097.76–4116.6 M5 bear FVG → SHORT ~4098, SL 4108, TP 4052 (4.6:1).
+- **Invalidation:** M5/M15 close-hold above 4092–4095 → bull continuation 4114/4137, short dead. (Resolved: price rejected the 4090 zone and sold to the 4021.56 D1 low, then recovered — the 07/09 coil.)
+
+---
+
+## Analysis #3 — 2026-07-08 10:24 UTC (WAIT — Gate 4 → ARMED → FILLED → BE SCRATCH)
+- **Direction:** WAIT→ARMED→FILLED→BE. Price swept London SSL 4040.22, reclaimed into D1 IFVG demand; armed BUY LIMIT #9710396 @4048. Filled as #7559209 (4047.99→4048.19, +$0.52, 8min) on a drift-down *without* M5 CHoCH confirming (alert #240 @4058.77 never fired); user scratched at BE ("no buyer pressure") — correct, price slid to 4040 again. Lesson: armed limit can fill before the confirmation trigger; if CHoCH doesn't fire, scratch to BE.
+- **Watch A (LONG):** M5 close > 4058.77 + retest 4046–4049 → LONG ~4048, SL 4035, TP 4090 (3.23:1).
+- **Watch B (SHORT):** bounce-reject 4081–4092 → SHORT ~4085, SL 4096, TP 4052 (3.0:1).
+- **Invalidation:** M5 close-hold below 4035 → 3984–4012; above 4095 → deeper bounce.

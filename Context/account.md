@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-08 08:1x UTC (LONDON — 2 wins closed +$31.26, FLAT; equity $5,042.95)
+updated: 2026-07-09 04:35 UTC (ASIAN — fresh UTC day, FLAT, equity $5,043.37; daily P&L $0.00)
 synced_from: MT5 Bridge
 ---
 
@@ -10,16 +10,24 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,042.95 |
-| Equity | $5,042.95 |
+| Balance | $5,043.37 |
+| Equity | $5,043.37 |
 | Max risk per trade (1%) | $50.43 |
 | Margin used | $0 |
-| Free margin | $5,042.95 |
+| Free margin | $5,043.37 |
 | Open positions | **None** |
-| Pending orders | **None** |
+| Pending orders | **None** (BUY LIMIT #9710396 filled → closed BE scratch #7559209 +$0.52) |
+
+## Session Status — 2026-07-09
+- **FLAT** — no open positions, no pendings. Balance/equity **$5,043.37**, max risk $50.43. Daily P&L **$0.00** (fresh UTC day), within all limits.
+- Market context: ASIAN (04:35 UTC), price ~4071. HTF NEUTRAL / range — the 07/08 crash to the D1 low 4021.56 was bought back overnight (H1 BoS UP@4091.69); price coiling **4062–4091** inside D1+H4 discount OTE. Pivot 4092. Forward read: [[Analysis/LTF/202607/20260709/20260709_0435_wait]] (WAIT, Gate 5 B 58 — no trade mid-range; sell the reject into 4089–4092 or buy the reclaim at 4046–4053 / 4021.56).
+- News (UTC): 12:30 Initial Jobless Claims (HIGH), 14:00 Existing Home Sales (HIGH), 17:00 30-Year Bond Auction (HIGH). No HIGH gold cluster in the Asian window; stand down ~15 min around 12:30 / 14:00.
 
 ## Session Status — 2026-07-08
-- Daily P&L: **+$31.26** closed (**2 win, 0 loss**) — reconciled in [[Trade Log/20260708]]:
+- Daily P&L: **+$31.86** closed (**3 win, 1 loss, 1 BE scratch**) — reconciled in [[Trade Log/20260708]]:
+  - T3 #7559209 BUY 4047.99 → 4048.19, net **+$0.52 (8 min, BE scratch)** — fill of the Claude-armed BUY LIMIT #9710396 (Watch A demand long) from [[Analysis/LTF/202607/20260708/20260708_1024_wait]]. Filled on a drift-down to 4048 *without* the M5 CHoCH confirming (alert #240 @4058.77 never fired); closed manually at BE ("no buyer pressure"). Correct scratch — price kept sliding to 4045.95 after the close.
+  - T4 #7561302 BUY 4063.77 → 4058.75, net **−$10.09 (5 min, LOSS)** — manual long chasing the 4040-floor bounce mid-OTE; cut quickly.
+  - T5 #7562090 BUY 4063.55 → 4068.66, net **+$10.17 (13 min, WIN)** — immediate long re-entry same ~4063 area, rode to the 4072.8 rejection top and banked. T4+T5 = +$0.08 wash. Both off-CONFIRM-flow LONGs off the held 4040.22 demand floor (technical bounce, not a war bid). The stated sell focus (fade 4081–4092) never triggered — price rejected at 4072.8 (OTE top, discount), short of the zone.
   - T1 #7528202 BUY 4101.70 → 4102.73, net **+$2.01** (23 min) — manual scalp long off the early-London 4098–4102 M5 demand bounce. Small, off-plan, green.
   - **T2 #7544896 SELL 4119.90 → 4105.25, net +$29.25 (69 min, 0.02 lot) — the breakdown short, day's edge (WIN).** With-trend short off the 4133.85 BSL sweep + rejection, expressed as the compression breakdown rather than the armed 4136.5 bounce-sell (which never filled — price broke down instead of bouncing, so the limit was correctly abandoned). Banked manually at **4105.25 = +146.5 pips** into the 4103.93–4110.32 OTE/support shelf (the pre-planned first target). Price then ran to **4088** through the 4091.97 SSL — full move was there; early bank captured the clean first leg. Linked: [[Analysis/LTF/202607/20260708/20260708_0634_wait]].
 - Session start equity: $5,011.79 → **current $5,042.95 (+$31.26, +0.62% day)** — flat, within all limits.

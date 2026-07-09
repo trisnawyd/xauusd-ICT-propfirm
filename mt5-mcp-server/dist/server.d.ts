@@ -4,6 +4,7 @@ export declare const SAFETY_CONFIG: {
     readonly requireSL: true;
     readonly requireTP: true;
     readonly maxRiskPct: 10;
+    readonly dailyLossLimitUsd: 200;
 };
 export declare const EXECUTION_TOOLS: Set<string>;
 export declare const ANALYSIS_TOOLS: Set<string>;

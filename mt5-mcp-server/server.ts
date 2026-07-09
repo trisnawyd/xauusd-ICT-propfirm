@@ -18,6 +18,9 @@ export const SAFETY_CONFIG = {
   requireSL: true,
   requireTP: true,
   maxRiskPct: 10,
+  // Prop-firm daily loss limit (Top One Trader 2 Step PRO v2, $5K): 4% of initial balance = $200, static.
+  // See prop-rules/toponetrader-2step-pro-5k.md. Absolute $ floor, not a % of live equity.
+  dailyLossLimitUsd: 200,
 } as const;
 
 export const EXECUTION_TOOLS = new Set([
@@ -1289,14 +1292,15 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
   ) {
     try {
       const dd = await callEA("get_daily_drawdown");
-      if (dd.equity > 0 && dd.total_pnl !== undefined) {
-        const pct = dd.total_pnl / dd.equity;
-        if (pct < -0.2) {
+      if (dd.total_pnl !== undefined) {
+        const pct = dd.equity > 0 ? dd.total_pnl / dd.equity : 0;
+        // Prop-firm daily loss limit: 2 Step PRO v2 $5K = 4% of initial = $200 (static, absolute $ floor).
+        if (dd.total_pnl <= -SAFETY_CONFIG.dailyLossLimitUsd) {
           return {
             content: [
               {
                 type: "text",
-                text: `⛔ DAILY LOSS LIMIT BREACHED: P&L ${dd.total_pnl.toFixed(2)} = ${(pct * 100).toFixed(1)}% of equity ${dd.equity.toFixed(2)}. All trading blocked for today.`,
+                text: `⛔ DAILY LOSS LIMIT BREACHED: P&L ${dd.total_pnl.toFixed(2)} ≤ -$${SAFETY_CONFIG.dailyLossLimitUsd} (${(pct * 100).toFixed(1)}% of equity ${dd.equity.toFixed(2)}). All trading blocked for today.`,
               },
             ],
           };

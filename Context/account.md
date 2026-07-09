@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-09 04:35 UTC (ASIAN — fresh UTC day, FLAT, equity $5,043.37; daily P&L $0.00)
+updated: 2026-07-09 03:33 UTC (ASIAN — 4 trades closed −$53.13, FLAT; equity $4,989.90; 0W/3L/1BE)
 synced_from: MT5 Bridge
 ---
 
@@ -10,18 +10,25 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,043.37 |
-| Equity | $5,043.37 |
-| Max risk per trade (1%) | $50.43 |
+| Balance | $4,989.90 |
+| Equity | $4,989.90 |
+| Max risk per trade (1%) | $49.90 |
 | Margin used | $0 |
 | Free margin | $5,043.37 |
 | Open positions | **None** |
 | Pending orders | **None** (BUY LIMIT #9710396 filled → closed BE scratch #7559209 +$0.52) |
 
 ## Session Status — 2026-07-09
-- **FLAT** — no open positions, no pendings. Balance/equity **$5,043.37**, max risk $50.43. Daily P&L **$0.00** (fresh UTC day), within all limits.
-- Market context: ASIAN (04:35 UTC), price ~4071. HTF NEUTRAL / range — the 07/08 crash to the D1 low 4021.56 was bought back overnight (H1 BoS UP@4091.69); price coiling **4062–4091** inside D1+H4 discount OTE. Pivot 4092. Forward read: [[Analysis/LTF/202607/20260709/20260709_0435_wait]] (WAIT, Gate 5 B 58 — no trade mid-range; sell the reject into 4089–4092 or buy the reclaim at 4046–4053 / 4021.56).
-- News (UTC): 12:30 Initial Jobless Claims (HIGH), 14:00 Existing Home Sales (HIGH), 17:00 30-Year Bond Auction (HIGH). No HIGH gold cluster in the Asian window; stand down ~15 min around 12:30 / 14:00.
+- Daily P&L: **−$53.13** closed (**0 win, 3 loss, 1 BE scratch**) — reconciled in [[Trade Log/20260709]]:
+  - T1 #7594957 SELL 4073.82 → 4079.42, net **−$11.25** (8 min, 0.02 lot) — **right direction, wrong location.** The 4089.55 reject had already fired (bias short, price later fell to 4054), but this shorted **mid-range at 4073.82** (discount, below M15 EQ 4078); a routine bounce to 4079 stopped it before the down-leg. Same error as 07/07 T2.
+  - T2 #7595731 BUY 4073.66 → 4068.24, net **−$16.34** (11 min, 0.03 lot) — **knife-catch #1.** Flipped the losing short into a long, buying into the live down-move with no reclaim trigger.
+  - T3 #7596364 BUY 4063.17 → 4054.56, net **−$25.91** (4 min, 0.03 lot) — **knife-catch #2, biggest loss.** Bought lower as the drop accelerated; stopped −86 pips in 4 min. The recurring "don't buy the dip into a downtrend" loss (06/26, 06/30, 07/06).
+  - T4 #7596725 BUY 4058.32 → 4058.42, net **+$0.37** (13 min, 0.03 lot) — third long, scratched at BE. The one disciplined exit.
+- Session start equity: $5,043.37 → **current $4,989.90 (−$53.47 balance / −$53.13 closed, −1.06% day)** — within the −20% daily limit.
+- **FLAT** — no open positions, no pendings.
+- ⚠️ Behavioral: the SHORT direction was the day's edge (4089 reject → 4054), but T1 gave it away on a mid-range entry and T2–T4 then reversed into dip-buying longs against the down-leg (−$42.25 of the −$53). **Lesson: sell the rejection AT supply (4085–4090) or a confirmed break, not mid-range; and never flip a losing short into a dip-buy — re-short higher instead.**
+- Market context: ASIAN (03:33 UTC), price ~4063 at the 4062 SSL after the down-leg. HTF NEUTRAL / range 4021.56–4092. Forward read: [[Analysis/LTF/202607/20260709/20260709_0435_wait]].
+- News (UTC): 12:30 Initial Jobless Claims (HIGH), 14:00 Existing Home Sales (HIGH), 17:00 30-Year Bond Auction (HIGH). Stand down ~15 min around 12:30 / 14:00.
 
 ## Session Status — 2026-07-08
 - Daily P&L: **+$31.86** closed (**3 win, 1 loss, 1 BE scratch**) — reconciled in [[Trade Log/20260708]]:

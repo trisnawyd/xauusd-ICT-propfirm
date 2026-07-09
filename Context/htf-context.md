@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-09 04:35 UTC (fresh MCP pull — 07/08 crash to D1 low 4021.56 bought back overnight, H1 flipped BoS UP@4091.69; price now coiling 4062-4091 inside D1+H4 discount OTE)
+updated: 2026-07-09 01:35 UTC (fresh MCP pull — 07/08 crash to D1 low 4021.56 bought back overnight, H1 flipped BoS UP@4091.69; price now coiling 4062-4091 inside D1+H4 discount OTE)
 source: MCP (detect_structure D1/H4/H1, detect_fvg D1/H4/H1, detect_liquidity_sweeps H4, get_premium_discount D1/H4/H1, get_swing_levels D1, get_session_levels, get_current_tick, get_account_info, get_economic_calendar)
 snapshot: "[[Analysis/HTF/202607/20260709]]"
 ---

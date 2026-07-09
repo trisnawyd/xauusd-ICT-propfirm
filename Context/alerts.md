@@ -1,13 +1,17 @@
 # Active Alerts
 
-<!-- Live EA set reconciled to list_alerts @ 2026-07-09 04:35 UTC (ASIAN): 9 active —
-     #158 @3942, #178 @4012.55, #235 @4180, #237 @4088, #242 @4090, #243 @4098, #245 @4062, #246 @4053, #247 @4021 -->
+<!-- Live EA set reconciled to list_alerts @ 2026-07-09 03:44 UTC (ASIAN): 10 active —
+     #158 @3942, #178 @4012.55, #235 @4180, #237 @4088, #242 @4090, #243 @4098, #246 @4053, #247 @4021, #248 @4073, #249 @4054.
+     (#245 @4062 fired — price broke below 4062 to the 4054.03 Asian low; EA auto-cleared.)
+     NOTE: prior rows' "04:35 UTC" times were broker time (UTC+3) mislabeled as UTC — corrected to 01:35 UTC. -->
 
 | ID | Label | Price | Direction | Set At |
 |----|-------|-------|-----------|--------|
-| **#245** ⚡LIVE | **M15 low / SSL 4062–4065 broken** — M5 close-and-HOLD below = bearish continuation to 4044/4021; run LTF | 4062.00 | below | 2026-07-09 04:35 UTC (live in EA) |
-| **#246** ⚡LIVE | **LONG-reaction zone — M5 bull FVG 4046.53–4053.31 ∩ H1 bull FVG 4043.84–4059.29**; counter-trend long needs M15/M5 bullish CHoCH + reclaim (no knife-catch) → LONG ~4050 SL 4040 TP 4090 (4.0:1); run LTF | 4053.00 | below | 2026-07-09 04:35 UTC (live in EA) |
-| **#247** ⚡LIVE | **07/08 range floor 4021.56 broken** — clean M5 close-hold below opens deep H4 bull FVG 3984–4012 / deep OTE; run LTF | 4021.00 | below | 2026-07-09 04:35 UTC (live in EA) |
+| **#248** ⚡LIVE | **SHORT zone (PRIMARY) — M15 bear FVG 4072.09–4076.56 ∩ M5 bear FVG 4074.6–4079.29**, upper half premium (>M15 EQ 4072.73); retrace + M1/M5 bearish rejection → SHORT ~4075 SL 4083 TP 4054→4044 (3.9:1, 0.06 lot). ⚠️ upper half only — 4072/the 4067–4069 FVG is discount (T1 trap); run LTF | 4073.00 | above | 2026-07-09 03:44 UTC (live in EA) |
+| **#249** ⚡LIVE | **Asian low 4054.03 / SSL broken** — M5 close-hold below = breakdown continuation to 4044/4021 (mind M15 bull FVG demand 4045–4053); run LTF | 4054.00 | below | 2026-07-09 03:44 UTC (live in EA) |
+| ~~**#245**~~ | ~~M15 low / SSL 4062–4065 broken → bearish continuation to 4044/4021~~ | ~~4062.00~~ | ~~below~~ | ~~2026-07-09 01:35 UTC~~ — **fired** ~06:xx broker (price broke 4062 down to the new Asian low 4054.03; EA auto-cleared; refined to #249 @4054 at the fresh low) |
+| **#246** ⚡LIVE | **LONG-reaction zone — M5 bull FVG 4046.53–4053.31 ∩ M15 bull FVG 4045.1–4053.31**; counter-trend long needs M15/M5 bullish CHoCH + reclaim (no knife-catch) → LONG ~4050 SL 4040 TP 4090 (4.0:1); also the SHORT TP-caution / bounce-risk shelf; run LTF | 4053.00 | below | 2026-07-09 01:35 UTC (live in EA) |
+| **#247** ⚡LIVE | **07/08 range floor 4021.56 broken** — clean M5 close-hold below opens deep H4 bull FVG 3984–4012 / deep OTE; run LTF | 4021.00 | below | 2026-07-09 01:35 UTC (live in EA) |
 | **#242** ⚡LIVE | **Bounce-reject SHORT (PRIMARY) — D1 bear FVG 4089.55–4091.97 / Asian high BSL 4091.69** (with-D1); sweep + M1/M5 bearish rejection → SHORT ~4090 SL 4098 TP 4062→4044→4021 (5.75:1, 0.06 lot). Also the bull-flip line: M15 close-HOLD above 4092 = long continuation to 4112; run LTF | 4090.00 | above | 2026-07-08 12:4x UTC (live in EA) |
 | **#237** ⚡LIVE | **Bounce-reject SHORT approach** — early heads-up ~4088 before the 4090–4092 sweep zone (#242); M1/M5 rejection → short; run LTF | 4088.00 | above | 2026-07-08 12:4x UTC (live in EA) |
 | **#243** ⚡LIVE | **Higher supply ~4098** — second sell tag above the 4090 zone (07/08 M5 bear FVG since filled; 4098 still valid supply); run LTF | 4098.00 | above | 2026-07-08 12:4x UTC (live in EA) |

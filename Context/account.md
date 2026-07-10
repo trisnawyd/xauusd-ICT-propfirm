@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-09 07:30 UTC (FRESH ACCOUNT — reset to $5,000.00, FLAT, no history)
+updated: 2026-07-09 23:53 UTC (re-synced after Trade 2 stopped out, FLAT)
 synced_from: MT5 Bridge
 ---
 
@@ -10,21 +10,20 @@ synced_from: MT5 Bridge
 | Broker | Exness MT5 |
 | Instrument | XAU/USD |
 | Lot size | Dynamic (1% risk model) |
-| Balance | $5,000.00 |
-| Equity | $5,000.00 |
-| Max risk per trade (1%) | $50.00 |
+| Balance | $4,971.02 |
+| Equity | $4,971.02 |
+| Max risk per trade (1%) | $49.71 |
 | Margin used | $0 |
-| Free margin | $5,000.00 |
+| Free margin | $4,971.02 |
 | Open positions | **None** |
 | Pending orders | **None** |
 
-## Session Status — 2026-07-09 (FRESH ACCOUNT)
-- **New account started.** Balance/equity reset to **$5,000.00**, max risk (1%) = **$50.00**.
-- **FLAT** — no open positions, no pendings. Daily P&L **$0.00** (0W/0L).
-- All prior-account trade logs, stats, and analysis archived to `_old-account/`. Live EA alerts cleared (was #158–#249) — alert set now empty.
-- Clean slate — no session history carried forward. First trade on this account logs fresh.
-- Market context: ASIAN (07:30 UTC), price ~4090. Run `analyze HTF` before the first trade — no HTF context carried from the old account state.
-- News (UTC): 12:30 Initial Jobless Claims (HIGH), 14:00 Existing Home Sales (HIGH), 17:00 30-Year Bond Auction (HIGH). Stand down ~15 min around 12:30 / 14:00.
+## Session Status — 2026-07-09 (ASIAN, end of day)
+- **FLAT** — no open positions, no pendings. Daily P&L **−$28.77** (2 positions: Trade 1 +$10.64, Trade 2 −$39.41).
+- Balance moved **$5,000.00 → $4,971.02** (−0.58%) on the first day of the fresh account. Max risk (1%) now **$49.71**.
+- **Trade 1:** with-D1 reject-SHORT @4118.06 (0.05 lot) into the 4112/4121 ceiling — partial 0.01 @4108.09 (+$9.94), runner 0.04 scratched BE @4117.86 (+$0.70). Disciplined green leg.
+- **Trade 2:** re-short @4125.02 (0.03 lot) into NY — **stopped out @4138.13 (−$39.41)** as price broke up through the 4127.51/4129.52 highs. See [[Trade Log/20260709]].
+- Daily loss limit **−$200 (4%)** untouched — **$171.23 of buffer remaining**.
 
 ## Lot Sizing Formula
 Lot = Max Risk ÷ (SL pips × $10)  → round to nearest 0.01

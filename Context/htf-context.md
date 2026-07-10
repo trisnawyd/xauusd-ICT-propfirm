@@ -1,89 +1,89 @@
 ---
-updated: 2026-07-09 08:09 UTC (fresh MCP pull — London broke the 4092 pivot, swept down to 4040.22 then rallied to the 4121.42 London high; price 4109 now testing the range-top ceiling D1-OTE 4110.73 / H4-EQ 4112.37; H1 flipped BoS UP@4089.55, structure recovering)
-source: MCP (detect_structure D1/H4/H1, detect_fvg D1/H4/H1, detect_order_blocks H4, detect_liquidity_sweeps H4, get_premium_discount D1/H4/H1, get_swing_levels D1, get_session_levels, get_current_tick, get_account_info, get_economic_calendar)
+updated: 2026-07-09 23:53 UTC (fresh MCP pull — the 4112 EQ ceiling broke and HELD; NY rallied to the 4138.42 high (H1 BoS UP), now retracing to 4123 in H4 PREMIUM; near-term momentum bullish, macro still bearish-for-gold)
+source: MCP (detect_structure D1/H4/H1, detect_fvg H4/H1, get_premium_discount H4, get_session_levels, get_current_tick)
 snapshot: "[[Analysis/HTF/202607/20260709]]"
 ---
 
 # HTF Context — XAU/USD
 
-## Bias: NEUTRAL — recovery into range-top resistance. The 07/08 crash to the D1 low **4021.56** was fully bought back; through the Asian/London sessions price broke the old **4092** pivot cap, dipped to the London low **4040.22**, then rallied hard to the **London high 4121.42** — now compressing at **4109**. This puts price square in the decision ceiling: **D1 OTE top 4110.73 ∩ H4 EQ 4112.37 ∩ H1 swing high 4111.39 ∩ London BSL 4121.42.** Near-term momentum is **bullish** (H1 BoS UP@4089.55 + a strong H4 07/09 08:00 candle that swept SSL@4091.97 and closed 4108.63), but price is still in **D1 + H4 DISCOUNT (below EQ)** and macro stays bearish-for-gold. **Pivot = 4112.37 (H4 EQ):** a sweep of the 4121 high + rejection here is the with-D1 SHORT back to 4084/4064/4040; an **H4 close-and-HOLD above 4112** flips to bull continuation toward 4134 → 4180. Cleaner edge remains the **reject-SHORT into 4112–4121**; the counter-trend LONG needs a pullback to the H1 FVG demand 4084–4101 + a confirmed M15/M5 reclaim, never a knife-catch.
+## Bias: NEUTRAL (bullish near-term tilt) — the recovery broke through the ceiling. Since the 08:09 read, price closed-and-HELD above the **4112 H4-EQ**, then NY pushed up to the **4138.42 high** (H1 **BoS UP@4138.42 broke 4127.51**, 07/09 20:00) before retracing to **4123** now. That flips the old 4112 pivot from resistance into **support**, and lifts the operative range to **~4101 (H4 EQ) → 4138/4148**. Price now sits in **H4 PREMIUM** (EQ 4101.09, price 4123) and **D1 DISCOUNT** (below D1 EQ ~4162) — the macro D1/H4 labels stay **BEARISH**, but the H1 leg off the 4021.56 floor is clean and bullish. **Pivot = 4101 (H4 EQ):** hold above it keeps the bull-recovery alive toward 4138 → 4148 → 4180; a sweep-reject of 4138/4148 is the with-D1 SHORT back to 4101 → 4082 → 4064. The higher-probability near-term play is now **LONG the pullback into 4093–4101 on a confirmed M15/M5 reclaim** (with H1 momentum); the reject-SHORT is the counter-trend fade at premium supply 4138–4148.
 
-**Continuity note:** the governing pivot has stepped UP from the old 4090–4092 supply (in play since 07/07) to **4112 (H4 EQ)** now that price closed and held above 4092. The recurring lesson holds: sell the reject into the supply/EQ with the trend; only buy the demand on a confirmed M15/M5 reclaim (the 06/30 & 07/01 anticipated-reclaim longs both failed). The down-leg completed at 4021.56 and reversed — that floor is the range bottom until a clean daily close below it.
+**Continuity note:** the governing pivot has stepped UP again — from **4112 (H4 EQ)** to **~4127–4138** now that price broke and held above 4112 and made the 4138 high. This is the same recurring pattern: each held reclaim steps the pivot up one shelf. Trade 2 today (SELL @4125.02 → SL 4138.13) is the cautionary tale — it faded a ceiling that was in the process of breaking, not holding. The down-leg floor stays **4021.56** until a clean daily close below it; the up-leg is capped at **4180.61** (H4 range top) until a close-hold above.
 
 ---
 
-## The Pivot — 4112.37 H4-EQ ceiling vs 4021.56 confirmed floor
-- **D1 OTE top 4110.73 ∩ H4 EQ 4112.37 ∩ H1 swing high 4111.39 ∩ London BSL 4121.42** — the near-term supply/EQ ceiling; sweep-reject = short.
-- **H1 bull FVG 4084.49–4101.63 [open] ∩ H1 bull FVG 4064.74–4081.64 [open]** — first demand / LONG-reaction shelves left by the London rally.
-- **Bull trigger:** H4 close-hold above **4112.37** → 4134 → 4180. **Bear trigger:** clean M5 close-hold below **4021.56** → 3984–4012 → 3942.86.
+## The Pivot — 4101 H4-EQ support vs 4138/4148 premium ceiling vs 4021.56 floor
+- **4138.42 (H1 BoS UP / NY high) ∩ 4148.59 (H1 swing) ∩ 4129.52 (London high)** — near-term supply; sweep-reject here = with-D1 SHORT.
+- **4101.09 (H4 EQ) ∩ 4082.87–4093.42 (H4 bull FVG open)** — first demand / LONG-reaction shelf now that 4112 flipped to support.
+- **Bull trigger:** H1 close-hold above **4138.42** → 4148 → 4180. **Bear trigger:** clean M5 close-hold below **4093.42** → 4082 → 4064 → 4021.56.
 
 ## D1 Analysis
-- **D1 (algo): BEARISH label**; last real BoS DOWN@3942.86 (06/30) is stale (~9 bars). Recent path: 07/06 H4203.17 → 07/08 L4021.56 → recovery to 4121.42 → now 4109.
-- **D1 swings:** highs 4382.31 → 4220.61 → 4096.36 → 4203.17; lows 3958.57 → 3942.86 → 4021.56 = **RANGE 3942.86–4382.31**.
-- **D1 P/D (4382.31/3942.86):** EQ 4162.59 | OTE 4036.9–4110.73. Price ~4109 = **DISCOUNT, at the TOP of OTE (4110.73)**. No open D1 FVG near price.
-- **D1 Bias: NEUTRAL / range, in discount** — needs a daily close below 3942.86 (bear) or back above ~4162 EQ (bull) to resolve.
+- **D1 (algo): BEARISH label**; last event **BoS UP@4203.17 broke 4138.42 (07/06)** — a bullish break, recovery leg. Path: 07/06 H4203.17 → 07/08 L4021.56 → recovery through 4112 → NY high 4138.42 → now 4123.
+- **D1 swings:** highs 4382.31 → 4220.61 → 4096.36 → 4203.17; lows 3942.86 → 4021.56 = **RANGE 3942.86–4382.31**.
+- **D1 P/D (4382.31/3942.86):** EQ ~4162.59. Price ~4123 = **DISCOUNT** (below EQ), above the OTE top 4110.73 now. No open D1 FVG near price.
+- **D1 Bias: NEUTRAL / range, recovering in discount** — needs a daily close above ~4162 EQ (bull) or below 3942.86 (bear) to resolve.
 
 ## H4 Analysis
-- **H4 (algo): BEARISH label**, last event **BoS DOWN@4021.56 (07/08 16:00)** = the crash low, since fully bought back. Operative: strong recovery, now testing EQ.
-- **H4 P/D (4203.17/4021.56):** EQ 4112.37 | OTE 4060.42–4090.94. Price ~4109 = **DISCOUNT, JUST below EQ** (price has climbed above OTE).
-- **H4 sweep:** current 07/09 08:00 candle swept **SSL@4091.97** (wick 4063.46) and **closed 4108.63** — strong bullish sweep-and-reclaim.
-- **H4 FVGs open:** BULLISH **3984.74–4012.55** (deep demand / reload). No near supply FVG — overhead bear FVGs filled.
-- **H4 Bias: recovering to EQ resistance.** First resistance H4 EQ 4112; demand 4084 → 4064 → 4040 → 4021.
+- **H4 (algo): BEARISH label**, last event **BoS DOWN@4021.56 (07/08 16:00)** = the crash low, since fully bought back. Operative: strong recovery, now in premium above EQ.
+- **H4 P/D (4180.61/4021.56):** EQ **4101.09** | OTE 4055.6–4082.32. Price 4123.34 = **PREMIUM** (climbed above EQ).
+- **H4 FVGs open:** BULLISH **4082.87–4093.42** (immediate demand / reload shelf), BULLISH **3984.74–4012.55** (deep demand), BEARISH **4233.39–4239.57** (supply well above, not in play).
+- **H4 Bias: recovery in premium.** Support H4 EQ 4101 + FVG 4082–4093; resistance 4138 → 4148 → 4180.
 
 ## H1 Analysis
-- **H1 (algo): BEARISH label** but last two events **BoS UP@4089.55 (07/09 03:00)** and **BoS UP@4091.69 (07/08 21:00)** — near-term structure is UP off the floor.
-- **H1 P/D (4111.39/4021.56):** EQ 4066.48 | OTE 4040.78–4055.88. Price ~4109 = **PREMIUM, at the swing high** — extended.
-- **H1 FVGs open:** BULLISH **4084.49–4101.63 (09:00)** and BULLISH **4064.74–4081.64 (08:00)** — demand just below price.
-- **H1 Bias: bullish off the floor** but stretched into PREMIUM at the 4110–4121 ceiling; a reject there resumes the with-D1 down-leg.
+- **H1 (algo): BULLISH label**, last event **BoS UP@4138.42 broke 4127.51 (07/09 20:00)** — clean up-leg, made the NY high then retraced to 4123.
+- **H1 FVGs open:** BULLISH **4064.74–4081.64 (07/09 08:00)** — demand shelf below. (The 4084.49–4101.63 FVG has since filled.)
+- **H1 Bias: bullish off the floor**, retracing from the 4138 high into the 4101–4123 premium zone; hold above 4101 keeps the up-leg intact.
 
 ## Premium / Discount
-- **D1 (4382.31/3942.86):** EQ 4162.59 | price ~4109 = **DISCOUNT, at OTE top 4110.73**.
-- **H4 (4203.17/4021.56):** EQ 4112.37 | price ~4109 = **DISCOUNT, just below EQ**.
-- **H1 (4111.39/4021.56):** EQ 4066.48 | price ~4109 = **PREMIUM, at swing high**.
+- **D1 (4382.31/3942.86):** EQ ~4162.59 | price 4123 = **DISCOUNT**.
+- **H4 (4180.61/4021.56):** EQ 4101.09 | price 4123 = **PREMIUM**.
+- **H1:** bullish leg, price mid-range between the 4021.56 floor and the 4138.42 high.
 
 ---
 
 ## Key Levels
 
-### Resistance / Supply (above ~4109)
+### Resistance / Supply (above ~4123)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **4110.73** | D1 OTE top | Upper bound of D1 discount OTE — reject here = short |
-| **4111.39 / 4112.37** | H1 swing high / H4 EQ | **The ceiling — PRIMARY sweep-reject SHORT; close-hold above 4112 = bull continuation** |
-| **4121.42** | London high BSL | Sweep target; sweep-reject = primary short trigger |
-| **4134.08** | H4 swing high | Next resistance on a bull run |
-| **4180.61** | Range top / H4 | Close-hold above breaks range → 4203/4382 |
+| **4127.51** | Asian high / broken H1 swing | Broke on the NY push; first micro-resistance on a re-test |
+| **4129.52** | London high | Session BSL |
+| **4138.42** | H1 BoS UP / NY high | **The ceiling — sweep-reject = with-D1 SHORT (this was Trade 2's SL)** |
+| **4148.59** | H1 swing high | Next resistance on a bull run |
+| **4180.61** | H4 range top | Close-hold above breaks range → 4203/4233 |
+| **4233.39–4239.57** | H4 bear FVG [open] | Deeper supply, not in play |
 
-### Support / Demand (below ~4109)
+### Support / Demand (below ~4123)
 | Level | Source | Notes |
 |-------|--------|-------|
-| **4084.49–4101.63** | H1 bull FVG [open] | Immediate demand / first LONG-reaction shelf |
+| **4101.09** | H4 EQ | **Pivot — flipped from ceiling to support; hold above = bull-recovery intact** |
+| **4093.42** | H1 CHoCH / M15 low | Bear trigger on a close below |
+| **4082.87–4093.42** | H4 bull FVG [open] | Immediate demand / first LONG-reaction shelf |
 | **4064.74–4081.64** | H1 bull FVG [open] | Second demand shelf |
-| **4060.42–4090.94** | H4 OTE | Deeper discount demand |
-| **4040.22** | London low | Session support |
+| **4055.6–4082.32** | H4 OTE | Deeper discount demand |
+| **4054.03** | H4 swing / London structure | Support |
 | **4021.56** | D1 low / range floor | Break-hold below → deep demand / bear resume |
 | **3984.74–4012.55** | H4 bull FVG [open] | Deep demand / LONG reload |
-| **3942.86** | Major swing low / range floor | Close below → open air 3920/3900 |
 
 ---
 
 ## Trade Directional Guidance
 
-### BIAS: NEUTRAL — range 4021.56–4121 (inside the wider 3942–4382 D1 range), action now at the TOP. Sell the reject into 4112–4121 (with-D1); buy the demand reaction at 4084–4101 / 4064–4081 only on a confirmed M15/M5 reclaim. Do NOT chase the breakout mid-air and do NOT knife-catch the demand.
+### BIAS: NEUTRAL, bullish near-term tilt — recovery broke the 4112 ceiling to 4138, now consolidating in H4 premium 4101–4138. Buy the pullback into 4093–4101 on a confirmed M15/M5 reclaim (with H1 momentum); sell the reject at premium supply 4138–4148 (with-D1 fade). Do NOT chase mid-air and do NOT fade a ceiling that is still breaking (Trade 2's lesson).
 
-**Setup A — SHORT the reject (with-D1, PRIMARY):**
-- Condition: sweep of the **4121.42 London high** and/or rejection at **H4 EQ 4112**, M1/M5 bearish rejection.
-- Entry ~4118 | SL 4126 | TP 4084 → 4064 → 4040.
-- Invalidation: H4 close-and-hold above 4112.37 → bull continuation.
+**Setup A — LONG the pullback (with H1 momentum, PRIMARY near-term):**
+- Condition: retrace into **4093–4101** (H4 EQ + bull FVG 4082.87–4093.42) + M15/M5 bullish CHoCH/reclaim (not a wick).
+- Entry ~4095 | SL 4080 | TP 4127 → 4138 → 4148.
+- Invalidation: M5 close-hold below 4082 → back to 4064/4054/4021.
 
-**Setup B — LONG the pullback (counter-trend):**
-- Condition: retrace into **4084–4101** (H1 bull FVG) or **4064–4081** + M15/M5 bullish CHoCH/reclaim (not a wick).
-- Entry ~4090 | SL 4076 | TP 4112 → 4121 → 4134.
-- Invalidation: M5 close-hold below 4064 → back to 4040/4021.
+**Setup B — SHORT the reject (with-D1, counter to H1):**
+- Condition: sweep of the **4138.42 / 4148.59** highs + M1/M5 bearish rejection in premium.
+- Entry ~4144 | SL 4154 | TP 4112 → 4101 → 4082.
+- Invalidation: H1 close-and-hold above 4148.59 → bull continuation to 4180.
 
 ### BIAS RESOLUTION
-- **Reject short (base case, with-trend):** sweep 4121 / reject 4112 → 4084 → 4064 → 4040.
-- **Pullback long (counter-trend at demand):** reclaim off 4084–4101 or 4064–4081 → 4112 → 4121 → 4134.
-- **Bull continuation:** H4 close-hold above 4112.37 → 4134 → 4180.
-- **Bear continuation:** clean break-hold below 4021.56 → 3984–4012 → 3942.86.
-- **News (UTC):** 12:30 Initial Jobless Claims (HIGH), 14:00 Existing Home Sales (HIGH), 17:00 30-Year Bond Auction (HIGH). Stand down ~15 min around 12:30 and 14:00.
+- **Pullback long (base case, with H1):** reclaim off 4093–4101 → 4127 → 4138 → 4148.
+- **Reject short (with-D1 fade):** sweep 4138/4148 + reject → 4112 → 4101 → 4082.
+- **Bull continuation:** H1 close-hold above 4138.42 → 4148 → 4180.
+- **Bear continuation:** clean M5 close-hold below 4093.42 → 4082 → 4064 → 4021.56.
+- **News (UTC):** none flagged in the immediate Asian window; re-check the calendar before London.

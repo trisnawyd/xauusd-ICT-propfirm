@@ -72,6 +72,42 @@ feel scared / want to "just close it" ..... NOT a valid action. Check the tree a
 
 ---
 
+## Auto-Mode Management Rules (mechanical — the headless loop runs these, no discretion)
+
+**Scope:** applies ONLY when `auto-mode.json` `enabled: true`. Source of truth:
+`xauusd-ict-claude/full-automation-plan.md` §5 and the runbook
+`xauusd-ict-claude/docs/auto-cycle.md`. The manual RULE 1–3 above are for
+hand-traded positions; the auto loop follows *this* table so the exit rules are
+enforced the same way whether or not a human is watching. Cadence: the 5-min
+management lane runs 24/5 **whenever any position or pending is open** (no time
+stop — positions ride to SL/TP, so they can hold overnight).
+
+| # | Trigger (all numbers pulled fresh this cycle) | Action | Maps to |
+|---|---|---|---|
+| A | Pending filled but its confirmation (e.g. M5 CHoCH alert) has NOT fired within 15 min of fill, **or** price closes M5 against entry without the trigger | `close_position` (scratch ≈ BE / small loss) | **NEW — no manual equivalent.** #9710396 07-08 lesson |
+| B | Position ≥ **+1R** floating | `move_to_breakeven` (BE + 1 pip) | RULE 2 (BE half of it) |
+| C | Position ≥ +1R **and** lot ≥ 0.02 | `close_position` half, keep runner to TP | RULE 2 (partial). At 0.01 lot there is nothing to halve → BE only |
+| D | HIGH-impact event ≤ 15 min ahead, position **< +1R** | `close_position`; if **≥ +1R**, tighten to BE and hold | **NEW — no manual equivalent.** T8 07-06 Waller lesson |
+| E | Session end / M5 close beyond invalidation level / HTF stale (pending) | `delete_pending_order`, log the cancel | RULE 3 invalidation, applied to pendings (armed-WAIT expiry) |
+| F | Hard SL/TP always at broker on entry | (enforced by all 3 layers) | RULE 1 |
+
+### Where auto DIVERGES from the manual rules above (read this)
+
+- **Risk is 0.5%, not 1%.** Trial sizing is 0.5% (~$25) per trade, `auto_max_lot`
+  **0.05**, R:R ≥ **2:1**. The manual "1% / ~$50 / R:R ≥ 1:2" caps do NOT apply in auto.
+- **No discretionary early bank in v1.** The manual adherence log's "+200 enough,
+  close the runner" call (ticket 8999451) would be **disallowed** by the auto loop —
+  it runs partial-at-1R + runner-to-TP/structure only, and the review measures the
+  delta vs. the human's early-exit instinct. "Bank when it feels done" is not codifiable.
+- **SL is structural, sized by lot — never tightened to afford lot.** Same spirit as
+  RULE 1, but mechanical: if 0.01 lot at the structural SL still exceeds 0.5% risk,
+  **skip the trade** (do not narrow the stop to fit).
+- **Rules A and D have no manual counterpart** — they exist because the two documented
+  auto failure modes (pre-trigger fill, news-through-SL) are *management* failures a
+  watching human caught by hand; the loop has to catch them by rule.
+
+---
+
 ## Adherence Log (mark each trade Y/N — track if you actually followed it)
 
 | Date | Ticket | R1 SL-beyond-liq | R2 +1R partial+BE | R3 structure exit | Followed all 3? | Note |

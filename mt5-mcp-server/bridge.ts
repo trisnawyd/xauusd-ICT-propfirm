@@ -19,20 +19,51 @@ import * as zmq from "zeromq";
 const PORT = Number(process.env.MT5_BRIDGE_PORT ?? 5556);
 const ZMQ_ENDPOINT = process.env.MT5_ZMQ_ENDPOINT ?? "tcp://127.0.0.1:5555";
 
-const sock = new zmq.Request();
-sock.connect(ZMQ_ENDPOINT);
+const ZMQ_TIMEOUT_MS = 5000;
+
+function newSocket(): zmq.Request {
+  const s = new zmq.Request();
+  s.sendTimeout = ZMQ_TIMEOUT_MS;
+  s.receiveTimeout = ZMQ_TIMEOUT_MS;
+  s.connect(ZMQ_ENDPOINT);
+  return s;
+}
+
+let sock = newSocket();
+
+// REQ sockets enforce strict send/recv alternation. A timed-out call leaves
+// the socket expecting a recv it will never get, so any further send() would
+// throw "Operation cannot be accomplished in current state" — recreate the
+// socket instead of reusing a wedged one.
+function resetSocket(): void {
+  try {
+    sock.close();
+  } catch {
+    /* already closed/broken — ignore */
+  }
+  sock = newSocket();
+}
 
 // ZMQ Request is strict lockstep (one send -> one receive). Serialize EA calls
 // so overlapping HTTP requests can't interleave on the single socket.
 let chain: Promise<unknown> = Promise.resolve();
 function callEA(name: string, args: Record<string, unknown> = {}): Promise<any> {
   const run = async () => {
-    await sock.send(JSON.stringify({ name, arguments: args }));
-    const [res] = await sock.receive();
-    return JSON.parse(res.toString());
+    try {
+      await sock.send(JSON.stringify({ name, arguments: args }));
+      const [res] = await sock.receive();
+      return JSON.parse(res.toString());
+    } catch (err) {
+      resetSocket();
+      const msg = err instanceof Error ? err.message : String(err);
+      throw new Error(`EA request timed out or failed (${msg}) — socket reset`);
+    }
   };
   const result = chain.then(run, run);
-  chain = result.catch(() => {}); // keep the chain alive even if a call rejects
+  chain = result.then(
+    () => undefined,
+    () => undefined,
+  ); // keep the chain alive even if a call rejects
   return result;
 }
 

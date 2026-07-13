@@ -8,8 +8,31 @@ import {
 } from "@modelcontextprotocol/sdk/types.js";
 import * as zmq from "zeromq";
 
-const sock = new zmq.Request();
-sock.connect("tcp://127.0.0.1:5555");
+const ZMQ_ENDPOINT = "tcp://127.0.0.1:5555";
+const ZMQ_TIMEOUT_MS = 5000;
+
+let sock = newSocket();
+
+function newSocket(): zmq.Request {
+  const s = new zmq.Request();
+  s.sendTimeout = ZMQ_TIMEOUT_MS;
+  s.receiveTimeout = ZMQ_TIMEOUT_MS;
+  s.connect(ZMQ_ENDPOINT);
+  return s;
+}
+
+// REQ sockets enforce strict send/recv alternation. A timed-out call leaves
+// the socket expecting a recv it will never get, so any further send() would
+// throw "Operation cannot be accomplished in current state" — recreate the
+// socket instead of reusing a wedged one.
+async function resetSocket(): Promise<void> {
+  try {
+    sock.close();
+  } catch {
+    /* already closed/broken — ignore */
+  }
+  sock = newSocket();
+}
 
 // --- Safety configuration (server-side layer) ---
 export const SAFETY_CONFIG = {
@@ -73,13 +96,36 @@ export function validateExecution(params: Record<string, unknown>): string | nul
 
 // --- Phase 2: Analysis engine (computed locally from EA data) ---
 
+// Serialize EA calls so overlapping tool calls can't interleave on the
+// single lockstep REQ socket.
+let chain: Promise<unknown> = Promise.resolve();
+
+async function sendRecv(payload: string): Promise<string> {
+  const run = async () => {
+    try {
+      await sock.send(payload);
+      const [response] = await sock.receive();
+      return response.toString();
+    } catch (err) {
+      await resetSocket();
+      const msg = err instanceof Error ? err.message : String(err);
+      throw new Error(`EA request timed out or failed (${msg}) — socket reset`);
+    }
+  };
+  const result = chain.then(run, run);
+  chain = result.then(
+    () => undefined,
+    () => undefined,
+  ); // keep the chain alive even if a call rejects
+  return result;
+}
+
 async function callEA(
   name: string,
   args: Record<string, unknown> = {},
 ): Promise<any> {
-  await sock.send(JSON.stringify({ name, arguments: args }));
-  const [response] = await sock.receive();
-  return JSON.parse(response.toString());
+  const response = await sendRecv(JSON.stringify({ name, arguments: args }));
+  return JSON.parse(response);
 }
 
 interface Swing {
@@ -1351,9 +1397,8 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
     }
   }
 
-  await sock.send(JSON.stringify(req.params));
-  const [response] = await sock.receive();
-  const compacted = compactOutput(req.params.name, response.toString());
+  const response = await sendRecv(JSON.stringify(req.params));
+  const compacted = compactOutput(req.params.name, response);
 
   // 3A: Auto-sync account after every execution tool (except cancel/delete)
   if (
@@ -1411,9 +1456,8 @@ server.setRequestHandler(ReadResourceRequestSchema, async (req) => {
       throw new Error(`Unknown resource: ${req.params.uri}`);
   }
 
-  await sock.send(JSON.stringify({ tool: toolName }));
-  const [response] = await sock.receive();
-  const compacted = compactOutput(toolName, response.toString());
+  const response = await sendRecv(JSON.stringify({ tool: toolName }));
+  const compacted = compactOutput(toolName, response);
   return {
     contents: [
       {

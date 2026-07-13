@@ -30,6 +30,15 @@ AlertEntry g_alerts[];
 int        g_alert_count   = 0;
 int        g_next_alert_id = 1;
 
+// CopyRates on a symbol/timeframe whose history isn't cached locally triggers
+// a synchronous download from the trade server, blocking OnTimer (and with it
+// the whole terminal UI thread) until it completes. Check sync state first so
+// we can fail fast with a retryable error instead of freezing the terminal.
+bool IsHistorySynced(const string symbol, ENUM_TIMEFRAMES tf)
+  {
+   return (bool)SeriesInfoInteger(symbol, tf, SERIES_SYNCHRONIZED);
+  }
+
 //--- Chart line helpers
 string AlertObjName(int id) { return StringFormat("MT5B_ALT_%d", id); }
 
@@ -381,6 +390,9 @@ string GetOHLCV(const string req)
 
    ENUM_TIMEFRAMES tf = StringToTimeframe(tfStr);
 
+   if(!IsHistorySynced(symbol, tf))
+      return StringFormat("{\"error\":\"history not synced yet for %s %s — retry shortly\"}", symbol, tfStr);
+
    MqlRates rates[];
    ArraySetAsSeries(rates, true);
    int copied = CopyRates(symbol, tf, 0, count, rates);
@@ -599,6 +611,9 @@ string GetSwingLevels(const string req)
 
    ENUM_TIMEFRAMES tf = StringToTimeframe(tfStr);
 
+   if(!IsHistorySynced("XAUUSD", tf))
+      return StringFormat("{\"error\":\"history not synced yet for XAUUSD %s — retry shortly\",\"swings\":[]}", tfStr);
+
    // Load rates
    MqlRates rates[];
    ArraySetAsSeries(rates, true);
@@ -672,6 +687,9 @@ string GetSessionLevels()
    // Asian: 22:00-08:00 (previous day start to current day 08:00)
    // London: 08:00-17:00
    // New York: 13:00-21:00
+
+   if(!IsHistorySynced("XAUUSD", PERIOD_H1))
+      return "{\"error\":\"history not synced yet for XAUUSD H1 — retry shortly\",\"active_session\":\"" + active + "\"}";
 
    MqlRates h1[];
    ArraySetAsSeries(h1, true);

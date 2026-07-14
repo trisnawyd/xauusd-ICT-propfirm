@@ -25,10 +25,15 @@ snapshot: "[[Analysis/HTF/202607/20260714]]"
 - **4032.20 (H1 bull FVG top — FORMING, see caveat)** — retrace-long zone if the impulse is real.
 - **4022.98 (CPI spike origin)** — lost = the entire CPI move has unwound; the fade is on.
 
-## ⚠️ Data-timing caveat — read before trusting any zone
-The spike's own imbalance **has not printed yet.** An FVG needs 3 *closed* candles; the 12:00 UTC H1 candle is still open. That is why all H1/H4 FVG scans return **0 open** — it is a **timing artifact, not an absence of structure.** A bullish H1 FVG with its top at **4032.20** (high of the 11:00 UTC H1 candle) is *likely* to print once the 13:00/14:00 UTC candles close. **It is not confirmed. Do not trade it as fact — wait for it to actually appear in `detect_fvg`.**
+## ✅ RESOLVED at 13:21 UTC — the FVGs have printed
+The 12:52 read reported `open:0` on every FVG/OB scan and called Gate 3 a fail in both directions. **That was a data-timing artifact, as flagged** — an FVG needs 3 *closed* candles and the 12:00 UTC H1 candle was still open. It has since closed, and the spike's imbalance is now on the board:
 
-Likewise, `detect_structure` labels on all three TFs are **lagging**: their last printed events are all 1–4 days stale and none reflect the spike.
+- **H1 BULLISH 4032.20–4070.62 — [OPEN]**
+- **H4 BULLISH 4034.37–4070.62 — [OPEN]**
+
+**Gate 3 now PASSES for a long.** There is a real, unmitigated HTF demand zone. Setup A's precondition is met. (Note the correction: **4032.20 is the FVG FLOOR, not its top** — the top is **4070.62**. The 12:52 alert map had this backwards; alerts rebuilt as #177/#178.)
+
+`detect_structure` labels on all three TFs remain **lagging** — their last printed events are 1–4 days stale and none reflect the spike. Read the tape, not the label.
 
 ## D1 Analysis
 - **D1 (algo): BEARISH label.** Last event **BoS UP@4203.17 broke 4138.42 (07/06)** — 8 days stale, ignore. **No new D1 event has printed.**
@@ -90,14 +95,15 @@ Likewise, `detect_structure` labels on all three TFs are **lagging**: their last
 
 ## Trade Directional Guidance
 
-### BIAS: NEUTRAL — **no trade at market, in either direction.**
-Price sits on H4 EQ with zero unmitigated HTF zones, inside a post-news chop, with four Fed speakers still to come. **Gate 3 fails long AND short.** The bear map is dead; the bull case is a lower high that got rejected. Wait for the impulse to *resolve into structure* — then trade the retest, not the spike.
+### BIAS: NEUTRAL — **no trade at market, but Gate 3 now passes LONG on a retrace.**
+Price (4077) sits between H4 EQ (4081.91) above and the confirmed bull FVG top (4070.62) below, inside post-news chop, with four Fed speakers still to come. The bear map is dead; the bull case is still a lower high that got rejected at 4103.23. **But the bull FVG has now printed — the long finally has a zone.** Trade the retest, not the spike.
 
-**Setup A — LONG the retrace into the forming H1 bull FVG (PRIMARY, CONDITIONAL):**
-- **Precondition (non-negotiable):** the H1 bull FVG must **actually print** in `detect_fvg` after the 13:00/14:00 UTC candles close. If it does not appear, this setup does not exist.
-- Condition: pullback into **4032–4058** + M15/M5 bullish rejection/CHoCH in the zone.
+**Setup A — LONG the retrace into the bull FVG (PRIMARY, LIVE):**
+- **Precondition: MET** ✅ — H1 BULLISH **4032.20–4070.62 [OPEN]**, H4 BULLISH **4034.37–4070.62 [OPEN]**.
+- Condition: pullback into the FVG + M15/M5 bullish rejection/CHoCH in the zone.
 - Entry ~**4045** | SL **4022** (below the 4022.98 spike origin) | TP1 **4103.23** → TP2 **4138.42**.
 - Calc: SL (4045−4022)×10 = **230 pips** → 0.02 lot = **$46.00** (max risk $49.35 ✓) | TP1 (4103.23−4045)×10 = **582 pips** → **R:R 2.5:1** ✓
+- ⚠️ **DO NOT buy the FVG top.** Entry 4068 / SL 4030 = **380 pips** against a **352-pip** TP1 → **R:R 0.93:1 — fails the 1:2 hard rule.** The trade only exists on a **deeper fill toward 4045**. Alert #177 (4070.62) means *start watching*, NOT *enter*.
 - Invalidation: H1 close below **4022.98**.
 
 **Setup B — SHORT the failed spike (fade, CONDITIONAL):**

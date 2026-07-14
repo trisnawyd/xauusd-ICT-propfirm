@@ -1,36 +1,35 @@
 # Active Alerts
 
-<!-- Version-controlled alert list (ships with the commit). Broker/detect timestamps are broker time (UTC+3); subtract 3h for UTC. Trust get_session_levels UTC. -->
+<!-- Version-controlled alert list (ships with the commit). Broker/detect/calendar timestamps are broker time (UTC+3); subtract 3h for UTC. Trust get_session_levels UTC. -->
 
-Updated: 2026-07-14 02:20 UTC (ASIAN) — bias stays **BEARISH**; the 4021.56 D1 floor broke on 07/13 and price ran to 3983.20. The alert map has been **rebuilt one shelf lower** — every level from the 07/13 map (4094 / 4101 / 4052 / 4021-below) is now behind price and dead. Table below = actual `list_alerts` EA state, verified after this cycle's `set_alert`/`delete_alert` calls.
+Updated: 2026-07-14 12:52 UTC (LONDON, post-CPI) — bias flips **BEARISH → NEUTRAL**. Cold CPI core (0.0% m/m) spiked gold **4030 → 4103.23** at 12:30 UTC and killed the entire 07/14 bear map. Table below = actual `list_alerts` EA state, verified after this cycle's `set_alert`/`delete_alert` calls.
 
 | ID | Label | Price | Direction | Set At |
 |----|-------|-------|-----------|--------|
-| #164 | H4 EQ — **BEAR INVALIDATION** | 4060.70 | above | 2026-07-14 02:20 UTC |
-| #165 | M15 bear FVG top — SL shelter | 4051.17 | above | 2026-07-14 02:20 UTC |
-| #166 | SHORT zone — pending #9954835 entry | 4042.50 | above | 2026-07-14 02:20 UTC |
-| #167 | **Watch A entry — M15 bear FVG floor** | 4037.49 | above | 2026-07-14 02:20 UTC |
-| #168 | Flipped D1 low — zone approach | 4021.56 | above | 2026-07-14 02:20 UTC |
-| #169 | **Day low break — bear continuation (Watch B)** | 3983.20 | below | 2026-07-14 02:20 UTC |
-| #170 | D1 swing low — first target | 3958.57 | below | 2026-07-14 02:20 UTC |
-| #171 | D1 range floor — **bear resolution** | 3942.86 | below | 2026-07-14 02:20 UTC |
+| #173 | D1 swing high — **lower-high series breaks, bear structure dies** | 4138.42 | above | 2026-07-14 12:52 UTC |
+| #172 | **Day high / BSL grab — bull continuation trigger** | 4103.23 | above | 2026-07-14 12:52 UTC |
+| #174 | H1 bull FVG top (forming) — **retrace-LONG zone (Setup A)** | 4032.20 | below | 2026-07-14 12:52 UTC |
+| #175 | CPI spike origin — move fully faded, **fade-SHORT live (Setup B)** | 4022.98 | below | 2026-07-14 12:52 UTC |
+| #176 | Day low — full CPI reversal, **bear map revives** | 3983.20 | below | 2026-07-14 12:52 UTC |
+
+_Price at update: **4079.74**. H4 EQ **4081.91** sits 2 points above — price is ON the fence._
 
 **What each one tells you:**
-- **#168 (4021.56)** fires first on a rally — the retrace toward the short zone is live.
-- **#167 (4037.49)** → price is entering the Watch A zone. **#166 (4042.50)** → the resting limit is about to fill.
-- **#165 (4051.17)** → price is inside the stop shelter; the setup is under pressure.
-- **#164 (4060.70)** → **thesis dead.** H1 reclaim-hold above H4 EQ opens 4067.51 → 4090–4097.56.
-- **#169 (3983.20)** → the retrace never came; Watch B (continuation short) is live.
-- **#170 / #171** → downside targets landing.
+- **#172 (4103.23)** → price is retesting the spike high. This level is a **BSL grab** (the 12:00 UTC candle swept 4080.97 + 4091.20, wicked 4103.23, closed back at 4079.86). A *reclaim-and-hold* means the raid was real accumulation → 4110.73 → 4138.42. A second rejection means it was a trap.
+- **#173 (4138.42)** → **the structural one.** Until this breaks, 4103.23 is still a LOWER HIGH and the D1 lower-high series (4382.31 → 4220.61 → 4203.17 → 4138.42) is intact. **Only here does the bear structure genuinely die.**
+- **#174 (4032.20)** → price is entering the **Setup A** retrace-long zone. ⚠️ **Precondition: the H1 bull FVG must actually print in `detect_fvg` first** — it cannot exist yet (the 12:00 UTC H1 candle is still open; an FVG needs 3 closed candles). If the FVG never forms, this alert is just a level.
+- **#175 (4022.98)** → the CPI spike has **fully round-tripped**. Setup B (fade-short) activates on an H1 close-hold below 4032.20.
+- **#176 (3983.20)** → total reversal; the 07/14 bear map comes back online (3958.57 → 3942.86).
 
-**Current watch plan:**
-- **Watch A (SHORT, PRIMARY):** rally into **4037–4042** (M15 bear FVG 4037.49–4041.94 ∩ H4 sell-OTE 4018.2–4043.16 ∩ flipped 4021.56) + M5/M1 bearish rejection → entry ~**4040**, SL **4055**, TP1 **3983.20** → TP **3958.57** (R:R **5.4:1**, lot 0.03, risk $45.00). **Already covered by resting pending #9954835** (SELL_LIMIT 0.02 @4042.5, SL 4054.5, TP 3986.5) — no new order proposed. Its TP 3986.5 is conservative and forfeits the 3958/3942 leg.
-- **Watch B (SHORT, continuation):** M5 close-hold below **3983.20** → entry ~**3982**, SL **3996**, TP **3944** (R:R **2.7:1**, lot 0.03, risk $42.00).
-- **LONG: not available** — fails Gate 3 counter-trend (zero open H4 demand zones; price is *below* the H4 OTE, not inside it).
-- **Bear invalidation:** H1 reclaim-hold above **4060.70** (H4 EQ) → kills both watches, opens 4067.51 → 4090–4097.56.
+**Current watch plan — NO TRADE AT MARKET (Gate 3 fails BOTH directions):**
+Zero unmitigated H4/H1 OBs and FVGs (`open:0` on all four scans) and price is sitting on H4 EQ. A LONG has no demand zone to buy; a SHORT has no supply zone to sell and would fade a live fundamental catalyst. Wait for the impulse to resolve into structure, then trade the retest — not the spike.
 
-_Bias BEARISH (D1/H4/H1 all down). Price ~4009 has been compressing in a 3983–4012 range for ~9 hours, directly beneath the 4020–4043 supply band, and is now pressing the range top. **Gate 3 WAIT — no entry zone:** M5 has 0 open OBs and 0 open FVGs; the nearest supply is ~300 pips up. Sell the retrace into 4037–4042, don't chase._
+- **Setup A (LONG, PRIMARY — conditional):** H1 bull FVG prints → pullback into **4032–4058** + M15/M5 bullish rejection → entry ~**4045**, SL **4022**, TP1 **4103.23**, TP2 **4138.42**. SL (4045−4022)×10 = **230 pips** → 0.02 lot = **$46.00** (max risk $49.35 ✓) | TP1 **582 pips** → **R:R 2.5:1**.
+- **Setup B (SHORT, conditional):** H1 **close-hold below 4032.20** → entry ~**4030**, SL **4048**, TP **3983.20**. SL **180 pips** → 0.02 lot = **$36.00** ✓ | TP **468 pips** → **R:R 2.6:1**. ⚠️ Fades a real catalyst — requires the H1 close first, do not pre-empt.
+- **At market: nothing.** Both directions fail Gate 3.
 
-**⚠️ CPI 15:30 UTC — HIGH impact** (CPI m/m, Core CPI m/m, CPI y/y). The day's pivot; the nine-hour base is a market waiting for it. **No new entries 15:15–15:45.** If #9954835 fills before then it carries a 120-pip SL through the release.
+_Bias **NEUTRAL / TRANSITIONAL**. Bear map dead, bull structure unproven. Price 4079.74 on H4 EQ 4081.91, D1 lower-high 4138.42 intact, spike high was a rejected BSL grab._
 
-<!-- Removed this cycle: #162 (4200.31, "M15 EQ reclaim") and #163 (4247.57, "H1 FVG supply") — both deleted; ancient pre-June levels ~190-240 points above price that had survived an EA restart. Also dead (never re-registered after the restart): #267 (4180.61), #285 (4094.00), #286 (4101.09), #287 (4052.79), #288 (4021.56 below-trigger — the level survives as #168, but flipped to an above-trigger since price is now beneath it). -->
+**⚠️ NEWS REMAINING (UTC):** **16:40 & 16:55 Fed Barr** · **17:30 Fed Cook** · **18:55 Fed Bowman** · **20:00 TIC** — all MEDIUM. (The calendar tool reports these as 19:40/19:55/20:30/21:55 — **broker time, +3h**.) A Fed speaker framing the 0.0% core print is the next volatility risk. No new entries ±15min around each.
+
+<!-- Removed this cycle: #169 (3983.20), #170 (3958.57), #171 (3942.86) — all deleted; the bear-map labels they carried ("bear continuation", "bear resolution") are dead after CPI. The 3983.20 LEVEL survives as #176 with a corrected label. NOTE: #164–#168 (4060.70 / 4051.17 / 4042.50 / 4037.49 / 4021.56) were never deleted — they FIRED and were auto-consumed by the EA as the CPI spike ran straight through all five. alerts.md had drifted from EA state; this cycle re-verified against list_alerts. -->

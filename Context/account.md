@@ -1,5 +1,5 @@
 ---
-updated: 2026-07-14 02:05 UTC (ASIAN — FLAT, 1 pending, daily P&L $0.00)
+updated: 2026-07-14 12:52 UTC (LONDON, post-CPI — FLAT, 0 pendings, daily P&L $0.00)
 synced_from: MT5 Bridge
 ---
 
@@ -13,17 +13,26 @@ synced_from: MT5 Bridge
 | Balance | $4,934.73 |
 | Equity | $4,934.73 |
 | Max risk per trade (1%) | $49.35 |
-| Margin used | $808.50 |
-| Free margin | $4,126.23 |
+| Margin used | $0.00 |
+| Free margin | $4,934.73 |
 | Open positions | **None** |
-| Pending orders | **1** — #9954835 SELL_LIMIT 0.02 @4042.5, SL 4054.5, TP 3986.5 |
+| Pending orders | **None** |
 
-## Session Status — 2026-07-14 (ASIAN, 02:05 UTC)
-- **FLAT** — no open positions. Daily P&L **$0.00** (closed $0 / float $0) — nothing traded today.
-- **1 resting pending:** #9954835 SELL_LIMIT 0.02 @4042.5 | SL 4054.5 | TP 3986.5 — R:R 4.67:1, risk **$24.00**. Sits at the top edge of the H4 sell-OTE (4018.2–4043.16), consistent with the HTF bear thesis. **Its TP 3986.5 is conservative** — it exits at the swept low and forfeits the 3958.57 / 3942.86 leg.
+## Session Status — 2026-07-14 (LONDON, 12:52 UTC — post-CPI)
+- **FLAT** — no open positions, **no pendings**. Daily P&L **$0.00** (closed $0 / float $0) — nothing traded today.
 - Balance/equity **$4,934.73**. Max risk (1%) = **$49.35**.
 - Daily loss limit **−$200 (4% of $5K initial)** — **full buffer intact** (0/2 daily cap, 0/2 consecutive losses).
-- **⚠️ CPI 15:30 UTC (HIGH).** If the pending fills before then, it carries a 120-pip SL through the release.
+
+### ⚠️ CPI 12:30 UTC — the pending did NOT fill, and that was luck
+Pending **#9954835 SELL_LIMIT 0.02 @4042.5 | SL 4054.5** is **gone** — `get_pending_orders` empty, `get_trade_history today` empty, balance unchanged. It never filled.
+
+**It should have.** The 12:30 UTC release candle went **4030.26 → 4090.01 in sixty seconds** — straight through 4042.5. A resting sell limit there fills on the way up and its stop 12 points behind is taken out almost immediately, very likely with slippage past the $24 nominal risk. MT5 cannot tell us *why* the order is gone (manual cancel vs. attached expiry). **If the operator did not pull it, then an expiry timer saved this book, not the process.** Worth confirming.
+
+Two process failures fed this, both now fixed in `CLAUDE.md`:
+1. **The release time was wrong by 3h** — `get_economic_calendar` returns **broker time** (15:30 = 12:30 UTC), and the pre-release note copied it as UTC. The "decide before 15:15 UTC" deadline pointed *hours after* the event.
+2. **The directional call was authored by the standing bear bias** — it argued the hawkish surprise was "the pain trade… skewed in our favour." Every CPI number printed cold.
+
+Post-mortem: `Analysis/News/202607/20260714/20260714_0630_cpi.md`
 
 ## 🚨 UNRESOLVED — 07/13 trade-log gap (operator action needed)
 MT5 `get_trade_history 7d` returns **4 trades on 07/13 that exist in no Trade Log file** (`Trade Log/20260713.md` does not exist) and match **no graded plan** — every 07/13 analysis was WAIT or SHORT, yet **all four were LONGS into a confirmed BEARISH tape**:
